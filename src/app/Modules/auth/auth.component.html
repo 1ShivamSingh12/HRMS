@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card">
+    <div class="upper">
+      <div class="banner">
+        <img src="../../../../assets/applogo.png" />
+      </div>
+      <div *ngIf="toggle">
+        <app-login-with-google></app-login-with-google>
+      </div>
+      <div *ngIf="!toggle">
+        <app-login-with-credentials></app-login-with-credentials>
+      </div>
+    </div>
+
+    <div class="button_login" (click)="show()">
+      <P *ngIf="toggle">LOGIN WITH CREDINTIALS</P>
+      <p *ngIf="!toggle">LOGIN WITH GOOGLE</p>
+    </div>
+    <div class="text">
+      <p> <span>{{newYear}} </span> &#169; Appinventiv HR System</p>
+    </div>
+  </div>
+</div>

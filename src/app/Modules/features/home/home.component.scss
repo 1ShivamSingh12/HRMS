@@ -1,0 +1,382 @@
+@import "../../../../scss/mix";
+
+.container {
+  .referal {
+    .referal-inner {
+      padding: 20px;
+      background-color: #f2f6fc;
+      .header {
+        display: flex;
+        padding-bottom: 25px;
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+        }
+        .user {
+          padding-top: 30px;
+          span {
+            font-family: "Lato";
+            font-size: 24px;
+            color: #524d4d;
+            font-weight: 300;
+            line-height: 1.4;
+            margin-bottom: 0;
+          }
+          p {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .main {
+        .main_upper {
+          .job_description {
+            display: grid;
+            grid-template-columns: 65% 35%;
+            .jobs {
+              display: grid;
+              grid-template-columns: 50% 50%;
+              border: 1px solid #d4d9df;
+              border-radius: 5px;
+              background-color: #fff;
+              margin: 0px 8px 0px 8px;
+              .heading {
+                // width: 50%;
+                border-right: 1px dashed #ccc;
+                padding: 24px 20px 24px 24px;
+                .jobs_heading {
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 8px;
+                  p {
+                    margin: 0;
+                    font-size: 20px;
+                    font-weight: 500;
+                  }
+                  button {
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199cff;
+                    background-blend-mode: soft-light, normal;
+
+                    color: #fff;
+                    border: none;
+                    padding: 8px;
+                    border-radius: 7px;
+                  }
+                }
+
+                .card{
+                  padding: 20px;
+                  border: 1px solid rgba(150, 165, 184, 0.3);
+                  border-radius: 10px;
+
+                  .card_upper {
+                    position: relative;
+                    background-color: #fff;
+
+                    // border: 1px solid black;
+                    .job_logo {
+                      @include flex(center, center);
+                      border: 1px solid rgba(150, 165, 184, 0.3);
+                      background-color: #f2f6fc;
+                      padding: 20px;
+                      min-height: 130px;
+                      border-radius: 10px;
+                      img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                      }
+                    }
+                    .location {
+                      position: absolute;
+                      bottom: 5px;
+                      left: 15px;
+                      background-color: #ffffff;
+                      border-radius: 20px;
+                      padding: 8px 12px 8px 30px;
+                      font-family: "Lato";
+                      font-size: 12px;
+                      color: #231e1e;
+                      font-weight: 400;
+                      line-height: 1.2;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    }
+                    .date {
+                      position: absolute;
+                      bottom: 15px;
+                      right: 15px;
+                      font-family: "Lato";
+                      font-size: 12px;
+                      color: #606167;
+                      font-weight: 700;
+                      line-height: 1.2;
+                    }
+                  }
+
+                  .card_middle{
+                    padding: 10px 0;
+                    border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+                    .job_desc{
+                      h3{
+                        font-family: "Lato";
+                        font-size: 20px;
+                        color: #231E1E;
+                        font-weight: 600;
+                        line-height: 1.2;
+                        margin-bottom: 5px;
+                      }
+                      p{
+                        font-family: "Lato";
+                        font-size: 14px;
+                        color: #606167;
+                        font-weight: 400;
+                        line-height: 1.5;
+                      }
+                    }
+                  }
+
+                  .card_bottom{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+                    p{
+                      font-family: "Lato";
+                      font-size: 13px;
+                      color: #606167;
+                      font-weight: 400;
+                      line-height: 1.2;
+                    }
+                    h3{
+                      font-family: "Lato";
+                      font-size: 16px;
+                      color: #000000;
+                      font-weight: 600;
+                      line-height: 1.2;
+                    }
+                    .opening{
+
+                    }
+                    .experience{
+
+                    }
+                  }
+
+                  .card_button{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 15px 0 0 0;
+                    button{
+                      width: 100%;
+                      margin: 0 8px;
+                      text-transform: none;
+                      font-family: "Lato";
+                      font-size: 14px;
+                      color: #199CFF;
+                      font-weight: 500;
+                      line-height: 1.32;
+                      padding: 12px;
+                      border-radius: 5px;
+                      border: 1px solid rgba(150, 165, 184, 0.2);
+
+                    }
+                    .refer_candidate_button{
+                      width: 100%;
+                      margin: 0 8px;
+                      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+                      background-blend-mode: soft-light, normal;
+                      border: 1px solid rgba(150, 165, 184, 0.2);
+                      box-sizing: border-box;
+                      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
+                      border-radius: 4px;
+                      color: #FFFFFF;
+                    }
+                  }
+
+                }
+
+              }
+
+              .refer_bonus{
+                padding: 25px;
+                h3{
+                  font-family: "Lato";
+                  font-size: 14px;
+                  color: #199CFF;
+                  font-weight: 600;
+                  line-height: 1.9;
+                  margin: 0px;
+                }
+
+                .bonus_card{
+                  // padding: 10px;
+                  .bonus_card_upper{
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    @include flex(center,center);
+                    .bonus_card_content{
+                      text-align: center;
+                      padding: 27px 15px;
+                      margin: 15px;
+                      // margin-right: 15px;
+                      // margin-bottom: 15px;
+                      background-color: #f3f8ff;
+                      h2{
+                        font-size: 56px;
+                        color: #199CFF;
+                        font-weight: 500;
+                        line-height: 1.4;
+                        margin: 5px 0;
+                      }
+                      h3{
+                        font-family: "Lato";
+                        font-size: 16px;
+                        color: #000000;
+                        font-weight: 800;
+                        line-height: 1.9;
+                        margin: 5px 0;
+                      }
+                      p{
+                        font-family: "Lato";
+                        font-size: 12px;
+                        color: #606167;
+                        font-weight: 500;
+                        line-height: 1.2;
+                        margin: 5px 0;
+                        text-align: center;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .new_members{
+              background-color: #fff;
+              margin: 0px 8px 0px 8px;
+              border: 1px solid #DBE2EA;
+              border-radius: 5px;
+
+              .new_members_in{
+                padding: 25px;
+                h2{
+
+                  font-size: 20px;
+                  color: #231E1E;
+                  font-weight: 500;
+                  line-height: 1.5;
+                  margin: 0;
+                }
+                .new_members_details{
+                  @include flex(center,center);
+                  margin-top: 30px;
+                  img{
+
+                  }
+                }
+              }
+            }
+
+
+          }
+        }
+
+        .main_middle{
+          .main_middle_content{
+            background-color: #fff;
+            margin: 0px 8px 0px 8px;
+            border: 1px solid #DBE2EA;
+            border-radius: 5px;
+
+            .main_middle_header{
+              padding: .875rem 1.5rem;
+              margin-bottom: 0;
+              background-color: transparent;
+              border-bottom: 0px solid rgba(24,28,33,0.06);
+              border-bottom-width: 1px;
+              h2{
+                font-size: 20px;
+                color: #231E1E;
+                font-weight: 500;
+                line-height: 1.5;
+                margin: 0;
+              }
+
+            }
+
+            .main_middle_card{
+              padding: 1em;
+              display: grid;
+              grid-template-columns: 33% 33% 33%;
+              gap: 10px;
+              h2{
+
+                font-size: 16px;
+                color: #000000;
+                font-weight: 500;
+                line-height: 1.9;
+                width: 90%;
+                height: 20px;
+
+              }
+              h4{
+                font-family: "Lato";
+                font-size: 12px;
+                color: #606167;
+                font-weight: 600;
+                line-height: 1.9;
+              }
+              .appreciation{
+                border: 1.5px solid rgba(150, 165, 184, 0.3);
+                padding: 16px 16px 80px 16px;
+                border-radius: 10px;
+                position: relative;
+                // height: 414px;
+
+                p{
+                  font-family: "Lato";
+                  font-size: 12px;
+                  color: #606167;
+                  font-weight: 500;
+                  line-height: 1.9;
+                }
+
+                button{
+                  position: absolute;
+                  left: 0;
+                  bottom: 0;
+                  padding: 16px;
+                  margin: 15px;
+                }
+              }
+              .awards{
+                border: 1.5px solid rgba(150, 165, 184, 0.3);
+                padding: 16px 16px 80px 16px;
+                border-radius: 10px;
+                position: relative;
+
+                .pics{
+                  display: grid;
+                  grid-template-columns: 50% 50%;
+
+                  img{
+                    width: 100%;
+                    border: 1px solid black;
+                  }
+                }
+
+              }
+            }
+
+          }
+        }
+      }
+
+    }
+  }
+}
