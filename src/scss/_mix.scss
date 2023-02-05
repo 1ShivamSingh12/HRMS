@@ -3,3 +3,15 @@
   align-items: $item;
   justify-content: $align;
 }
+
+@mixin grid($grid-type, $args, $row-gap, $column-gap: $row-gap) {
+
+    display: grid;
+    #{$grid-type}: #{$args};
+    grid-gap: rem($row-gap) rem($column-gap);
+  }
+
+
+$primary-blue: #199cff;
+$primary-white: #fff;
+

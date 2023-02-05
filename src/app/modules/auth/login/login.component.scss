@@ -1,0 +1,59 @@
+@import '../../../../scss/mix';
+.container {
+  width: 100%;
+  min-height: 100%;
+  background-image: url(../../../../assets/banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include flex(center, center);
+  .card {
+    border: 1px solid black;
+    background-color: #fff;
+
+    .upper {
+      padding: 3em;
+
+      .banner {
+        text-align: center;
+        padding-bottom: 50px;
+      }
+    }
+
+    .button_login{
+      background-color: #26B4FF;
+      width: 96%;
+      margin: auto;
+      border-radius: 2px;
+      box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 7%), 0px 4px 5px 0px rgb(0 0 0 / 5%), 0px 1px 10px 0px rgb(0 0 0 / 3%);
+      cursor: pointer;
+      p{
+        font-size: 13px;
+        color: white;
+        text-align: center;
+        padding: 7px;
+        font-weight: 500;
+      }
+    }
+    .text {
+      text-align: center;
+      padding-top: 15px;
+      color: #a3a4a6;
+    }
+  }
+}
+
+@media only screen and (max-width: 399px) {
+  .container{
+    .card{
+      width: 90vw;
+      .upper{
+        .banner{
+          img{
+            width: 69vw;
+          }
+        }
+      }
+    }
+  }
+}

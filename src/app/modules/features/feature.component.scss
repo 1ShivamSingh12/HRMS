@@ -1,0 +1,121 @@
+@import "../../../scss/mix";
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  mat-toolbar {
+    padding: 17px 0px 0px 14px;
+    @include flex('',space-between);
+    background-color: #fff;
+
+    .header-left {
+      img {
+        width: 60%;
+      }
+
+      button {
+        border: none;
+        background-color: white;
+        position: relative;
+        bottom: 10px;
+        cursor: pointer;
+
+        &:hover{
+          color: blue;
+        }
+      }
+
+      .app_logo {
+        width: 54%;
+      }
+    }
+    .header-right {
+      @include flex('',space-between);
+      .logout {
+        @include flex('','');
+        p {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .header{
+    mat-toolbar{
+      display: block;
+      .header-right{
+        display: none;
+      }
+
+      .header-left{
+        @include flex('',space-between);
+        img {
+          width: 17%;
+        }
+
+        .app_logo{
+          display: none;
+        }
+      }
+    }
+  }
+
+  .example-sidenav{
+
+  }
+
+  .example-container{
+
+    ::ng-deep.mat-drawer-content{
+      display: contents;
+    }
+
+    .secondary{
+      display: none;
+    }
+  }
+
+}
+
+
+
+.example-container {
+  position: relative;
+  top: 70px;
+  height: 900px;
+}
+.example-sidenav-content {
+  height: 100%;
+
+}
+.example-sidenav {
+  user-select: none;
+}
+.full-width {
+  width: 9rem;
+  margin-top: 3px;
+}
+.menu-button {
+  transition: 300ms ease-in-out;
+  transform: rotate(0deg);
+}
+.menu-button.rotated {
+  transform: rotate(180deg);
+}
+.submenu {
+  overflow-y: hidden;
+  transition: transform 300ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+  padding-left: 30px;
+}
+.submenu.expanded {
+  transform: scaleY(1);
+}
+
+::ng-deep.mat-list-item-content {
+  @include flex('','');
+}

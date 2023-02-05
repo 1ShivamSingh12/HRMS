@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="header_my_details">
+    <div class="my_details">
+      <img src="../../../../assets/images (1).png">
+      <div class="my_details_body">
+        <h2>Shivam Singh</h2>
+        <p><strong>Email : </strong> <span>shivamsingh07725@gmial.com</span></p>
+        <p><strong>Employee ID : </strong> <span>AI1547</span></p>
+        <p><strong>Designation : </strong> <span>Software Engineer</span></p>
+        <p><strong>Last Login : </strong> <span>Feb-01-2023 10:17 PM from 172.31.25.47</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="profile">
+    <div class="emp_info">
+      <div class="emp_info_body">
+        <div class="basic_information" [class.active]="viewMode=='information'"  (click)="viewMode='information'">
+          <mat-icon>home</mat-icon>
+          <p><a>Basic Information</a></p>
+        </div>
+        <div class="basic_information" [class.active]="viewMode=='profile_picture'" (click)="viewMode='profile_picture'">
+          <mat-icon>home</mat-icon>
+          <p>Profile Picture</p>
+        </div>
+        <div class="basic_information" [class.active]="viewMode=='qualification'" (click)="viewMode='qualification'">
+          <mat-icon>home</mat-icon>
+          <p>Qualification</p>
+        </div>
+        <div class="basic_information" [class.active]="viewMode=='shift'" (click)="viewMode='shift'">
+          <mat-icon>home</mat-icon>
+          <p>Shift</p>
+        </div>
+        <div class="basic_information" [class.active]="viewMode=='change_pass'" (click)="viewMode='change_pass'">
+          <mat-icon>home</mat-icon>
+          <p>Change Password</p>
+        </div>
+        <div class="basic_information" [class.active]="viewMode=='appraisal'" (click)="viewMode='appraisal'">
+          <mat-icon>home</mat-icon>
+          <p>Appraisal</p>
+        </div>
+      </div>
+    </div>
+    <div [ngSwitch]="viewMode" class="emp_info_data">
+      <div *ngSwitchCase="'information'">
+        <app-basic-information></app-basic-information>
+      </div>
+      <div *ngSwitchCase="'profile_picture'">
+        <app-profile-picture></app-profile-picture>
+      </div>
+      <div *ngSwitchCase="'qualification'">
+        <app-qualification></app-qualification>
+      </div>
+      <div *ngSwitchCase="'shift'">
+        <!-- <app-profile-picture></app-profile-picture> -->
+      </div>
+      <div *ngSwitchCase="'change_pass'">
+        <!-- <app-profile-picture></app-profile-picture> -->
+      </div>
+      <div *ngSwitchCase="'appraisal'">
+        <!-- <app-profile-picture></app-profile-picture> -->
+      </div>
+    </div>
+  </div>
+  <div>
+  </div>
+</div>

@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AUTH, DASHBOARD } from './Constant/routes';
-import { PageNotFoundComponent } from './Modules/page-not-found/page-not-found.component';
+import { AUTH, DASHBOARD } from './constants/routes';
+import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: AUTH.path, pathMatch: 'full' },
   {
-    path: AUTH.path, loadChildren: () => import('./Modules/auth/auth.module').then(m => m.AuthModule),
+    path: AUTH.path, loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule),
   },
   {
-    path: DASHBOARD.path, loadChildren: () => import('./Modules/features/features.module').then(m => m.FeaturesModule),
+    path: DASHBOARD.path, loadChildren: () => import('./modules/features/features.module').then(m => m.FeaturesModule),
   },
   {
     path:'**',component:PageNotFoundComponent

@@ -1,0 +1,116 @@
+@import '../../../../../scss/mix';
+
+.card {
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+  border-radius: 10px;
+  .card_header {
+    h2 {
+      font-size: 20px;
+      color: #3246d3;
+      font-family: 'Segoe UI';
+      padding: 11px 25px 11px 15px;
+      border-bottom: 1px solid #f3f7fc;
+      font-weight: 700;
+      margin: 0px;
+    }
+  }
+
+  .card_body {
+    padding:1em ;
+    .card_upper {
+      @include grid('grid-template-columns', '33% 33% 33%','','');
+      margin-bottom: 20px;
+      .input-box {
+        margin: 0px 10px 0px 10px;
+        mat-form-field {
+          width: 18vw;
+        }
+        p{
+          font-size: 14px;
+          font-weight: 600;
+          font-family: 'Segoe UI';
+          color: #2f3031;
+          margin-bottom: 5px;
+          margin: 0;
+        }
+        ::ng-deep.mat-form-field-appearance-outline
+        .mat-form-field-infix{
+          padding: 20px 0px 17px 0px;
+          border-top: 0em solid transparent;
+        }
+      }
+    }
+
+    .card_middle {
+      @include grid('grid-template-columns', '50% 50%','','');
+
+      margin-bottom: 20px;
+
+      p{
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Segoe UI';
+        color: #2f3031;
+        margin-bottom: 5px;
+        margin: 0;
+      }
+      .input-box {
+        margin: 0px 10px 0px 10px;
+        mat-form-field {
+          width: 12.7vw;
+        }
+        ::ng-deep.mat-form-field-appearance-outline
+        .mat-form-field-infix{
+          padding: 20px 0px 17px 0px;
+          border-top: 0em solid transparent;
+        }
+      }
+      .years_experience{
+        @include grid('grid-template-columns', auto auto ,'','');
+      }
+
+      .relevant_experience{
+        @include grid('grid-template-columns', auto auto ,'','');
+
+      }
+    }
+
+    .card_bottom{
+      .input-box {
+        margin: 0px 10px 0px 10px;
+        p{
+          font-size: 14px;
+          font-weight: 600;
+          font-family: 'Segoe UI';
+          color: #2f3031;
+          margin-bottom: 5px;
+          margin: 0;
+        }
+
+        textarea{
+          width: 96%;
+          min-height: 100px;
+          border: 1px solid #d8d8d8;
+          border-radius: 3px !important;
+          padding: 12px 10px !important;
+          background: #fff;
+          resize: none;
+        }
+      }
+    }
+
+    .save_button{
+      margin: 25px 0px 0px 10px;
+      button{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+        background-blend-mode: soft-light, normal;
+        border: 1px solid rgba(150, 165, 184, 0.2);
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
+        border-radius: 4px;
+        color: #FFFFFF;
+        padding: 10px 20px 10px 20px;
+      }
+    }
+  }
+}
