@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+MatIconModule
+
   ]
 })
 export class HomeModule { }

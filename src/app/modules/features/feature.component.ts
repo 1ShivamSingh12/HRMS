@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { sideNavList } from 'src/app/constants/sidenav';
 
 @Component({
   selector: 'app-feature',
@@ -7,6 +8,8 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./feature.component.scss']
 })
 export class FeatureComponent implements OnInit {
+
+  sideroutes = sideNavList
 
   constructor() { }
 

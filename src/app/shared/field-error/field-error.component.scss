@@ -1,7 +1,6 @@
-
+@import '../../../scss/mix';
 .err {
   color: red;
   font-size: 13px;
-  bottom: 17px;
-  position: relative;
+  @include position(relative , '',17px,'','');
 }

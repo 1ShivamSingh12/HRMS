@@ -5,13 +5,65 @@
 }
 
 @mixin grid($grid-type, $args, $row-gap, $column-gap: $row-gap) {
+  display: grid;
+  #{$grid-type}: #{$args};
+  grid-gap: rem($row-gap) rem($column-gap);
+}
 
-    display: grid;
-    #{$grid-type}: #{$args};
-    grid-gap: rem($row-gap) rem($column-gap);
+@mixin position($position,$top,$bottom,$left,$right) {
+  position: $position;
+  top : $top;
+  bottom: $bottom;
+  left : $left;
+  right : $right;
+}
+
+@mixin form-field{
+  .input-box {
+    margin: 0px 10px 0px 10px;
+    mat-form-field {
+      width: 18vw;
+    }
+    p{
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Segoe UI';
+      color: #2f3031;
+      margin-bottom: 5px;
+      margin: 0;
+    }
+    ::ng-deep.mat-form-field-appearance-outline
+    .mat-form-field-infix{
+      padding: 20px 0px 17px 0px;
+      border-top: 0em solid transparent;
+    }
+    ::ng-deep .mat-form-field-appearance-fill {
+      background-color: $pure-white;
+      .mat-form-field-flex{
+        background-color:$pure-white;
+        padding: 0em 0em 0 0.75em;
+      }
+
+    }
   }
+}
 
 
+@mixin button{
+  .save_button{
+      margin: 25px 0px 0px 10px;
+      button{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
+        background-blend-mode: soft-light, normal;
+        border: 1px solid rgba(150, 165, 184, 0.2);
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
+        border-radius: 4px;
+        color: $primary-white;
+        padding: 10px 20px 10px 20px;
+      }
+    }
+}
 $primary-blue: #199cff;
 $primary-white: #fff;
-
+$darkbklue : #26B4FF;
+$pure-white : white

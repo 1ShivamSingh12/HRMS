@@ -1,13 +1,13 @@
 @import "../../../scss/mix";
 
 .header {
-  position: fixed;
+  @include position(fixed , '','','','');
   width: 100%;
   z-index: 10000;
   mat-toolbar {
     padding: 17px 0px 0px 14px;
     @include flex('',space-between);
-    background-color: #fff;
+    background-color: $primary-white;
 
     .header-left {
       img {
@@ -17,8 +17,7 @@
       button {
         border: none;
         background-color: white;
-        position: relative;
-        bottom: 10px;
+        @include position(relative , '',10px,'','');
         cursor: pointer;
 
         &:hover{
@@ -42,6 +41,66 @@
   }
 }
 
+.example-container {
+  @include position(relative , 70px,'','','');
+
+  .example-sidenav{
+    mat-nav-list{
+      mat-list-item{
+        margin-bottom: 8px;
+        mat-icon{
+          margin-right: 10px;
+          margin-left: 5px;
+        }
+        span{
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .parent{
+    &:hover{
+      color: blue;
+    }
+  }
+  .activeLink{
+    color: blue;
+  }
+
+}
+
+.example-sidenav-content {
+  height: 900px;
+
+}
+.example-sidenav {
+  user-select: none;
+}
+.full-width {
+  width: 9rem;
+  margin-top: 3px;
+}
+.menu-button {
+  transition: 300ms ease-in-out;
+  transform: rotate(268deg);
+}
+.menu-button.rotated {
+  transform: rotate(360deg);
+}
+.submenu {
+  overflow-y: hidden;
+  transition: transform 300ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+  padding-left: 30px;
+}
+.submenu.expanded {
+  transform: scaleY(1);
+}
+
+
 @media only screen and (max-width: 1000px) {
   .header{
     mat-toolbar{
@@ -63,9 +122,6 @@
     }
   }
 
-  .example-sidenav{
-
-  }
 
   .example-container{
 
@@ -76,46 +132,10 @@
     .secondary{
       display: none;
     }
+    .example-sidenav-content {
+      height: 100%;
+
+    }
   }
 
-}
-
-
-
-.example-container {
-  position: relative;
-  top: 70px;
-  height: 900px;
-}
-.example-sidenav-content {
-  height: 100%;
-
-}
-.example-sidenav {
-  user-select: none;
-}
-.full-width {
-  width: 9rem;
-  margin-top: 3px;
-}
-.menu-button {
-  transition: 300ms ease-in-out;
-  transform: rotate(0deg);
-}
-.menu-button.rotated {
-  transform: rotate(180deg);
-}
-.submenu {
-  overflow-y: hidden;
-  transition: transform 300ms ease;
-  transform: scaleY(0);
-  transform-origin: top;
-  padding-left: 30px;
-}
-.submenu.expanded {
-  transform: scaleY(1);
-}
-
-::ng-deep.mat-list-item-content {
-  @include flex('','');
 }

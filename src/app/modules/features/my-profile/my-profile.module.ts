@@ -9,6 +9,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { QualificationComponent } from './qualification/qualification.component';
+import {MatSelectModule} from '@angular/material/select';
+import { ShiftComponent } from './shift/shift.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AppraisalComponent } from './appraisal/appraisal.component';
 
 
 
@@ -17,14 +21,18 @@ import { QualificationComponent } from './qualification/qualification.component'
     MyProfileComponent,
     BasicInformationComponent,
     ProfilePictureComponent,
-    QualificationComponent
+    QualificationComponent,
+    ShiftComponent,
+    ChangePasswordComponent,
+    AppraisalComponent
   ],
   imports: [
     CommonModule,
     MyProfileRoutingModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class MyProfileModule { }

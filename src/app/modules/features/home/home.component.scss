@@ -83,7 +83,8 @@
                   border-radius: 10px;
 
                   .card_upper {
-                    position: relative;
+                  @include position(relative , '','','','');
+
                     background-color: $primary-white;
                     .job_logo {
                       @include flex(center, center);
@@ -101,9 +102,7 @@
                     }
 
                     .location {
-                      position: absolute;
-                      bottom: 5px;
-                      left: 15px;
+                      @include position(absolute , '',5px,15px,'');
                       background-color: $primary-white;
                       border-radius: 20px;
                       padding: 8px 12px 8px 30px;
@@ -118,9 +117,7 @@
                     }
 
                     .date {
-                      position: absolute;
-                      bottom: 15px;
-                      right: 15px;
+                      @include position(absolute , '',15px,'',15px);
                       font-family: "Lato";
                       font-size: 12px;
                       color: #606167;
@@ -234,7 +231,7 @@
                   // padding: 10px;
                   .bonus_card_upper {
 
-              @include grid('grid-template-columns', '50% 50%','','');
+                  @include grid('grid-template-columns', '50% 50%','','');
 
                     @include flex(center, center);
 
@@ -358,7 +355,7 @@
                 border: 1.5px solid rgba(150, 165, 184, 0.3);
                 padding: 16px 16px 80px 16px;
                 border-radius: 10px;
-                position: relative;
+                @include position(relative , '','','','');
                 // height: 414px;
 
                 p {
@@ -370,9 +367,7 @@
                 }
 
                 button {
-                  position: absolute;
-                  left: 0;
-                  bottom: 0;
+                  @include position(absolute , '',0,0,'');
                   padding: 16px;
                   margin: 15px;
                 }
@@ -382,7 +377,7 @@
                 border: 1.5px solid rgba(150, 165, 184, 0.3);
                 padding: 16px 16px 80px 16px;
                 border-radius: 10px;
-                position: relative;
+                @include position(relative , '','','','');
 
                 .pics {
 
@@ -442,7 +437,7 @@
         .main {
           .main_upper {
             .job_description {
-              
+
               @include grid('grid-template-columns', '100%','','');
 
               .jobs {

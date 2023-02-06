@@ -20,7 +20,7 @@ export const transAnimation = animation([
 
 // Routable animations
 export const slideInAnimation = trigger('routeAnimations', [
-  // transition('void => *' , [
+  // transition(':enter' , [
   //   style({position: 'relative' }),
   //   animate(1000 , style({left : '100%'})),
   // ]),

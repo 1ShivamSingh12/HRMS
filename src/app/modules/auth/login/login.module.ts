@@ -14,7 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
 import { FieldErrorModule } from 'src/app/shared/field-error/field-error.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     validationError,
     FieldErrorModule,
     MatSnackBarModule,
+IvyCarouselModule
+
 
 
   ]
