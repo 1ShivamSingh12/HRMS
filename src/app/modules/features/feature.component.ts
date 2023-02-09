@@ -26,6 +26,8 @@ export class FeatureComponent implements OnInit {
 
   }
 
+  
+
   mouseenter() {
     if (!this.isExpanded) {
       this.isShowing = true;

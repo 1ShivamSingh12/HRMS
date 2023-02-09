@@ -12,7 +12,7 @@ import { slideInAnimation } from 'src/app/animations/animations';
 })
 export class MyProfileComponent implements OnInit {
 
-  viewMode = 'map';
+  viewMode = 'information';
   constructor() { }
 
   ngOnInit(): void {

@@ -40,4 +40,42 @@ export const MY_PROFILE : Route = {
   get fullurl(): string {
     return `${DASHBOARD.fullurl}/${this.path}`;
   },
+
+}
+
+export const DIRECTORY : Route = {
+  path:'directory',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+
+}
+
+export const ENTREPRENEURSHIP : Route = {
+  path:'entrepreneurship',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+
+}
+
+export const HOLIDAY_CALENDER : Route = {
+  path:'holiday-calender',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+}
+
+export const MY_PERFORMANCE : Route = {
+  path:'my-performance',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+}
+
+export const JOB_OPENING : Route = {
+  path:'job-opening',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
 }

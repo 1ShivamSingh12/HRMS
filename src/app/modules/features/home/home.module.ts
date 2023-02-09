@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { MatIconModule } from '@angular/material/icon';
+import { FooterModule } from 'src/app/shared/footer/footer.module';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     HomeRoutingModule,
     IvyCarouselModule,
-MatIconModule
+MatIconModule,
+FooterModule,
+
 
   ]
 })

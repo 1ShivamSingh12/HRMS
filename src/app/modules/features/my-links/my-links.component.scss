@@ -1,0 +1,27 @@
+@import '../../../../scss/mix';
+
+.container{
+  background-color: #f2f6fc;
+  padding: 15px 30px 10px 30px;
+  min-height: 100%;
+  .card{
+    padding: 20px;
+    background: $primary-white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    .card_body{
+      text-align: center;
+      // margin-bottom: 30px;
+    }
+  }
+}
+// .footer{
+//   background-color: $primary-white;
+//   padding: 10px 0px 0px 30px;
+//   p{
+//     color: #4E5155;
+//     font-size: 11px;
+//     font-weight: 500;
+//   }
+// }

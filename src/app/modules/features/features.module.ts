@@ -8,7 +8,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
-
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -23,6 +23,8 @@ import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
     MatSidenavModule,
     MatListModule,
     absolutePipe,
+MatButtonModule
+
   ]
 })
 export class FeaturesModule { }

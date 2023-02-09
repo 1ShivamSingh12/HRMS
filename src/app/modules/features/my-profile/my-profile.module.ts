@@ -13,6 +13,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ShiftComponent } from './shift/shift.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AppraisalComponent } from './appraisal/appraisal.component';
+import { FooterModule } from 'src/app/shared/footer/footer.module';
 
 
 
@@ -32,7 +33,8 @@ import { AppraisalComponent } from './appraisal/appraisal.component';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    FooterModule
   ]
 })
 export class MyProfileModule { }

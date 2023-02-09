@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 10000;
   mat-toolbar {
-    padding: 17px 0px 0px 14px;
+    padding: 17px 20px 0px 14px;
     @include flex('',space-between);
     background-color: $primary-white;
 
@@ -23,18 +23,55 @@
         &:hover{
           color: blue;
         }
+
+        mat-icon{
+          position: relative;
+          bottom: 10px;
+        }
       }
 
       .app_logo {
         width: 54%;
       }
     }
-    .header-right {
-      @include flex('',space-between);
-      .logout {
-        @include flex('','');
-        p {
+    .right {
+      @include grid(grid-template-columns , '55% 23% 10%', 18px );
+      padding: 10px;
+      .logo {
+      }
+      .userName {
+        img{
+          width: 31px;
+          height: 31px;
+          border-radius: 50%;
+        }
+        span{
+          position: relative;
+          bottom: 8px;
+          right: 10px;
+          color: #485665;
           font-size: 13px;
+        }
+      }
+      .help {
+        margin: 0;
+        padding: 0;
+        // width: 80%;
+        // background-color: red;
+        button{
+          color: white;
+          background-color: red;
+          padding: 3px;
+          margin-left: 9px;
+          // width: 30px;
+          font-weight: bold;
+
+        }
+      }
+
+      .bellIcon{
+        mat-icon{
+          color: grey
         }
       }
     }
@@ -43,9 +80,9 @@
 
 .example-container {
   @include position(relative , 70px,'','','');
-
   .example-sidenav{
     mat-nav-list{
+      @include custom-scroller('y');
       mat-list-item{
         margin-bottom: 8px;
         mat-icon{
@@ -69,11 +106,15 @@
     color: blue;
   }
 
+  ::ng-deep.mat-drawer-content{
+    background-color: white
+  }
+
 }
 
 .example-sidenav-content {
+  @include custom-scroller('y');
   height: 900px;
-
 }
 .example-sidenav {
   user-select: none;
@@ -105,14 +146,24 @@
   .header{
     mat-toolbar{
       display: block;
-      .header-right{
+      .right{
         display: none;
       }
 
       .header-left{
+
         @include flex('',space-between);
         img {
           width: 17%;
+        }
+
+
+        button{
+
+          mat-icon{
+            position: relative;
+            bottom: 0;
+          }
         }
 
         .app_logo{
@@ -133,7 +184,7 @@
       display: none;
     }
     .example-sidenav-content {
-      height: 100%;
+      height: 93vh;
 
     }
   }

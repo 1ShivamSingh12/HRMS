@@ -19,29 +19,8 @@
       padding: 1em;
 
       .card_body{
-        @include grid(grid-template-columns , '33% 33% 33%','','');
-        // .input-box {
-        //   margin: 0px 10px 0px 10px;
-        //   mat-form-field {
-        //     width: 18vw;
-        //   }
-        //   p{
-        //     font-size: 14px;
-        //     font-weight: 600;
-        //     font-family: 'Segoe UI';
-        //     color: #2f3031;
-        //     margin-bottom: 5px;
-        //     margin: 0;
-        //   }
-        //   ::ng-deep.mat-form-field-appearance-outline
-        //   .mat-form-field-infix{
-        //     padding: 20px 0px 17px 0px;
-        //     border-top: 0em solid transparent;
-        //   }
-        // }
-
-
-        @include form-field();
+        @include grid(grid-template-columns , '33% 33% 33%','');
+        @include form-field(100%);
       }
     }
   }
@@ -51,3 +30,15 @@
   }
 }
 
+@media only screen and (max-width: 825px) {
+  .container {
+    .card{
+      .card_inner{
+        .card_body{
+
+          @include grid(grid-template-columns , 100%, "");
+        }
+      }
+    }
+  }
+}

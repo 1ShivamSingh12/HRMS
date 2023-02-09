@@ -7,15 +7,16 @@
         <mat-icon>menu</mat-icon>
       </button>
     </div>
-    <div class="header-right">
-      <div class="logout">
-        <p>Shivam Singh</p>
-        <mat-icon>home</mat-icon>
+    <div class="right">
+      <div class="userName">
+       <span>Shivam Singh</span>
+       <img src="../../../assets/images (1).png">
+       <mat-icon>keyboard_arrow_down</mat-icon>
       </div>
-      <div>
-        <p>Help</p>
+      <div class="help">
+        <button>Help</button>
       </div>
-      <div>
+      <div class="bellIcon">
         <mat-icon>notifications</mat-icon>
       </div>
     </div>
@@ -36,8 +37,9 @@
           </mat-list-item>
           <div class="submenu"  [ngClass]="{'expanded' : item.show}" *ngIf="item.show">
             <ng-container *ngFor="let item1 of item.options">
-              <mat-list-item [routerLink]="item1.link" routerLinkActive="activeLink">
-                {{item1.subTitle}}
+              <mat-list-item [routerLink]="item1.link" routerLinkActive="activeLink" [ngClass]=" isExpanded ? 'primary' : 'secondary'">
+                <mat-icon>{{item1.subLogo}}</mat-icon>
+                <span *ngIf="isExpanded || isShowing">{{item1.subTitle}}</span>
               </mat-list-item>
             </ng-container>
           </div>
