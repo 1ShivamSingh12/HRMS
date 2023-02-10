@@ -1,0 +1,48 @@
+@import '../../../../../scss/mix';
+
+.container{
+  background-color: $common-background;
+  min-height: 100%;
+  padding: 20px;
+  .card {
+    .card_header {
+      margin-bottom: 30px;
+      h3 {
+        font-size: 24px;
+        color: #199cff;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+:host ::ng-deep .container {
+
+  .tables{
+   border: 1px solid rgba(24,28,33,0.06);
+   padding: 20px;
+    table{
+      tbody{
+        line-height: 5;
+
+        td.cdk-column-candidate_name{
+          color: #199cff;
+        }
+      }
+
+      thead{
+        tr{
+          th{
+            font-family: "Lato";
+            font-size: 14px;
+            color: #96A5B8;
+            font-weight: 500;
+            border-bottom: 1px solid #EDF2F6;
+          }
+        }
+      }
+    }
+  }
+}
+

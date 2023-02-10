@@ -1,0 +1,194 @@
+@import "../../../scss/mix";
+
+.card {
+  padding: 20px;
+  border: 1px solid rgba(150, 165, 184, 0.3);
+  border-radius: 10px;
+
+  .card_upper {
+  @include position(relative , '','','','');
+
+    background-color: $primary-white;
+    .job_logo {
+      @include flex(center, center);
+      border: 1px solid rgba(150, 165, 184, 0.3);
+      background-color: #f2f6fc;
+      padding: 20px;
+      min-height: 130px;
+      border-radius: 10px;
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    }
+
+    .location {
+      @include position(absolute , '',5px,15px,'');
+      background-color: $primary-white;
+      border-radius: 20px;
+      padding: 0px 0px 3px 10px;
+      font-family: "Lato";
+      font-size: 12px;
+      color: #231e1e;
+      font-weight: 400;
+      line-height: 1.2;
+      text-overflow: ellipsis;
+      mat-icon{
+        @include position(relative , '',-4px,'','');
+      }
+      span{
+        @include position(relative , '',5px,'','');
+      }
+    }
+
+    .date {
+      @include position(absolute , '',15px,'',15px);
+      font-family: "Lato";
+      font-size: 12px;
+      color: #606167;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+  }
+
+  .card_middle {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+
+    .job_desc {
+      h3 {
+        font-family: "Lato";
+        font-size: 20px;
+        color: #231e1e;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-family: "Lato";
+        font-size: 14px;
+        color: #606167;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .card_bottom {
+
+
+    @include flex('',space-between);
+    padding: 10px;
+    border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+
+    p {
+      font-family: "Lato";
+      font-size: 13px;
+      color: #606167;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-family: "Lato";
+      font-size: 16px;
+      color: #000000;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .opening {
+    }
+
+    .experience {
+    }
+  }
+
+  .card_button {
+
+    @include flex('',space-between);
+    padding: 15px 0 0 0;
+
+    button {
+      width: 100%;
+      margin: 0 8px;
+      text-transform: none;
+      font-family: "Lato";
+      font-size: 14px;
+      color: $primary-blue;
+      font-weight: 500;
+      line-height: 1.32;
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid rgba(150, 165, 184, 0.2);
+    }
+
+    .refer_candidate_button {
+      width: 100%;
+      margin: 0 8px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
+        $primary-blue;
+      background-blend-mode: soft-light, normal;
+      border: 1px solid rgba(150, 165, 184, 0.2);
+      box-sizing: border-box;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
+      border-radius: 4px;
+      color: $primary-white;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 830px) {
+  .card{
+    .card_upper{
+      .job_logo{
+        padding: 50px;
+      }
+      .location{
+        bottom: 30px;
+        width: 88%;
+      }
+      .date{
+        bottom: 5px;
+        left: 4%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 830px) {
+  .card{
+    .card_upper{
+      .job_logo{
+        padding: 50px;
+      }
+      .location{
+        bottom: 30px;
+        left: 7px;
+        width: 91%;
+      }
+      .date{
+        bottom: 5px;
+        left: 4%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .card{
+    .card_button{
+      display: block;
+      button{
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

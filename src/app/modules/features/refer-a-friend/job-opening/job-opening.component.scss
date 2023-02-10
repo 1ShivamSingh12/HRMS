@@ -223,3 +223,52 @@
 //     }
 //   }
 // }
+
+.container {
+  min-height: 100%;
+  padding: 20px;
+  background-color: #f2f6fc;
+
+  .card {
+    .card_header {
+      margin-bottom: 30px;
+      p {
+        font-size: 24px;
+        color: #199cff;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 0;
+      }
+    }
+
+    .card_body {
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+      gap: 10px;
+      .content {
+        background-color: white;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .container{
+    .card{
+      .card_body{
+       grid-template-columns: 50% 50%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .container{
+    .card{
+      .card_body{
+       grid-template-columns: 100%;
+      }
+    }
+  }
+}

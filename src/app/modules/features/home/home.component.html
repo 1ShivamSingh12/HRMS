@@ -15,80 +15,15 @@
               <div class="heading">
                 <div class="jobs_heading">
                   <p>Latest Job Openings</p>
-                  <button>View All</button>
+                  <button [routerLink]="['JOB_OPENING' | absolute]">View All</button>
                 </div>
-                <div class="card">
-                  <div class="card_upper">
-                    <div class="job_logo">
-                      <img src="../../../../assets/DeepinScreenshot_select-area_20230201160408.png" />
-                    </div>
-                    <div class="location">
-                      <mat-icon>location_on</mat-icon>
-                      <span>Noida,Uttar Pradesh</span>
-                    </div>
-                    <div class="date">2/01/23</div>
-                  </div>
 
-                  <div class="card_middle">
-                    <div class="job_desc">
-                      <h3>Sr. Software Engineer - BlockChain</h3>
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="card_bottom">
-                    <div class="opening">
-                      <p>Number of Openings</p>
-                      <h3>3</h3>
-                    </div>
-                    <div class="experience">
-                      <p>Experience</p>
-                      <h3>3 to 5 Years</h3>
-                    </div>
-                  </div>
-
-                  <div class="card_button">
-                    <button>View Details</button>
-                    <button class="refer_candidate_button">
-                      Refer a Candidate
-                    </button>
-                  </div>
-
-                </div>
+                <app-job-details></app-job-details>
               </div>
               <div class="refer_bonus">
                 <h3>OUR REFERRAL BONUS PROGRAM</h3>
-                <div class="bonus_card">
-                  <div class="bonus_card_upper">
-
-                    <div class="bonus_card_content">
-                      <h2>11K</h2>
-                      <h3>Referral Bonus</h3>
-                      <p>For 1 to 3 Years of experience</p>
-                    </div>
-                    <div class="bonus_card_content">
-                      <h2>21K</h2>
-                      <h3>Referral Bonus</h3>
-                      <p>For 3 to 5 Years of experience</p>
-                    </div>
-                  </div>
-                  <div class="bonus_card_upper">
-
-                    <div class="bonus_card_content">
-                      <h2>11K</h2>
-                      <h3>Referral Bonus</h3>
-                      <p>For 1 to 3 Years of experience</p>
-                    </div>
-                    <div class="bonus_card_content">
-                      <h2>21K</h2>
-                      <h3>Referral Bonus</h3>
-                      <p>For 3 to 5 Years of experience</p>
-                    </div>
-                  </div>
-                </div>
+               
+                <app-referal-bonus></app-referal-bonus>
               </div>
             </div>
 

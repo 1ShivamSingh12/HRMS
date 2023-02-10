@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DIRECTORY, ENTREPRENEURSHIP, HOLIDAY_CALENDER, HOME, JOB_OPENING, MY_PERFORMANCE, MY_PROFILE } from 'src/app/constants/routes';
+import { DIRECTORY, ENTREPRENEURSHIP, HOLIDAY_CALENDER, HOME, JOB_OPENING, MY_PERFORMANCE, MY_PROFILE, REFERRAL_LIST } from 'src/app/constants/routes';
 import { FeatureComponent } from './feature.component';
 
 const routes: Routes = [
@@ -46,7 +46,12 @@ const routes: Routes = [
       {
         path: JOB_OPENING.path,
         loadChildren: () =>
-          import('./job-opening/job-opening.module').then((m) => m.JobOpeningModule),
+          import('./refer-a-friend/job-opening/job-opening.module').then((m) => m.JobOpeningModule),
+      },
+      {
+        path: REFERRAL_LIST.path,
+        loadChildren: () =>
+          import('./refer-a-friend/referral-list/referral-list.module').then((m) => m.ReferralListModule),
       },
     ],
   },

@@ -14,7 +14,7 @@
   <div class="profile">
     <div class="emp_info">
       <div class="emp_info_body">
-        <div class="basic_information" [class.active]="viewMode=='information'"  (click)="viewMode='information'">
+        <div class="basic_information" [class.active]="viewMode=='basic_information'"  (click)="viewMode='basic_information'">
           <mat-icon>home</mat-icon>
           <p><a>Basic Information</a></p>
         </div>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div [ngSwitch]="viewMode" class="emp_info_data">
-      <div *ngSwitchCase="'information'">
+      <div *ngSwitchCase="'basic_information'">
         <app-basic-information></app-basic-information>
       </div>
       <div *ngSwitchCase="'profile_picture'">

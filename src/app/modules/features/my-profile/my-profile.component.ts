@@ -12,14 +12,9 @@ import { slideInAnimation } from 'src/app/animations/animations';
 })
 export class MyProfileComponent implements OnInit {
 
-  viewMode = 'information';
+  viewMode = 'basic_information';
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  }
-
 }

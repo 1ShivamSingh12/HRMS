@@ -79,3 +79,10 @@ export const JOB_OPENING : Route = {
     return `${DASHBOARD.fullurl}/${this.path}`;
   },
 }
+
+export const REFERRAL_LIST : Route = {
+  path:'referral-list',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+}

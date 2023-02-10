@@ -14,6 +14,7 @@ import { ShiftComponent } from './shift/shift.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AppraisalComponent } from './appraisal/appraisal.component';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { ShiftModule } from './shift/shift.module';
 
 
 
@@ -23,7 +24,6 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     BasicInformationComponent,
     ProfilePictureComponent,
     QualificationComponent,
-    ShiftComponent,
     ChangePasswordComponent,
     AppraisalComponent
   ],
@@ -34,7 +34,8 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FooterModule
+    FooterModule,
+    ShiftModule
   ]
 })
 export class MyProfileModule { }
