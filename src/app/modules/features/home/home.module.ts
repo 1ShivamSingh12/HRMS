@@ -9,6 +9,13 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { ReferalBonusModule } from 'src/app/components/referal-bonus/referal-bonus.module';
 import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
 import { jobDetailModule } from 'src/app/components/job-details/job-details.module';
+import { NguCarouselModule } from '@ngu/carousel';
+import { GalleryModule } from 'src/app/components/gallery/gallery.module';
+import { LatestNewsModule } from 'src/app/components/latest-news/latest-news.module';
+
+
+
+
 
 @NgModule({
   declarations: [HomeComponent],
@@ -21,7 +28,11 @@ import { jobDetailModule } from 'src/app/components/job-details/job-details.modu
     ReferalBonusModule,
     absolutePipe,
     jobDetailModule,
-    ReferalBonusModule
+    ReferalBonusModule,
+    NguCarouselModule,
+    GalleryModule,
+    LatestNewsModule
+
   ],
 })
 export class HomeModule {}

@@ -81,16 +81,12 @@ export class ReferralListComponent implements OnInit {
   ];
 
 
-  //  LIST_CANDIDATE: Options = {
-  //     search: true,
-  //     searchPlaceholder: "Search...",
+   LIST_CANDIDATE: Options = {
+      search: false,
+      searchPlaceholder: "",
+      pagination: true,
+      addButton: false,
+  };
 
-  //     pagination: true,
-  //     addButton: true,
-  //     ButtonDetails: {
-  //       buttonName: 'Download Report'
-  //     }
-  // };
-
-  // listingConfig: Options = this.LIST_CANDIDATE;
+  listingConfig: Options = this.LIST_CANDIDATE;
 }

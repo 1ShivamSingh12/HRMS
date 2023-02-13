@@ -66,7 +66,7 @@
                   button {
                     cursor: pointer;
                     background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
-                    $primary-blue;
+                      $primary-blue;
                     background-blend-mode: soft-light, normal;
                     color: $primary-white;
                     border: none;
@@ -301,9 +301,8 @@
         .main {
           .main_upper {
             .job_description {
-
               .jobs {
-              @include grid("grid-template-columns", "100%", "");
+                @include grid("grid-template-columns", "100%", "");
               }
             }
           }

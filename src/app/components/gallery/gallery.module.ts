@@ -3,13 +3,16 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
-import { JobDetailsComponent } from "./job-details.component";
-import { NguCarouselModule } from '@ngu/carousel';
+import { NguCarouselModule } from "@ngu/carousel";
+import { GalleryComponent } from "./gallery.component";
+
+
+
 
 
 @NgModule({
   declarations: [
-    JobDetailsComponent
+    GalleryComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +22,7 @@ import { NguCarouselModule } from '@ngu/carousel';
     NguCarouselModule
   ],
   exports:[
-    JobDetailsComponent,
+    GalleryComponent
   ]
 })
-export class jobDetailModule { }
+export class GalleryModule { }

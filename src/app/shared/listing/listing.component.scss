@@ -1,0 +1,33 @@
+.container{
+  .buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 0px 20px;
+    .input-box{
+      span{
+        margin: 10px;
+      }
+      .select{
+        height: 35px;
+        width: 35%;
+        border:1px solid #DBE2EA;
+        background-color: #fff;
+      }
+    }
+
+    .search{
+      .input-box1{
+        ::ng-deep.mat-form-field-appearance-outline{
+          .mat-form-field-flex{
+            height: 50px;
+          }
+          .mat-form-field-wrapper{
+            margin: 0px 0px -5px 0px;
+          }
+        }
+
+
+      }
+    }
+  }
+}

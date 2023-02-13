@@ -1,6 +1,21 @@
-<div>
-  <div>
-    <button *ngIf="config">{{config.searchPlaceholder}}</button>
-    <button  *ngIf="config">sdchvwejhcve</button>
+<div class="container">
+  <div class="buttons">
+    <div class="input-box" *ngIf="config.show">
+      <span>Show</span>
+      <select class="select" name="option">
+        <option value="1" disabled selected>Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <span>entries</span>
+    </div>
+    <div class="search" *ngIf="config.search">
+      <div class="input-box1">
+        <span>Search: </span>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder={{config.searchPlaceholder}} />
+        </mat-form-field>
+      </div>
+    </div>
   </div>
 </div>

@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { LatestNewsComponent } from './components/latest-news/latest-news.component';
+
 
 
 
@@ -18,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    
       ],
   imports: [
     BrowserModule,
