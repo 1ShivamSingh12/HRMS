@@ -21,7 +21,7 @@
 }
 :host ::ng-deep .container {
   .tables{
-    overflow: scroll;
+    overflow-x: scroll;
     table{
       border: 1px solid rgba(24,28,33,0.06);
       width: 100%;
@@ -49,5 +49,33 @@
       }
     }
   }
+}
+
+
+@media only screen and (max-width: 625px) {
+  :host ::ng-deep .container{
+    .buttons{
+      display: flex;
+      flex-direction: column;
+      .input-box{
+        margin-bottom: 20px;
+        .select{
+          height: 50px !important;
+        }
+        span{
+          margin: 5px !important;
+        }
+      }
+      .search{
+        margin-left: 5px;
+        margin-bottom: 20px;
+        mat-form-field{
+          width: 50%;
+        }
+      }
+    }
+  }
+
+
 }
 

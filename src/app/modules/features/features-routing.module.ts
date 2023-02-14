@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ASSETS_INVENTORY, ASSET_DECLARATION, DIRECTORY, ENTREPRENEURSHIP, HOLIDAY_CALENDER, HOME, JOB_OPENING, MY_INTERVIEW, MY_PERFORMANCE, MY_PROFILE, REFERRAL_LIST, REQUEST_ASSET } from 'src/app/constants/routes';
+import { ASSETS_INVENTORY, ASSET_DECLARATION, DIRECTORY, ENTREPRENEURSHIP, HOLIDAY_CALENDER, HOME, JOB_OPENING, MY_INTERVIEW, MY_PERFORMANCE, MY_PROFILE, MY_TRAINING, ONGOING_TRAINING, REFERRAL_LIST, REQUESTED_TRAINING, REQUEST_ASSET, UPCOMING_TRAINING } from 'src/app/constants/routes';
 import { FeatureComponent } from './feature.component';
 
 const routes: Routes = [
@@ -72,6 +72,26 @@ const routes: Routes = [
         path: ASSET_DECLARATION.path,
         loadChildren: () =>
           import('./assets-inventory/asset-declaration/asset-declaration.module').then((m) => m.AssetDeclarationModule),
+      },
+      {
+        path: UPCOMING_TRAINING.path,
+        loadChildren: () =>
+          import('./Trainings/upcoming-training/upcoming-training.module').then((m) => m.UpcomingTrainingModule),
+      },
+      {
+        path: ONGOING_TRAINING.path,
+        loadChildren: () =>
+          import('./Trainings/ongoing-traning/ongoing-traning.module').then((m) => m.OngoingTraningModule),
+      },
+      {
+        path: MY_TRAINING.path,
+        loadChildren: () =>
+          import('./Trainings/my-traning/my-traning.module').then((m) => m.MyTraningModule),
+      },
+      {
+        path: REQUESTED_TRAINING.path,
+        loadChildren: () =>
+          import('./Trainings/requested-traning/requested-traning.module').then((m) => m.RequestedTraningModule),
       },
     ],
   },

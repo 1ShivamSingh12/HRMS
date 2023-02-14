@@ -4,7 +4,7 @@ import { ASSETS_DECLARATION, Options } from 'src/app/interfaces/table.interface'
 @Component({
   selector: 'app-asset-declaration',
   templateUrl: './asset-declaration.component.html',
-  styleUrls: ['./asset-declaration.component.scss']
+  styleUrls: ['./asset-declaration.component.scss'],
 })
 export class AssetDeclarationComponent implements OnInit {
 
@@ -21,6 +21,8 @@ export class AssetDeclarationComponent implements OnInit {
     }else{
       this.show = false
     }
+
+
   }
 
   tableColumns: Array<any> = [

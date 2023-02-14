@@ -99,44 +99,24 @@
       font-weight: 600;
       line-height: 1.2;
     }
-
-    .opening {
-    }
-
-    .experience {
-    }
   }
 
   .card_button {
 
-    @include flex('',space-between);
-    padding: 15px 0 0 0;
+   display: grid;
+   grid-template-columns: 49% 49%;
+   column-gap: 2%;
+   margin-top: 10px;
 
-    button {
-      width: 100%;
-      margin: 0 8px;
-      text-transform: none;
-      font-family: "Lato";
-      font-size: 14px;
+    .view_detail{
+      cursor: pointer;
+      background-color:#fff;
       color: $primary-blue;
-      font-weight: 500;
-      line-height: 1.32;
-      padding: 12px;
-      border-radius: 5px;
-      border: 1px solid rgba(150, 165, 184, 0.2);
+      border: 1.5px solid rgba(150, 165, 184, 0.5);
+      padding: 15px;
     }
-
-    .refer_candidate_button {
-      width: 100%;
-      margin: 0 8px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
-        $primary-blue;
-      background-blend-mode: soft-light, normal;
-      border: 1px solid rgba(150, 165, 184, 0.2);
-      box-sizing: border-box;
-      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
-      border-radius: 4px;
-      color: $primary-white;
+    .refer{
+      @include button(15px);
     }
   }
 }
@@ -185,7 +165,7 @@
 @media only screen and (max-width: 560px) {
   .card{
     .card_button{
-      display: block;
+      grid-template-columns: 100%;
       button{
         margin-bottom: 5px;
       }

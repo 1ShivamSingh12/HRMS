@@ -15,6 +15,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { AppraisalComponent } from './appraisal/appraisal.component';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { ShiftModule } from './shift/shift.module';
+import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
+import { ListingModule } from 'src/app/shared/listing/listing.module';
 
 
 
@@ -35,7 +37,9 @@ import { ShiftModule } from './shift/shift.module';
     MatInputModule,
     MatSelectModule,
     FooterModule,
-    ShiftModule
+    ShiftModule,
+    CommonTableModule,
+    ListingModule
   ]
 })
 export class MyProfileModule { }

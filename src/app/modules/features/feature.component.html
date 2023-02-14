@@ -2,7 +2,7 @@
   <mat-toolbar class="example-toolbar">
     <div class="header-left">
       <img *ngIf="isExpanded" src="../../../assets/applogo.png" />
-      <!-- <img class="app_logo" *ngIf="!isExpanded" src="../../../assets/DeepinScreenshot_select-area_20230201160408.png"> -->
+      <img class="app_logo" *ngIf="!isExpanded" src="../../../assets/DeepinScreenshot_select-area_20230201160408.png">
       <button mat-icon-button (click)="isExpanded = !isExpanded">
         <mat-icon>menu</mat-icon>
       </button>
@@ -38,7 +38,7 @@
           <div class="submenu"  [ngClass]="{'expanded' : item.show}" *ngIf="item.show">
             <ng-container *ngFor="let item1 of item.options">
               <mat-list-item class="parent" [routerLink]="item1.link" routerLinkActive="activeLink" [ngClass]=" isExpanded ? 'primary' : 'secondary'">
-                <mat-icon>{{item1.subLogo}}</mat-icon>
+                <mat-icon *ngIf="item1.subLogo">{{item1.subLogo}}</mat-icon>
                 <span *ngIf="isExpanded || isShowing">{{item1.subTitle}}</span>
               </mat-list-item>
             </ng-container>
@@ -50,6 +50,5 @@
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-container>
-
 </div>
 

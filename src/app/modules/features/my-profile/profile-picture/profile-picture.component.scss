@@ -1,16 +1,15 @@
-@import '../../../../../scss/mix';
-.container{
-  .card_profile{
+@import "../../../../../scss/mix";
+.container {
+  .card_profile {
     background: $primary-white;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     .card_profile_header {
-
       h2 {
         font-size: 20px;
         color: #3246d3;
-        font-family: 'Segoe UI';
+        font-family: "Segoe UI";
         padding: 11px 25px 11px 15px;
         border-bottom: 1px solid #f3f7fc;
         font-weight: 700;
@@ -18,30 +17,35 @@
       }
     }
 
-    .card_profile_mid{
+    .card_profile_mid {
       padding: 20px;
-      .card_profile_image{
-        h4{
+      .card_profile_image {
+        h4 {
           font-size: 14px;
           font-weight: 600;
-          font-family: 'Segoe UI';
+          font-family: "Segoe UI";
           color: #2f3031;
           margin-bottom: 10px;
         }
-        input{
-
+        input {
           padding-bottom: 13px;
         }
-        p{
+        p {
           font-size: 12px;
         }
 
-        img{
+        img {
           width: 100px;
           height: 70px;
         }
       }
-      @include button();
+
+      button {
+        width: 10%;
+        margin-top: 20px;
+        margin-left: 10px;
+        @include button(10px);
+      }
     }
   }
 }

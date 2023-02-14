@@ -35,6 +35,7 @@
       }
 
       .card_upper_body{
+
         padding: 20px;
         .card_content{
           display: grid;
@@ -58,6 +59,13 @@
               padding: 12px 10px !important;
               background: $primary-white;
               resize: none;
+            }
+            p{
+              word-break: break-word;
+              span{
+                color: red;
+                word-break: break-word;
+              }
             }
           }
         }
@@ -95,6 +103,7 @@
 }
 :host ::ng-deep .container {
   .tables {
+    overflow-x: scroll;
     table {
       border: 1px solid rgba(24, 28, 33, 0.06);
       width: 100%;
@@ -117,6 +126,53 @@
             font-weight: 400;
             font-size: 14px;
           }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width:800px){
+  .container{
+    .card{
+      .card_upper{
+        .request_button{
+          padding: 20px;
+        }
+        .card_upper_body{
+          .card_content{
+            grid-template-columns: 100%;
+          }
+          .card_bottom{
+            .input-box{
+              textarea{
+                width: 89%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 629px) {
+  :host ::ng-deep .container{
+    .buttons{
+      display: flex;
+      flex-direction: column;
+      .input-box{
+        margin-bottom: 20px;
+        .select{
+          height: 50px !important;
+        }
+        span{
+          margin: 5px !important;
+        }
+      }
+      .search{
+        margin-left: 5px;
+        margin-bottom: 20px;
+        mat-form-field{
+          width: 50%;
         }
       }
     }

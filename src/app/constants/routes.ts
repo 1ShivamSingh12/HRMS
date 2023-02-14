@@ -115,3 +115,29 @@ export const ASSET_DECLARATION : Route = {
   },
 }
 
+export const UPCOMING_TRAINING : Route = {
+  path:'upcoming_trainings',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+}
+
+export const ONGOING_TRAINING : Route = {
+  path:'ongoing_trainings',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+
+}
+export const MY_TRAINING : Route = {
+  path:'my_trainings',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  }
+}
+export const REQUESTED_TRAINING : Route = {
+  path:'requested-trainings',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  }
+}

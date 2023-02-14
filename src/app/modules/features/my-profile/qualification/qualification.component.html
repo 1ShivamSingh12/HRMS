@@ -75,6 +75,9 @@
     </div>
     <div>
       <div>
+
+        <app-listing [config]="qualificationConfig"></app-listing>
+    <app-common-table [tableColumns]="tableColumns" [tableData]="tableData" [isPageable]="true" [defaultPageSize]="3"></app-common-table>
         <!-- <mat-form-field appearance="fill">
           <mat-label>Choose an option</mat-label>
           <mat-select>

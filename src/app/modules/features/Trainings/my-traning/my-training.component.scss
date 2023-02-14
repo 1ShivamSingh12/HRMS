@@ -1,0 +1,51 @@
+@import "../../../../../scss/mix";
+
+.container {
+  padding: 20px;
+  background-color: #f2f6fc;
+  min-height: 100%;
+  .card-header {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    h3 {
+      font-size: 24px;
+      color: #199cff;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+    button {
+      span {
+        position: relative;
+        bottom: 7px;
+      }
+      @include button(5px);
+    }
+  }
+
+  .card {
+    background-color: #fff;
+    margin: 0px 8px 0px 8px;
+    border: 1px solid #dbe2ea;
+    border-radius: 5px;
+    .card_body {
+      padding: 30px;
+      h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+      }
+
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          @include button(10px)
+        }
+      }
+    }
+  }
+}

@@ -8,7 +8,6 @@ export class AbsolutePipe implements PipeTransform {
 
   transform(route:any): any {
     // @ts-ignore
-
       return routes[route].fullurl
 
        ;

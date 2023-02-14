@@ -29,7 +29,7 @@ export class LoginWithCredentialsComponent implements OnInit {
   onSubmit(){
     if(this.loginForm.value.email == ''){
       this.snackbar_service.openSnackBarErr('Email field is Empty' , 'red-snackbar')
-    }else{
+    }else if(this.loginForm.value.password == ''){
       this.snackbar_service.openSnackBarErr('Password field is Empty' , 'red-snackbar')
     }
   }

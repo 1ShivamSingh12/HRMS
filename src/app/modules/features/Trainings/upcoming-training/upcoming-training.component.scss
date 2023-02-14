@@ -1,0 +1,146 @@
+@import "../../../../../scss/mix";
+
+.container {
+  padding: 20px;
+  background-color: #f2f6fc;
+  min-height: 100%;
+  .card-header {
+    margin-bottom: 30px;
+    h3 {
+      font-size: 24px;
+      color: #199cff;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    .card_upper {
+      padding: 20px;
+      border: 1px solid rgba(150, 165, 184, 0.3);
+      border-radius: 10px;
+      background-color: #fff;
+
+      .card_body {
+        @include position(relative, "", "", "", "");
+
+        background-color: $primary-white;
+        .job_logo {
+          @include flex(center, center);
+          border: 1px solid rgba(150, 165, 184, 0.3);
+          background-color: #f2f6fc;
+          padding: 20px;
+          min-height: 130px;
+          border-radius: 10px;
+
+          img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+          }
+        }
+
+        .location {
+          @include position(absolute, "", 5px, 15px, "");
+          background-color: $primary-white;
+          border-radius: 20px;
+          padding: 0px 0px 3px 10px;
+          font-family: "Lato";
+          font-size: 12px;
+          color: #231e1e;
+          font-weight: 400;
+          line-height: 1.2;
+          text-overflow: ellipsis;
+          mat-icon {
+            @include position(relative, "", -4px, "", "");
+          }
+          span {
+            @include position(relative, "", 5px, "", "");
+          }
+        }
+
+        .date {
+          @include position(absolute, "", 15px, "", 15px);
+          font-family: "Lato";
+          font-size: 12px;
+          color: #606167;
+          font-weight: 700;
+          line-height: 1.2;
+        }
+      }
+
+      .card_middle {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+
+        .traning_desc {
+          h3 {
+            font-size: 20px;
+            color: #231e1e;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 5px;
+          }
+        }
+      }
+
+      .card_bottom {
+        padding-top: 10px;
+        border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+
+        p {
+          font-family: "Lato";
+          font-size: 13px;
+          color: #606167;
+          font-weight: 400;
+          line-height: 1.2;
+          margin: 0 0 5px;
+        }
+
+        h3 {
+          font-family: "Lato";
+          font-size: 16px;
+          color: #000000;
+          font-weight: 600;
+          line-height: 1.2;
+        }
+
+        .traning_details {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 25px;
+        }
+      }
+
+      .card_button {
+        display: grid;
+        grid-template-columns: 49% 49%;
+        column-gap: 2%;
+        padding: 15px 0 0 0;
+
+        button {
+          font-size: 14px;
+          color: $primary-blue;
+          font-weight: 500;
+          line-height: 1.32;
+          padding: 12px;
+          border-radius: 5px;
+          border: 1px solid rgba(150, 165, 184, 0.2);
+        }
+
+        .refer_candidate_button {
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
+          background-blend-mode: soft-light, normal;
+          border: 1px solid rgba(150, 165, 184, 0.2);
+          box-sizing: border-box;
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
+          border-radius: 4px;
+          color: $primary-white;
+        }
+      }
+    }
+  }
+}

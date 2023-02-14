@@ -95,6 +95,7 @@
 }
 :host ::ng-deep .container {
   .tables {
+    overflow-x: scroll;
     table {
       border: 1px solid rgba(24, 28, 33, 0.06);
       width: 100%;
@@ -117,6 +118,47 @@
             font-weight: 400;
             font-size: 14px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 629px) {
+
+  .container{
+    .card{
+      .card_upper{
+        .request_button{
+          padding: 20px;
+        }
+        .card_upper_body{
+          .card_content{
+            grid-template-columns: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  :host ::ng-deep .container{
+    .buttons{
+      display: flex;
+      flex-direction: column;
+      .input-box{
+        margin-bottom: 20px;
+        .select{
+          height: 50px !important;
+        }
+        span{
+          margin: 5px !important;
+        }
+      }
+      .search{
+        margin-left: 5px;
+        margin-bottom: 20px;
+        mat-form-field{
+          width: 50%;
         }
       }
     }
