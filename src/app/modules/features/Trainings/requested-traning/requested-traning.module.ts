@@ -5,6 +5,7 @@ import { RequestedTraningRoutingModule } from './requested-traning-routing.modul
 import { RequestedTraningComponent } from './requested-traning.component';
 import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
 import { ListingModule } from 'src/app/shared/listing/listing.module';
+import { FooterModule } from 'src/app/shared/footer/footer.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ListingModule } from 'src/app/shared/listing/listing.module';
     CommonModule,
     RequestedTraningRoutingModule,
     CommonTableModule,
-    ListingModule
+    ListingModule,
+    FooterModule
   ]
 })
 export class RequestedTraningModule { }

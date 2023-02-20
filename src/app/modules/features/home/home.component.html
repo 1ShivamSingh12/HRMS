@@ -17,11 +17,7 @@
                   <p>Latest Job Openings</p>
                   <button [routerLink]="['JOB_OPENING' | absolute]">View All</button>
                 </div>
-                <ngu-carousel #myCarousel1 [inputs]="carouselConfig1" [dataSource]="carouselItems1">
-                  <div *nguCarouselDef="let item;" class="item">
-                    <app-job-details></app-job-details>
-                  </div>
-                </ngu-carousel>
+                <app-job-card></app-job-card>
               </div>
               <div class="refer_bonus">
                 <h3>OUR REFERRAL BONUS PROGRAM</h3>
@@ -32,19 +28,7 @@
             <div class="new_members">
               <div class="new_members_in">
                 <h2>New Family Members</h2>
-                <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="carouselItems">
-                  <!-- <button NguCarouselNext class="rightRs">></button>
-                  <button NguCarouselPrev class="leftRs"><</button> -->
-                  <div *nguCarouselDef="let item;" class="item">
-                    <div class="new_members_details">
-                      <!-- <img src="../../../../assets/DeepinScreenshot_select-area_20230202121545.png"> -->
-                      <img src="https://dashboard.appinventiv.com/skin/hrsale_assets/img/new-family-card.png">
-                    </div>
-                  </div>
-                    <!-- <ul class="myPoint" NguCarouselPoint>
-                      <li *ngFor="let j of myCarousel.pointNumbers" [class.active]="j==myCarousel.activePoint" (click)="myCarousel.moveTo(j)"></li>
-                    </ul> -->
-                  </ngu-carousel>
+                <app-new-members-carousel></app-new-members-carousel>
               </div>
             </div>
           </div>
@@ -54,7 +38,7 @@
             <div class="main_middle_header">
               <h2>Latest at Appinventiv</h2>
             </div>
-            <app-latest-news></app-latest-news>
+            <app-latest-news-carousel></app-latest-news-carousel>
           </div>
         </div>
 
@@ -63,7 +47,8 @@
             <div class="main_middle_header">
               <h2>Appinventiv Gallery</h2>
             </div>
-            <app-gallery></app-gallery>
+            <!-- <app-gallery></app-gallery> -->
+            <app-gallery-carousel></app-gallery-carousel>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 @import "../../../scss/mix";
 
 .header {
-  @include position(fixed , '','','','');
+  // @include position(fixed , '','','','');
   width: 100%;
   z-index: 10000;
   mat-toolbar {
@@ -11,7 +11,9 @@
 
     .header-left {
       img {
-        width: 60%;
+        // width: 60%;
+        height: 40px;
+        cursor: pointer;
       }
 
       button {
@@ -79,7 +81,7 @@
 }
 
 .example-container {
-  @include position(relative , 70px,'','','');
+  @include position(relative , 10px,'','','');
   .example-sidenav{
     mat-nav-list{
       @include custom-scroller('y');
@@ -92,6 +94,13 @@
         span{
           font-weight: 500;
           font-size: 14px;
+
+          .s{
+            display: none;
+          }
+          .w{
+            background-color: red;
+          }
         }
       }
     }
@@ -102,9 +111,9 @@
       color: blue;
     }
   }
-  // .activeLink{
-  //   color: blue;
-  // }
+  .activeLink{
+    color: blue;
+  }
 
   ::ng-deep.mat-drawer-content{
     background-color: white
@@ -159,7 +168,6 @@
 
 
         button{
-
           mat-icon{
             position: relative;
             bottom: 0;
@@ -176,6 +184,7 @@
 
   .example-container{
 
+
     ::ng-deep.mat-drawer-content{
       display: contents;
     }
@@ -183,10 +192,22 @@
     .secondary{
       display: none;
     }
+
     .example-sidenav-content {
       height: 93vh;
+    }
+  }
+}
+
+@media only screen and (max-width:600px){
+  .header{
+    mat-toolbar{
+      .header-left{
+        img{
+          width: 35%;
+        }
+      }
 
     }
   }
-
 }

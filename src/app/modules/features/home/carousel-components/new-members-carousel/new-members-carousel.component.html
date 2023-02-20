@@ -1,0 +1,27 @@
+<ng-container *ngFor="let item of arr">
+  <ng-template #listOfDivs>
+    <!-- <h1>sdkweuf</h1> -->
+
+    <div class="new_members_details">
+      <!-- <img src="../../../../assets/DeepinScreenshot_select-area_20230202121545.png"> -->
+      <div class="card">
+        <img src="https://dashboard.appinventiv.com/skin/hrsale_assets/img/new-family-card.png">
+        <div class="detail">
+          <div class="f">
+            <img class="" src="../../../../../../assets/images (1).png">
+            <h3>Shivam Singh</h3>
+            <p>Software Engineer ( Angular )</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="details">
+
+      </div> -->
+    </div>
+  </ng-template>
+</ng-container>
+
+<ng-container *ngIf="render_child">
+  <app-carousel [buttondata]="buttonData" [inputs]="new_member_Config" [carouselData]="dataSource"></app-carousel>
+</ng-container>
+

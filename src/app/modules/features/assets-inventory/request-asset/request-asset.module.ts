@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
+import { FooterModule } from 'src/app/shared/footer/footer.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatSelectModule,
     MatOptionModule,
-    MatIconModule
+    MatIconModule,
+    FooterModule
   ]
 })
 export class RequestAssetModule { }

@@ -10,17 +10,20 @@ export class ValidationErrorPipe implements PipeTransform {
 
   transform(form: FormGroup, control : string , label : string): any {
 
+    // if(form.get(control)?.touched || form.get(control)?.invalid){
+
     if(form.get(control)?.touched && form.get(control)?.invalid){
-      // console.log('lll');
+      console.log(form,control,label,'lll');
 
       const error = form.get(control)?.errors
+
       // console.log(error,'errr');
 
       if(error?.hasOwnProperty("required")){
         return `${label} is required`
       }
       else if(error?.hasOwnProperty("minlength")){
-        return `${label} must be of 3 character`;
+        return `${label} must be of 6 character`;
       }else if(error?.hasOwnProperty("maxlength")){
         return `${label} must be of 10 character `;
       }

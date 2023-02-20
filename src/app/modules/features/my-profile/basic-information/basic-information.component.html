@@ -1,107 +1,130 @@
-<div class="card">
+<div class="card" [@enterLeaveAnimation]>
   <div class="card_header">
     <h2>Basic Information</h2>
   </div>
-  <div class="card_body">
-    <div class="card_upper">
-      <div class="input-box">
-        <p>First Name</p>
-        <mat-form-field appearance="outline">
-          <input matInput placeholder="First Name" />
-        </mat-form-field>
-      </div>
-      <div class="input-box">
-        <p>Last Name</p>
-        <mat-form-field appearance="outline">
-          <input matInput placeholder="Last Name" />
-        </mat-form-field>
-      </div>
-      <div class="input-box">
-        <p>Date of Birth</p>
-        <mat-form-field appearance="outline">
-          <input matInput placeholder="First Name" />
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="card_upper">
-      <div class="input-box">
-        <p>Gender</p>
-        <mat-form-field appearance="outline">
-          <mat-select placeholder="Gender">
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2" >Option 2</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="input-box">
-        <p>Martial Status</p>
-        <mat-form-field appearance="outline">
-          <mat-select placeholder="Martial Status">
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2" >Option 2</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="input-box">
-        <p>Conatct Number</p>
-        <mat-form-field appearance="outline">
-          <input matInput placeholder="First Name" />
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="card_middle">
-      <div>
-        <p style="margin-left: 12px; margin-bottom: 3px;">Years of Experience</p>
-        <div class="years_experience">
-          <div class="input-box">
-            <p>Years</p>
-            <mat-form-field appearance="outline">
-              <input matInput type="number" placeholder="First Name" />
-            </mat-form-field>
-          </div>
-          <div class="input-box">
-            <p>Months</p>
-            <mat-form-field appearance="outline">
-              <input matInput type="number" placeholder="First Name" />
-            </mat-form-field>
-          </div>
-
+  <form [formGroup]="basicInfo">
+    <div class="card_body">
+      <div class="card_upper">
+        <div class="input-box">
+          <p>First Name</p>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="First Name" formControlName="first_name" />
+          </mat-form-field>
+          <app-field-error [error]="basicInfo | validationError : 'first_name' : 'First Name'"></app-field-error>
         </div>
 
+        <div class="input-box">
+          <p>Last Name</p>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Last Name" formControlName="last_name" />
+          </mat-form-field>
+          <app-field-error [error]="basicInfo | validationError : 'last_name' : 'Last Name'"></app-field-error>
+
+        </div>
+        <div class="input-box">
+          <p>Date of Birth</p>
+          <mat-form-field appearance="outline">
+            <input matInput [matDatepicker]="picker1" placeholder="Date of Birth" formControlName="date_of_birth" readonly [max]="minFromDate"/>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <app-field-error [error]="basicInfo | validationError : 'date_of_birth' : 'Date of Birth'"></app-field-error>
+        </div>
       </div>
+      <div class="card_upper">
+        <div class="input-box">
+          <p>Gender</p>
+          <mat-form-field appearance="outline">
+            <mat-select [(value)]="selected" placeholder="Gender" formControlName="gender">
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2">Option 2</mat-option>
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <app-field-error [error]="basicInfo | validationError : 'gender' : 'Gender'"></app-field-error>
 
-      <div>
-        <p style="margin-left: 12px; margin-bottom: 3px;">Relevant Experience</p>
-        <div class="relevant_experience">
+        </div>
+        <div class="input-box">
+          <p>Martial Status</p>
+          <mat-form-field appearance="outline">
+            <mat-select placeholder="Martial Status" formControlName="martial_status">
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2">Option 2</mat-option>
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <app-field-error [error]="basicInfo | validationError : 'martial_status' : 'Martial Status'">
+          </app-field-error>
 
-          <div class="input-box">
-            <p>Years</p>
-            <mat-form-field appearance="outline">
-              <input matInput type="number" placeholder="First Name" />
-            </mat-form-field>
-          </div>
-          <div class="input-box">
-            <p>Months</p>
-            <mat-form-field appearance="outline">
-              <input matInput type="number" placeholder="First Name" />
-            </mat-form-field>
+        </div>
+        <div class="input-box">
+          <p>Conatct Number</p>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="First Name" type="number" formControlName="number" />
+          </mat-form-field>
+          <app-field-error [error]="basicInfo | validationError : 'number' : 'Conatct Number'"></app-field-error>
+
+        </div>
+      </div>
+      <div class="card_middle">
+        <div>
+          <p style="margin-left: 12px; margin-bottom: 3px">
+            Years of Experience
+          </p>
+          <div class="years_experience">
+            <div class="input-box">
+              <p>Years</p>
+              <mat-form-field appearance="outline">
+                <input matInput type="number" placeholder="First Name" formControlName='years_experience' />
+              </mat-form-field>
+              <app-field-error [error]="basicInfo | validationError : 'years_experience' : 'Years'"></app-field-error>
+
+            </div>
+            <div class="input-box">
+              <p>Months</p>
+              <mat-form-field appearance="outline">
+                <input matInput type="number" placeholder="First Name" formControlName="months_experience" />
+              </mat-form-field>
+              <app-field-error [error]="basicInfo | validationError : 'months_experience' : 'Month'"></app-field-error>
+
+            </div>
           </div>
         </div>
 
+        <div>
+          <p style="margin-left: 12px; margin-bottom: 3px">
+            Relevant Experience
+          </p>
+          <div class="relevant_experience">
+            <div class="input-box">
+              <p>Years</p>
+              <mat-form-field appearance="outline">
+                <input matInput type="number" placeholder="First Name" formControlName="years_relevant" />
+              </mat-form-field>
+              <app-field-error [error]="basicInfo | validationError : 'years_relevant' : 'Years'"></app-field-error>
+
+            </div>
+            <div class="input-box">
+              <p>Months</p>
+              <mat-form-field appearance="outline">
+                <input matInput type="number" placeholder="First Name" formControlName="months_relevant" />
+              </mat-form-field>
+              <app-field-error [error]="basicInfo | validationError : 'months_relevant' : 'Months'"></app-field-error>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card_bottom">
+        <div class="input-box">
+          <p>Address</p>
+          <textarea placeholder="Address"></textarea>
+        </div>
+      </div>
+      <div class="save_button">
+        <button (click)="onSubmit()">Save</button>
       </div>
     </div>
-
-    <div class="card_bottom">
-      <div class="input-box">
-        <p>Address</p>
-        <textarea placeholder="Address"></textarea>
-      </div>
-    </div>
-    <div class="save_button">
-      <button>Save</button>
-    </div>
-  </div>
-
+  </form>
 </div>

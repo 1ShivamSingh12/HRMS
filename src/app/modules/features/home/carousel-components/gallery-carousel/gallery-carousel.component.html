@@ -1,0 +1,14 @@
+<ng-container *ngFor="let item of listofImage">
+  <ng-template #listOfDivs>
+    <div class="slide">
+      <div class="image">
+        <img [src]="'../../../../../../assets/' |   appendImagePath : item.image"  alt="">
+        <button (click)="openDialog()">View All</button>
+      </div>
+    </div>
+  </ng-template>
+</ng-container>
+
+<ng-container *ngIf="render_child">
+  <app-carousel [buttondata]="buttonData" [inputs]="new_member_Config" [carouselData]="dataSource"></app-carousel>
+</ng-container>

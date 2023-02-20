@@ -1,0 +1,43 @@
+<!--
+<h1 mat-dialog-title>Dialog with elements</h1>
+<mat-dialog-content>
+
+  <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="carouselItems">
+    <div *nguCarouselDef="let item" class="item">
+      <div class="slider">
+        <div class="image" *ngFor="let person of listofImage" >
+          <img [src]="'../../../../../../assets/' + person.image" alt="">
+          <img [src]="'../../../../../../assets/' |   appendImagePath : person.image"  alt="">
+        </div>
+      </div>
+      <div class="tile">{{item.path}}</div>
+    </div>
+    <button NguCarouselNext class="rightRs">></button>
+    <button NguCarouselPrev class="leftRs"><</button>
+     <ul class="myPoint" NguCarouselPoint>
+      <li *ngFor="let j of myCarousel.pointNumbers" [class.active]="j == myCarousel.activePoint"
+        (click)="myCarousel.moveTo(j)"></li>
+    </ul>
+  </ngu-carousel>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div> -->
+<div class="header">
+  <mat-icon mat-dialog-close>close</mat-icon>
+</div>
+<mat-dialog-content>
+  <ng-container *ngFor="let item of listofImage">
+    <ng-template #listOfDivs>
+      <div class="slider">
+        <div class="image">
+          <img [src]="'../../../../../../assets/' |   appendImagePath : item.image"  alt="">
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+
+  <ng-container *ngIf="render_child">
+    <app-carousel [inputs]="galleyConfig" [carouselData]="dataSource" [buttondata] = 'buttonData'></app-carousel>
+  </ng-container>
+</mat-dialog-content>

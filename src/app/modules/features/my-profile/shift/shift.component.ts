@@ -1,10 +1,15 @@
+
 import { Component, OnInit } from '@angular/core';
+import { myProfileAnimation } from 'src/app/animations/myProfileAnimation';
 import { SHIFT } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-shift',
   templateUrl: './shift.component.html',
-  styleUrls: ['./shift.component.scss']
+  styleUrls: ['./shift.component.scss'],
+  animations: [
+    myProfileAnimation
+  ],
 })
 export class ShiftComponent implements OnInit {
 

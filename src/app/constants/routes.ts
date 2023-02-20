@@ -141,3 +141,9 @@ export const REQUESTED_TRAINING : Route = {
     return `${DASHBOARD.fullurl}/${this.path}`;
   }
 }
+export const JOB_DETAILS : Route = {
+  path:'job-details',
+  get fullurl(): string {
+    return `${JOB_OPENING.fullurl}/${this.path}`;
+  }
+}

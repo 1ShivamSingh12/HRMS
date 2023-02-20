@@ -1,16 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as routes from '../../constants/routes'
+import * as routes from '../../constants/routes';
 
 @Pipe({
-  name: 'absolute'
+  name: 'absolute',
 })
 export class AbsolutePipe implements PipeTransform {
-
-  transform(route:any): any {
-    // @ts-ignore
-      return routes[route].fullurl
-
-       ;
+  transform(route: any): any {
+    if (route) {
+      // @ts-ignore
+      return routes[route].fullurl;
     }
-
+  }
 }

@@ -1,0 +1,25 @@
+
+<ng-container *ngFor="let item of arr">
+  <ng-template #listOfDivs>
+    <div class="job-card-wrapper">
+      <div class="card">
+        <div class="appreciation">
+          <h2>Appreciation</h2>
+
+          <h4>Dear Shivam Singh</h4>
+
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged.</p>
+
+          <button>View Deatils</button>
+        </div>
+      </div>
+
+    </div>
+  </ng-template>
+</ng-container>
+<ng-container *ngIf="render_child">
+  <app-carousel [buttondata]="buttonData" [carouselData]="dataSource"></app-carousel>
+</ng-container>

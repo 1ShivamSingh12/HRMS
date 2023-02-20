@@ -1,0 +1,26 @@
+<ng-container *ngFor="let item of appinventiv_latest">
+  <ng-template #listOfDivs>
+    <div *ngIf="item.division_name == 'Apprecitaion'">
+      <app-latest-news></app-latest-news>
+
+    </div>
+
+    <div *ngIf="item.division_name == 'Birthday Celebration'">
+      <app-awards></app-awards>
+    </div>
+
+
+    <div *ngIf="item.division_name == 'Work Anniversary'">
+      <app-awards></app-awards>
+    </div>
+
+    <div *ngIf="item.division_name == 'Awards'">
+      <app-awards></app-awards>
+    </div>
+
+  </ng-template>
+</ng-container>
+
+<ng-container *ngIf="render_child">
+  <app-carousel [buttondata]="buttonData" [inputs]="app_latest_gridConfig" [carouselData]="dataSource" ></app-carousel>
+</ng-container>

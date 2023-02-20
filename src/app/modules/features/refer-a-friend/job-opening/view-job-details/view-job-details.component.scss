@@ -1,0 +1,124 @@
+.main-container {
+  background-color: #f3f6fc;
+  padding: 35px;
+
+  .heading {
+    h3 {
+      span{
+
+        color: #199CFF;
+      }
+    }
+  }
+
+  .container {
+    background-color: white;
+    padding: 25px;
+    margin-top: 20px;
+
+    .main-card {
+      h1 {
+        border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+        padding: 0px 0px 10px 0px;
+      }
+    }
+
+    .middle-content {
+      h2 {
+        border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+        padding: 0px 0px 10px 0px;
+      }
+
+      .list-item {
+        display: flex;
+        justify-content: space-evenly;
+
+        h4 {
+          background-color: #f3f6fc;
+          padding: 8px;
+          color: #199cff;
+          border-radius: 5px;
+          span {
+            color: #199cff;
+          }
+        }
+      }
+
+      .job-introduction {
+        p {
+          background-color: #f3f6fc;
+          padding: 25px;
+        }
+      }
+
+      .job-description {
+        .lower-content {
+          background-color: #f3f6fc;
+          padding: 30px;
+
+          ul {
+            li {
+              list-style-type: disc;
+              font-family: "Lato";
+              font-size: 14px;
+              color: #606167;
+              font-weight: 500;
+              line-height: 1.5;
+              margin-bottom: 10px;
+            }
+          }
+
+          h3 {
+            font-family: "Lato";
+            font-size: 16px;
+            color: #606167;
+            font-weight: 600;
+            line-height: 1.5;
+            padding: 30px 0px 0px 0px;
+          }
+        }
+
+        .Qualificatin {
+          h2 {
+            padding: 15px 0px 10px 0px;
+          }
+
+          .last-content {
+            background-color: #f3f6fc;
+            padding: 30px;
+
+            ul {
+              li {
+                list-style-type: disc;
+                font-family: "Lato";
+                font-size: 14px;
+                color: #606167;
+                font-weight: 500;
+                line-height: 1.5;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .main-container{
+    .container{
+      .middle-content{
+        .job-description{
+          .lower-content{
+            padding: 5px;
+          }
+          .Qualificatin{
+            .last-content{
+              padding: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

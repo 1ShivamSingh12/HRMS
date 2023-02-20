@@ -10,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { FooterModule } from 'src/app/shared/footer/footer.module';
 
 
 
@@ -26,7 +27,8 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     MatOptionModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    FooterModule
   ]
 })
 export class AssetDeclarationModule { }

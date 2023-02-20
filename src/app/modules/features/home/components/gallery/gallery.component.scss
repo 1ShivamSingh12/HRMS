@@ -1,0 +1,202 @@
+@import "../../../../../../scss/mix";
+
+.main_middle_card {
+  padding: 1em;
+
+  @include grid("grid-template-columns", "33% 33% 33%", "");
+
+  gap: 10px;
+
+  .image{
+    img{
+    width: 100%;
+  }
+  button{
+    position: relative;
+  }
+
+  }
+
+
+  // h2 {
+  //   font-size: 16px;
+  //   color: #000000;
+  //   font-weight: 500;
+  //   line-height: 1.9;
+  //   width: 90%;
+  //   height: 20px;
+  // }
+
+  // h4 {
+  //   font-family: "Lato";
+  //   font-size: 12px;
+  //   color: #606167;
+  //   font-weight: 600;
+  //   line-height: 1.9;
+  // }
+
+  // .appreciation {
+  //   border: 1.5px solid rgba(150, 165, 184, 0.3);
+  //   padding: 16px 16px 80px 16px;
+  //   border-radius: 10px;
+  //   @include position(relative, "", "", "", "");
+  //   // height: 414px;
+
+  //   p {
+  //     font-family: "Lato";
+  //     font-size: 12px;
+  //     color: #606167;
+  //     font-weight: 500;
+  //     line-height: 1.9;
+  //   }
+
+  //   button {
+  //     @include position(absolute, "", 0, 0, "");
+  //     padding: 16px;
+  //     margin: 15px;
+  //     background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
+  //     background-blend-mode: soft-light, normal;
+  //     border: 1px solid rgba(150, 165, 184, 0.2);
+  //     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
+  //     border-radius: 4px;
+  //     color: $primary-white;
+  //     padding: 10px 20px 10px 20px;
+  //   }
+  // }
+
+  // .awards {
+  //   border: 1.5px solid rgba(150, 165, 184, 0.3);
+  //   padding: 16px 16px 80px 16px;
+  //   border-radius: 10px;
+  //   @include position(relative, "", "", "", "");
+
+  //   .pics {
+  //     @include grid("grid-template-columns", "47% 47%", 20px);
+
+  //     img {
+  //       width: 100%;
+  //       border-radius: 5px;
+  //     }
+  //   }
+
+  //   p {
+  //     font-family: "Lato";
+  //     font-size: 12px;
+  //     color: #606167;
+  //     font-weight: 700;
+  //     line-height: 1.9;
+  //     margin-bottom: 0;
+  //   }
+
+  //   h4 {
+  //     font-family: "Lato";
+  //     font-size: 12px;
+  //     color: #199cff;
+  //     font-weight: 600;
+  //     line-height: 1.9;
+  //     margin-bottom: 0;
+  //   }
+
+  //   .awards_para {
+  //     margin-top: 30px;
+  //     p {
+  //       font-family: "Lato";
+  //       font-size: 12px;
+  //       color: #606167;
+  //       font-weight: 500;
+  //       line-height: 1.9;
+  //     }
+  //   }
+
+  //   .awards_in {
+  //     margin-top: 40px;
+
+  //     p {
+  //       font-family: "Lato";
+  //       font-size: 12px;
+  //       color: #606167;
+  //       font-weight: 700;
+  //       line-height: 1.9;
+  //       margin-bottom: 0;
+  //     }
+
+  //     h4 {
+  //       font-family: "Lato";
+  //       font-size: 12px;
+  //       color: #199cff;
+  //       font-weight: 600;
+  //       line-height: 1.9;
+  //       margin-bottom: 0;
+  //     }
+  //   }
+  // }
+}
+
+@media only screen and (max-width: 1000px) {
+  // .main_middle_card {
+  //   @include grid("grid-template-columns", "50% 50%", "");
+  // }
+}
+
+.item {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.tile {
+  min-height: 200px;
+  background-color: #ccc;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.leftRs {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3);
+  border-radius: 999px;
+  left: 0;
+}
+
+.rightRs {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3);
+  border-radius: 999px;
+  right: 0;
+}
+
+.myPoint {
+  cursor: pointer;
+  list-style-type: none;
+  text-align: center;
+  padding: 12px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.myPoint li {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.55);
+  padding: 4px;
+  margin: 0 3px;
+  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  transition: 0.4s;
+}
+.myPoint li.active {
+  background: #6b6b6b;
+  transform: scale(1.2);
+}

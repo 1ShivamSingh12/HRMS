@@ -1,14 +1,15 @@
 <div class="container">
-  <div class="card_profile">
+  <div class="card_profile" [@enterLeaveAnimation]>
     <div class="card_profile_header">
       <h2>Profile Picture</h2>
     </div>
     <div class="card_profile_mid">
       <div class="card_profile_image">
         <h4>Browse</h4>
-        <input type="file">
+        <input #logo type="file" (change)="preview(logo.files)">
         <p>Upload files only: gif,png,jpg,jpeg</p>
-        <img src="../../../../../assets/images (1).png">
+        <img src="../../../../../assets/images (1).png"  *ngIf="!imgURL">
+        <img [src]="imgURL" *ngIf="imgURL">
       </div>
 
       <div class="save_button">

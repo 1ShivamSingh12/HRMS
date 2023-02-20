@@ -5,6 +5,7 @@ import { MyTraningRoutingModule } from './my-traning-routing.module';
 import { MyTrainingComponent } from './my-training.component';
 import { MatIconModule } from '@angular/material/icon';
 import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
+import { FooterModule } from 'src/app/shared/footer/footer.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
     CommonModule,
     MyTraningRoutingModule,
     MatIconModule,
-    absolutePipe
+    absolutePipe,
+    FooterModule
   ]
 })
 export class MyTraningModule { }

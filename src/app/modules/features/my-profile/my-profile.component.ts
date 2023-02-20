@@ -6,9 +6,6 @@ import { slideInAnimation } from 'src/app/animations/animations';
   selector: 'app-my-profile',
   templateUrl: './my-profile.component.html',
   styleUrls: ['./my-profile.component.scss'],
-  animations:[
-    slideInAnimation
-  ]
 })
 export class MyProfileComponent implements OnInit {
 

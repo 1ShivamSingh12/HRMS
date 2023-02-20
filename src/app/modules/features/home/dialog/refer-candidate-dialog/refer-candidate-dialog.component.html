@@ -1,0 +1,110 @@
+<div class="header">
+  <h2 mat-dialog-title>Refer a candidate</h2>
+  <mat-icon mat-dialog-close>close</mat-icon>
+</div>
+
+<mat-dialog-content class="mat-typography">
+  <div class="heading">
+    <h3>Job Details</h3>
+  </div>
+
+  <div class="job_detail">
+    <div class="input-box">
+      <p>Department Name</p>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Department Name" disabled readonly/>
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <p>Job Code</p>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Job Code" disabled />
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <p>Location</p>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Location" disabled />
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <p>Experience</p>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Experience" disabled />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="heading">
+    <h3>Candidate Details</h3>
+  </div>
+
+  <form [formGroup]="referCandidate">
+    <div class="candidate_detail">
+      <div class="input-box">
+        <p>Job Loaction</p>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Job Loaction" formControlName="job_location" />
+        </mat-form-field>
+        <app-field-error [error]="referCandidate | validationError : 'job_location' : 'Job Location'"></app-field-error>
+
+      </div>
+      <div class="input-box">
+        <p>Candidate Name</p>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Candidate Name" formControlName="candidate_name"/>
+        </mat-form-field>
+        <app-field-error [error]="referCandidate | validationError : 'candidate_name' : 'Candidate Name'"></app-field-error>
+
+      </div>
+      <div class="input-box">
+        <p>Position Title</p>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Position Title" formControlName="position"/>
+        </mat-form-field>
+        <app-field-error [error]="referCandidate | validationError : 'position' : 'Position Title'"></app-field-error>
+
+      </div>
+      <div class="input-box">
+        <p>Experience</p>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Experience" formControlName="experience" />
+        </mat-form-field>
+        <app-field-error [error]="referCandidate | validationError : 'experience' : 'Experience'"></app-field-error>
+
+      </div>
+      <div class="input-box">
+        <p>Email ID</p>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Enter Email ID" formControlName="email"/>
+        </mat-form-field>
+        <app-field-error [error]="referCandidate | validationError : 'email' : 'Email'"></app-field-error>
+
+      </div>
+      <div class="input-box">
+        <p>Phone Number</p>
+        <mat-form-field appearance="outline">
+          <input matInput type="number" placeholder="Enter Phone Number" formControlName="number"/>
+        </mat-form-field>
+        <app-field-error [error]="referCandidate | validationError : 'number' : 'Enter Phone Number'"></app-field-error>
+
+      </div>
+      <div class="file-choose">
+        <p>Upload CV(pdf,doc)</p>
+        <input type="file"/>
+        <!-- <app-field-error [error]="referCandidate | validationError : 'file' : 'CV'"></app-field-error> -->
+
+      </div>
+      <div class="skill-set">
+        <p>Skill Set</p>
+        <textarea placeholder="Enter Skills"></textarea>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="cancel" mat-button mat-dialog-close>Cancel</button>
+  <button class="submit" mat-button (click)="onSubmit()"  cdkFocusInitial>
+    Submit
+  </button>
+</mat-dialog-actions>

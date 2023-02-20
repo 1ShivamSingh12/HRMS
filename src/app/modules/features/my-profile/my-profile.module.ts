@@ -10,14 +10,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { QualificationComponent } from './qualification/qualification.component';
 import {MatSelectModule} from '@angular/material/select';
-import { ShiftComponent } from './shift/shift.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AppraisalComponent } from './appraisal/appraisal.component';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { ShiftModule } from './shift/shift.module';
 import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
 import { ListingModule } from 'src/app/shared/listing/listing.module';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FieldErrorModule } from 'src/app/shared/field-error/field-error.module';
+import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
 
 
 @NgModule({
@@ -39,7 +42,15 @@ import { ListingModule } from 'src/app/shared/listing/listing.module';
     FooterModule,
     ShiftModule,
     CommonTableModule,
-    ListingModule
+    ListingModule,
+    MatDatepickerModule,
+MatNativeDateModule,
+FormsModule,
+ReactiveFormsModule,
+FieldErrorModule,
+validationError
+
+
   ]
 })
 export class MyProfileModule { }

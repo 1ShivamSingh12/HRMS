@@ -1,0 +1,17 @@
+<ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="carouselData">
+  <button *ngIf="buttondata.button" NguCarouselNext class="rightRs">></button>
+  <button *ngIf="buttondata.button" NguCarouselPrev class="leftRs"><</button>
+  <!-- <button class="next" NguCarouselNext><img src="../../../assets/ic-nav-fill-right.svg"/></button>
+  <button class="prev" NguCarouselPrev><img src="../../../assets/ic-nav-fill-left.svg"/></button> -->
+
+  <div *nguCarouselDef="let item" class="item">
+    <ng-container *ngTemplateOutlet="item"> </ng-container>
+  </div>
+  <ul class="myPoint" NguCarouselPoint *ngIf="buttondata.dot">
+    <li
+      *ngFor="let it of myCarousel.pointNumbers; let j = index"
+      [class.active]="j == myCarousel.activePoint"
+      (click)="myCarousel.moveTo(j)"
+    ></li>
+  </ul>
+</ngu-carousel>

@@ -1,0 +1,11 @@
+<ng-container *ngFor="let item of arr">
+  <ng-template #listOfDivs>
+    <div class="job-card-wrapper">
+     <app-job-details></app-job-details>
+    </div>
+  </ng-template>
+</ng-container>
+
+<ng-container *ngIf="render_child">
+  <app-carousel [buttondata]="buttonData" [carouselData]="dataSource"></app-carousel>
+</ng-container>

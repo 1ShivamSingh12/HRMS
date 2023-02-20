@@ -9,6 +9,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,7 +25,8 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     MatOptionModule,
     MatSelectModule,
     MatIconModule,
-    FooterModule
+    FooterModule,
+    FormsModule
   ]
 })
 export class DirectoryModule { }
