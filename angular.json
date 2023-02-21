@@ -33,7 +33,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "https://example.com/fontawesome/v5.15.4/js/all.js"
+            ]
           },
           "configurations": {
             "production": {

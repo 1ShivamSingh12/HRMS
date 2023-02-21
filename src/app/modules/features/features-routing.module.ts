@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ASSETS_INVENTORY, ASSET_DECLARATION, DIRECTORY, ENTREPRENEURSHIP, HOLIDAY_CALENDER, HOME, JOB_DETAILS, JOB_OPENING, MY_INTERVIEW, MY_PERFORMANCE, MY_PROFILE, MY_TRAINING, ONGOING_TRAINING, REFERRAL_LIST, REQUESTED_TRAINING, REQUEST_ASSET, UPCOMING_TRAINING } from 'src/app/constants/routes';
+import { ASSETS_INVENTORY, ASSET_DECLARATION, DIRECTORY, DOCUMENTS, ENTREPRENEURSHIP, FRESHER_TRAINING, HOLIDAY_CALENDER, HOME, JOB_OPENING, MY_INTERVIEW, MY_PERFORMANCE, MY_PROFILE, MY_TRAINING, ONGOING_TRAINING, REFERRAL_LIST, REQUESTED_TRAINING, REQUEST_ASSET, UPCOMING_TRAINING } from 'src/app/constants/routes';
 import { FeatureComponent } from './feature.component';
 
 const routes: Routes = [
@@ -36,7 +36,12 @@ const routes: Routes = [
       {
         path: HOLIDAY_CALENDER.path,
         loadChildren: () =>
-          import('./my-links/my-links.module').then((m) => m.MyLinksModule),
+          import('./my-links/calender/calender.module').then((m) => m.CalenderModule),
+      },
+      {
+        path: DOCUMENTS.path,
+        loadChildren: () =>
+          import('./my-links/policy-document/policy-document.module').then((m) => m.PolicyDocumentModule),
       },
       {
         path: MY_PERFORMANCE.path,
@@ -93,11 +98,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./Trainings/requested-traning/requested-traning.module').then((m) => m.RequestedTraningModule),
       },
-      // {
-      //   path: JOB_DETAILS.path,
-      //   loadChildren: () =>
-      //     import('./refer-a-friend/job-opening/view-job-details/view-job-details.module').then((m) => m.ViewJobDetailsModule),
-      // },
+      {
+        path: FRESHER_TRAINING.path,
+        loadChildren: () =>
+          import('./fresher-training/my-trainings/my-trainings.module').then((m) => m.MyTrainingsModule),
+      },
     ],
   },
 ];

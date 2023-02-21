@@ -1,16 +1,16 @@
-import { ASSETS_INVENTORY, ASSET_DECLARATION, DASHBOARD, DIRECTORY, ENTREPRENEURSHIP, FORGET_PASSWORD, HOLIDAY_CALENDER, HOME, JOB_OPENING, LOGIN, MY_INTERVIEW, MY_PERFORMANCE, MY_PROFILE, MY_TRAINING, ONGOING_TRAINING, REFERRAL_LIST, REQUESTED_TRAINING, REQUEST_ASSET, UPCOMING_TRAINING } from "./routes";
+import { ASSETS_INVENTORY, ASSET_DECLARATION, DIRECTORY, DOCUMENTS, ENTREPRENEURSHIP, FRESHER_TRAINING, HOLIDAY_CALENDER, HOME, JOB_OPENING, MY_INTERVIEW, MY_PERFORMANCE, MY_PROFILE, MY_TRAINING, ONGOING_TRAINING, REFERRAL_LIST, REQUESTED_TRAINING, REQUEST_ASSET, UPCOMING_TRAINING } from "./routes";
 
 export const sideNavList = [
   { title: 'Home', logo: 'home',link : HOME.path, isActive: true, },
   { title: 'My Profile', logo: 'person',link : MY_PROFILE.path, isActive: true, },
   { title: 'Directory', logo: 'description',link : DIRECTORY.path, isActive: true, },
   { title: 'Entrepreneurship Program', logo: 'person', show : false, options: [{ subTitle: 'Explore', link : ENTREPRENEURSHIP.path, subLogo: ''}], isActive: true, },
-  { title: 'My Links', logo: 'grid_view',show : false, options: [{ subTitle: 'Insurance Verification Details', subLogo: 'checklist'},{ subTitle: 'Holiday Calender ', subLogo: 'event',link:HOLIDAY_CALENDER.path}], isActive: true, },
-  { title: 'Finance', logo: 'payments', options: [], isActive: true, },
+  { title: 'My Links', logo: 'grid_view',show : false, options: [{ subTitle: 'Insurance Verification Details', subLogo: 'checklist'},{ subTitle: 'Holiday Calender ', subLogo: 'event',link:HOLIDAY_CALENDER.path},{ subTitle: 'Policy Documents', subLogo: 'event',link:DOCUMENTS.path}], isActive: true, },
+  { title: 'Finance', logo: 'payments', options: [{ subTitle: 'Salary Slip', link :'', subLogo: 'dash'},{ subTitle: 'Form 16', link :'', subLogo: 'dash'},{ subTitle: 'Investment Declaration', link :'', subLogo: 'dash'}], isActive: true, },
   { title: 'Reviews', logo: 'grid_view',  options: [{ subTitle: 'My Performance', link : MY_PERFORMANCE.path, subLogo: 'event'}], isActive: true, },
   { title: 'Refer a Friend', logo: 'groups', options: [{ subTitle: 'Job Openings', subLogo: '',link:JOB_OPENING.path},{ subTitle: ' Referral List', subLogo: '',link:REFERRAL_LIST.path}], isActive: true, },
   { title: 'Recruitment', logo: 'grid_view',  options: [{ subTitle: 'My Interview', link : MY_INTERVIEW.path,}], isActive: true, },
-  { title: 'Freshers Training', logo: 'school', options: [], isActive: true, },
+  { title: 'Freshers Training', logo: 'school', options: [{ subTitle: 'My Trainings', link : FRESHER_TRAINING.path, subLogo: 'event'}], isActive: true, },
   { title: 'Training', logo: 'school', options: [{ subTitle: 'Upcoming Trainings', link : UPCOMING_TRAINING.path, subLogo: ''},{ subTitle: 'Ongoing Trainings', link : ONGOING_TRAINING.path, subLogo: ''},{ subTitle: 'My Trainings', link : MY_TRAINING.path, subLogo: ''},{ subTitle: 'Requested Training', link : REQUESTED_TRAINING.path, subLogo: ''}], isActive: true, },
   { title: 'Assests Inventory', logo: 'science', options: [{ subTitle: 'My Assets inventory', link : ASSETS_INVENTORY.path, subLogo: 'event'},{ subTitle: 'Request Asset', link : REQUEST_ASSET.path, subLogo: 'event'},{ subTitle: 'Assets Declaration', link : ASSET_DECLARATION.path, subLogo: 'event'}], isActive: true, },
   { title: 'Attendance', logo: 'schedule', options: [], isActive: true, },

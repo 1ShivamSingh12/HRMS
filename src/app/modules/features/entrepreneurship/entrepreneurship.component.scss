@@ -1,3 +1,5 @@
+@import '../../../../scss/mix';
+
 .container{
   background-color: #f2f6fc;
   min-height: 100%;
@@ -11,6 +13,13 @@
     .para{
       padding-top: 150px;
       margin: 0em 2em 0em 2em;
+
+      .idea_button{
+        margin-top: 30px;
+        button{
+          @include button(10px);
+        }
+      }
     }
 
     .images{

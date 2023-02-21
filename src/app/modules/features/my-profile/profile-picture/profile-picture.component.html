@@ -6,7 +6,7 @@
     <div class="card_profile_mid">
       <div class="card_profile_image">
         <h4>Browse</h4>
-        <input #logo type="file" (change)="preview(logo.files)">
+        <input #logo type="file" (change)="preview(logo.files)" accept="image/png, image/gif, image/jpeg">
         <p>Upload files only: gif,png,jpg,jpeg</p>
         <img src="../../../../../assets/images (1).png"  *ngIf="!imgURL">
         <img [src]="imgURL" *ngIf="imgURL">

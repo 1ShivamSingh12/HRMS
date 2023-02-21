@@ -1,0 +1,57 @@
+@import "../../../../../../scss/mix";
+
+.container {
+  background-color: #f2f6fc;
+  padding: 21px 30px 0px 35px;
+  min-height: 100%;
+  padding: 2em;
+  .card {
+    .card_header {
+      .card_header_body {
+        h4 {
+          padding: 20px 25px 11px 0px;
+          font-family: "Lato";
+          font-size: 24px;
+          color: #606167;
+          font-weight: 700;
+          line-height: 1.32;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .card_upper {
+      background-color: #fff;
+      border: 1px solid #dbe2ea;
+      border-radius: 5px;
+
+      ::ng-deep.mat-button-toggle-appearance-standard {
+        .mat-button-toggle-label-content {
+          padding: 0 20px;
+        }
+      }
+
+      .tab{
+      }
+    }
+  }
+}
+
+::ng-deep.mat-tab-labels{
+  background-color: rgba(227, 236, 243, 0.46);
+  width: 30rem;
+  padding: 5px;
+}
+
+::ng-deep.mat-tab-list {
+  padding: 20px;
+}
+::ng-deep.mat-tab-label.mat-tab-label-active {
+  background-color: #26B4FF;
+  color: white;
+  border-radius: 10px;
+}
+
+::ng-deep.mat-tab-group.mat-primary .mat-ink-bar{
+  background-color: #fff;
+}

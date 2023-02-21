@@ -34,16 +34,15 @@ export class JobDetailsComponent implements OnInit {
     this.cdr.detectChanges();
   }
   options: MatDialogConfig = {
-    // height: '',
     width: '51rem',
     panelClass: 'refer-a-candidate-dialog',
   };
   openDialog() {
     const dialogRef = this.dialog.open(ReferCandidateDialogComponent,this.options );
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
 
   viewDetail(){

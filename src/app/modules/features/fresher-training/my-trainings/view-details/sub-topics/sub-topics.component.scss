@@ -1,0 +1,20 @@
+.container{
+  padding: 20px;
+  .card{
+    .heading {
+      padding: 0 0 15px 0;
+      border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+      h3 {
+        font-weight: 500;
+        margin: 0px;
+      }
+    }
+  }
+}
+
+:host ::ng-deep .container {
+  .tables {
+    overflow-x: scroll;
+
+  }
+}

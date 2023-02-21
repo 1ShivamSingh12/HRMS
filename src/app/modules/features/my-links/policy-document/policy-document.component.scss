@@ -1,0 +1,46 @@
+@import "../../../../../scss/mix";
+
+.container {
+  background-color: #f2f6fc;
+  min-height: 100%;
+  padding: 2em;
+  .heading {
+    margin-bottom: 30px;
+    h3 {
+      font-size: 24px;
+      color: $primary-blue;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0;
+
+    }
+  }
+
+  .card {
+    border: 1px solid #d4d9df;
+    border-radius: 5px;
+    background-color: $primary-white;
+    // margin: 1em;
+
+    .policy{
+
+    }
+  }
+}
+
+:host ::ng-deep .container {
+  .tables{
+    // display: none;
+    border-radius: 10px;
+    table{
+
+      tbody{
+        tr{
+          td{
+            padding: 20px;
+          }
+        }
+      }
+    }
+  }
+}

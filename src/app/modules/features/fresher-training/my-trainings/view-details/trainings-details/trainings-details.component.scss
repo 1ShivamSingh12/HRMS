@@ -1,0 +1,97 @@
+.container {
+  padding: 20px;
+  .heading {
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+    h3 {
+      font-weight: 500;
+      margin: 0px;
+    }
+  }
+  .card_upper {
+    .card_body {
+      padding: 10px;
+      span {
+        font-family: "Lato";
+        font-size: 14px;
+        color: #606167;
+        font-weight: 400;
+        line-height: 1.5;
+        min-width: 160px;
+        margin: 0 10px 0 0;
+      }
+      p {
+        font-size: 14px;
+        color: #231e1e;
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 0 0 8px;
+      }
+      .title {
+        display: flex;
+      }
+      .dates{
+        display: flex; justify-content: space-between; width: 70%
+      }
+      .mode-batch{
+        display: flex; justify-content: space-between; width: 69%
+
+      }
+      .start_date {
+        display: flex;
+      }
+
+      .training_mode {
+        display: flex;
+      }
+    }
+  }
+
+  .card_middle {
+    .description {
+      background-color: #f4f8ff;
+      padding: 24px;
+      border-radius: 4px;
+      margin-top: 15px;
+    }
+  }
+
+  .card_bottom {
+    margin-top: 20px;
+  }
+}
+
+:host ::ng-deep .container {
+  .tables {
+    overflow-x: scroll;
+
+  }
+}
+
+@media only screen and (max-width:888px){
+  .container{
+    .card_upper{
+      .card_body{
+        // display: block;
+        .dates{
+          display: block;
+        }.mode-batch{
+
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:400px){
+  .container{
+    .card_upper{
+      .card_body{
+       span{
+        min-width: 100px;
+       }
+      }
+    }
+  }
+}

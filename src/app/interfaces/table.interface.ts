@@ -9,6 +9,15 @@ export interface REFERRAL_LIST {
   resume: any;
 }
 
+export interface POLICY {
+  serial_number: any;
+  name: any;
+  type: string;
+  file_size: string;
+  last_modified: any;
+  action: any;
+}
+
 export interface MY_INTERVIEW {
   serial_number: any;
   department: string;
@@ -77,6 +86,34 @@ export interface QUALIFICATION {
 export interface SHIFT {
   date_of_joining: any;
   office_shift: string;
+}
+
+export interface TRAININGS_DETAILS {
+  serial_number: any;
+  topic: string;
+  topic_trainer: any;
+  trainer_email: string;
+  start_date: string;
+  end_date: any;
+  resource_url: any;
+}
+
+export interface SUB_TOPICS {
+  serial_number: any;
+  sub_topic: string;
+  topic: any;
+  trainer: string;
+  trainer_email: string;
+  start_date: any;
+  end_date: any;
+  resource_url: any;
+}
+
+export interface ATTENDENCE {
+  serial_number: any;
+  topic: any;
+  date: any;
+ attendence:any
 }
 
 export interface Options {

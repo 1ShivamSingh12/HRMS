@@ -66,6 +66,13 @@ export const HOLIDAY_CALENDER : Route = {
   },
 }
 
+export const DOCUMENTS : Route = {
+  path:'policy-document',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  }
+}
+
 export const MY_PERFORMANCE : Route = {
   path:'my-performance',
   get fullurl(): string {
@@ -145,5 +152,26 @@ export const JOB_DETAILS : Route = {
   path:'job-details',
   get fullurl(): string {
     return `${JOB_OPENING.fullurl}/${this.path}`;
+  }
+}
+
+export const ADD_PITCH : Route = {
+  path:'add-pitch',
+  get fullurl(): string {
+    return `${ENTREPRENEURSHIP.fullurl}/${this.path}`;
+  }
+}
+
+export const FRESHER_TRAINING : Route = {
+  path:'fresher-training',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  }
+}
+
+export const VIEW_DETAILS : Route = {
+  path:'trainings-details',
+  get fullurl(): string {
+    return `/${FRESHER_TRAINING.fullurl}/${this.path}`;
   }
 }

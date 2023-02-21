@@ -25,7 +25,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatListModule,
     absolutePipe,
 MatButtonModule,
-MatDialogModule
+MatDialogModule,
 
   ]
 })

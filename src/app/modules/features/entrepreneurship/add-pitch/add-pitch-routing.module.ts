@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MyLinksComponent } from './my-links.component';
+import { AddPitchComponent } from './add-pitch.component';
 
 const routes: Routes = [
-  {path:'',component:MyLinksComponent}
+  {path:'',component:AddPitchComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MyLinksRoutingModule { }
+export class AddPitchRoutingModule { }

@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="header">
+    <p>Add pitch</p>
+    <div class="buttons">
+      <button class="cancel_button">Cancel</button>
+      <button class="submit_button">Submit</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="heading">
+      <h3>My Details</h3>
+    </div>
+    <div class="my_detail">
+      <div class="input-box">
+        <p>Name</p>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Name" disabled readonly />
+        </mat-form-field>
+      </div>
+
+      <div class="my_detail_body">
+        <div class="input-box">
+          <p>Employee Id</p>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Name" disabled readonly />
+          </mat-form-field>
+        </div>
+        <div class="input-box">
+          <p>Date of birth</p>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Name" disabled readonly />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="heading">
+      <h3>Pitch Details</h3>
+    </div>
+    <div class="pitch_detail">
+      <div class="input-box">
+        <p>Pitch Title</p>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Title" disabled readonly />
+        </mat-form-field>
+      </div>
+      <div class="input-box">
+        <p>Industry</p>
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Select Industry">
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="input-box">
+        <p>Type</p>
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Type">
+            <mat-option value="option1">Technical</mat-option>
+            <mat-option value="option2">Non Technical</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <angular-editor [config]="editorConfig" placeholder="'Enter text here...'"></angular-editor>
+    </div>
+  </div>
+</div>
