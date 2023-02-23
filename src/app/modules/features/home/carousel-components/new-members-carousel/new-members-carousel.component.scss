@@ -6,6 +6,7 @@
 
   .card{
     position: relative;
+    
     .detail{
 
       @include flex(center,center);
@@ -81,6 +82,32 @@
           position: absolute;
           top: 60px;
           left: 65px;
+        }
+
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width : 280px){
+
+  .new_members_details{
+    .card{
+      .detail{
+        .f{
+          position: absolute;
+          left: 49px;
+          top: 46px;
+
+          img{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+          }
+          h3{
+            font-size: 15px;
+          }
         }
 
       }

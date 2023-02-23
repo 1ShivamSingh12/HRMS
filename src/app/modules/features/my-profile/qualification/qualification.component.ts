@@ -22,17 +22,6 @@ export class QualificationComponent implements OnInit {
     this.createForm()
   }
 
-
-  date1 = new FormControl
-  date2 = new FormControl
-
-  @ViewChild('fromInput', {
-    read: MatInput
-  }) fromInput!: MatInput;
-  @ViewChild('toInput', {
-    read: MatInput
-  }) toInput!: MatInput;
-
   createForm() {
     this.qualification = this.fb.group({
       school: ['', [COMMON_VALIDATION]],

@@ -4,18 +4,15 @@ import { CommonModule } from '@angular/common';
 import { FeaturesRoutingModule } from './features-routing.module';
 import { FeatureComponent } from './feature.component';
 import { MatIconModule } from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 
-
 @NgModule({
-  declarations: [
-    FeatureComponent
-  ],
+  declarations: [FeatureComponent],
   imports: [
     CommonModule,
     FeaturesRoutingModule,
@@ -24,9 +21,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSidenavModule,
     MatListModule,
     absolutePipe,
-MatButtonModule,
-MatDialogModule,
-
-  ]
+    MatButtonModule,
+    MatDialogModule,
+  ],
 })
-export class FeaturesModule { }
+export class FeaturesModule {}

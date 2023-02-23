@@ -122,11 +122,8 @@ mat-dialog-content{
 }
 
 mat-dialog-actions{
-  padding-left: 48px;
-  padding-top: 24px;
-  padding-right: 48px;
-  overflow-y: scroll;
-
+  display: flex;
+  justify-content: flex-end;
   .submit{
     @include button(-1px)
   }
@@ -140,10 +137,6 @@ mat-dialog-actions{
 
 }
 
-// ::ng-deep.mat-dialog-container{
-//   padding: 0px 0px 24px 0px !important;
-//   width: 51rem;
-// }
 
 @media only screen and (max-width: 600px) {
   mat-dialog-content{
@@ -155,4 +148,30 @@ mat-dialog-actions{
 
     }
   }
+
+  mat-dialog-actions{
+    display: flex;
+    justify-content: center;
+  }
 }
+
+@media only screen and (max-width: 390px) {
+  mat-dialog-actions{
+    padding: 10px 20px 10px 20px;
+    button{
+      width: 100%;
+      margin-left: 0px;
+
+    }
+
+    .mat-button-base+.mat-button-base, .mat-dialog-actions .mat-mdc-button-base+.mat-mdc-button-base{
+      margin-left: 0px;
+    }
+
+    .cancel{
+      margin-bottom: 5px;
+    }
+
+  }
+}
+

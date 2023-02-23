@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { OngoingTraningRoutingModule } from './ongoing-traning-routing.module';
 import { OngoingTraningComponent } from './ongoing-traning.component';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { AppendImagePathModule } from 'src/app/pipes/append-image-path/append-image-path/append-image-path.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
   imports: [
     CommonModule,
     OngoingTraningRoutingModule,
-    FooterModule
+    FooterModule,
+    AppendImagePathModule
   ]
 })
 export class OngoingTraningModule { }

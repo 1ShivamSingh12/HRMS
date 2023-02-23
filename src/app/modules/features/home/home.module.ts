@@ -27,6 +27,7 @@ import { GalleryCarouselComponent } from './carousel-components/gallery-carousel
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FieldErrorModule } from 'src/app/shared/field-error/field-error.module';
 import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
+import { AwardsImageComponent } from './components/awards-image/awards-image.component';
 
 @NgModule({
   declarations: [

@@ -77,6 +77,21 @@
     .pitch_detail{
       @include form-field(100%);
       .input-box{
+        // margin: 0px;
+        p{
+          font-size: 14px;
+          color: #96A5B8;
+          font-weight: 500;
+          line-height: 1.4;
+          margin-bottom: 4px;
+        }
+
+
+
+      }
+
+      .choose-file{
+        margin-left: 10px;
 
         p{
           font-size: 14px;
@@ -84,6 +99,26 @@
           font-weight: 500;
           line-height: 1.4;
           margin-bottom: 4px;
+        }
+        input{
+          border: 1px solid #d8d8d8;
+          border-radius: 2px !important;
+          padding: 13px 10px !important;
+          background: #fff;
+          width: 97%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:375px){
+  .container{
+    .card{
+      .my_detail{
+        .my_detail_body{
+          display: grid;
+          grid-template-columns: 100%;
         }
       }
     }

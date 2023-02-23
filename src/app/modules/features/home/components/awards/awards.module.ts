@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AwardsComponent } from './awards.component';
+import { AwardsImageModule } from '../awards-image/awards-image.module';
+
 
 
 
@@ -9,7 +11,8 @@ import { AwardsComponent } from './awards.component';
     AwardsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AwardsImageModule
   ],
   exports:[
     AwardsComponent

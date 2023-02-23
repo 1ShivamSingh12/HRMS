@@ -1,0 +1,9 @@
+@import "../../../../../../scss/mix";
+
+.images{
+  @include grid("grid-template-columns", "47% 47%", 20px);
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+}

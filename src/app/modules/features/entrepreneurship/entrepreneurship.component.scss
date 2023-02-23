@@ -60,12 +60,17 @@
       .para{
         padding-top: 0;
       }
-
       .images{
+        margin-top: 40px;
         .img1{
           img{
             width: 530px;
-            height: 540px;
+            height: 400px;
+          }
+        }
+        .img2{
+          img{
+            width: 450px;
           }
         }
       }

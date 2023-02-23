@@ -66,7 +66,5 @@ export class LatestNewsComponent implements OnInit {
   render_child = false;
   @ViewChildren("listOfDivs", { read: TemplateRef }) listToShow!: QueryList<ElementRef<HTMLDivElement>>;
 
-  newOpeningsData = {
-    showButtons:false
-  }
+
 }

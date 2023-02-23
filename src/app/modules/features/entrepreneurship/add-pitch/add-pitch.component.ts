@@ -9,12 +9,13 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   styleUrls: ['./add-pitch.component.scss']
 })
 export class AddPitchComponent implements OnInit {
-  
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+ 
   editorConfig: AngularEditorConfig = {
     editable: true,
       spellcheck: true,
