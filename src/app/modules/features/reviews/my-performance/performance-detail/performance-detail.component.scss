@@ -1,0 +1,85 @@
+.container{
+  .cards{
+   display: flex;
+    .honours {
+      background-color: #cbe7ff;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .ratings{
+      display: flex;
+      margin-left: 10px;
+      .rating{
+        background: #E5FEC0;
+        padding: 40px;
+        border-radius: 10px;
+        p{
+          font-size: 46px;
+          font-weight: 500;
+        }
+      }
+      .rating_breakup{
+        display: flex;
+        background:#ebf3e0;
+
+        .technical{
+          text-align: center;
+          padding: 28px 10px 0px 10px;
+          p{
+            text-align: center;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+.heading{
+  h3{
+    margin: 0 0 0px !important;
+    font-size: 13px;
+  }
+  h4{
+    margin: 0 0 0px !important;
+    font-size: 10px;
+    padding-bottom: 40px;
+  }
+  .mat-dialog-title{
+    text-align: center;
+  }
+
+}
+
+
+
+@media only screen and (max-width:700px){
+  .container{
+    .cards{
+      display: block;
+      .honours{
+        text-align: center;
+      }
+      .ratings{
+        margin-left: 0;
+      }
+    }
+  }
+}
+@media only screen and (max-width:591px){
+  .container{
+    .cards{
+      .ratings{
+        display: block;
+        .rating{
+          text-align: center;
+        }
+        .rating_breakup{
+          display: block;
+        }
+      }
+    }
+  }
+}

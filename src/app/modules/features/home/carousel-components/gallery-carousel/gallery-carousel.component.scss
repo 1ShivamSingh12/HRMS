@@ -28,3 +28,13 @@
     }
   }
 }
+
+@media only screen and (max-width:280px){
+  .slide{
+    .image{
+      button{
+        left: 50%;
+      }
+    }
+  }
+}

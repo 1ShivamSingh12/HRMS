@@ -262,6 +262,32 @@ export const ASSET_DECLARATION : Route = {
   },
 }
 
+/*attendance*/
 
+export const ATTENDANCE : Route = {
+  path:'attendance',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+}
 
+export const ATTENDANCE_CALENDER : Route = {
+  path:'attendance-calender',
+  get fullurl(): string {
+    return `${ATTENDANCE.fullurl}/${this.path}`;
+  },
+}
 
+export const MANUAL_PUNCH : Route = {
+  path:'manual-punch',
+  get fullurl(): string {
+    return `${ATTENDANCE.fullurl}/${this.path}`;
+  },
+}
+
+export const PUNCH_LOG : Route = {
+  path:'punch-log',
+  get fullurl(): string {
+    return `${ATTENDANCE.fullurl}/${this.path}`;
+  },
+}

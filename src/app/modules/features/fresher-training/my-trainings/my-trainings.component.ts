@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { VIEW_DETAILS } from 'src/app/constants/routes';
+import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 
 @Component({
   selector: 'app-my-trainings',
@@ -9,12 +11,21 @@ import { VIEW_DETAILS } from 'src/app/constants/routes';
 })
 export class MyTrainingsComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor(private route:Router,private dialog:MatDialog) { }
 
   ngOnInit(): void {
   }
 
   openViewDetail(){
     this.route.navigate([VIEW_DETAILS.fullurl])
+  }
+
+  options: MatDialogConfig = {
+    width: '35rem',
+    panelClass: 'feedback-form',
+  };
+
+  openDialog(){
+    this.dialog.open(FeedbackFormComponent,this.options)
   }
 }

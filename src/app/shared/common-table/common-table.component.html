@@ -2,7 +2,7 @@
 
 <div class="tables">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container *ngFor="let disCol of tableColumns; let colIndex = index" matColumnDef="{{ disCol?.columnDef }}">
+    <ng-container *ngFor="let disCol of tableColumns; let colIndex = index" [matColumnDef]="disCol?.columnDef">
       <th mat-header-cell *matHeaderCellDef>
         {{ disCol?.header }}
       </th>
@@ -10,9 +10,14 @@
       <td mat-cell *matCellDef="let element">
         <span *ngIf="!disCol.isLink; else link">
           {{ disCol?.cell(element) }}
+
+          <!-- {{dataSource | json}} -->
+          <!-- {{element | json}} -->
         </span>
 
-        <ng-template #link> </ng-template>
+        <ng-template #link>
+
+        </ng-template>
       </td>
     </ng-container>
 
@@ -24,3 +29,5 @@
 </div>
 
 <mat-paginator appPaginationStyle *ngIf="isPageable" [pageSize]="defaultPageSize" [pageSizeOptions]="defaultPaginationSize"></mat-paginator>
+
+<!-- {{dataSource | json}} -->

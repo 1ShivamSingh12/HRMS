@@ -33,8 +33,46 @@
       </div>
 
       <div class="card_button">
-        <button class="view_detail" (click)="openViewDetail()">View Details</button>
-        <button class="refer">Feedback</button>
+        <button class="view_detail" (click)="openViewDetail()">
+          View Details
+        </button>
+        <button class="refer" (click)="openDialog()">Feedback</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card_upper">
+        <div class="job_logo">
+          <img src="../../../../assets/DeepinScreenshot_select-area_20230201160408.png" />
+        </div>
+      </div>
+      <div class="card_middle">
+        <div class="job_desc">
+          <h3>Angular Training Feb- 2022</h3>
+          <span>Completed</span>
+        </div>
+      </div>
+
+      <div class="card_bottom">
+        <div class="opening">
+          <p>Start Date</p>
+          <h3>Feb-28-2022</h3>
+        </div>
+        <div class="experience">
+          <p>End Date</p>
+          <h3>Apr-02-2022</h3>
+        </div>
+        <div>
+          <p>Mode</p>
+          <h3>Online</h3>
+        </div>
+      </div>
+
+      <div class="card_button">
+        <button class="view_detail" (click)="openViewDetail()">
+          View Details
+        </button>
+        <button class="refer" (click)="openDialog()">Feedback</button>
       </div>
     </div>
   </div>
@@ -44,4 +82,5 @@
     <app-footer></app-footer>
   </div>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,186 @@
+@import "../../../../../../scss/mix";
+
+.header {
+  background-color: #f3f3f3;
+  padding: 20px 10px 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  h2 {
+    font-size: 20px;
+    color: #199cff;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+  }
+  mat-icon {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  }
+}
+
+mat-dialog-content {
+  padding: 20px;
+
+  .card_upper {
+    padding: 10px;
+    span {
+      font-family: "Lato";
+      font-size: 14px;
+      color: #606167;
+      font-weight: 400;
+      line-height: 1.5;
+      min-width: 120px;
+      margin: 0 10px 0 0;
+    }
+    p {
+      font-size: 14px;
+      color: #231e1e;
+      font-weight: 400;
+      line-height: 1.5;
+      margin: 0 0 8px;
+    }
+    .title {
+      display: flex;
+      margin-bottom: 1em;
+    }
+    .dates {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1em;
+      .start_date {
+        display: flex;
+      }
+
+      .training_mode {
+        display: flex;
+      }
+    }
+  }
+
+  .card_lower {
+    p {
+      font-family: Lato;
+      font-size: 14px;
+      color: #292c30;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+
+    h4 {
+      color: #d9534f !important;
+    }
+
+    span {
+      color: #02bc77 !important;
+    }
+    .goal {
+      padding: 0px 10px 0px 12px;
+      margin-bottom: 16px;
+      .example-radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0;
+        align-items: flex-start;
+      }
+
+      .example-radio-button {
+        margin: 5px;
+      }
+    }
+    .helpful {
+      padding: 0px 10px 0px 12px;
+      margin-bottom: 2em;
+      .content {
+        display: flex;
+        justify-content: space-between;
+
+        .mat-radio-button {
+          padding: 0px 10px 0px 10px;
+        }
+      }
+    }
+
+    .textarea {
+      padding: 0px 10px 0px 12px;
+      margin-bottom: 16px;
+      textarea {
+        min-width: 100%;
+        min-height: 60px;
+        resize: none;
+      }
+    }
+  }
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    padding: 10px;
+  }
+  .submit {
+    @include button(-1px);
+  }
+
+  .cancel {
+    margin-right: 5px;
+    background-color: #fff;
+    color: #96a5b8;
+    border: 1.5px solid rgba(150, 165, 184, 0.5);
+  }
+}
+
+@media only screen and (max-width: 605px) {
+  mat-dialog-content {
+    .card_upper {
+      .dates {
+        display: block;
+
+        .start_date {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  mat-dialog-actions {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  mat-dialog-content {
+    .card_lower {
+      .helpful {
+        .content {
+          display: block;
+        }
+      }
+    }
+  }
+  mat-dialog-actions {
+    padding: 10px 20px 10px 20px;
+    button {
+      width: 100%;
+      margin-left: 0px;
+    }
+
+    .mat-button-base + .mat-button-base,
+    .mat-dialog-actions .mat-mdc-button-base + .mat-mdc-button-base {
+      margin-left: 0px;
+    }
+
+    .cancel {
+      margin-bottom: 5px;
+    }
+  }
+}

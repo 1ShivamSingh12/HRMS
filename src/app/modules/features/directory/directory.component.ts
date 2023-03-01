@@ -1,123 +1,69 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatSelect } from '@angular/material/select';
-import { LOGIN } from 'src/app/constants/routes';
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { directory } from 'src/app/constants/const_data';
 
 @Component({
   selector: 'app-directory',
   templateUrl: './directory.component.html',
   styleUrls: ['./directory.component.scss'],
 })
-export class DirectoryComponent implements OnInit, AfterViewInit {
+export class DirectoryComponent implements OnInit {
   constructor() {}
-  // ngAfterViewInit(): void {
-  //   throw new Error('Method not implemented.');
-  // }
+
+  departmentSearch: any = 'All';
 
   ngOnInit(): void {}
 
-  @ViewChild('nameInput') nameInput: any;
-  @ViewChild('departmentSelect') departmentSelect!: any;
-
-  searchText: any;
-
-  directory = [
-    {
-      name: 'Arpit',
-      designation: 'Sr. Software Engineer - Android',
-      email: 'shivam.singh5@appinvetiv.com',
-      birthday: '21st Aug ',
-    },
-    {
-      name: 'Shivam',
-      designation: 'Sr. Software Engineer - Angular',
-      email: 'shivam.singh5@appinvetiv.com',
-      birthday: '21st Aug ',
-    },
-    {
-      name: 'Swapnil',
-      designation: 'Sr. Software Engineer - Android',
-      email: 'shivam.singh5@appinvetiv.com',
-      birthday: '21st Aug ',
-    },
-    {
-      name: 'Aahan Verma',
-      designation: 'Sr. Software Engineer - Android',
-      email: 'shivam.singh5@appinvetiv.com',
-      birthday: '21st Aug ',
-    },
-    {
-      name: 'Ayush',
-      designation: 'Sr. Software Engineer - React',
-      email: 'shivam.singh5@appinvetiv.com',
-      birthday: '21st Aug ',
-    },
-    {
-      name: 'Aahan Verma',
-      designation: 'Sr. Software Engineer - Android',
-      email: 'shivam.singh5@appinvetiv.com',
-      birthday: '21st Aug ',
-    },
-    {
-      name: 'Aahan Verma',
-      designation: 'Sr. Software Engineer - Android',
-      email: 'shivam.singh5@appinvetiv.com',
-      birthday: '21st Aug ',
-    },
-    {
-      name: 'Aahan Verma',
-      designation: 'Sr. Software Engineer - Android',
-      email: 'shivam.singh5@appinvetiv.com',
-      birthday: '21st Aug ',
-    },
-    {
-      name: 'Aahan Verma',
-      designation: 'Sr. Software Engineer - Android',
-      email: 'shivam.singh5@appinvetiv.com',
-      birthday: '21st Aug ',
-    },
-    {
-      name: 'Aahan Verma',
-      designation: 'Sr. Software Engineer - Android',
-      email: 'shivam.singh5@appinvetiv.com',
-      birthday: '21st Aug ',
-    },
-  ];
+  searchValue = new FormControl();
 
   department: any;
   name: any;
 
-  filteredData: any[] = [];
-
-  searchKey(e: any) {
-    console.log(e,"jackD");
-
-    const search = e.toLowerCase();
-    this.directory = this.directory.filter((item) => {
-      const name = item.name.toLowerCase();
-      const department = item.designation.toLowerCase();
-      if (name.includes(search) || department.includes(search)) {
-        return true;
-      }
-      return false;
-    });
-
-    //  this.arr = this.arr.filter((item:any)=> {item.a;sdfj == })
-  }
-
-  ngAfterViewInit(): void {
-    // console.log(this.departmentSelect.value);
-    // if(this.departmentSelect.value != undefined || this.nameInput.value != undefined){
-    //   const departmentSearchString = this.departmentSelect.value.toLowerCase();
-    //   const nameSearchString = this.nameInput.nativeElement.value.toLowerCase();
-    //   this.directory = this.directory.filter(item => {
-    //     const department = item.designation.toLowerCase();
-    //     const name = item.name.toLowerCase();
-    //     return department.includes(departmentSearchString) && name.includes(nameSearchString);
-    //   });
-    // }
-  }
+  filteredData: any[] = directory;
 
   search() {
-    console.log(this.departmentSelect.value);
+    console.log(this.filteredData, 'kkkllnfdknk');
+    if (this.searchValue.value) {
+      this.filteredData = directory.filter((item) => {
+        if (
+          item.name.toLowerCase().includes(this.searchValue.value.trim().toLowerCase())
+        ) {
+          return true;
+        }
+        return false;
+      });
+    } else {
+      this.filteredData = directory;
+    }
+
+    if (this.departmentSearch !== 'All' && this.searchValue.value ) {
+
+      console.log('andr');
+      this.filteredData = directory.filter((item) => {
+        if (item.designation.toLowerCase().includes(this.departmentSearch.toLowerCase()) && item.name.toLowerCase().includes(this.searchValue.value.trim().toLowerCase())
+        ) {
+          return true;
+        }
+        return false;
+      });
+    }
+  }
+
+  departmentSelect(e: any) {
+    console.log(e.value, 'kkkk');
+    this.departmentSearch = e.value;
+    if (this.departmentSearch) {
+      const search = e.value.toLowerCase();
+      console.log(search);
+      this.filteredData = directory.filter((item) => {
+        const department = item.designation.toLowerCase();
+
+        if (department.includes(search)) {
+          return true;
+        }
+        return false;
+      });
+    }
+    // this.search();
   }
 }

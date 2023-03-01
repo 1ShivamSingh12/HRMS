@@ -7,12 +7,16 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { PerformanceDetailComponent } from './performance-detail/performance-detail.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
 @NgModule({
   declarations: [
-    MyPerformanceComponent
+    MyPerformanceComponent,
+    PerformanceDetailComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,9 @@ import { MatOptionModule } from '@angular/material/core';
     MatFormFieldModule,
     MatSelectModule,
     MatOptionModule,
-    FooterModule
+    FooterModule,
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class MyPerformanceModule { }

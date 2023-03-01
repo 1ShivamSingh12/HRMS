@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { monthList } from 'src/app/constants/const_data';
+import { PerformanceDetailComponent } from './performance-detail/performance-detail.component';
+
 
 @Component({
   selector: 'app-my-performance',
@@ -7,9 +11,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyPerformanceComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog : MatDialog) { }
+
+  yearValue : any = '2023'
+  toggleYear = true
 
   ngOnInit(): void {
+    console.log(monthList);
+
+  }
+
+  review_list:any = monthList
+  yearSelect(e:any){
+    console.log(e.value);
+    if(e.value == '2023'){
+      this.toggleYear = true
+    }else{
+      this.toggleYear = false
+    }
+  }
+
+  openDialog(){
+    this.dialog.open(PerformanceDetailComponent)
   }
 
 }

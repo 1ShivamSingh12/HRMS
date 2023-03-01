@@ -10,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     MatSelectModule,
     MatOptionModule,
     MatIconModule,
-    FooterModule
+    FooterModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class RequestAssetModule { }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ReferAFriendRoutingModule } from './refer-a-friend-routing.module';
 import { ReferAFriendComponent } from './refer-a-friend.component';
+import { FooterModule } from 'src/app/shared/footer/footer.module';
 
 
 
@@ -12,7 +13,8 @@ import { ReferAFriendComponent } from './refer-a-friend.component';
   ],
   imports: [
     CommonModule,
-    ReferAFriendRoutingModule
+    ReferAFriendRoutingModule,
+    FooterModule
   ]
 })
 export class ReferAFriendModule { }

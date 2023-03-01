@@ -13,6 +13,9 @@ export class AssetDeclarationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  
+
   show : boolean = false
 
   showNewAsset(){
@@ -21,8 +24,6 @@ export class AssetDeclarationComponent implements OnInit {
     }else{
       this.show = false
     }
-
-
   }
 
   tableColumns: Array<any> = [

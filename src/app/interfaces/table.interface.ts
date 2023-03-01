@@ -109,6 +109,14 @@ export interface SUB_TOPICS {
   resource_url: any;
 }
 
+export interface MANUAL_PUNCH {
+  edit: any;
+  manual_punch_date: any;
+  in_time: any;
+  out_time: any;
+}
+
+
 export interface ATTENDENCE {
   serial_number: any;
   topic: any;

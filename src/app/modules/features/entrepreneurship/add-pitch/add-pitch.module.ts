@@ -7,11 +7,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { FieldErrorModule } from 'src/app/shared/field-error/field-error.module';
+import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
 
 
 @NgModule({
@@ -25,12 +26,13 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     MatInputModule,
     MatSelectModule,
     MatOptionModule,
-    CKEditorModule,
-    AngularEditorModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FooterModule
+    FooterModule,
+    FieldErrorModule,
+    AngularEditorModule,
+    validationError
   ]
 })
 export class AddPitchModule { }

@@ -9,7 +9,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -26,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatIconModule,
     FooterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DirectoryModule { }

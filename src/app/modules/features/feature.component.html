@@ -37,9 +37,9 @@
           </mat-list-item>
           <div class="submenu"  [ngClass]="{'expanded' : item.show}" *ngIf="item.show">
             <ng-container *ngFor="let item1 of item.options">
-              <mat-list-item class="parent" [routerLink]="item1.link" routerLinkActive="activeLink" [ngClass]=" isExpanded ? 'primary' : 'secondary'">
+              <mat-list-item class="parent"  [routerLink]="item1.link" routerLinkActive="activeLink" [ngClass]=" isExpanded ? 'primary' : 'secondary'">
                 <mat-icon *ngIf="item1.subLogo">{{item1.subLogo}}</mat-icon>
-                <span >{{item1.subTitle}}</span>
+                <span  *ngIf="isExpanded || isShowing" >{{item1.subTitle}}</span>
               </mat-list-item>
             </ng-container>
           </div>

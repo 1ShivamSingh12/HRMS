@@ -15,6 +15,12 @@
           border-bottom: 1px solid #f3f7fc;
           font-weight: 500;
         }
+        nav{
+          color:#a3a4a6
+        }
+        span{
+          color: #4E5155;
+        }
       }
     }
 
@@ -180,6 +186,41 @@
 
             p {
               font-weight: 500;
+            }
+
+            .box_heading{
+              display: flex;justify-content: space-between;
+              p{
+                background: #E7FCC8;
+                border-radius: 3px;
+                color: #000;
+                font-weight: 700;
+                width: 52px;
+                text-align: center;
+                line-height: 2;
+
+              }
+            }
+
+            .achievement{
+              padding-top: 30px;
+
+              p{
+                font-size: 16px;
+              }
+              .awards{
+                color: #F7C417;
+              }
+              .honour{
+                display: flex;
+                justify-content: space-between;
+                p{
+                  color: #0086FF;
+                }
+                mat-icon{
+                  cursor: pointer;
+                }
+              }
             }
           }
         }

@@ -4,8 +4,10 @@
   background-color: #f2f6fc;
   min-height: 100%;
   padding: 30px;
+
   .heading {
     margin-bottom: 30px;
+
     h3 {
       font-size: 24px;
       color: #199cff;
@@ -28,6 +30,7 @@
         @include position(relative, "", "", "", "");
 
         background-color: $primary-white;
+
         .job_logo {
           @include flex(center, center);
           border: 1px solid rgba(150, 165, 184, 0.3);
@@ -51,6 +54,7 @@
         .job_desc {
           display: flex;
           justify-content: space-between;
+
           h3 {
             font-family: "Lato";
             font-size: 20px;
@@ -58,13 +62,16 @@
             font-weight: 600;
             line-height: 1.2;
             margin-bottom: 5px;
+            overflow: hidden;
           }
+
           span {
             background-color: #02bc77;
             color: #fff;
             padding: 3px;
             font-size: 0.858em;
             font-weight: 500;
+            height: 16px;
           }
         }
       }
@@ -104,28 +111,47 @@
           padding: 15px;
           background: rgba(24, 28, 33, 0.06);
         }
+
         .refer {
           @include button(15px);
         }
       }
     }
   }
-  @media only screen and (max-width: 830px) {
-    .card {
-      .card_upper {
-        .job_logo {
-          padding: 50px;
+}
+
+@media only screen and (max-width: 1020px) {
+  .container {
+    .cardss {
+      .card {
+        .card_bottom {
+          h3 {
+            font-size: 13px;
+          }
         }
       }
     }
   }
+}
 
-  @media only screen and (max-width: 560px) {
-    .card {
-      .card_button {
-        grid-template-columns: 100%;
-        button {
-          margin-bottom: 5px;
+@media only screen and (max-width: 760px) {
+  .container {
+    .cardss {
+      @include grid(grid-template-columns, "50% 50%", 10px);
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    .cardss {
+      @include grid(grid-template-columns, "100%", 10px);
+      .card {
+        .card_button {
+          display: block;
+          button {
+            width: 100%;
+          }
         }
       }
     }

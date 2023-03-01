@@ -59,48 +59,67 @@
       @include form-field(100%);
       .input-box {
         margin: 0px;
-        p{
+        p {
           font-size: 14px;
-          color: #96A5B8;
+          color: #96a5b8;
           font-weight: 500;
           line-height: 1.4;
           margin-bottom: 4px;
         }
+
+        ::ng-deep.mat-form-field-appearance-outline{
+          .mat-form-field-flex{
+            background-color: #F8F8F8;
+          }
+        }
+        
       }
-      .my_detail_body{
+      .my_detail_body {
         display: grid;
         grid-template-columns: 49.5% 49.5%;
         column-gap: 1%;
       }
+
+
     }
 
-    .pitch_detail{
+    .pitch_detail {
       @include form-field(100%);
-      .input-box{
-        // margin: 0px;
-        p{
+      .input-box {
+        margin: 0px;
+        p {
           font-size: 14px;
-          color: #96A5B8;
+          color: #96a5b8;
           font-weight: 500;
           line-height: 1.4;
           margin-bottom: 4px;
         }
+      }
 
+      .textarea {
+
+        margin-bottom: 15px;
+        p {
+          font-size: 14px;
+          color: #96a5b8;
+          font-weight: 500;
+          line-height: 1.4;
+          margin-bottom: 4px;
+        }
 
 
       }
 
-      .choose-file{
-        margin-left: 10px;
+      .choose-file {
 
-        p{
+        p {
           font-size: 14px;
-          color: #96A5B8;
+          color: #96a5b8;
           font-weight: 500;
           line-height: 1.4;
           margin-bottom: 4px;
         }
-        input{
+        input {
           border: 1px solid #d8d8d8;
           border-radius: 2px !important;
           padding: 13px 10px !important;
@@ -112,11 +131,15 @@
   }
 }
 
-@media only screen and (max-width:375px){
-  .container{
-    .card{
-      .my_detail{
-        .my_detail_body{
+.angular-editor-textarea{
+  min-height: 15vw;
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    .card {
+      .my_detail {
+        .my_detail_body {
           display: grid;
           grid-template-columns: 100%;
         }

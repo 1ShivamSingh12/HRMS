@@ -47,12 +47,12 @@ export class PolicyDocumentComponent implements OnInit {
 
   tableData: Array<POLICY> = [
     {
-      serial_number: '',
-      name: '',
-      type: '',
-      file_size: '',
-      last_modified: '',
-      action: '',
+      serial_number: 1,
+      name: ' Appinventiv_Policy_Manual',
+      type: '	pdf',
+      file_size: '341.71 KB',
+      last_modified: 'May-13-2022',
+      action: 'download',
     },
   ];
 

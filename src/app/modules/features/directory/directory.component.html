@@ -7,13 +7,14 @@
         <div class="input-box">
           <p> Name</p>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="Search by Name" #nameInput [ngModel]="searchText"  (ngModelChange)="searchKey($event)" />
+            <input matInput placeholder="Search by Name" [formControl]="searchValue"/>
           </mat-form-field>
         </div>
         <div class="input-box">
           <p>Department</p>
           <mat-form-field appearance="outline">
-            <mat-select #departmentSelect placeholder="Department" >
+            <mat-select [(value)]="departmentSearch"  placeholder="Department" (selectionChange)="departmentSelect($event)">
+              <mat-option value="All">All</mat-option>
               <mat-option value="Android">Android</mat-option>
               <mat-option value="Angular" >Angular</mat-option>
               <mat-option value="React">React</mat-option>
@@ -27,7 +28,7 @@
       </div>
       <div class="row">
         <div class="card_lower">
-          <div class="card_body" *ngFor="let item of directory">
+          <div class="card_body" *ngFor="let item of filteredData">
             <div class="picture">
               <img src="../../../../assets/images (1).png">
             </div>
