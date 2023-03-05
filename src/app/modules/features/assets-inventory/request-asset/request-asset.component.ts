@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
 import { Options, REQUEST_ASSETS } from 'src/app/interfaces/table.interface';
 
@@ -18,18 +19,19 @@ export class RequestAssetComponent implements OnInit {
 
   createForm() {
     this.requestAsset = this.fb.group({
-      serial_no: ['1', [COMMON_VALIDATION, NAME_PATTERN]],
-      status: ['1', [COMMON_VALIDATION, NAME_PATTERN]],
-      request_reason: ['option1', [COMMON_VALIDATION]],
-      priority: ['option1', [COMMON_VALIDATION]],
-      requested_at: ['option1', [COMMON_VALIDATION]],
-      assets_category: ['option1', [COMMON_VALIDATION]],
-      allocation_type: ['option1', [COMMON_VALIDATION]],
-      company: ['option1', [COMMON_VALIDATION]],
+      serial_no: ['', [COMMON_VALIDATION, NAME_PATTERN]],
+      status: ['', [COMMON_VALIDATION, NAME_PATTERN]],
+      request_reason: ['', [COMMON_VALIDATION]],
+      priority: ['', [COMMON_VALIDATION]],
+      requested_at: ['', [COMMON_VALIDATION]],
+      assets_category: ['', [COMMON_VALIDATION]],
+      allocation_type: ['', [COMMON_VALIDATION]],
+      company: ['', [COMMON_VALIDATION]],
     });
   }
 
   show: boolean = false;
+  TABLE_DATA:any[]=[];
 
   showNewAsset() {
     if (this.show == false) {
@@ -44,6 +46,7 @@ export class RequestAssetComponent implements OnInit {
       columnDef: 'serial_no',
       header: 'S No.',
       cell: (element: Record<string, any>) => `${element['serial_no']}`,
+      isLink : true
     },
     {
       columnDef: 'status',
@@ -54,7 +57,6 @@ export class RequestAssetComponent implements OnInit {
       columnDef: 'request_reason',
       header: 'Request Reason',
       cell: (element: Record<string, any>) => {
-        // console.log(element,"elemnt")
         return `${element['request_reason']}`
       },
     },
@@ -82,30 +84,31 @@ export class RequestAssetComponent implements OnInit {
       columnDef: 'company',
       header: 'Company',
       cell: (element: Record<string, any>) => `${element['company']}`,
+      type:'text'
     },
   ];
 
-  tableData: Array<REQUEST_ASSETS> = [
-    {
-      serial_no: 'a',
-      status: 'afd',
-      request_reason: 'df',
-      priority: '89',
-      requested_at: 'eriogjio',
-      assets_category: '4r4',
-      allocation_type: '43r',
-      company: '43r',
-    },
-    {
-      serial_no: 'a',
-      status: 'afd',
-      request_reason: 'df',
-      priority: '89',
-      requested_at: 'eriogjio',
-      assets_category: '4r4',
-      allocation_type: '43r',
-      company: '43r',
-    },
+  tableData: any = [
+    // {
+    //   serial_no: 'a',
+    //   status: 'afd',
+    //   request_reason: 'df',
+    //   priority: '89',
+    //   requested_at: 'eriogjio',
+    //   assets_category: '4r4',
+    //   allocation_type: '43r',
+    //   company: '43r',
+    // },
+    // {
+    //   serial_no: 'a',
+    //   status: 'afd',
+    //   request_reason: 'df',
+    //   priority: '89',
+    //   requested_at: 'eriogjio',
+    //   assets_category: '4r4',
+    //   allocation_type: '43r',
+    //   company: '43r',
+    // },
 
   ];
 
@@ -121,7 +124,10 @@ export class RequestAssetComponent implements OnInit {
 
   submitRequest() {
     console.log(this.requestAsset.value);
-    this.tableData.push(this.requestAsset.value);
+    this.TABLE_DATA.push(this.requestAsset.value);
+
+    this.tableData = new MatTableDataSource<REQUEST_ASSETS>(this.TABLE_DATA);
+
     console.log(this.tableData, 'lll');
   }
 }

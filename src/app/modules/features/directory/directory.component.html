@@ -4,45 +4,55 @@
       <h3>Employee Directory</h3>
     </div>
     <div class="card_functions">
-        <div class="input-box">
-          <p> Name</p>
-          <mat-form-field appearance="outline">
-            <input matInput placeholder="Search by Name" [formControl]="searchValue"/>
-          </mat-form-field>
-        </div>
-        <div class="input-box">
-          <p>Department</p>
-          <mat-form-field appearance="outline">
-            <mat-select [(value)]="departmentSearch"  placeholder="Department" (selectionChange)="departmentSelect($event)">
-              <mat-option value="All">All</mat-option>
-              <mat-option value="Android">Android</mat-option>
-              <mat-option value="Angular" >Angular</mat-option>
-              <mat-option value="React">React</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="buttons">
-          <button class="reset">Reset</button>
-          <button (click)="search()" class="search"><mat-icon>search</mat-icon>Search</button>
-        </div>
+      <div class="input-box">
+        <p>Name</p>
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            placeholder="Search by Name"
+            [formControl]="searchValue"
+          />
+        </mat-form-field>
       </div>
-      <div class="row">
-        <div class="card_lower">
-          <div class="card_body" *ngFor="let item of filteredData">
-            <div class="picture">
-              <img src="../../../../assets/images (1).png">
-            </div>
-            <div class="team">
-              <h3>{{item.name}}</h3>
-              <p>{{item.designation}}</p>
-              <div class="personal_info">
-                <p><span>@</span>{{item.email}}</p>
-                <p><mat-icon>cake</mat-icon>{{item.birthday}}</p>
-              </div>
+      <div class="input-box">
+        <p>Department</p>
+        <mat-form-field appearance="outline">
+          <mat-select
+            [(value)]="departmentSearch"
+            placeholder="Department"
+            (selectionChange)="departmentSelect($event)"
+          >
+            <mat-option value="All">All</mat-option>
+            <mat-option value="Android">Android</mat-option>
+            <mat-option value="Angular">Angular</mat-option>
+            <mat-option value="React">React</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="buttons">
+        <button class="reset">Reset</button>
+        <button (click)="search()" class="search">
+          <mat-icon>search</mat-icon>Search
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card_lower">
+        <div class="card_body" *ngFor="let item of filteredData">
+          <div class="picture">
+            <img src="../../../../assets/images (1).png" />
+          </div>
+          <div class="team">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.designation }}</p>
+            <div class="personal_info">
+              <p><span>@</span>{{ item.email }}</p>
+              <p><mat-icon>cake</mat-icon>{{ item.birthday }}</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </div>
 </div>
 

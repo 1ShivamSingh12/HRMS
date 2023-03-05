@@ -10,11 +10,11 @@ import { directory } from 'src/app/constants/const_data';
 export class DirectoryComponent implements OnInit {
   constructor() {}
 
+  ngOnInit(): void {}
   departmentSearch: any = 'All';
 
-  ngOnInit(): void {}
-
   searchValue = new FormControl();
+
 
   department: any;
   name: any;
@@ -38,7 +38,7 @@ export class DirectoryComponent implements OnInit {
 
     if (this.departmentSearch !== 'All' && this.searchValue.value ) {
 
-      console.log('andr');
+
       this.filteredData = directory.filter((item) => {
         if (item.designation.toLowerCase().includes(this.departmentSearch.toLowerCase()) && item.name.toLowerCase().includes(this.searchValue.value.trim().toLowerCase())
         ) {

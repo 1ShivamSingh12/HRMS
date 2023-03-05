@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -13,7 +13,8 @@ export class CommonTableComponent implements OnInit {
   @Input() isPageable: boolean = false;
   @Input() defaultPaginationSize: number[] = [5, 10, 15];
   @Input() defaultPageSize = this.defaultPaginationSize[1];
-
+  @Output() buttonClick = new EventEmitter<string[]>();
+  
   get dataSource(){
     console.log(this.tableData,"123");
     return this.tableData;
@@ -35,4 +36,5 @@ export class CommonTableComponent implements OnInit {
     // this.dataSource = new MatTableDataSource(this.tableData);
     // console.log(this.data, 'kkkk');
   }
+
 }

@@ -12,7 +12,6 @@
       font-weight: 500;
       line-height: 1.2;
       margin-bottom: 0;
-
     }
   }
 
@@ -22,22 +21,34 @@
     background-color: $primary-white;
     // margin: 1em;
 
-    .policy{
-
+    .policy {
     }
   }
 }
 
 :host ::ng-deep .container {
-  .tables{
+  .tables {
     // display: none;
     border-radius: 10px;
-    table{
+    table {
+      tbody {
+        tr {
+          td.cdk-column-action {
+            button {
+              padding: 4px 8px;
+              background-color: #f8f8f8;
+              border-style: none;
+              border-radius: 5px;
+              cursor: pointer;
 
-      tbody{
-        tr{
-          td{
-            // padding: 20px;
+              box-shadow: 0 0 2px rgba(0, 0, 0, 0.19);
+              width: 80%;
+              transition: 0.3s ease-in-out all;
+              span {
+                position: relative;
+                bottom: 8px;
+              }
+            }
           }
         }
       }

@@ -18,10 +18,12 @@ export class ProfilePictureComponent implements OnInit {
   ngOnInit(): void {}
 
   preview(files: any) {
+    console.log(files[0].type);
 
     this.size = files[0].size
-    if(this.size <= 1000000){
-  
+    let type = files[0].type
+    if(this.size <= 1000000 && (type == 'image/jpeg' || type == 'image/png' || type == 'image/gif')){
+
       if (files.length === 0) return;
       var reader = new FileReader();
       this.imagePath = files;
@@ -33,8 +35,10 @@ export class ProfilePictureComponent implements OnInit {
         // console.log(rawData,'skwe');
         this.imgURL = reader.result
       };
-    }else{
+    }else if(this.size >= 1000000){
       this.snackbar.openSnackBarErr('File limit is 1Mb','red-snackbar')
+    }else{
+      this.snackbar.openSnackBarErr('File Type should be png , jpg , jpeg , gif' , 'red-snackbar')
     }
   }
 }

@@ -42,6 +42,13 @@ export class PolicyDocumentComponent implements OnInit {
       columnDef: 'action',
       header: 'Action',
       cell: (element: Record<string, any>) => `${element['action']}`,
+      isButton:true,
+      buttons:[
+        {
+          heading:'Download',
+          icon:'download'
+        }
+      ]
     },
   ];
 
@@ -52,7 +59,7 @@ export class PolicyDocumentComponent implements OnInit {
       type: '	pdf',
       file_size: '341.71 KB',
       last_modified: 'May-13-2022',
-      action: 'download',
+      action:''
     },
   ];
 

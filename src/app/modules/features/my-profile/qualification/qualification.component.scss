@@ -76,6 +76,22 @@
   }
 }
 
+:host ::ng-deep .container {
+  .tables {
+    // display: none;
+    border-radius: 10px;
+    table {
+      tbody {
+        tr {
+          td.mat-column-action {
+            
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 825px) {
   .container {
     .card_body_1 {

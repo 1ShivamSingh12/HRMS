@@ -4,6 +4,23 @@
     table{
       width: 100%;
       box-shadow: none;
+
+      .edit{
+        background-color: grey;
+        color: white;
+        border: none;
+        padding: 8px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+
+      .delete{
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+      }
     }
   }
 }

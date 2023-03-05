@@ -1,25 +1,25 @@
-
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatInput } from '@angular/material/input';
 import { myProfileAnimation } from 'src/app/animations/myProfileAnimation';
 import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
 import { Options, QUALIFICATION } from 'src/app/interfaces/table.interface';
+import { CarouselDialogComponent } from '../../home/dialog/carousel-dialog/carousel-dialog.component';
+import { EditQualificationComponent } from './edit-qualification/edit-qualification.component';
 
 @Component({
   selector: 'app-qualification',
   templateUrl: './qualification.component.html',
   styleUrls: ['./qualification.component.scss'],
-  animations: [
-    myProfileAnimation
-  ],
+  animations: [myProfileAnimation],
 })
 export class QualificationComponent implements OnInit {
   qualification!: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder , private dialog:MatDialog) {}
 
   ngOnInit(): void {
-    this.createForm()
+    this.createForm();
   }
 
   createForm() {
@@ -37,6 +37,20 @@ export class QualificationComponent implements OnInit {
       columnDef: 'action',
       header: 'Action',
       cell: (element: Record<string, any>) => `${element['action']}`,
+      isButton: true,
+      buttons: [
+        {
+          heading: 'Edit',
+          style: 'edit',
+          data:(element: QUALIFICATION) => element, action:'edit',
+        },
+        {
+          heading: 'Delete',
+          style: 'delete',
+          data:(element: QUALIFICATION) => element, action:'delete',
+
+        },
+      ],
     },
     {
       columnDef: 'school',
@@ -58,9 +72,15 @@ export class QualificationComponent implements OnInit {
   tableData: Array<QUALIFICATION> = [
     {
       action: '',
-      school: '',
-      time_period: '',
-      education_level: '',
+      school: 'sjknjwe',
+      time_period: 'ewfwefui',
+      education_level: 'ekwfefuei32ih32',
+    },
+    {
+      action: '',
+      school: 'jhbhh',
+      time_period: 'vvvvvvv',
+      education_level: 'nnnnnnn',
     },
   ];
 
@@ -73,4 +93,14 @@ export class QualificationComponent implements OnInit {
   };
 
   qualificationConfig: Options = this.QUALIFICATION_DECLARATION;
+
+  buttonClick(result: string[]) {
+    console.log(result,'dddddddddddd');
+
+    if(result[0] == 'edit'){
+      this.dialog.open(EditQualificationComponent)
+    }
+
+  }
+
 }
