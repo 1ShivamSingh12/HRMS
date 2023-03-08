@@ -1,3 +1,5 @@
+@import '../../../scss/mix';
+
 .container{
   .buttons{
     display: flex;
@@ -16,7 +18,7 @@
     }
 
     .search{
-      .input-box1{
+      .input-box{
         ::ng-deep.mat-form-field-appearance-outline{
           .mat-form-field-flex{
             height: 50px;
@@ -25,7 +27,23 @@
             margin: 0px 0px -5px 0px;
           }
         }
+        span{
+          margin: 0px;
+        }
+      }
+    }
+  }
+}
 
+@media only screen and (max-width:560px){
+  .container{
+    .buttons{
+      display: block;
+
+      .search{
+
+        margin-top: 10px;
+        @include form-field(100%);
 
       }
     }

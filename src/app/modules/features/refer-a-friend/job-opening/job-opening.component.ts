@@ -12,4 +12,6 @@ export class JobOpeningComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  divs:Array<any> = [1,2,3,4]
+
 }

@@ -1,0 +1,121 @@
+@import "../../../../../scss/mix";
+
+.container {
+  background-color: #f2f6fc;
+  min-height: 100%;
+  padding: 30px;
+
+  .card {
+
+    @include grid(grid-template-columns , 28% 68% ,2%);
+
+
+    h3 {
+      font-size: 20px;
+      color: #3246d3;
+      font-family: "Segoe UI";
+      padding: 11px 25px 11px 15px;
+      border-bottom: 1px solid #f3f7fc;
+      font-weight: 700;
+    }
+
+    .employee_detail {
+      box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
+      background-color: $primary-white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+
+      .employee_body {
+        padding: 1.5em;
+        @include form-field(100%);
+
+        button{
+          margin-left: 10px;
+          width: 20%;
+          @include button(10px)
+        }
+      }
+    }
+
+    .manual_punch {
+      box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
+      background-color: $primary-white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+
+      .heading {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+
+        h3 {
+          padding: 0px;
+        }
+        button {
+          height: 21px;
+          background-color: #fff;
+          border: 1px solid #26b4ff;
+          color:#26b4ff ;
+
+          &:hover{
+            color: white;
+            background-color: #26b4ff;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+:host ::ng-deep .container {
+  .tables{
+    padding: 25px;
+    overflow-x: scroll;
+    table{
+      border: 1px solid rgba(24,28,33,0.06);
+      width: 100%;
+
+      tbody{
+        // background-color: #f9f9f9;
+        tr{
+          td{
+
+            padding: 10px 10px 10px 20px;
+
+          }
+        }
+      }
+      thead{
+        tr{
+          th{
+
+            padding: 10px 10px 10px 20px;
+            color: #000;
+            font-weight: 400;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width:787px){
+  .container{
+    .card{
+      @include grid(grid-template-columns , 100% ,'');
+    }
+  }
+}
+@media only screen and (max-width:300px){
+  .container{
+    .card{
+     .manual_punch{
+      .heading{
+        display: block;
+      }
+     }
+    }
+  }
+}

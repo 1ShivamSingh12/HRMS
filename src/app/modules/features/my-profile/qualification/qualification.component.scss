@@ -79,12 +79,13 @@
 :host ::ng-deep .container {
   .tables {
     // display: none;
+    overflow-x: scroll;
     border-radius: 10px;
     table {
       tbody {
         tr {
           td.mat-column-action {
-            
+
           }
         }
       }
@@ -103,5 +104,4 @@
     }
   }
 }
-
 

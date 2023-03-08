@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
 
 @Component({
@@ -9,12 +9,13 @@ import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
   styleUrls: ['./edit-qualification.component.scss']
 })
 export class EditQualificationComponent implements OnInit {
-  qualification!: FormGroup;
 
-  constructor(private dialog:MatDialog,private fb: FormBuilder ) { }
+  qualification!: FormGroup;
+  constructor(private fb: FormBuilder , private dialog:MatDialog , @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit(): void {
     this.createForm();
+    console.log(this.data,'wkewjfebfuefuieuifwe');
   }
 
   createForm() {
@@ -26,9 +27,5 @@ export class EditQualificationComponent implements OnInit {
       language: ['', [COMMON_VALIDATION]],
       Courses: ['', [COMMON_VALIDATION]],
     });
-  }
-
-  kk(){
-    this.dialog.closeAll()
   }
 }

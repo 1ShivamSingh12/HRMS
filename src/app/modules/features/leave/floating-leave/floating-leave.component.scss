@@ -1,0 +1,31 @@
+@import '../../../../../scss/mix';
+
+.container{
+  background-color: $common-background;
+  min-height: 93%;
+  padding: 30px;
+  .heading{
+    margin-bottom: 30px;
+    h3{
+      font-size: 24px;
+      color: $primary-blue;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+  }
+
+  .card{
+    background-color: #fff;
+    padding: 20px;
+    .card_heading{
+      padding: 0 0 15px 0;
+      border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+      h4{
+        font-size: 18px;
+        color: #231E1E;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

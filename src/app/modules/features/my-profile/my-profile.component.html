@@ -14,51 +14,34 @@
   <div class="profile">
     <div class="emp_info">
       <div class="emp_info_body">
-        <div class="basic_information" [class.active]="viewMode=='basic_information'"  (click)="viewMode='basic_information'">
+        <div class="basic_information" [routerLink]="['BASIC_INFORMATION' | absolute]" routerLinkActive="active">
           <mat-icon>person</mat-icon>
           <p><a>Basic Information</a></p>
         </div>
-        <div class="basic_information" [class.active]="viewMode=='profile_picture'" (click)="viewMode='profile_picture'">
+        <div class="basic_information" [routerLink]="['PROFILE_PICTURE' | absolute]" routerLinkActive="active">
           <mat-icon>camera</mat-icon>
           <p>Profile Picture</p>
         </div>
-        <div class="basic_information" [class.active]="viewMode=='qualification'" (click)="viewMode='qualification'">
+        <div class="basic_information" [routerLink]="['QUALIFICATION' | absolute]" routerLinkActive="active">
           <mat-icon>book</mat-icon>
           <p>Qualification</p>
         </div>
-        <div class="basic_information" [class.active]="viewMode=='shift'" (click)="viewMode='shift'">
+        <div class="basic_information" [routerLink]="['SHIFT' | absolute]" routerLinkActive="active">
           <mat-icon>person</mat-icon>
           <p>Shift</p>
         </div>
-        <div class="basic_information" [class.active]="viewMode=='change_pass'" (click)="viewMode='change_pass'">
+        <div class="basic_information" [routerLink]="['CHANGE_PASSWORD' | absolute]" routerLinkActive="active">
           <mat-icon>key</mat-icon>
           <p>Change Password</p>
         </div>
-        <div class="basic_information" [class.active]="viewMode=='appraisal'" (click)="viewMode='appraisal'">
+        <div class="basic_information" [routerLink]="['APPRAISAL' | absolute]" routerLinkActive="active">
           <mat-icon>home</mat-icon>
           <p>Appraisal</p>
         </div>
       </div>
     </div>
-    <div [ngSwitch]="viewMode" class="emp_info_data">
-      <div *ngSwitchCase="'basic_information'">
-        <app-basic-information></app-basic-information>
-      </div>
-      <div *ngSwitchCase="'profile_picture'">
-        <app-profile-picture></app-profile-picture>
-      </div>
-      <div *ngSwitchCase="'qualification'">
-        <app-qualification></app-qualification>
-      </div>
-      <div *ngSwitchCase="'shift'">
-        <app-shift></app-shift>
-      </div>
-      <div *ngSwitchCase="'change_pass'">
-        <app-change-password></app-change-password>
-      </div>
-      <div *ngSwitchCase="'appraisal'">
-        <app-appraisal></app-appraisal>
-      </div>
+    <div class="emp_info_data">
+      <router-outlet></router-outlet>
     </div>
   </div>
   <div>

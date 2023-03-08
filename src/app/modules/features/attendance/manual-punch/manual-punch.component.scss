@@ -6,9 +6,8 @@
   padding: 30px;
 
   .card {
-    display: grid;
-    grid-template-columns: 28% 68%;
-    gap: 4%;
+
+    @include grid(grid-template-columns , 28% 68% , 4%);
 
     h3 {
       font-size: 20px;
@@ -64,12 +63,13 @@
 :host ::ng-deep .container {
   .tables{
     padding: 25px;
+    overflow-x: scroll;
     table{
       border: 1px solid rgba(24,28,33,0.06);
       width: 100%;
 
       tbody{
-        background-color: #f9f9f9;
+        // background-color: #f9f9f9;
         tr{
           td{
             border:1px solid #f1f1f2;
@@ -90,5 +90,24 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width:787px){
+  .container{
+    .card{
+      @include grid(grid-template-columns , 100% ,'');
+    }
+  }
+}
+@media only screen and (max-width:375px){
+  .container{
+   .card{
+    .manual_punch{
+      .heading{
+        display: block;
+      }
+    }
+   }
   }
 }

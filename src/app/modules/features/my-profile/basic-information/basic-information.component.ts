@@ -1,6 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { myProfileAnimation } from 'src/app/animations/myProfileAnimation';
 import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
 
@@ -13,6 +12,7 @@ import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
   ],
 })
 export class BasicInformationComponent implements OnInit {
+
   basicInfo!: FormGroup;
   constructor(private fb: FormBuilder) {}
 
@@ -45,4 +45,5 @@ export class BasicInformationComponent implements OnInit {
       this.basicInfo.markAllAsTouched();
     }
   }
+
 }

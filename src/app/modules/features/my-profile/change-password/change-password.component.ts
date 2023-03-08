@@ -1,6 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { myProfileAnimation } from 'src/app/animations/myProfileAnimation';
 import { COMMON_VALIDATION, MIN_LENGTH } from 'src/app/constants/Validations';
 
@@ -13,7 +12,6 @@ import { COMMON_VALIDATION, MIN_LENGTH } from 'src/app/constants/Validations';
   ],
 })
 export class ChangePasswordComponent implements OnInit {
-
   password!:FormGroup
   constructor(private fb:FormBuilder) { }
 
@@ -28,5 +26,4 @@ export class ChangePasswordComponent implements OnInit {
 
     });
   }
-
 }

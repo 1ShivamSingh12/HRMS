@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { myProfileAnimation } from 'src/app/animations/myProfileAnimation';
 import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 
@@ -7,9 +6,12 @@ import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
   selector: 'app-profile-picture',
   templateUrl: './profile-picture.component.html',
   styleUrls: ['./profile-picture.component.scss'],
-  animations: [myProfileAnimation],
+  animations: [
+    myProfileAnimation
+  ],
 })
 export class ProfilePictureComponent implements OnInit {
+
   imagePath: any;
   imgURL: any;
   size! : number
@@ -41,4 +43,5 @@ export class ProfilePictureComponent implements OnInit {
       this.snackbar.openSnackBarErr('File Type should be png , jpg , jpeg , gif' , 'red-snackbar')
     }
   }
+
 }

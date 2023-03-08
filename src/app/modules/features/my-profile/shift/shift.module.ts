@@ -1,22 +1,19 @@
-import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
-import { CommonTableModule } from "src/app/shared/common-table/common-table.module";
-import { ShiftComponent } from "./shift.component";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-
-
+import { ShiftRoutingModule } from './shift-routing.module';
+import { ShiftComponent } from './shift.component';
+import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
 
 
 @NgModule({
   declarations: [
-ShiftComponent
+    ShiftComponent
   ],
   imports: [
     CommonModule,
+    ShiftRoutingModule,
     CommonTableModule
-  ],
-  exports:[
-ShiftComponent
   ]
 })
 export class ShiftModule { }

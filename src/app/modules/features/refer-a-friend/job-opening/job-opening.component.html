@@ -6,20 +6,8 @@
       <p>Current Job Openings</p>
     </div>
     <div class="card_body">
-      <div class="content">
+      <div class="content" *ngFor="let data of divs">
         <app-job-details></app-job-details>
-      </div>
-      <div class="content">
-        <app-job-details></app-job-details>
-
-      </div>
-      <div class="content">
-        <app-job-details></app-job-details>
-
-      </div>
-      <div class="content">
-        <app-job-details></app-job-details>
-
       </div>
     </div>
   </div>

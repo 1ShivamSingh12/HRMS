@@ -23,6 +23,7 @@ export class ReferralListComponent implements OnInit {
       columnDef: 'candidate_name',
       header: 'First Name',
       cell: (element: Record<string, any>) => `${element['candidate_name']}`,
+      isLink:true
     },
     {
       columnDef: 'experience',

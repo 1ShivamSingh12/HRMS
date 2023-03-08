@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ASSETS_INVENTORY, ASSET_DECLARATION, ATTENDANCE, DIRECTORY, DOCUMENTS, ENTREPRENEURSHIP, FRESHER_TRAINING, HOLIDAY_CALENDER, HOME, JOB_OPENING, MY_INTERVIEW, MY_LINKS, MY_PERFORMANCE, MY_PROFILE, MY_TRAINING, ONGOING_TRAINING, RECRUITMENT, REFERRAL_LIST, REFER_A_FRIEND, REQUESTED_TRAINING, REQUEST_ASSET, REVIEWS, TRAINING, UPCOMING_TRAINING } from 'src/app/constants/routes';
+import { ASSETS_INVENTORY, ASSET_DECLARATION, ATTENDANCE, DIRECTORY, DOCUMENTS, ENTREPRENEURSHIP, FRESHER_TRAINING, HOLIDAY_CALENDER, HOME, JOB_OPENING, LEAVE, MY_INTERVIEW, MY_LINKS, MY_PERFORMANCE, MY_PROFILE, MY_TRAINING, ONGOING_TRAINING, RECRUITMENT, REFERRAL_LIST, REFER_A_FRIEND, REQUESTED_TRAINING, REQUEST_ASSET, REVIEWS, TRAINING, UPCOMING_TRAINING } from 'src/app/constants/routes';
 import { FeatureComponent } from './feature.component';
 
 const routes: Routes = [
@@ -78,6 +78,11 @@ const routes: Routes = [
         path: ATTENDANCE.path,
         loadChildren: () =>
           import('./attendance/attendance.module').then((m) => m.AttendanceModule),
+      },
+      {
+        path: LEAVE.path,
+        loadChildren: () =>
+          import('./leave/leave.module').then((m) => m.LeaveModule),
       },
     ],
   },

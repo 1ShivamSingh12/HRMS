@@ -1,1 +1,31 @@
-<p>punch-log works!</p>
+<div class="container">
+  <div class="card">
+    <div class="employee_detail">
+      <h3>Punch Log</h3>
+      <div class="employee_body">
+        <div class="input-box">
+          <p>Date</p>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="First Name"  />
+          </mat-form-field>
+          <!-- <app-field-error [error]="basicInfo | validationError : 'first_name' : 'First Name'"></app-field-error> -->
+        </div>
+        <div class="input-box">
+          <p>Company</p>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="First Name"  />
+          </mat-form-field>
+          <!-- <app-field-error [error]="basicInfo | validationError : 'first_name' : 'First Name'"></app-field-error> -->
+        </div>
+        <button>Get</button>
+      </div>
+    </div>
+    <div class="manual_punch">
+      <div class="heading">
+        <h3>Punch Log</h3>
+        <button> + Add New</button>
+      </div>
+      <app-common-table [tableColumns]="tableColumns" [tableData]="tableData" [isPageable]="false" [defaultPageSize]="3"></app-common-table>
+    </div>
+  </div>
+</div>

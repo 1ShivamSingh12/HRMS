@@ -53,8 +53,50 @@ export const MY_PROFILE : Route = {
   get fullurl(): string {
     return `${DASHBOARD.fullurl}/${this.path}`;
   },
-
 }
+
+export const BASIC_INFORMATION : Route = {
+  path:'basic-information',
+  get fullurl(): string {
+    return `${MY_PROFILE.fullurl}/${this.path}`;
+  }
+}
+
+export const PROFILE_PICTURE : Route = {
+  path:'profile-picture',
+  get fullurl(): string {
+    return `${MY_PROFILE.fullurl}/${this.path}`;
+  }
+}
+
+export const QUALIFICATION : Route = {
+  path:'qualification',
+  get fullurl(): string {
+    return `${MY_PROFILE.fullurl}/${this.path}`;
+  }
+}
+
+export const SHIFT : Route = {
+  path:'shift',
+  get fullurl(): string {
+    return `${MY_PROFILE.fullurl}/${this.path}`;
+  }
+}
+
+export const CHANGE_PASSWORD : Route = {
+  path:'change-password',
+  get fullurl(): string {
+    return `${MY_PROFILE.fullurl}/${this.path}`;
+  }
+}
+
+export const APPRAISAL : Route = {
+  path:'appraisal',
+  get fullurl(): string {
+    return `${MY_PROFILE.fullurl}/${this.path}`;
+  }
+}
+
 
 /* directory routes*/
 
@@ -289,5 +331,30 @@ export const PUNCH_LOG : Route = {
   path:'punch-log',
   get fullurl(): string {
     return `${ATTENDANCE.fullurl}/${this.path}`;
+  },
+}
+
+
+/* Leave */
+
+
+export const LEAVE : Route = {
+  path:'leave',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+}
+
+export const MY_LEAVE : Route = {
+  path:'my-leave',
+  get fullurl(): string {
+    return `${LEAVE.fullurl}/${this.path}`;
+  },
+}
+
+export const FLOATING_LEAVE : Route = {
+  path:'floating-leave',
+  get fullurl(): string {
+    return `${LEAVE.fullurl}/${this.path}`;
   },
 }

@@ -42,6 +42,25 @@ export interface ASSETS {
   company: any;
 }
 
+export interface MY_LEAVE {
+  action: any;
+  leave_type: string;
+  request_from: any;
+  request_to: string;
+  applied_on: string;
+  status: any;
+  level1: string;
+  level2: any;
+}
+
+
+export interface FLOATING_LEAVE {
+  s_no: any;
+  event_name: string;
+  date: any;
+}
+
+
 export interface REQUEST_ASSETS {
   serial_no: any;
   status: any;
@@ -80,10 +99,10 @@ export interface REQUESTED_TRAINING {
 export interface QUALIFICATION {
   action: any;
   school: any;
-  time_period: string;
   education_level: any;
+  time_period: string;
 }
-export interface SHIFT {
+  export interface SHIFT {
   date_of_joining: any;
   office_shift: string;
 }
@@ -114,6 +133,12 @@ export interface MANUAL_PUNCH {
   manual_punch_date: any;
   in_time: any;
   out_time: any;
+}
+
+export interface PUNCH_LOG {
+  name: any;
+  punch_time: any;
+  direction: any;
 }
 
 

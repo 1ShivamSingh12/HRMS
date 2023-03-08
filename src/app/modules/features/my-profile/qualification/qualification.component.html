@@ -19,7 +19,7 @@
           <div class="input-box">
             <p>Education Level</p>
             <mat-form-field appearance="outline">
-              <mat-select placeholder="Eductaion" formControlName="eductaion_level">
+              <mat-select placeholder="Eductaion" formControlName="education_level">
                 <mat-option value="option1">Option 1</mat-option>
                 <mat-option value="option2">Option 2</mat-option>
                 <mat-option value="option3">Option 3</mat-option>
@@ -83,7 +83,7 @@
           </div>
         </div>
         <div class="save_button">
-          <button>Save</button>
+          <button (click)="saveData()">Save</button>
         </div>
       </div>
     </form>

@@ -14,7 +14,7 @@ export class CommonTableComponent implements OnInit {
   @Input() defaultPaginationSize: number[] = [5, 10, 15];
   @Input() defaultPageSize = this.defaultPaginationSize[1];
   @Output() buttonClick = new EventEmitter<string[]>();
-  
+
   get dataSource(){
     console.log(this.tableData,"123");
     return this.tableData;
@@ -26,7 +26,7 @@ export class CommonTableComponent implements OnInit {
 
 
   displayedColumns: Array<any> = [];
-  // dataSource: MatTableDataSource<any> = new MatTableDataSource();
+  // dataSource: MatTableDataSource<any> = ew MatTableDataSource();
   constructor() {}
 
   ngOnInit(): void {

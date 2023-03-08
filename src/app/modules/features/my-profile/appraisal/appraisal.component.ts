@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { myProfileAnimation } from 'src/app/animations/myProfileAnimation';
 

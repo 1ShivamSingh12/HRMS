@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { myProfileAnimation } from 'src/app/animations/myProfileAnimation';
 import { SHIFT } from 'src/app/interfaces/table.interface';
@@ -39,7 +38,6 @@ export class ShiftComponent implements OnInit {
     },
 
   ];
-
 
 
 }
