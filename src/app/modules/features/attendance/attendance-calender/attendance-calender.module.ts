@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AttendanceCalenderRoutingModule } from './attendance-calender-routing.module';
 import { AttendanceCalenderComponent } from './attendance-calender.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { AttendanceCalenderComponent } from './attendance-calender.component';
   ],
   imports: [
     CommonModule,
-    AttendanceCalenderRoutingModule
+    AttendanceCalenderRoutingModule,
+    FullCalendarModule
+
   ]
 })
 export class AttendanceCalenderModule { }

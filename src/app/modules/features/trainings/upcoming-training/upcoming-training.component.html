@@ -39,8 +39,10 @@
         </div>
       </div>
       <div class="card_button">
-        <button>View Details</button>
-        <button class="refer_candidate_button">Enroll Training</button>
+        <a [routerLink]="['VIEW_DETAILS_UPCOMING_TRAINING' | absolute]" target="_blank">
+          <button >View Details</button>
+        </a>
+        <button class="refer_candidate_button" (click)="openDialog()">Enroll Training</button>
       </div>
     </div>
   </div>

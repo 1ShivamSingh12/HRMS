@@ -6,7 +6,7 @@
 
   .card{
     position: relative;
-    
+
     .detail{
 
       @include flex(center,center);
@@ -27,7 +27,7 @@
         h3{
           // @include flex(center,center);
           font-size: 18px;
-          color: #000000;
+          color: black000;
           font-weight: 500;
           line-height: 1.9;
           margin: 5px 0;

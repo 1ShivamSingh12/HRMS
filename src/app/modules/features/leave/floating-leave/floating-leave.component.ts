@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { FLOATING_LEAVE } from 'src/app/interfaces/table.interface';
 
 @Component({
@@ -7,10 +8,13 @@ import { FLOATING_LEAVE } from 'src/app/interfaces/table.interface';
   styleUrls: ['./floating-leave.component.scss']
 })
 export class FloatingLeaveComponent implements OnInit {
+  dataSource = new MatTableDataSource<FLOATING_LEAVE>();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<FLOATING_LEAVE>(this.tableData);
+
   }
 
   tableColumns: Array<any> = [

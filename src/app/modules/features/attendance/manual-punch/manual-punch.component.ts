@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { MANUAL_PUNCH } from 'src/app/interfaces/table.interface';
 
 @Component({
@@ -7,10 +8,13 @@ import { MANUAL_PUNCH } from 'src/app/interfaces/table.interface';
   styleUrls: ['./manual-punch.component.scss']
 })
 export class ManualPunchComponent implements OnInit {
+  dataSource = new MatTableDataSource<MANUAL_PUNCH>()
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<MANUAL_PUNCH>(this.tableData)
+
   }
 
   tableColumns: Array<any> = [

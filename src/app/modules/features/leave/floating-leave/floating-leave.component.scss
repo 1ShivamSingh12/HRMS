@@ -2,7 +2,7 @@
 
 .container{
   background-color: $common-background;
-  min-height: 93%;
+  min-height: 100%;
   padding: 30px;
   .heading{
     margin-bottom: 30px;
@@ -16,7 +16,7 @@
   }
 
   .card{
-    background-color: #fff;
+    background-color: $primary-white;
     padding: 20px;
     .card_heading{
       padding: 0 0 15px 0;

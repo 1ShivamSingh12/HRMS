@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { MY_LEAVE, Options } from 'src/app/interfaces/table.interface';
+import { MY_LEVAE_CONFIG, Options } from 'src/app/constants/tableConfig';
+import { MY_LEAVE } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-my-leave',
@@ -8,10 +10,14 @@ import { MY_LEAVE, Options } from 'src/app/interfaces/table.interface';
   styleUrls: ['./my-leave.component.scss']
 })
 export class MyLeaveComponent implements OnInit {
+  myLeaveConfig: Options = MY_LEVAE_CONFIG;
+  dataSource = new MatTableDataSource<MY_LEAVE>();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<MY_LEAVE>(this.tableData);
+
   }
   checked = false;
 
@@ -120,15 +126,5 @@ export class MyLeaveComponent implements OnInit {
     },
   ];
 
-
-  MY_LEVAE: Options = {
-    search: true,
-    show:true,
-    searchPlaceholder: "Search..",
-    pagination: true,
-    addButton: false,
-};
-
-myLeaveConfig: Options = this.MY_LEVAE;
 
 }

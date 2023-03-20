@@ -1,15 +1,15 @@
-
+@import '../.././../../../scss/mix';
 .container {
   min-height: 100%;
   padding: 20px;
-  background-color: #f2f6fc;
+  background-color: $common-background;
 
   .card {
     .card_header {
       margin-bottom: 30px;
       p {
         font-size: 24px;
-        color: #199cff;
+        color: $primary-blue;
         font-weight: 500;
         line-height: 1.2;
         margin-bottom: 0;
@@ -17,11 +17,10 @@
     }
 
     .card_body {
-      display: grid;
-      grid-template-columns: 33% 33% 33%;
-      gap: 10px;
+      @include grid(grid-template-columns,'33% 33% 33%' ,'10px');
+
       .content {
-        background-color: white;
+        background-color: $pure-white;
       }
     }
   }

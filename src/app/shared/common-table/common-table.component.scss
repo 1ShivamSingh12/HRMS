@@ -1,22 +1,23 @@
-.container{
-  .tables{
-    background-color: #fff;
-    table{
+@import "../../../scss/mix";
+.containers {
+  .tables {
+    background-color: $primary-white;
+    table {
       width: 100%;
       box-shadow: none;
 
-      .edit{
+      .edit {
         background-color: grey;
-        color: white;
+        color: $pure-white;
         border: none;
         padding: 8px;
         margin-right: 5px;
         cursor: pointer;
       }
 
-      .delete{
+      .delete {
         background-color: red;
-        color: white;
+        color: $pure-white;
         border: none;
         padding: 8px;
         cursor: pointer;
@@ -25,4 +26,57 @@
   }
 }
 
+.container {
+  .buttons {
+    @include flex("", flex-end);
+    padding: 20px 20px 10px 12px;
+    .search {
+      .input-box {
+        ::ng-deep.mat-form-field-appearance-outline {
+          .mat-form-field-wrapper {
+            margin: 0px 0px -5px 0px;
+          }
+          .mat-form-field-infix {
+            padding: 10px 0 15px 0px;
+          }
+        }
+        span {
+          margin: 0px;
+        }
+      }
+    }
+  }
+}
 
+::ng-deep.mat-paginator-outer-container {
+  .mat-paginator-container {
+    @include flex("", space-between);
+  }
+  .mat-paginator-page-size-label {
+    display: none;
+  }
+  .mat-paginator-page-size::after {
+    content: "Entries";
+    color: black;
+    font-size: 15px;
+  }
+  .mat-paginator-page-size::before {
+    content: "Show";
+    color: black;
+    font-size: 15px;
+  }
+  .mat-paginator-page-size {
+    margin-left: 15px;
+  }
+}
+
+@media only screen and (max-width: 447px) {
+  ::ng-deep.mat-paginator-outer-container {
+    .mat-paginator-container {
+      display: block;
+    }
+    .mat-paginator-page-size {
+      margin-left: 22px;
+    }
+  }
+}

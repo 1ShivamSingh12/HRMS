@@ -28,8 +28,7 @@
           </mat-form-field>
         </div>
       </div>
-      <app-listing [config]="interviewConfig"></app-listing>
-      <app-common-table [tableColumns]="tableColumns" [tableData]="tableData" [isPageable]="true" [defaultPageSize]="3"></app-common-table>
+      <app-common-table [config]="interviewConfig" [tableColumns]="tableColumns"  [dataSource]="dataSource"></app-common-table>
     </div>
   </div>
 

@@ -1,14 +1,14 @@
 @import "../../../../../scss/mix";
 .container {
   padding: 2em;
-  background-color: #f2f6fc;
+  background-color: $common-background;
   min-height: 100%;
   .header {
     @include flex("", space-between);
     margin-bottom: 30px;
     p {
       font-size: 24px;
-      color: #199cff;
+      color: $primary-blue;
       font-weight: 500;
       line-height: 1.2;
       margin-bottom: 0;
@@ -39,8 +39,7 @@
       h3 {
         font-size: 24px;
         font-weight: 500;
-        display: flex;
-        align-items: center;
+        @include flex(center,'');
         margin-left: 15px;
         &::after {
           content: "";
@@ -72,12 +71,11 @@
             background-color: #F8F8F8;
           }
         }
-        
+
       }
       .my_detail_body {
-        display: grid;
-        grid-template-columns: 49.5% 49.5%;
-        column-gap: 1%;
+        @include grid(grid-template-columns,'49.5% 49.5%' ,'1%');
+
       }
 
 
@@ -123,7 +121,7 @@
           border: 1px solid #d8d8d8;
           border-radius: 2px !important;
           padding: 13px 10px !important;
-          background: #fff;
+          background: $primary-white;
           width: 97%;
         }
       }

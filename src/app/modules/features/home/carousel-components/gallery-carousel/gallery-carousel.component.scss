@@ -1,3 +1,5 @@
+@import '../../../../../../scss/mix';
+
 .slide{
   .image{
     padding: 10px;
@@ -14,7 +16,7 @@
       border-style: none;
       font-family: "Lato";
       font-size: 14px;
-      color: #ffffff;
+      color: $pure-white;
       font-weight: 500;
       line-height: 1.2;
       text-align: center;

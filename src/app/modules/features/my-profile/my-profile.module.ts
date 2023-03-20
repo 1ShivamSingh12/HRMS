@@ -8,7 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
-import { ListingModule } from 'src/app/shared/listing/listing.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,7 +28,7 @@ import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
     MatSelectModule,
     FooterModule,
     CommonTableModule,
-    ListingModule,
+
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,

@@ -36,20 +36,20 @@
           <div class="card_upper">
             <div class="input-box">
               <mat-form-field appearance="outline">
-                <input [max]="qualification.value.time_to"  matInput [matDatepicker]="picker1" formControlName="time" placeholder="from" />
+                <input [max]="qualification.value.date_from"  matInput [matDatepicker]="picker1" formControlName="date_from" placeholder="from" />
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
               </mat-form-field>
-              <app-field-error [error]="qualification | validationError : 'time' : 'Time'"></app-field-error>
+              <app-field-error [error]="qualification | validationError : 'date_from' : 'Time'"></app-field-error>
             </div>
             <div class="input-box">
               <!-- <p>?</p> -->
               <mat-form-field appearance="outline">
-                <input [min]="qualification.value.time"  matInput [matDatepicker]="picker2" formControlName="time_to" placeholder="to"/>
+                <input [min]="qualification.value.date_to"  matInput [matDatepicker]="picker2" formControlName="date_to" placeholder="to"/>
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
               </mat-form-field>
-              <app-field-error [error]="qualification | validationError : 'time_to' : 'Time'"></app-field-error>
+              <app-field-error [error]="qualification | validationError : 'date_to' : 'Time'"></app-field-error>
             </div>
           </div>
         </div>
@@ -95,9 +95,9 @@
     </div>
     <div>
       <div>
-        <app-listing [config]="qualificationConfig"></app-listing>
-        <app-common-table (buttonClick)="buttonClick($event)" [tableColumns]="tableColumns" [tableData]="tableData" [isPageable]="true"
-          [defaultPageSize]="3"></app-common-table>
+        <!-- <app-listing [config]="qualificationConfig"></app-listing> -->
+        <app-common-table [config]="qualificationConfig" (buttonClick)="buttonClick($event)" [tableColumns]="tableColumns" [dataSource]="dataSource"
+         ></app-common-table>
       </div>
     </div>
   </div>

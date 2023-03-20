@@ -12,10 +12,10 @@
       padding: 1.7em;
       margin-bottom: 20px;
       .planned_leave_details {
-        display: flex;
+        @include flex('','');
         p {
           margin: 0 0 0;
-          color: #a3a4a6 !important;
+          color: $dullBlack !important;
           font-size: 13px;
         }
         mat-icon {
@@ -29,27 +29,26 @@
   }
 
   .add_leave {
-    background-color: #fff;
+    background-color: $primary-white;
     margin-bottom: 20px;
     .add_leave_content {
-      display: flex;
-      justify-content: space-between;
+      @include flex('',space-between);
       padding: 20px;
       h3 {
-        color: #3246d3;
+        color: $headingsBlue;
         font-weight: 500;
         font-size: 20px;
         margin: 0 0 0;
       }
       button {
         height: 21px;
-        background-color: #fff;
-        border: 1px solid #26b4ff;
-        color: #26b4ff;
+        background-color: $primary-white;
+        border: 1px solid $darkbklue;
+        color: $darkbklue;
 
         &:hover {
-          color: white;
-          background-color: #26b4ff;
+          color:$pure-white;
+          background-color: $darkbklue;
           cursor: pointer;
         }
       }
@@ -66,8 +65,7 @@
           }
 
           .half_day_toggle {
-            display: flex;
-            justify-content: space-between;
+            @include flex('',space-between);
             .example-section {
               margin-left: 10px;
               ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
@@ -109,7 +107,7 @@
             border: 1px solid #d8d8d8;
             border-radius: 2px !important;
             padding: 13px 10px !important;
-            background: #fff;
+            background: $primary-white;
             width: 94%;
           }
         }
@@ -126,7 +124,7 @@
       .buttons {
         margin: 30px 0px 0px 5px;
         button {
-          color: white;
+          color: $pure-white;
           padding: 10px;
           border: none;
         }
@@ -143,11 +141,11 @@
   }
 
   .leave_list {
-    background-color: #fff;
+    background-color: $primary-white;
 
     h3 {
       padding: 15px;
-      color: #3246d3;
+      color: $headingsBlue;
       font-weight: 500;
       font-size: 20px;
       margin: 0 0 0;
@@ -164,14 +162,14 @@
       width: 100%;
       border-collapse: collapse;
       tbody {
-        background-color: #f9f9f9;
+        background-color: $dullGrey;
       }
       thead {
         tr {
           th {
             border: 1px solid #f1f1f2;
             padding: 10px;
-            color: #000;
+            color: black;
             font-weight: 400;
             font-size: 14px;
           }

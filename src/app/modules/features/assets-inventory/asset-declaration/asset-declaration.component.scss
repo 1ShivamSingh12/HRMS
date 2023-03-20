@@ -6,17 +6,16 @@
   padding: 30px;
   .card {
     .card_upper {
-      background-color: #fff;
+      background-color: $primary-white;
       margin-bottom: 20px;
 
       .request_button {
-        display: flex;
-        justify-content: flex-end;
+        @include flex('',flex-end);
         padding: 20px 20px 10px 0px;
         border-bottom: 1px solid rgba(24,28,33,0.06);
         button {
-          background: #3246d3;
-          color: #fff;
+          background: $headingsBlue;
+          color: $primary-white;
           font-family: "Segoe UI";
           border-radius: 4px;
           padding: 7px 20px;
@@ -38,9 +37,7 @@
 
         padding: 20px;
         .card_content{
-          display: grid;
-          grid-template-columns: 24% 24% 24% 24%;
-          column-gap: 16px;
+          @include grid(grid-template-columns,'24% 24% 24% 24%' ,'16px');
           @include form-field(100%);
           mat-form-field{
             ::ng-deep.mat-select-placeholder{
@@ -71,17 +68,15 @@
         }
 
         .submit_button{
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @include flex(center,center);
           button{
             margin-top: 20px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
             background-blend-mode: soft-light, normal;
             border: 1px solid rgba(150, 165, 184, 0.2);
             box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
             border-radius: 4px;
-            color: #FFFFFF;
+            color: $pure-white;
             padding: 10px;
           }
         }
@@ -91,13 +86,13 @@
       .card_lower_header {
         h3 {
           font-size: 20px;
-          color: #3246d3;
+          color: $headingsBlue;
           padding: 11px 25px 11px 15px;
           border-bottom: 1px solid #f3f7fc;
           font-weight: 600;
         }
       }
-      background-color: #fff;
+      background-color: $primary-white;
     }
   }
 }
@@ -109,7 +104,7 @@
       width: 100%;
       border-collapse: collapse;
       tbody {
-        background-color: #f9f9f9;
+        background-color: $dullGrey;
         tr {
           td {
             border: 1px solid #f1f1f2;
@@ -122,7 +117,7 @@
           th {
             border: 1px solid #f1f1f2;
             padding: 10px 10px 10px 20px;
-            color: #000;
+            color: black;
             font-weight: 400;
             font-size: 14px;
           }

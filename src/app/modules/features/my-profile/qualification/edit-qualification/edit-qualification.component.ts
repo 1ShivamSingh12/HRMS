@@ -15,8 +15,11 @@ export class EditQualificationComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
+    this.interpolateData()
     console.log(this.data,'wkewjfebfuefuieuifwe');
   }
+
+  dialogData = this.data
 
   createForm() {
     this.qualification = this.fb.group({
@@ -27,5 +30,15 @@ export class EditQualificationComponent implements OnInit {
       language: ['', [COMMON_VALIDATION]],
       Courses: ['', [COMMON_VALIDATION]],
     });
+  }
+
+  interpolateData(){
+    this.qualification.get('school')?.setValue(this.dialogData.school)
+    this.qualification.get('eductaion_level')?.setValue(this.dialogData.education_level)
+    this.qualification.get('time')?.setValue(this.dialogData.date_from)
+    this.qualification.get('time_to')?.setValue(this.dialogData.date_to)
+    this.qualification.get('Courses')?.setValue(this.dialogData.Courses)
+    this.qualification.get('language')?.setValue(this.dialogData.language)
+
   }
 }

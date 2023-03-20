@@ -1,0 +1,146 @@
+@import '../../../../../../scss/mix';
+
+.container {
+  padding: 25px;
+  background-color: $common-background;
+  min-height: 100%;
+  .content {
+    h3{
+      margin: 0 0 0;
+    }
+    .breadcrum {
+      margin-bottom: 20px;
+      span{
+        color:blue;
+        cursor: pointer;
+      }
+
+      nav{
+        color: $dullBlack;
+
+      }
+
+    }
+    .heading {
+      @include flex('',space-between);
+      margin-bottom: 10px;
+      h3{
+        font-size: 24px;
+        font-weight: 500;
+      }
+      button{
+        @include button(10px);
+
+      }
+
+    }
+
+    .card {
+      background-color: $primary-white;
+      padding: 1.5em;
+      .trainig_detail {
+        .trainig_detail_heading {
+          @include flex('',space-between);
+          padding-bottom: 15px;
+          border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+
+          button{
+            border: 1.5px solid rgba(150, 165, 184, 0.5);
+            background-color: $pure-white;
+            font-family: "Lato";
+            font-size: 14px;
+            color: #96A5B8;
+            font-weight: 500;
+            line-height: 1.4;
+            border-radius: 4px;
+          }
+        }
+
+        .card_body {
+          padding: 15px 0px 0px 0px;
+          margin-bottom: 30px;
+          span {
+            font-family: "Lato";
+            font-size: 14px;
+            color: #606167;
+            font-weight: 400;
+            line-height: 1.5;
+            min-width: 160px;
+            margin: 0 10px 0 0;
+          }
+          p {
+            font-size: 14px;
+            color: #231e1e;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0 0 8px;
+          }
+          .title {
+            @include flex('',space-between);
+            width: 66%;
+          }
+          .dates {
+            @include flex('',space-between);
+            width: 67%;
+          }
+          .mode-batch {
+            @include flex('',space-between);
+            width: 65%;
+          }
+          .start_date {
+            @include flex('','');
+          }
+          .training_mode {
+            @include flex('','');
+          }
+          .j {
+            @include flex('','');
+          }
+        }
+      }
+
+      .description {
+        .description_heading {
+          h3 {
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+            font-size: 18px;
+          }
+        }
+        .description_content{
+          p{
+            margin-top: 15px;
+            background-color: #F4F8FF;
+            padding: 20px;
+            border-radius: 5px;
+            color: #606167;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:900px){
+  .container{
+    .content{
+      .card{
+        .trainig_detail{
+
+        .card_body{
+          .title{
+            display: block;
+          }
+          .dates{
+            display: block;
+          }
+          .mode-batch{
+            display: block;
+          }
+        }
+      }
+
+      }
+    }
+  }
+}

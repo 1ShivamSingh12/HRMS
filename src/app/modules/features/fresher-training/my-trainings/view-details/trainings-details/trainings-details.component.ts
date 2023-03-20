@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Options, TRAININGS_DETAILS } from 'src/app/interfaces/table.interface';
+import { MatTableDataSource } from '@angular/material/table';
+import { TRAININGS_DETAILS } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-trainings-details',
@@ -7,10 +8,13 @@ import { Options, TRAININGS_DETAILS } from 'src/app/interfaces/table.interface';
   styleUrls: ['./trainings-details.component.scss']
 })
 export class TrainingsDetailsComponent implements OnInit {
+  dataSource = new MatTableDataSource<TRAININGS_DETAILS>();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<TRAININGS_DETAILS>(this.tableData);
+
   }
 
   tableColumns: Array<any> = [
@@ -62,15 +66,5 @@ export class TrainingsDetailsComponent implements OnInit {
       resource_url: '',
     },
   ];
-
-  TRAININGS_DETAILS: Options = {
-    search: false,
-    show:false,
-    searchPlaceholder: "Search...",
-    pagination: true,
-    addButton: false,
-};
-
-training_detailsConfig: Options = this.TRAININGS_DETAILS;
 
 }

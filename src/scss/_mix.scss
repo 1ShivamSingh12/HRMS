@@ -3,6 +3,10 @@ $primary-white: #fff;
 $darkbklue: #26b4ff;
 $pure-white: white;
 $common-background: #f2f6fc;
+$dullBlack:#a3a4a6;
+$headingsBlue:#3246d3;
+$dullGrey:#f9f9f9;
+$Blue : blue;
 
 @mixin flex($item, $align) {
   display: flex;
@@ -57,7 +61,7 @@ $common-background: #f2f6fc;
 }
 
 @mixin button($padding) {
- 
+
   padding: $padding;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
   background-blend-mode: soft-light, normal;
@@ -69,10 +73,10 @@ $common-background: #f2f6fc;
 
   &:hover {
     cursor: pointer;
-    background: #26b4ff;
+    background: $darkbklue;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.07), 0px 4px 5px 0px rgba(0, 0, 0, 0.05),
       0px 1px 10px 0px rgba(0, 0, 0, 0.03);
-    color: #fff;
+    color: $primary-white;
   }
 }
 

@@ -1,7 +1,7 @@
 @import "../../../../../scss/mix";
 
 .container {
-  background-color: #f2f6fc;
+  background-color: $common-background;
   min-height: 100%;
   padding: 2em;
   .heading {

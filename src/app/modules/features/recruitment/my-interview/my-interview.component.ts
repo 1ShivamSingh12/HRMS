@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MY_INTERVIEW, Options } from 'src/app/interfaces/table.interface';
+import { MatTableDataSource } from '@angular/material/table';
+import { MY_INTERVIEW_CONFIQ, Options } from 'src/app/constants/tableConfig';
+import { MY_INTERVIEW } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-my-interview',
@@ -7,10 +9,13 @@ import { MY_INTERVIEW, Options } from 'src/app/interfaces/table.interface';
   styleUrls: ['./my-interview.component.scss']
 })
 export class MyInterviewComponent implements OnInit {
+  interviewConfig: Options = MY_INTERVIEW_CONFIQ;
+  dataSource = new MatTableDataSource<MY_INTERVIEW>();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<MY_INTERVIEW>(this.tableData);
   }
 
   tableColumns: Array<any> = [
@@ -68,7 +73,7 @@ export class MyInterviewComponent implements OnInit {
 
   tableData: Array<MY_INTERVIEW> = [
     {
-      serial_number: '',
+      serial_number: 'dwqdwdwd',
       department: '',
       name: '',
       email: '',
@@ -80,16 +85,4 @@ export class MyInterviewComponent implements OnInit {
       action:''
     },
   ];
-
-  MY_INTERVIEW: Options = {
-    search: true,
-    show:true,
-    searchPlaceholder: "Search...",
-    pagination: true,
-    addButton: false,
-};
-
-interviewConfig: Options = this.MY_INTERVIEW;
-
-
 }

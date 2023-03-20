@@ -14,7 +14,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
-import { ListingModule } from 'src/app/shared/listing/listing.module';
 import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 
@@ -39,7 +38,7 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     MatInputModule,
     AngularEditorModule,
     HttpClientModule,
-    ListingModule,
+
     CommonTableModule,
     FooterModule
   ]

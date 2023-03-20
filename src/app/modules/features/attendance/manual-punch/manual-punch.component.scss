@@ -1,7 +1,7 @@
 @import "../../../../../scss/mix";
 
 .container {
-  background-color: #f2f6fc;
+  background-color: $common-background;
   min-height: 100%;
   padding: 30px;
 
@@ -11,7 +11,7 @@
 
     h3 {
       font-size: 20px;
-      color: #3246d3;
+      color: $headingsBlue;
       font-family: "Segoe UI";
       padding: 11px 25px 11px 15px;
       border-bottom: 1px solid #f3f7fc;
@@ -37,8 +37,7 @@
       margin-bottom: 20px;
 
       .heading {
-        display: flex;
-        justify-content: space-between;
+        @include flex('',space-between);
         padding: 20px;
 
         h3 {
@@ -46,13 +45,13 @@
         }
         button {
           height: 21px;
-          background-color: #fff;
-          border: 1px solid #26b4ff;
-          color:#26b4ff ;
+          background-color: $primary-white;
+          border: 1px solid $darkbklue;
+          color:$darkbklue ;
 
           &:hover{
-            color: white;
-            background-color: #26b4ff;
+            color: $pure-white;
+            background-color: $darkbklue;
             cursor: pointer;
           }
         }
@@ -69,7 +68,7 @@
       width: 100%;
 
       tbody{
-        // background-color: #f9f9f9;
+        // background-color: $dullGrey;
         tr{
           td{
             border:1px solid #f1f1f2;
@@ -83,7 +82,7 @@
           th{
             border:1px solid #f1f1f2;
             padding: 10px 10px 10px 20px;
-            color: #000;
+            color: black;
             font-weight: 400;
             font-size: 14px;
           }

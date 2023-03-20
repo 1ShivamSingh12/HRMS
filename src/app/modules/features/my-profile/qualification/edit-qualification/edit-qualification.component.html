@@ -16,6 +16,9 @@
           <p>Education Level</p>
           <mat-form-field appearance="outline">
             <mat-select placeholder="Eductaion" formControlName="eductaion_level">
+              <mat-option [value]="dialogData.education_level">{{
+                dialogData.education_level
+                }}</mat-option>
               <mat-option value="option1">Option 1</mat-option>
               <mat-option value="option2">Option 2</mat-option>
               <mat-option value="option3">Option 3</mat-option>
@@ -57,6 +60,7 @@
             <p>Language</p>
             <mat-form-field appearance="outline">
               <mat-select placeholder="Language" formControlName="language">
+                <mat-option [value]="dialogData.language">{{dialogData.language}}</mat-option>
                 <mat-option value="option1">Option 1</mat-option>
                 <mat-option value="option2">Option 2</mat-option>
                 <mat-option value="option3">Option 3</mat-option>

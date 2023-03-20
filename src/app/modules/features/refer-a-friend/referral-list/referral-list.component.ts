@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Options, REFERRAL_LIST } from 'src/app/interfaces/table.interface';
+import { MatTableDataSource } from '@angular/material/table';
+import { REFERRAL_LIST } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-referral-list',
@@ -7,10 +8,12 @@ import { Options, REFERRAL_LIST } from 'src/app/interfaces/table.interface';
   styleUrls: ['./referral-list.component.scss']
 })
 export class ReferralListComponent implements OnInit {
+  dataSource = new MatTableDataSource<REFERRAL_LIST>();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.data()
   }
 
   tableColumns: Array<any> = [
@@ -81,13 +84,9 @@ export class ReferralListComponent implements OnInit {
 
   ];
 
+  data(){
+    this.dataSource = new MatTableDataSource<REFERRAL_LIST>(this.tableData);
 
-   LIST_CANDIDATE: Options = {
-      search: false,
-      searchPlaceholder: "",
-      pagination: true,
-      addButton: false,
-  };
+  }
 
-  listingConfig: Options = this.LIST_CANDIDATE;
 }

@@ -1,0 +1,16 @@
+@import '../../../../../scss/mix';
+
+.container {
+  background-color: $common-background;
+  min-height: 100%;
+  padding: 30px;
+  .calender {
+    box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
+      background-color: $primary-white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+
+      padding: 20px;
+
+  }
+}

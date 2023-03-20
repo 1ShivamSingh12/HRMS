@@ -20,7 +20,7 @@
 
   // h2 {
   //   font-size: 16px;
-  //   color: #000000;
+  //   color: black000;
   //   font-weight: 500;
   //   line-height: 1.9;
   //   width: 90%;
@@ -91,7 +91,7 @@
   //   h4 {
   //     font-family: "Lato";
   //     font-size: 12px;
-  //     color: #199cff;
+  //     color: $primary-blue;
   //     font-weight: 600;
   //     line-height: 1.9;
   //     margin-bottom: 0;
@@ -123,7 +123,7 @@
   //     h4 {
   //       font-family: "Lato";
   //       font-size: 12px;
-  //       color: #199cff;
+  //       color: $primary-blue;
   //       font-weight: 600;
   //       line-height: 1.9;
   //       margin-bottom: 0;
@@ -147,9 +147,7 @@
   min-height: 200px;
   background-color: #ccc;
   background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex(center,center);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 

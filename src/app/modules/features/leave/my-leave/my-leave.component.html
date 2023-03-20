@@ -128,8 +128,8 @@
 
     <h3>List All Leave</h3>
 
-    <app-listing [config]="myLeaveConfig"></app-listing>
-      <app-common-table [tableColumns]="tableColumns" [tableData]="tableData" [isPageable]="true" [defaultPageSize]="3"></app-common-table>
+    <!-- <app-listing [config]="myLeaveConfig"></app-listing> -->
+      <app-common-table [config]="myLeaveConfig" [tableColumns]="tableColumns"  [dataSource]="dataSource"></app-common-table>
   </div>
 </div>
 <div>

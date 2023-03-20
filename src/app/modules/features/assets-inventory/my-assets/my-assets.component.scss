@@ -9,13 +9,13 @@
       .card_header {
         h3 {
           font-size: 20px;
-          color: #3246d3;
+          color: $headingsBlue;
           padding: 11px 25px 11px 15px;
           border-bottom: 1px solid #f3f7fc;
           font-weight: 600;
         }
       }
-      background-color: #fff;
+      background-color: $primary-white;
     }
   }
 }
@@ -27,7 +27,7 @@
       width: 100%;
       border-collapse: collapse;
       tbody{
-        background-color: #f9f9f9;
+        background-color: $dullGrey;
         tr{
           td{
             border:1px solid #f1f1f2;
@@ -41,7 +41,7 @@
           th{
             border:1px solid #f1f1f2;
             padding: 10px 10px 10px 20px;
-            color: #000;
+            color: black;
             font-weight: 400;
             font-size: 14px;
           }

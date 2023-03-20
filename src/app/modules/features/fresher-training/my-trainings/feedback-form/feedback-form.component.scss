@@ -3,11 +3,11 @@
 .header {
   background-color: #f3f3f3;
   padding: 20px 10px 10px 20px;
-  display: flex;
-  justify-content: space-between;
+  @include flex('',space-between);
+
   h2 {
     font-size: 20px;
-    color: #199cff;
+    color: $primary-blue;
     font-weight: 500;
     line-height: 1.5;
     margin: 0;
@@ -17,10 +17,8 @@
     width: 30px;
     border-radius: 50%;
     border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
+   @include flex(center,center);
+    background-color: $primary-white;
   }
 }
 
@@ -46,19 +44,18 @@ mat-dialog-content {
       margin: 0 0 8px;
     }
     .title {
-      display: flex;
+      @include flex('','');
       margin-bottom: 1em;
     }
     .dates {
-      display: flex;
-      justify-content: space-between;
+      @include flex('',space-between);
       margin-bottom: 1em;
       .start_date {
-        display: flex;
+        @include flex('','');
       }
 
       .training_mode {
-        display: flex;
+        @include flex('','');
       }
     }
   }
@@ -84,10 +81,9 @@ mat-dialog-content {
       padding: 0px 10px 0px 12px;
       margin-bottom: 16px;
       .example-radio-group {
-        display: flex;
+        @include flex(flex-start,'');
         flex-direction: column;
         margin: 5px 0;
-        align-items: flex-start;
       }
 
       .example-radio-button {
@@ -98,9 +94,7 @@ mat-dialog-content {
       padding: 0px 10px 0px 12px;
       margin-bottom: 2em;
       .content {
-        display: flex;
-        justify-content: space-between;
-
+        @include flex('',space-between);
         .mat-radio-button {
           padding: 0px 10px 0px 10px;
         }
@@ -120,8 +114,7 @@ mat-dialog-content {
 }
 
 mat-dialog-actions {
-  display: flex;
-  justify-content: flex-end;
+  @include flex('',flex-end);
 
   button {
     padding: 10px;
@@ -132,7 +125,7 @@ mat-dialog-actions {
 
   .cancel {
     margin-right: 5px;
-    background-color: #fff;
+    background-color: $primary-white;
     color: #96a5b8;
     border: 1.5px solid rgba(150, 165, 184, 0.5);
   }
@@ -152,8 +145,7 @@ mat-dialog-actions {
   }
 
   mat-dialog-actions {
-    display: flex;
-    justify-content: center;
+    @include flex('',center);
   }
 }
 

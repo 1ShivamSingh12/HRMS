@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { ATTENDENCE } from 'src/app/interfaces/table.interface';
 
 @Component({
@@ -7,10 +8,11 @@ import { ATTENDENCE } from 'src/app/interfaces/table.interface';
   styleUrls: ['./attendence.component.scss']
 })
 export class AttendenceComponent implements OnInit {
-
+  dataSource = new MatTableDataSource<ATTENDENCE>()
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<ATTENDENCE>(this.tableData)
   }
   tableColumns: Array<any> = [
     {

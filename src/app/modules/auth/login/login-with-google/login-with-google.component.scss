@@ -15,7 +15,7 @@
       margin: 0;
       background-color: #4285f4;
       @include flex(center, center);
-      color: white;
+      color: $pure-white;
       font-size: 17px;
       font-weight: 500;
     }
@@ -23,7 +23,7 @@
   .text {
     text-align: center;
     padding-top: 20px;
-    color: #a3a4a6;
+    color: $dullBlack;
     p{
       margin-bottom: 6em;
     }

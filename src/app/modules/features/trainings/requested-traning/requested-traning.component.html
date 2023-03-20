@@ -4,8 +4,8 @@
   </div>
 
   <div class="card">
-    <app-listing [config]="requestedTraningConfig"></app-listing>
-    <app-common-table [tableColumns]="tableColumns" [tableData]="tableData" [isPageable]="true" [defaultPageSize]="3"></app-common-table>
+    <!-- <app-listing [config]="requestedTraningConfig"></app-listing> -->
+    <app-common-table [config]="requestedTraningConfig" [tableColumns]="tableColumns" [dataSource]="dataSource"></app-common-table>
   </div>
 </div>
 <app-footer></app-footer>

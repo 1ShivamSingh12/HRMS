@@ -1,16 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Options, REQUESTED_TRAINING } from 'src/app/interfaces/table.interface';
+import { MatTableDataSource } from '@angular/material/table';
+import {
+  Options,
+  REQUESTED_TRANING_DECLARATION,
+} from 'src/app/constants/tableConfig';
+import { REQUESTED_TRAINING } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-requested-traning',
   templateUrl: './requested-traning.component.html',
-  styleUrls: ['./requested-traning.component.scss']
+  styleUrls: ['./requested-traning.component.scss'],
 })
 export class RequestedTraningComponent implements OnInit {
+  requestedTraningConfig: Options = REQUESTED_TRANING_DECLARATION;
+  dataSource = new MatTableDataSource<REQUESTED_TRAINING>();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<REQUESTED_TRAINING>(
+      this.tableData
+    );
   }
 
   tableColumns: Array<any> = [
@@ -27,7 +37,8 @@ export class RequestedTraningComponent implements OnInit {
     {
       columnDef: 'timeline_to_conduct',
       header: 'Timeline to conduct',
-      cell: (element: Record<string, any>) => `${element['timeline_to_conduct']}`,
+      cell: (element: Record<string, any>) =>
+        `${element['timeline_to_conduct']}`,
     },
     {
       columnDef: 'requested_date',
@@ -52,19 +63,8 @@ export class RequestedTraningComponent implements OnInit {
       training_name: '',
       timeline_to_conduct: '',
       requested_date: '',
-      status : '',
+      status: '',
       action: '',
     },
   ];
-
-  REQUESTED_TRANING_DECLARATION: Options = {
-    search: false,
-    show:true,
-    searchPlaceholder: "Search..",
-    pagination: true,
-    addButton: false,
-};
-
-requestedTraningConfig: Options = this.REQUESTED_TRANING_DECLARATION;
-
 }

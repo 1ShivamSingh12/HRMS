@@ -1,0 +1,182 @@
+@import "../../../../../scss/mix";
+
+.container {
+  background-color: $common-background;
+  min-height: 100%;
+  padding: 30px;
+  .card {
+    .card_upper {
+      background-color: $primary-white;
+      margin-bottom: 20px;
+
+      .card_upper_heading {
+        @include flex("", space-between);
+        padding: 20px;
+        border-bottom: 1px solid rgba(24, 28, 33, 0.06);
+        button {
+          // height: 21px;
+          background-color: $primary-white;
+          border: 1px solid $darkbklue;
+          color: $darkbklue;
+
+          &:hover {
+            color: $pure-white;
+            background-color: $darkbklue;
+            cursor: pointer;
+          }
+        }
+        h3 {
+          color: $headingsBlue;
+          font-weight: 500;
+          font-size: 20px;
+          margin: 0 0 0;
+        }
+      }
+      .new_dsr {
+        @include grid(grid-template-columns, "48% 48%", 2%);
+        padding: 30px;
+
+        .dsr_type {
+          margin-bottom: 30px;
+          @include form-field(100%);
+          ::ng-deep.mat-form-field-wrapper {
+            padding-bottom: 0.7em;
+          }
+
+          .dsr_details {
+            @include grid(grid-template-columns, "33% 33% 33%", "");
+            .check {
+              margin: 30px 0px 0px 15px;
+            }
+          }
+        }
+
+        .Description {
+          p {
+            font-size: 14px;
+            font-weight: 600;
+            font-family: "Segoe UI";
+            color: #2f3031;
+          }
+        }
+
+        .buttons {
+          margin: 30px 0px 0px 5px;
+          button {
+            color: $pure-white;
+            padding: 10px;
+            border: none;
+          }
+          .save_button {
+            background: #1da81b !important;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .card_middle {
+      background-color: $primary-white;
+      margin-bottom: 20px;
+      padding: 20px;
+
+      .card_middle_content {
+        @include grid(grid-template-columns,'24% 24% 24% 24%' ,'16px');
+        @include form-field(100%);
+        mat-form-field {
+          ::ng-deep.mat-select-placeholder {
+            color: #babbbc;
+          }
+        }
+
+        .button {
+          margin-top: 30px;
+          button {
+            width: 5rem;
+            @include button(10px);
+          }
+        }
+      }
+    }
+
+    .card_bottom {
+      background-color: $primary-white;
+      padding: 20px;
+
+      .card_bottom_header {
+        h3 {
+          font-size: 20px;
+          color: $headingsBlue;
+          border-bottom: 1px solid #f3f7fc;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep .container {
+  .tables {
+    overflow-x: scroll;
+    table {
+      border: 1px solid rgba(24, 28, 33, 0.06);
+      width: 100%;
+      // border-collapse: collapse;
+      tbody {
+        background-color: $dullGrey;
+        tr {
+          td {
+            border: 1px solid #f1f1f2;
+            padding: 10px 10px 10px 20px;
+          }
+        }
+      }
+      thead {
+        tr {
+          th {
+            border: 1px solid #f1f1f2;
+            padding: 10px 10px 10px 20px;
+            color: black;
+            font-weight: 400;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and(max-width:800px) {
+  .container {
+    .card {
+      .card_upper {
+        .new_dsr {
+          @include grid(grid-template-columns, "100%", "");
+        }
+      }
+
+      .card_middle{
+        .card_middle_content{
+          @include grid(grid-template-columns, "100%", "");
+
+        }
+      }
+    }
+  }
+}
+
+@media only screen and(max-width:500px) {
+  .container {
+    .card {
+      .card_upper {
+        .new_dsr {
+          .dsr_type {
+            .dsr_details {
+              @include grid(grid-template-columns, "100%", "");
+            }
+          }
+        }
+      }
+    }
+  }
+}

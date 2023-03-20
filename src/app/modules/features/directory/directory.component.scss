@@ -1,7 +1,7 @@
 @import "../../../../scss/mix";
 
 .container {
-  background-color: #f2f6fc;
+  background-color: $common-background;
   min-height: 100%;
 
   .card_upper {
@@ -40,11 +40,10 @@
       .buttons {
         @include position(relative, 25px, "", "", "");
 
-
         .reset {
           cursor: pointer;
           border: 1.5px solid rgba(150, 165, 184, 0.5);
-          background-color: #ffffff;
+          background-color: $pure-white;
           font-size: 14px;
           color: #96a5b8;
           line-height: 1.4;
@@ -55,13 +54,13 @@
 
         .search {
           cursor: pointer;
-          background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199cff;
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
           background-blend-mode: soft-light, normal;
           border: 1px solid rgba(150, 165, 184, 0.2);
           box-sizing: border-box;
           box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
           border-radius: 4px;
-          color: #ffffff;
+          color: $pure-white;
           padding-bottom: 10px;
 
           mat-icon {
@@ -70,7 +69,6 @@
           }
         }
       }
-
     }
 
     .row {
@@ -83,11 +81,12 @@
           margin-left: 20px;
           background-color: #f7f5ec;
           text-align: center;
-          // position: relative;
+          position: relative;
+          overflow: hidden;
           .picture {
             img {
-              width: 85px;
-              height: 85px;
+              width: 140px;
+              height: 140px;
               border-radius: 50%;
               margin-bottom: 10px;
             }
@@ -126,21 +125,47 @@
             }
           }
 
-          // &:hover {
-          //   transform: scale(1);
-          //   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          //   box-sizing: border-box;
-          //   img {
-          //     box-shadow: 0 0 0 14px #f7f5ec;
-          //     transform: scale(0.7);
-          //   }
-          //   .background {
-          //     top: 0;
-          //   }
-          //   .social {
-          //     bottom: 0;
-          //   }
-          // }
+          &:hover {
+            .card-hover {
+              height: 200px;
+              transition: all 1s ease 0.1s;
+              background-color: #1369ce;
+            }
+            .picture {
+              // box-shadow: #199CFF;
+              img {
+                // background-color: black;
+                border-radius: 50%;
+                box-shadow: 0 0 0 14px #1369ce;
+                transform: scale(0.7);
+                transition: all 1s ease 0.1s;
+              }
+            }
+            .social {
+              bottom: 0px;
+              transition: all 1s ease 0.1s;
+              background-color: #1369ce;
+            }
+          }
+          .card-hover {
+            width: 80%;
+            height: 0px;
+            margin-left: 32px;
+            border-radius: 90%;
+            background-color: #1369ce;
+            top: -30%;
+            opacity: 0.9;
+            position: absolute;
+          }
+          .social {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: #1369ce;
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+          }
         }
       }
     }

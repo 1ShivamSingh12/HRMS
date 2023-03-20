@@ -30,7 +30,7 @@
         </mat-form-field>
       </div>
       <div class="buttons">
-        <button class="reset">Reset</button>
+        <button class="reset" (click)="reset()">Reset</button>
         <button (click)="search()" class="search">
           <mat-icon>search</mat-icon>Search
         </button>
@@ -39,6 +39,7 @@
     <div class="row">
       <div class="card_lower">
         <div class="card_body" *ngFor="let item of filteredData">
+          <div class="card-hover">&nbsp;</div>
           <div class="picture">
             <img src="../../../../assets/images (1).png" />
           </div>
@@ -50,6 +51,7 @@
               <p><mat-icon>cake</mat-icon>{{ item.birthday }}</p>
             </div>
           </div>
+          <div class="social">&nbsp;</div>
         </div>
       </div>
     </div>

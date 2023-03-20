@@ -115,8 +115,8 @@
       <div class="card_lower_header">
         <h3>List All Declaration Assets</h3>
       </div>
-      <app-listing [config]="assetsDeclarationConfig"></app-listing>
-      <app-common-table [tableColumns]="tableColumns" [tableData]="tableData" [isPageable]="true" [defaultPageSize]="3"></app-common-table>
+      <!-- <app-listing [config]="assetsDeclarationConfig"></app-listing> -->
+      <app-common-table [config]="assetsDeclarationConfig" [tableColumns]="tableColumns" [dataSource]="dataSource" ></app-common-table>
     </div>
   </div>
 </div>

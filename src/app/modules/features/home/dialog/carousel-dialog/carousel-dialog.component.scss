@@ -1,6 +1,7 @@
+@import '../../../../../../scss/mix';
+
 .header{
-  display: flex;
-  justify-content: flex-end;
+  @include flex('',flex-end);
   mat-icon{
     cursor: pointer;
     font-size: 30px;
@@ -12,9 +13,7 @@ mat-dialog-content{
 
     .image{
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex(center,center);
     }
     img{
 

@@ -6,8 +6,8 @@
         <h3>List All Assets inventory</h3>
       </div>
 
-      <app-listing [config]="assetsConfig"></app-listing>
-      <app-common-table [tableColumns]="tableColumns" [tableData]="tableData" [isPageable]="true" [defaultPageSize]="3"></app-common-table>
+      <!-- <app-listing [config]="assetsConfig"></app-listing> -->
+      <app-common-table [config]="assetsConfig" [tableColumns]="tableColumns" [dataSource]="dataSource" ></app-common-table>
     </div>
   </div>
 

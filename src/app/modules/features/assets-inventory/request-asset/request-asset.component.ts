@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
-import { Options, REQUEST_ASSETS } from 'src/app/interfaces/table.interface';
+import { Options, REQUEST_ASSETS_CONFIG } from 'src/app/constants/tableConfig';
+import { COMMON_VALIDATION } from 'src/app/constants/Validations';
+import { REQUEST_ASSETS } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-request-asset',
@@ -11,27 +12,26 @@ import { Options, REQUEST_ASSETS } from 'src/app/interfaces/table.interface';
 })
 export class RequestAssetComponent implements OnInit {
   requestAsset!: FormGroup;
+  assetsConfig: Options = REQUEST_ASSETS_CONFIG;
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.createForm();
+    this.dataSource = new MatTableDataSource<REQUEST_ASSETS>();
+    this.submitRequest();
   }
 
   createForm() {
     this.requestAsset = this.fb.group({
-      serial_no: ['', [COMMON_VALIDATION, NAME_PATTERN]],
-      status: ['', [COMMON_VALIDATION, NAME_PATTERN]],
       request_reason: ['', [COMMON_VALIDATION]],
       priority: ['', [COMMON_VALIDATION]],
       requested_at: ['', [COMMON_VALIDATION]],
       assets_category: ['', [COMMON_VALIDATION]],
       allocation_type: ['', [COMMON_VALIDATION]],
-      company: ['', [COMMON_VALIDATION]],
     });
   }
 
   show: boolean = false;
-  TABLE_DATA:any[]=[];
 
   showNewAsset() {
     if (this.show == false) {
@@ -46,7 +46,6 @@ export class RequestAssetComponent implements OnInit {
       columnDef: 'serial_no',
       header: 'S No.',
       cell: (element: Record<string, any>) => `${element['serial_no']}`,
-      isLink : true
     },
     {
       columnDef: 'status',
@@ -57,7 +56,7 @@ export class RequestAssetComponent implements OnInit {
       columnDef: 'request_reason',
       header: 'Request Reason',
       cell: (element: Record<string, any>) => {
-        return `${element['request_reason']}`
+        return `${element['request_reason']}`;
       },
     },
     {
@@ -84,50 +83,116 @@ export class RequestAssetComponent implements OnInit {
       columnDef: 'company',
       header: 'Company',
       cell: (element: Record<string, any>) => `${element['company']}`,
-      type:'text'
     },
   ];
 
   tableData: any = [
-    // {
-    //   serial_no: 'a',
-    //   status: 'afd',
-    //   request_reason: 'df',
-    //   priority: '89',
-    //   requested_at: 'eriogjio',
-    //   assets_category: '4r4',
-    //   allocation_type: '43r',
-    //   company: '43r',
-    // },
-    // {
-    //   serial_no: 'a',
-    //   status: 'afd',
-    //   request_reason: 'df',
-    //   priority: '89',
-    //   requested_at: 'eriogjio',
-    //   assets_category: '4r4',
-    //   allocation_type: '43r',
-    //   company: '43r',
-    // },
-
+    {
+      serial_no: 'a',
+      status: 'afd',
+      request_reason: 'df',
+      priority: '89',
+      requested_at: 'eriogjio',
+      assets_category: '4r4',
+      allocation_type: '43r',
+      company: '43r',
+    },
+    {
+      serial_no: 'a',
+      status: 'sjbds',
+      request_reason: 'fsdewc',
+      priority: '89',
+      requested_at: 'weeailj',
+      assets_category: '4r4',
+      allocation_type: '43r',
+      company: '43r',
+    },
+    {
+      serial_no: 'a',
+      status: 'afd',
+      request_reason: 'df',
+      priority: '89',
+      requested_at: 'eriogjio',
+      assets_category: '4r4',
+      allocation_type: '43r',
+      company: '43r',
+    },
+    {
+      serial_no: 'a',
+      status: 'sjbds',
+      request_reason: 'fsdewc',
+      priority: '89',
+      requested_at: 'weeailj',
+      assets_category: '4r4',
+      allocation_type: '43r',
+      company: '43r',
+    },{
+      serial_no: 'a',
+      status: 'afd',
+      request_reason: 'df',
+      priority: '89',
+      requested_at: 'eriogjio',
+      assets_category: '4r4',
+      allocation_type: '43r',
+      company: '43r',
+    },
+    {
+      serial_no: 'a',
+      status: 'sjbds',
+      request_reason: 'fsdewc',
+      priority: '89',
+      requested_at: 'weeailj',
+      assets_category: '4r4',
+      allocation_type: '43r',
+      company: '43r',
+    },{
+      serial_no: 'a',
+      status: 'afd',
+      request_reason: 'df',
+      priority: '89',
+      requested_at: 'eriogjio',
+      assets_category: '4r4',
+      allocation_type: '43r',
+      company: '43r',
+    },
+    {
+      serial_no: 'a',
+      status: 'sjbds',
+      request_reason: 'fsdewc',
+      priority: '89',
+      requested_at: 'weeailj',
+      assets_category: '4r4',
+      allocation_type: '43r',
+      company: '43r',
+    },{
+      serial_no: 'a',
+      status: 'afd',
+      request_reason: 'df',
+      priority: '89',
+      requested_at: 'eriogjio',
+      assets_category: '4r4',
+      allocation_type: '43r',
+      company: '43r',
+    },
+    {
+      serial_no: 'a',
+      status: 'sjbds',
+      request_reason: 'fsdewc',
+      priority: '89',
+      requested_at: 'weeailj',
+      assets_category: '4r4',
+      allocation_type: '43r',
+      company: '43r',
+    },
   ];
 
-  REQUEST_ASSETS: Options = {
-    search: true,
-    show: true,
-    searchPlaceholder: 'Search..',
-    pagination: true,
-    addButton: false,
-  };
-
-  assetsConfig: Options = this.REQUEST_ASSETS;
+  dataSource = new MatTableDataSource<REQUEST_ASSETS>(this.tableData);
 
   submitRequest() {
-    console.log(this.requestAsset.value);
-    this.TABLE_DATA.push(this.requestAsset.value);
-
-    this.tableData = new MatTableDataSource<REQUEST_ASSETS>(this.TABLE_DATA);
-
-    console.log(this.tableData, 'lll');
+    if (this.requestAsset.valid) {
+      this.tableData.push(this.requestAsset.value);
+    }
+    this.dataSource = new MatTableDataSource<REQUEST_ASSETS>(this.tableData);
+    console.log(this.dataSource.data, 'lll');
   }
 }

@@ -1,0 +1,36 @@
+@import '../../../../../../../scss/mix';
+
+h1{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0 0 5px;
+}
+
+
+.container{
+  h3{
+    text-align: center;
+  }
+
+  .buttons{
+    @include flex('',center);
+
+    button{
+      margin-right: 10px;
+      padding: 15px;
+      color: $pure-white;
+      border: none;
+      border-radius: 5px;
+    }
+    .ok_button{
+      background-color: rgb(48, 133, 214);
+      width: 20%;
+    }
+
+    .cancel_button{
+      background-color: red;
+      width: 30%;
+    }
+  }
+}

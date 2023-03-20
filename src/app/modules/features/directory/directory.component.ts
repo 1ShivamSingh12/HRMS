@@ -15,7 +15,6 @@ export class DirectoryComponent implements OnInit {
 
   searchValue = new FormControl();
 
-
   department: any;
   name: any;
 
@@ -26,7 +25,9 @@ export class DirectoryComponent implements OnInit {
     if (this.searchValue.value) {
       this.filteredData = directory.filter((item) => {
         if (
-          item.name.toLowerCase().includes(this.searchValue.value.trim().toLowerCase())
+          item.name
+            .toLowerCase()
+            .includes(this.searchValue.value.trim().toLowerCase())
         ) {
           return true;
         }
@@ -36,11 +37,15 @@ export class DirectoryComponent implements OnInit {
       this.filteredData = directory;
     }
 
-    if (this.departmentSearch !== 'All' && this.searchValue.value ) {
-
-
+    if (this.departmentSearch !== 'All' && this.searchValue.value) {
       this.filteredData = directory.filter((item) => {
-        if (item.designation.toLowerCase().includes(this.departmentSearch.toLowerCase()) && item.name.toLowerCase().includes(this.searchValue.value.trim().toLowerCase())
+        if (
+          item.designation
+            .toLowerCase()
+            .includes(this.departmentSearch.toLowerCase()) &&
+          item.name
+            .toLowerCase()
+            .includes(this.searchValue.value.trim().toLowerCase())
         ) {
           return true;
         }
@@ -52,7 +57,21 @@ export class DirectoryComponent implements OnInit {
   departmentSelect(e: any) {
     console.log(e.value, 'kkkk');
     this.departmentSearch = e.value;
-    if (this.departmentSearch) {
+    if (this.departmentSearch !== 'All' && this.searchValue.value) {
+      this.filteredData = directory.filter((item) => {
+        if (
+          item.designation
+            .toLowerCase()
+            .includes(this.departmentSearch.toLowerCase()) &&
+          item.name
+            .toLowerCase()
+            .includes(this.searchValue.value.trim().toLowerCase())
+        ) {
+          return true;
+        }
+        return false;
+      });
+    } else if (this.departmentSearch !== 'All') {
       const search = e.value.toLowerCase();
       console.log(search);
       this.filteredData = directory.filter((item) => {
@@ -63,7 +82,14 @@ export class DirectoryComponent implements OnInit {
         }
         return false;
       });
+    } else if (this.departmentSearch == 'All') {
+      this.filteredData = directory;
     }
-    // this.search();
+  }
+
+  reset() {
+    this.departmentSearch = 'All';
+    this.searchValue.setValue('');
+    this.search();
   }
 }

@@ -12,7 +12,7 @@
     .job_logo {
       @include flex(center, center);
       border: 1px solid rgba(150, 165, 184, 0.3);
-      background-color: #f2f6fc;
+      background-color: $common-background;
       padding: 20px;
       min-height: 130px;
       border-radius: 10px;
@@ -93,7 +93,7 @@
     h3 {
       font-family: "Lato";
       font-size: 16px;
-      color: #000000;
+      color: black000;
       font-weight: 600;
       line-height: 1.2;
     }
@@ -105,7 +105,7 @@
 
     .view_detail {
       cursor: pointer;
-      background-color: #fff;
+      background-color: $primary-white;
       color: $primary-blue;
       border: 1.5px solid rgba(150, 165, 184, 0.5);
       padding: 15px;

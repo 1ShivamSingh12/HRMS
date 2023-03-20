@@ -10,6 +10,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { PerformanceDetailComponent } from './performance-detail/performance-detail.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
 
 
 
@@ -27,7 +28,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatOptionModule,
     FooterModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    absolutePipe
   ]
 })
 export class MyPerformanceModule { }

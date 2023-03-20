@@ -14,7 +14,7 @@ import { AUTH, HOME } from '../constants/routes';
 export class AuthGuard implements CanActivate {
   constructor(private route: Router) {}
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
-    if (sessionStorage.getItem('login') === 'True') {
+    if (localStorage.getItem('login') === 'True') {
       return true;
     } else {
       this.route.navigate([AUTH.fullurl]);

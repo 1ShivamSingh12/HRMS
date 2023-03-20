@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="content">
+    <div class="breadcrum">
+      <nav><span [routerLink]="['HOME' | absolute]">Home</span> / Training / Training Details</nav>
+    </div>
+    <div class="heading">
+      <h3>Micro Frontend Angular</h3>
+      <button (click)="openDialog()">Enroll Training</button>
+    </div>
+
+    <div class="card">
+      <div class="trainig_detail">
+        <div class="trainig_detail_heading">
+          <h3>Training Details</h3>
+          <button>Proposed</button>
+        </div>
+
+        <div class="card_body">
+          <div class="title">
+            <div class="j">
+              <span>Title :</span>
+              <p>Micro Frontend Angular</p>
+            </div>
+            <div class="j">
+              <span>Training Duration</span>
+              <p>1 hrs</p>
+            </div>
+          </div>
+          <div class="dates">
+            <div class="start_date">
+              <span>Training Dates :</span>
+              <p>Jan-05-2023   -   Jan-05-2023</p>
+            </div>
+            <div class="start_date">
+              <span>Training mode :</span>
+              <p>Online</p>
+            </div>
+          </div>
+          <div class="mode-batch">
+            <div class="training_mode">
+              <span>Who can attend :</span>
+              <p>Angular</p>
+            </div>
+            <div class="training_mode">
+              <span>No. of seats :</span>
+              <p>55</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="description">
+        <div class="description_heading">
+          <h3>Description</h3>
+        </div>
+
+        <div class="description_content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta consequatur reiciendis unde architecto impedit, quibusdam similique accusamus nisi? Libero blanditiis iste unde deleniti, quasi eaque nobis expedita architecto itaque debitis!</p>
+        </div>
+      </div>
+
+      <div class="description">
+        <div class="description_heading">
+          <h3>Support details</h3>
+        </div>
+
+        <div class="description_content">
+          <p>This is online training, so no support required.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

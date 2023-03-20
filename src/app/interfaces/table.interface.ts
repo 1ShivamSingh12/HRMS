@@ -149,24 +149,22 @@ export interface ATTENDENCE {
  attendence:any
 }
 
-export interface Options {
-  search?: boolean;
-  filter?: any;
-  show?: any;
-  pagination?: boolean;
-  searchPlaceholder?: string;
-  addButton?: boolean;
-  actionButton?: boolean;
-  ButtonDetails?: AddButtonDetails;
-  ActionButtonDetails?: AddButtonDetails;
+export interface TICKET {
+  action: any;
+  ticket_code: any;
+  priority: any;
+  employee: string;
+  subject: string;
+  status: any;
+  date: string;
 }
 
-export interface AddButtonDetails {
-  route?: string;
-  buttonName: string;
-  // isAddbuttonContainsQuery?: boolean
-}
-export interface DropDownDetails {
-  buttonName: string;
-  // isAddbuttonContainsQuery?: boolean
+export interface DSR {
+  sr_no: any;
+  emp_name: any;
+  emp_id: any;
+  email: string;
+  employee_type: string;
+  date: string;
+  total: any;
 }

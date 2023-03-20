@@ -2,15 +2,14 @@
 
 .container {
   padding: 20px;
-  background-color: #f2f6fc;
+  background-color: $common-background;
   min-height: 100%;
   .card-header {
     margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
+    @include flex('',space-between);
     h3 {
       font-size: 24px;
-      color: #199cff;
+      color: $primary-blue;
       font-weight: 500;
       line-height: 1.2;
       margin-bottom: 0;
@@ -25,23 +24,19 @@
   }
 
   .card {
-    background-color: #fff;
+    background-color: $primary-white;
     margin: 0px 8px 0px 8px;
     border: 1px solid #dbe2ea;
     border-radius: 5px;
     .card_body {
       padding: 30px;
       h1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(center,center);
         font-size: 35px;
       }
 
       .button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(center,center);
         button {
           @include button(10px)
         }

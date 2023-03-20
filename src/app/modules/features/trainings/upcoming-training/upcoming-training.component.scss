@@ -2,13 +2,13 @@
 
 .container {
   padding: 20px;
-  background-color: #f2f6fc;
+  background-color: $common-background;
   min-height: 100%;
   .card-header {
     margin-bottom: 30px;
     h3 {
       font-size: 24px;
-      color: #199cff;
+      color: $primary-blue;
       font-weight: 500;
       line-height: 1.2;
       margin-bottom: 0;
@@ -16,13 +16,13 @@
   }
 
   .card {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+    @include grid(grid-template-columns,'33% 33% 33%' ,'');
+
     .card_upper {
       padding: 20px;
       border: 1px solid rgba(150, 165, 184, 0.3);
       border-radius: 10px;
-      background-color: #fff;
+      background-color: $primary-white;
 
       .card_body {
         @include position(relative, "", "", "", "");
@@ -31,7 +31,7 @@
         .job_logo {
           @include flex(center, center);
           border: 1px solid rgba(150, 165, 184, 0.3);
-          background-color: #f2f6fc;
+          background-color: $common-background;
           padding: 20px;
           min-height: 130px;
           border-radius: 10px;
@@ -103,25 +103,25 @@
         h3 {
           font-family: "Lato";
           font-size: 16px;
-          color: #000000;
+          color: black000;
           font-weight: 600;
           line-height: 1.2;
         }
 
         .traning_details {
-          display: flex;
-          justify-content: space-between;
+          @include flex('',space-between);
           margin-top: 25px;
         }
       }
 
       .card_button {
-        display: grid;
-        grid-template-columns: 49% 49%;
-        column-gap: 2%;
+        @include grid(grid-template-columns,'49% 49%' ,'2%');
+
         padding: 15px 0 0 0;
 
         button {
+          width: 100%;
+          cursor: pointer;
           font-size: 14px;
           color: $primary-blue;
           font-weight: 500;
@@ -132,13 +132,7 @@
         }
 
         .refer_candidate_button {
-          background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
-          background-blend-mode: soft-light, normal;
-          border: 1px solid rgba(150, 165, 184, 0.2);
-          box-sizing: border-box;
-          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
-          border-radius: 4px;
-          color: $primary-white;
+          @include button(10px)
         }
       }
     }

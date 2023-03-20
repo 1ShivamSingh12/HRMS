@@ -33,7 +33,7 @@ export class LoginWithCredentialsComponent implements OnInit {
     if(this.loginForm.valid){
 
       if(this.loginForm.value.email == 'shivam12@gmail.com' && this.loginForm.value.password == '123456'){
-        sessionStorage.setItem('login','True')
+        localStorage.setItem('login','True')
         this.route.navigate(['dashboard/home'])
       }else{
         this.snackbar_service.openSnackBarErr('Login Credentials are invalid','red-snackbar')

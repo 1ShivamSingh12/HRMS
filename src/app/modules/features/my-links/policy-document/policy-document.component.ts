@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Options, POLICY } from 'src/app/interfaces/table.interface';
+import { MatTableDataSource } from '@angular/material/table';
+import { POLICY } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-policy-document',
@@ -7,10 +8,12 @@ import { Options, POLICY } from 'src/app/interfaces/table.interface';
   styleUrls: ['./policy-document.component.scss']
 })
 export class PolicyDocumentComponent implements OnInit {
+  dataSource = new MatTableDataSource<POLICY>();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.data()
   }
   tableColumns: Array<any> = [
     {
@@ -42,7 +45,7 @@ export class PolicyDocumentComponent implements OnInit {
       columnDef: 'action',
       header: 'Action',
       cell: (element: Record<string, any>) => `${element['action']}`,
-      isButton:true,
+      type:'button',
       buttons:[
         {
           heading:'Download',
@@ -63,14 +66,9 @@ export class PolicyDocumentComponent implements OnInit {
     },
   ];
 
-  POLICY: Options = {
-    search: false,
-    show:false,
-    searchPlaceholder: "Search...",
-    pagination: false,
-    addButton: false,
-};
+  data(){
+    this.dataSource = new MatTableDataSource<POLICY>(this.tableData);
 
-policyConfig: Options = this.POLICY;
+  }
 
 }

@@ -13,7 +13,7 @@ export class ValidationErrorPipe implements PipeTransform {
     // if(form.get(control)?.touched || form.get(control)?.invalid){
 
     if(form.get(control)?.touched && form.get(control)?.invalid){
-      console.log(form,control,label,'lll');
+      // console.log(form,control,label,'lll');
 
       const error = form.get(control)?.errors
 

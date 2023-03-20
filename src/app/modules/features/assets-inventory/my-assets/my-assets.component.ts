@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ASSETS, Options } from 'src/app/interfaces/table.interface';
+import { MatTableDataSource } from '@angular/material/table';
+import { ASSETS_CONFIG, Options } from 'src/app/constants/tableConfig';
+import { ASSETS } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-my-assets',
@@ -7,10 +9,15 @@ import { ASSETS, Options } from 'src/app/interfaces/table.interface';
   styleUrls: ['./my-assets.component.scss']
 })
 export class MyAssetsComponent implements OnInit {
+  assetsConfig: Options = ASSETS_CONFIG;
+  dataSource = new MatTableDataSource<ASSETS>()
+
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<ASSETS>(this.tableData)
+
   }
 
 
@@ -70,14 +77,6 @@ export class MyAssetsComponent implements OnInit {
     },
   ];
 
-  ASSETS: Options = {
-    search: true,
-    show:true,
-    searchPlaceholder: "Search by asset name, category",
-    pagination: true,
-    addButton: false,
-};
 
-assetsConfig: Options = this.ASSETS;
 
 }

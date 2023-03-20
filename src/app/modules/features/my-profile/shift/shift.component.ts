@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { myProfileAnimation } from 'src/app/animations/myProfileAnimation';
 import { SHIFT } from 'src/app/interfaces/table.interface';
 
@@ -6,15 +7,16 @@ import { SHIFT } from 'src/app/interfaces/table.interface';
   selector: 'app-shift',
   templateUrl: './shift.component.html',
   styleUrls: ['./shift.component.scss'],
-  animations: [
-    myProfileAnimation
-  ],
+  animations: [myProfileAnimation],
 })
 export class ShiftComponent implements OnInit {
 
-  constructor() { }
+  dataSource = new MatTableDataSource<SHIFT>();
+
+  constructor() {}
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<SHIFT>(this.tableData);
   }
 
   tableColumns: Array<any> = [
@@ -32,12 +34,8 @@ export class ShiftComponent implements OnInit {
 
   tableData: Array<SHIFT> = [
     {
-      date_of_joining:' Feb-07-2022',
+      date_of_joining: ' Feb-07-2022',
       office_shift: 'Morning Shift',
-
     },
-
   ];
-
-
 }

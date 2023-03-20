@@ -1,3 +1,5 @@
+@import '../../../../../../../scss/mix';
+
 .container {
   padding: 20px;
   .heading {
@@ -28,21 +30,22 @@
         margin: 0 0 8px;
       }
       .title {
-        display: flex;
+        @include flex('','');
       }
-      .dates{
-        display: flex; justify-content: space-between; width: 70%
+      .dates {
+        @include flex('',space-between);
+        width: 70%;
       }
-      .mode-batch{
-        display: flex; justify-content: space-between; width: 69%
-
+      .mode-batch {
+        @include flex('',space-between);
+        width: 69%;
       }
       .start_date {
-        display: flex;
+        @include flex('','');
       }
 
       .training_mode {
-        display: flex;
+        @include flex('','');
       }
     }
   }
@@ -64,19 +67,18 @@
 :host ::ng-deep .container {
   .tables {
     overflow-x: scroll;
-
   }
 }
 
-@media only screen and (max-width:888px){
-  .container{
-    .card_upper{
-      .card_body{
+@media only screen and (max-width: 888px) {
+  .container {
+    .card_upper {
+      .card_body {
         // display: block;
-        .dates{
+        .dates {
           display: block;
-        }.mode-batch{
-
+        }
+        .mode-batch {
           display: block;
         }
       }
@@ -84,13 +86,13 @@
   }
 }
 
-@media only screen and (max-width:400px){
-  .container{
-    .card_upper{
-      .card_body{
-       span{
-        min-width: 100px;
-       }
+@media only screen and (max-width: 400px) {
+  .container {
+    .card_upper {
+      .card_body {
+        span {
+          min-width: 100px;
+        }
       }
     }
   }

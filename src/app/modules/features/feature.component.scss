@@ -6,7 +6,7 @@
   z-index: 10000;
   mat-toolbar {
     padding: 17px 20px 0px 14px;
-    @include flex('',space-between);
+    @include flex("", space-between);
     background-color: $primary-white;
 
     .header-left {
@@ -18,15 +18,15 @@
 
       button {
         border: none;
-        background-color: white;
-        @include position(relative , '',10px,'','');
+        background-color: $pure-white;
+        @include position(relative, "", 10px, "", "");
         cursor: pointer;
 
-        &:hover{
+        &:hover {
           color: blue;
         }
 
-        mat-icon{
+        mat-icon {
           position: relative;
           bottom: 10px;
         }
@@ -37,17 +37,18 @@
       }
     }
     .right {
-      @include grid(grid-template-columns , '55% 23% 10%', 18px );
+      @include grid(grid-template-columns, "55% 23% 10%", 18px);
       padding: 10px;
       .logo {
       }
       .userName {
-        img{
+        cursor: pointer;
+        img {
           width: 31px;
           height: 31px;
           border-radius: 50%;
         }
-        span{
+        span {
           position: relative;
           bottom: 8px;
           right: 10px;
@@ -60,45 +61,46 @@
         padding: 0;
         // width: 80%;
         // background-color: red;
-        button{
-          color: white;
+        button {
+          color: $pure-white;
           background-color: red;
           padding: 3px;
           margin-left: 9px;
           // width: 30px;
           font-weight: bold;
-
         }
       }
 
-      .bellIcon{
-        mat-icon{
-          color: grey
+      .bellIcon {
+        mat-icon {
+          color: grey;
         }
       }
+
+
     }
   }
 }
 
 .example-container {
-  @include position(relative , 10px,'','','');
-  .example-sidenav{
-    mat-nav-list{
-      @include custom-scroller('y');
-      mat-list-item{
+  @include position(relative, 10px, "", "", "");
+  .example-sidenav {
+    mat-nav-list {
+      @include custom-scroller("y");
+      mat-list-item {
         margin-bottom: 8px;
-        mat-icon{
+        mat-icon {
           margin-right: 10px;
           margin-left: 5px;
         }
-        span{
+        span {
           font-weight: 500;
           font-size: 14px;
 
-          .s{
+          .s {
             display: none;
           }
-          .w{
+          .w {
             background-color: red;
           }
         }
@@ -106,23 +108,26 @@
     }
   }
 
-  .parent{
-    &:hover{
+  .parent {
+    &:hover {
       color: blue;
     }
   }
-  .activeLink{
+  .activeLink {
+    color: blue;
+    border-left: 4px solid blue;
+  }
+  .activeLink1 {
     color: blue;
   }
 
-  ::ng-deep.mat-drawer-content{
-    background-color: white
+  ::ng-deep.mat-drawer-content {
+    background-color: white;
   }
-
 }
 
 .example-sidenav-content {
-  @include custom-scroller('y');
+  @include custom-scroller("y");
   height: 900px;
 }
 .example-sidenav {
@@ -150,46 +155,40 @@
   transform: scaleY(1);
 }
 
-
 @media only screen and (max-width: 1000px) {
-  .header{
-    mat-toolbar{
+  .header {
+    mat-toolbar {
       display: block;
-      .right{
+      .right {
         display: none;
       }
 
-      .header-left{
-
-        @include flex('',space-between);
+      .header-left {
+        @include flex("", space-between);
         img {
           width: 17%;
         }
 
-
-        button{
-          mat-icon{
+        button {
+          mat-icon {
             position: relative;
             bottom: 0;
           }
         }
 
-        .app_logo{
+        .app_logo {
           display: none;
         }
       }
     }
   }
 
-
-  .example-container{
-
-
-    ::ng-deep.mat-drawer-content{
+  .example-container {
+    ::ng-deep.mat-drawer-content {
       display: contents;
     }
 
-    .secondary{
+    .secondary {
       display: none;
     }
 
@@ -199,15 +198,14 @@
   }
 }
 
-@media only screen and (max-width:600px){
-  .header{
-    mat-toolbar{
-      .header-left{
-        img{
+@media only screen and (max-width: 600px) {
+  .header {
+    mat-toolbar {
+      .header-left {
+        img {
           width: 35%;
         }
       }
-
     }
   }
 }

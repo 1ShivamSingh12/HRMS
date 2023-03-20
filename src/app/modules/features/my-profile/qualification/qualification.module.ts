@@ -7,7 +7,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { FieldErrorModule } from 'src/app/shared/field-error/field-error.module';
-import { ListingModule } from 'src/app/shared/listing/listing.module';
 import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -30,7 +29,7 @@ import { DeleteQualificationComponent } from './delete-qualification/delete-qual
     MatSelectModule,
     MatOptionModule,
     FieldErrorModule,
-    ListingModule,
+
     CommonTableModule,
     MatDatepickerModule,
     MatNativeDateModule,

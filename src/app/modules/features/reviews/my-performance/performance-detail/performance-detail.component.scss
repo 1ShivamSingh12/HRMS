@@ -1,6 +1,8 @@
+@import '../../../../../../scss/mix';
+
 .container{
   .cards{
-   display: flex;
+    @include flex('','');
     .honours {
       background-color: #cbe7ff;
       border-radius: 10px;
@@ -8,7 +10,7 @@
     }
 
     .ratings{
-      display: flex;
+      @include flex('','');
       margin-left: 10px;
       .rating{
         background: #E5FEC0;
@@ -20,7 +22,7 @@
         }
       }
       .rating_breakup{
-        display: flex;
+        @include flex('','');
         background:#ebf3e0;
 
         .technical{

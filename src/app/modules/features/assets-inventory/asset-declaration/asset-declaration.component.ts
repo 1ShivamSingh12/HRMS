@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ASSETS_DECLARATION, Options } from 'src/app/interfaces/table.interface';
+import { MatTableDataSource } from '@angular/material/table';
+import { ASSETS_DECLARATION_CONFIG, Options } from 'src/app/constants/tableConfig';
+import { ASSETS_DECLARATION } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-asset-declaration',
@@ -8,13 +10,15 @@ import { ASSETS_DECLARATION, Options } from 'src/app/interfaces/table.interface'
 })
 export class AssetDeclarationComponent implements OnInit {
 
+  assetsDeclarationConfig: Options = ASSETS_DECLARATION_CONFIG;
+  dataSource = new MatTableDataSource<ASSETS_DECLARATION>()
+
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<ASSETS_DECLARATION>(this.tableData)
+
   }
-
-
-  
 
   show : boolean = false
 
@@ -106,14 +110,6 @@ export class AssetDeclarationComponent implements OnInit {
     },
   ];
 
-  ASSETS_DECLARATION: Options = {
-    search: true,
-    show:true,
-    searchPlaceholder: "Search..",
-    pagination: true,
-    addButton: false,
-};
 
-assetsDeclarationConfig: Options = this.ASSETS_DECLARATION;
 
 }

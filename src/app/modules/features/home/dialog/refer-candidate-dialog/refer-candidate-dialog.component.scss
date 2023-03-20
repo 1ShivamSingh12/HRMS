@@ -3,11 +3,10 @@
 .header{
   background-color: #F3F3F3;
   padding: 20px 10px 10px 20px;
-  display: flex;
-  justify-content: space-between;
+  @include flex('',space-between);
   h2{
     font-size: 20px;
-    color: #199CFF;
+    color: $primary-blue;
     font-weight: 500;
     line-height: 1.5;
     margin: 0;
@@ -17,10 +16,8 @@
     width: 30px;
     border-radius: 50%;
     border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
+    @include flex(center,center);
+    background-color: $primary-white;
   }
 }
 
@@ -37,8 +34,7 @@ mat-dialog-content{
     h3{
       font-size: 24px;
       font-weight: 500;
-      display: flex;
-      align-items: center;
+      @include flex(center,'');
 
       &::after{
         content: '';
@@ -71,9 +67,8 @@ mat-dialog-content{
     }
   }
   .job_detail{
-    display: grid;
-    grid-template-columns: 48% 48%;
-    column-gap: 4%;
+    @include grid(grid-template-columns,'48% 48%' ,'4%');
+
   }
 
   .candidate_detail{
@@ -94,7 +89,7 @@ mat-dialog-content{
         border: 1px solid #d8d8d8;
         border-radius: 2px !important;
         padding: 13px 10px !important;
-        background: #fff;
+        background: $primary-white;
         width: 92%;
       }
     }
@@ -122,14 +117,13 @@ mat-dialog-content{
 }
 
 mat-dialog-actions{
-  display: flex;
-  justify-content: flex-end;
+  @include flex('',flex-end);
   .submit{
     @include button(-1px)
   }
 
   .cancel{
-    background-color:#fff;
+    background-color:$primary-white;
     color: #96A5B8;
     border: 1.5px solid rgba(150, 165, 184, 0.5);
   }
@@ -150,8 +144,7 @@ mat-dialog-actions{
   }
 
   mat-dialog-actions{
-    display: flex;
-    justify-content: center;
+    @include flex('',center);
   }
 }
 

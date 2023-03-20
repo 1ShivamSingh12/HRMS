@@ -1,3 +1,5 @@
+@import '../../../../../../scss/mix';
+
 .main-container {
   background-color: #f3f6fc;
   padding: 35px;
@@ -6,13 +8,13 @@
     h3 {
       span{
 
-        color: #199CFF;
+        color: $primary-blue;
       }
     }
   }
 
   .container {
-    background-color: white;
+    background-color: $pure-white;
     padding: 25px;
     margin-top: 20px;
 
@@ -30,16 +32,15 @@
       }
 
       .list-item {
-        display: flex;
-        justify-content: space-evenly;
+        @include flex('',space-evenly);
 
         h4 {
           background-color: #f3f6fc;
           padding: 8px;
-          color: #199cff;
+          color: $primary-blue;
           border-radius: 5px;
           span {
-            color: #199cff;
+            color: $primary-blue;
           }
         }
       }

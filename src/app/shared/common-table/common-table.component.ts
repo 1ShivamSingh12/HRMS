@@ -1,4 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { Options } from 'src/app/constants/tableConfig';
+
 
 
 @Component({
@@ -6,35 +10,47 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './common-table.component.html',
   styleUrls: ['./common-table.component.scss'],
 })
-export class CommonTableComponent implements OnInit {
+export class CommonTableComponent implements OnInit,OnChanges {
+  displayedColumns: Array<any> = [];
+  filterValue:any
+
+  constructor() {}
   @Input() tableColumns: Array<any> = [];
-
-  @Input() tableData: Array<any> = [];
-  @Input() isPageable: boolean = false;
-  @Input() defaultPaginationSize: number[] = [5, 10, 15];
-  @Input() defaultPageSize = this.defaultPaginationSize[1];
+  @Input() dataSource! : MatTableDataSource<any>
+  @Input() tableData!: Array<any>;
   @Output() buttonClick = new EventEmitter<string[]>();
-
-  get dataSource(){
-    console.log(this.tableData,"123");
-    return this.tableData;
-  }
+  @Input() config! : Options
+  @ViewChild('paginator') paginator!: MatPaginator;
 
   ngAfterViewInit(){
-    console.log(this.tableColumns,"TC");
+    if(this.dataSource){
+      console.log(this.dataSource.data,'wefhwefyuewegi');
+
+      this.dataSource.paginator = this.paginator;
+    }
   }
 
-
-  displayedColumns: Array<any> = [];
-  // dataSource: MatTableDataSource<any> = ew MatTableDataSource();
-  constructor() {}
+  ngOnChanges(){
+    console.log('jkvvh');
+    this.dataSource.paginator = this.paginator
+  }
 
   ngOnInit(): void {
     this.displayedColumns = this.tableColumns.map((c) => c.columnDef);
     console.log(this.tableColumns,'ppppppp');
+    console.log(this.dataSource,'wcwecjebc');
 
-    // this.dataSource = new MatTableDataSource(this.tableData);
-    // console.log(this.data, 'kkkk');
+  }
+
+
+
+  applyFilter(event:Event){
+    this.filterValue = (event.target as HTMLInputElement).value;
+    console.log(this.dataSource,'this.dataSource');
+    console.log(this.filterValue,'kkkkkk');
+    this.filterValue = this.filterValue?.trim().toLowerCase();
+    this.dataSource.filter = this.filterValue?.trim().toLowerCase();
+
   }
 
 }

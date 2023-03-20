@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { SUB_TOPICS } from 'src/app/interfaces/table.interface';
 
 @Component({
@@ -7,10 +8,13 @@ import { SUB_TOPICS } from 'src/app/interfaces/table.interface';
   styleUrls: ['./sub-topics.component.scss']
 })
 export class SubTopicsComponent implements OnInit {
+  dataSource = new MatTableDataSource<SUB_TOPICS>();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<SUB_TOPICS>(this.tableData);
+
   }
 
   tableColumns: Array<any> = [

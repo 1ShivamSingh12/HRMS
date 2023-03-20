@@ -1,7 +1,7 @@
 @import "../../../../../../scss/mix";
 
 .container {
-  background-color: #f2f6fc;
+  background-color: $common-background;
   padding: 21px 30px 0px 35px;
   min-height: 100%;
   padding: 2em;
@@ -21,7 +21,7 @@
     }
 
     .card_upper {
-      background-color: #fff;
+      background-color: $primary-white;
       border: 1px solid #dbe2ea;
       border-radius: 5px;
 
@@ -47,11 +47,11 @@
   padding: 20px;
 }
 ::ng-deep.mat-tab-label.mat-tab-label-active {
-  background-color: #26B4FF;
-  color: white;
+  background-color: $darkbklue;
+  color: $pure-white;
   border-radius: 10px;
 }
 
 ::ng-deep.mat-tab-group.mat-primary .mat-ink-bar{
-  background-color: #fff;
+  background-color: $primary-white;
 }

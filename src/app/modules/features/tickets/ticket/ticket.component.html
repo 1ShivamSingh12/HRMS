@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="card">
+    <div class="card_upper">
+      <div class="card_upper_heading">
+        <h3>Create New Ticket</h3>
+        <button (click)="showticket()">+ Add New</button>
+      </div>
+
+      <form [formGroup]="ticket">
+        <div class="new_ticket" *ngIf="!show">
+          <div class="ticket_type">
+            <div class="input-box">
+              <p>Subject</p>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Subject" />
+              </mat-form-field>
+            </div>
+            <div class="input-box">
+              <p>Departmnet</p>
+              <mat-form-field appearance="outline">
+                <mat-select placeholder="Leave Type">
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2">Option 2</mat-option>
+                  <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="input-box">
+              <p>Ticket Category</p>
+              <mat-form-field appearance="outline">
+                <mat-select placeholder="Leave Type">
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2">Option 2</mat-option>
+                  <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="input-box">
+              <p>Priority</p>
+              <mat-form-field appearance="outline">
+                <mat-select placeholder="Leave Type">
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2">Option 2</mat-option>
+                  <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="ticket_description">
+            <p>Ticket Description</p>
+            <angular-editor [config]="editorConfig" placeholder="'Enter industrytext here...'"></angular-editor>
+          </div>
+
+          <div class="buttons">
+            <button class="save_button">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="card_lower">
+      <div class="card_lower_header">
+        <h3>List All Tickets</h3>
+      </div>
+      <app-common-table [config]="ticketconfig" [tableColumns]="tableColumns" [dataSource]="dataSource"
+       ></app-common-table>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -253,6 +253,14 @@ export const UPCOMING_TRAINING : Route = {
   },
 }
 
+export const VIEW_DETAILS_UPCOMING_TRAINING : Route = {
+  path:'view-detail',
+  get fullurl(): string {
+    return `${UPCOMING_TRAINING.fullurl}/${this.path}`;
+  },
+}
+
+
 export const ONGOING_TRAINING : Route = {
   path:'ongoing_trainings',
   get fullurl(): string {
@@ -356,5 +364,46 @@ export const FLOATING_LEAVE : Route = {
   path:'floating-leave',
   get fullurl(): string {
     return `${LEAVE.fullurl}/${this.path}`;
+  },
+}
+
+/* TICKET */
+
+export const TICKETS : Route = {
+  path:'tickets',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+}
+
+export const TICKET : Route = {
+  path:'ticket',
+  get fullurl(): string {
+    return `${TICKETS.fullurl}/${this.path}`;
+  },
+}
+
+
+/* dsr */
+
+export const DSR : Route = {
+  path:'dsr',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+}
+
+export const MY_DSR : Route = {
+  path:'my-dsr',
+  get fullurl(): string {
+    return `${DSR.fullurl}/${this.path}`;
+  },
+}
+
+/* PROJECTS */
+export const PROJECTS : Route = {
+  path:'projects',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
   },
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ASSETS_INVENTORY, ASSET_DECLARATION, ATTENDANCE, DIRECTORY, DOCUMENTS, ENTREPRENEURSHIP, FRESHER_TRAINING, HOLIDAY_CALENDER, HOME, JOB_OPENING, LEAVE, MY_INTERVIEW, MY_LINKS, MY_PERFORMANCE, MY_PROFILE, MY_TRAINING, ONGOING_TRAINING, RECRUITMENT, REFERRAL_LIST, REFER_A_FRIEND, REQUESTED_TRAINING, REQUEST_ASSET, REVIEWS, TRAINING, UPCOMING_TRAINING } from 'src/app/constants/routes';
+import { ASSETS_INVENTORY, ASSET_DECLARATION, ATTENDANCE, DIRECTORY, DOCUMENTS, DSR, ENTREPRENEURSHIP, FRESHER_TRAINING, HOLIDAY_CALENDER, HOME, JOB_OPENING, LEAVE, MY_INTERVIEW, MY_LINKS, MY_PERFORMANCE, MY_PROFILE, MY_TRAINING, ONGOING_TRAINING, PROJECTS, RECRUITMENT, REFERRAL_LIST, REFER_A_FRIEND, REQUESTED_TRAINING, REQUEST_ASSET, REVIEWS, TICKETS, TRAINING, UPCOMING_TRAINING } from 'src/app/constants/routes';
 import { FeatureComponent } from './feature.component';
 
 const routes: Routes = [
@@ -83,6 +83,21 @@ const routes: Routes = [
         path: LEAVE.path,
         loadChildren: () =>
           import('./leave/leave.module').then((m) => m.LeaveModule),
+      },
+      {
+        path: TICKETS.path,
+        loadChildren: () =>
+          import('./tickets/tickets.module').then((m) => m.TicketsModule),
+      },
+      {
+        path: DSR.path,
+        loadChildren: () =>
+          import('./dsr/dsr.module').then((m) => m.DsrModule),
+      },
+      {
+        path: PROJECTS.path,
+        loadChildren: () =>
+          import('./projects/projects.module').then((m) => m.ProjectsModule),
       },
     ],
   },
