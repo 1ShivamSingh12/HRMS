@@ -17,33 +17,18 @@
             </div>
             <div class="input-box">
               <p>Departmnet</p>
-              <mat-form-field appearance="outline">
-                <mat-select placeholder="Leave Type">
-                  <mat-option value="option1">Option 1</mat-option>
-                  <mat-option value="option2">Option 2</mat-option>
-                  <mat-option value="option3">Option 3</mat-option>
-                </mat-select>
-              </mat-form-field>
+            <app-dropdown-with-search [data]="dropDown" [placeholder]="'Department'" [myControlName]=""></app-dropdown-with-search>
+
             </div>
             <div class="input-box">
               <p>Ticket Category</p>
-              <mat-form-field appearance="outline">
-                <mat-select placeholder="Leave Type">
-                  <mat-option value="option1">Option 1</mat-option>
-                  <mat-option value="option2">Option 2</mat-option>
-                  <mat-option value="option3">Option 3</mat-option>
-                </mat-select>
-              </mat-form-field>
+              <app-dropdown-with-search [data]="dropDown" [placeholder]="'Ticket Category'" [myControlName]=""></app-dropdown-with-search>
+
             </div>
             <div class="input-box">
               <p>Priority</p>
-              <mat-form-field appearance="outline">
-                <mat-select placeholder="Leave Type">
-                  <mat-option value="option1">Option 1</mat-option>
-                  <mat-option value="option2">Option 2</mat-option>
-                  <mat-option value="option3">Option 3</mat-option>
-                </mat-select>
-              </mat-form-field>
+              <app-dropdown-with-search [data]="dropDown" [placeholder]="'Priority'" [myControlName]=""></app-dropdown-with-search>
+
             </div>
           </div>
 

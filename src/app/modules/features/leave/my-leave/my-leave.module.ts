@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -16,12 +16,10 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
-
+import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
 
 @NgModule({
-  declarations: [
-    MyLeaveComponent
-  ],
+  declarations: [MyLeaveComponent],
   imports: [
     CommonModule,
     MyLeaveRoutingModule,
@@ -38,9 +36,9 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     MatInputModule,
     AngularEditorModule,
     HttpClientModule,
-
+    DropdownWithSearchModule,
     CommonTableModule,
-    FooterModule
-  ]
+    FooterModule,
+  ],
 })
-export class MyLeaveModule { }
+export class MyLeaveModule {}

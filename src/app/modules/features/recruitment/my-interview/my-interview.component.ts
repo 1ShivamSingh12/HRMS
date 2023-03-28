@@ -1,17 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { INTERVIEW_DATA } from 'src/app/constants/const_data';
+import { departmentDrop, statusDropDown } from 'src/app/constants/drop_down_data';
 import { MY_INTERVIEW_CONFIQ, Options } from 'src/app/constants/tableConfig';
 import { MY_INTERVIEW } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-my-interview',
   templateUrl: './my-interview.component.html',
-  styleUrls: ['./my-interview.component.scss']
+  styleUrls: ['./my-interview.component.scss'],
 })
 export class MyInterviewComponent implements OnInit {
   interviewConfig: Options = MY_INTERVIEW_CONFIQ;
   dataSource = new MatTableDataSource<MY_INTERVIEW>();
-
+  department = new FormControl();
+  status = new FormControl();
+  departmentDropDown = departmentDrop
+  statusDropDown = statusDropDown
   constructor() { }
 
   ngOnInit(): void {
@@ -71,18 +77,30 @@ export class MyInterviewComponent implements OnInit {
     },
   ];
 
-  tableData: Array<MY_INTERVIEW> = [
-    {
-      serial_number: 'dwqdwdwd',
-      department: '',
-      name: '',
-      email: '',
-      mobileNo: '',
-      round_type: '',
-      interview_date: '',
-      interview_time : '',
-      final_status:'',
-      action:''
-    },
-  ];
+  tableData: Array<any> = INTERVIEW_DATA;
+
+  filter: any = INTERVIEW_DATA;
+
+  filterValue(e: any) {
+    console.log(e.value,'dkjcnwe');
+
+    if (this.department.value && !this.status.value) {
+      this.filter = this.tableData.filter(
+        (item: any) => item.department == this.department.value
+      );
+    } else if (!this.department.value && this.status.value) {
+      this.filter = this.tableData.filter(
+        (item: any) => item.final_status == this.status.value
+      );
+    }
+    if (this.department.value && this.status.value) {
+      this.filter = this.tableData.filter((item) => {
+        if (item.department.toLowerCase().includes(this.department.value.toLowerCase()) &&item.final_status.toLowerCase().includes(this.status.value.trim().toLowerCase())){
+          return true;
+        }
+        return false;
+      });
+    }
+    this.dataSource = new MatTableDataSource<MY_INTERVIEW>(this.filter);
+  }
 }

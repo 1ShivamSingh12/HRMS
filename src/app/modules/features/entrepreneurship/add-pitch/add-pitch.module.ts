@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { FieldErrorModule } from 'src/app/shared/field-error/field-error.module';
 import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
+import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { validationError } from 'src/app/pipes/validation-error/valiadation-erro
     FooterModule,
     FieldErrorModule,
     AngularEditorModule,
-    validationError
+    validationError,
+    DropdownWithSearchModule
   ]
 })
 export class AddPitchModule { }

@@ -7,16 +7,14 @@
 
   gap: 10px;
 
-  .image{
-    img{
-    width: 100%;
+  .image {
+    img {
+      width: 100%;
+    }
+    button {
+      position: relative;
+    }
   }
-  button{
-    position: relative;
-  }
-
-  }
-
 
   // h2 {
   //   font-size: 16px;
@@ -147,7 +145,7 @@
   min-height: 200px;
   background-color: #ccc;
   background-size: cover !important;
-  @include flex(center,center);
+  @include flex(center, center);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 

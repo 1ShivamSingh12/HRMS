@@ -3,7 +3,8 @@
 .container {
   padding: 20px;
   background-color: $common-background;
-  min-height: 100%;
+
+   min-height: 100%;
   .card-header {
     margin-bottom: 30px;
     h3 {
@@ -16,7 +17,7 @@
   }
 
   .card {
-    @include grid(grid-template-columns,'33% 33% 33%' ,'');
+    @include grid(grid-template-columns, "33% 33% 33%", "");
 
     .card_upper {
       padding: 20px;
@@ -31,8 +32,7 @@
         .job_logo {
           @include flex(center, center);
           border: 1px solid rgba(150, 165, 184, 0.3);
-          background-color: $common-background;
-          padding: 20px;
+                   padding: 20px;
           min-height: 130px;
           border-radius: 10px;
 
@@ -109,13 +109,13 @@
         }
 
         .traning_details {
-          @include flex('',space-between);
+          @include flex("", space-between);
           margin-top: 25px;
         }
       }
 
       .card_button {
-        @include grid(grid-template-columns,'49% 49%' ,'2%');
+        @include grid(grid-template-columns, "49% 49%", "2%");
 
         padding: 15px 0 0 0;
 
@@ -132,9 +132,17 @@
         }
 
         .refer_candidate_button {
-          @include button(10px)
+          @include button(10px);
         }
       }
+    }
+  }
+}
+
+@media only screen and(max-width:750px) {
+  .container {
+    .card {
+      @include grid(grid-template-columns, "100%", "");
     }
   }
 }

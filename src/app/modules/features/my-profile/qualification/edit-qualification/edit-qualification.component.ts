@@ -1,6 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
 
 @Component({
@@ -11,11 +12,11 @@ import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
 export class EditQualificationComponent implements OnInit {
 
   qualification!: FormGroup;
-  constructor(private fb: FormBuilder , private dialog:MatDialog , @Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(private fb: FormBuilder , @Inject(MAT_DIALOG_DATA) public data: any , private dialogRef:MatDialogRef<EditQualificationComponent> , private datePipe: DatePipe) {}
 
   ngOnInit(): void {
     this.createForm();
-    this.interpolateData()
+    this.qualification.patchValue(this.dialogData)
     console.log(this.data,'wkewjfebfuefuieuifwe');
   }
 
@@ -24,21 +25,19 @@ export class EditQualificationComponent implements OnInit {
   createForm() {
     this.qualification = this.fb.group({
       school: ['', [COMMON_VALIDATION]],
-      eductaion_level: ['', [COMMON_VALIDATION, NAME_PATTERN]],
-      time: ['', [COMMON_VALIDATION]],
-      time_to: ['', [COMMON_VALIDATION]],
+      education_level: ['', [COMMON_VALIDATION, NAME_PATTERN]],
+      date_from: ['', [COMMON_VALIDATION]],
+      date_to: ['', [COMMON_VALIDATION]],
       language: ['', [COMMON_VALIDATION]],
       Courses: ['', [COMMON_VALIDATION]],
     });
   }
+  time:any
 
-  interpolateData(){
-    this.qualification.get('school')?.setValue(this.dialogData.school)
-    this.qualification.get('eductaion_level')?.setValue(this.dialogData.education_level)
-    this.qualification.get('time')?.setValue(this.dialogData.date_from)
-    this.qualification.get('time_to')?.setValue(this.dialogData.date_to)
-    this.qualification.get('Courses')?.setValue(this.dialogData.Courses)
-    this.qualification.get('language')?.setValue(this.dialogData.language)
-
+  updateValue(){
+    this.qualification.value['id']=this.dialogData.id
+    this.qualification.value.date_from = this.datePipe.transform(this.qualification.value.date_from, 'YYYY-MM-dd');
+    this.qualification.value.date_to = this.datePipe.transform(this.qualification.value.date_to, 'YYYY-MM-dd');
+    this.dialogRef.close(this.qualification.value);
   }
 }

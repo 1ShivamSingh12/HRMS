@@ -58,13 +58,13 @@ export class RequestedTraningComponent implements OnInit {
   ];
 
   tableData: Array<REQUESTED_TRAINING> = [
-    {
-      serial_number: '',
-      training_name: '',
-      timeline_to_conduct: '',
-      requested_date: '',
-      status: '',
-      action: '',
-    },
+    // {
+    //   serial_number: '',
+    //   training_name: '',
+    //   timeline_to_conduct: '',
+    //   requested_date: '',
+    //   status: '',
+    //   action: '',
+    // },
   ];
 }

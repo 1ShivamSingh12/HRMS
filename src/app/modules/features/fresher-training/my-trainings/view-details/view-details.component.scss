@@ -1,10 +1,11 @@
 @import "../../../../../../scss/mix";
 
 .container {
-  background-color: $common-background;
-  padding: 21px 30px 0px 35px;
+   padding: 21px 30px 0px 35px;
   min-height: 100%;
   padding: 2em;
+  background-color: $common-background;
+
   .card {
     .card_header {
       .card_header_body {
@@ -47,7 +48,7 @@
   padding: 20px;
 }
 ::ng-deep.mat-tab-label.mat-tab-label-active {
-  background-color: $darkbklue;
+  background-color: $darkblue;
   color: $pure-white;
   border-radius: 10px;
 }

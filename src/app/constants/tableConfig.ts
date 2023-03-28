@@ -77,7 +77,7 @@ export const MY_INTERVIEW_CONFIQ: Options = {
 export const REQUESTED_TRANING_DECLARATION: Options = {
   search: false,
   showFilter:true,
-  show:true,
+  show:false,
   searchPlaceholder: "Search..",
 };
 
@@ -92,5 +92,12 @@ export const DSR_CONFIG: Options = {
   search: true,
   showFilter:true,
   show:true,
+  searchPlaceholder: "Search..",
+};
+
+export const PROJECTS_CONFIG: Options = {
+  search: false,
+  showFilter:false,
+  show:false,
   searchPlaceholder: "Search..",
 };

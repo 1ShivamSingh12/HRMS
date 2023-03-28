@@ -4,7 +4,7 @@
       <div class="input-box">
         <span>Search: </span>
         <mat-form-field appearance="outline">
-          <input matInput placeholder={{config.searchPlaceholder}} (keyup)="applyFilter($event)" />
+          <input matInput placeholder="{{ config.searchPlaceholder }}" (keyup)="applyFilter($event)" />
         </mat-form-field>
       </div>
     </div>
@@ -14,21 +14,19 @@
   <div class="tables">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container *ngFor="let disCol of tableColumns; let colIndex = index" [matColumnDef]="disCol?.columnDef">
-
         <th mat-header-cell *matHeaderCellDef>
           {{ disCol?.header }}
         </th>
-
         <td mat-cell *matCellDef="let element" [ngSwitch]="disCol.type">
           <span *ngSwitchCase="">
             {{ disCol?.cell(element) }}
           </span>
           <span *ngSwitchCase="'link'">
-            <a href="url"> {{ disCol?.cell(element) }}</a>
+            <a href={{disCol.link}} target="_blank"> {{ disCol?.cell(element) }}</a>
           </span>
           <span *ngSwitchCase="'button'">
             <span *ngFor="let buttons of disCol.buttons">
-              <button class="{{ buttons.style }}" (click)="this.buttonClick.emit([buttons.action,buttons.data(element)])">
+              <button class="{{ buttons.style }}" (click)="this.buttonClick.emit([buttons.action, buttons.data(element)])">
                 <mat-icon *ngIf="buttons.icon">{{ buttons.icon }}</mat-icon><span>{{ buttons.heading }}</span>
               </button>
             </span>
@@ -37,11 +35,17 @@
 
       </ng-container>
 
+
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <tr class="no_data_row" *matNoDataRow>
+        <td class="mat-cell" colspan="20">No data available in table</td>
+      </tr>
     </table>
   </div>
 </div>
 
-<mat-paginator  *ngIf="config?.pagination" [pageSizeOptions]="[5,10]" #paginator></mat-paginator>
+<mat-paginator *ngIf="config?.pagination" [pageSizeOptions]="[5, 10]" #paginator></mat-paginator>

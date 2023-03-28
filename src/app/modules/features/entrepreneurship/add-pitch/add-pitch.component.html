@@ -50,23 +50,14 @@
         </div>
         <div class="input-box">
           <p>Industry</p>
-          <mat-form-field appearance="outline">
-            <mat-select placeholder="Select Industry" formControlName="industry">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
+        
+          <app-dropdown-with-search [myControlName]="addPitch.controls.industry" [data]="dropDown" [placeholder]="'Industry'"></app-dropdown-with-search>
           <app-field-error [error]="addPitch | validationError : 'industry' : 'Industry'"></app-field-error>
         </div>
         <div class="input-box">
           <p>Type</p>
-          <mat-form-field appearance="outline">
-            <mat-select placeholder="Type" formControlName="type">
-              <mat-option value="option1">Technical</mat-option>
-              <mat-option value="option2">Non Technical</mat-option>
-            </mat-select>
-          </mat-form-field>
+
+          <app-dropdown-with-search [myControlName]="addPitch.controls.type" [data]="dropDown" [placeholder]="'Type'"></app-dropdown-with-search>
           <app-field-error [error]="addPitch | validationError : 'type' : 'Type'"></app-field-error>
 
         </div>

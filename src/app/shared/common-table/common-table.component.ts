@@ -24,14 +24,13 @@ export class CommonTableComponent implements OnInit,OnChanges {
 
   ngAfterViewInit(){
     if(this.dataSource){
-      console.log(this.dataSource.data,'wefhwefyuewegi');
-
+      console.log(this.dataSource.data.length,'wefhwefyuewegi');
       this.dataSource.paginator = this.paginator;
     }
   }
 
   ngOnChanges(){
-    console.log('jkvvh');
+
     this.dataSource.paginator = this.paginator
   }
 

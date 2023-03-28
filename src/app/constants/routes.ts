@@ -407,3 +407,10 @@ export const PROJECTS : Route = {
     return `${DASHBOARD.fullurl}/${this.path}`;
   },
 }
+
+export const PROJECT_DETAIL : Route = {
+  path:'project-details',
+  get fullurl(): string {
+    return `${PROJECTS.fullurl}/${this.path}`;
+  },
+}

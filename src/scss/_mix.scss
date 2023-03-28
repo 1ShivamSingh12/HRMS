@@ -1,12 +1,12 @@
 $primary-blue: #199cff;
 $primary-white: #fff;
-$darkbklue: #26b4ff;
+$darkblue: #26b4ff;
 $pure-white: white;
 $common-background: #f2f6fc;
-$dullBlack:#a3a4a6;
-$headingsBlue:#3246d3;
-$dullGrey:#f9f9f9;
-$Blue : blue;
+$dullBlack: #a3a4a6;
+$headingsBlue: #3246d3;
+$dullGrey: #f9f9f9;
+$Blue: blue;
 
 @mixin flex($item, $align) {
   display: flex;
@@ -61,7 +61,6 @@ $Blue : blue;
 }
 
 @mixin button($padding) {
-
   padding: $padding;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
   background-blend-mode: soft-light, normal;
@@ -73,12 +72,41 @@ $Blue : blue;
 
   &:hover {
     cursor: pointer;
-    background: $darkbklue;
+    background: $darkblue;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.07), 0px 4px 5px 0px rgba(0, 0, 0, 0.05),
       0px 1px 10px 0px rgba(0, 0, 0, 0.03);
     color: $primary-white;
   }
 }
+
+@mixin commonCard() {
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
+  background-color: $primary-white;
+  border-radius: 10px;
+}
+
+@mixin commonTableStyling($border,$td_border) {
+    tbody {
+      tr {
+        td {
+          border: $td_border;
+          padding: 10px 10px 10px 20px;
+        }
+      }
+    }
+    thead {
+      tr {
+        th {
+          border: $border;
+          padding: 10px 10px 10px 20px;
+          color: black;
+          font-weight: 400;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
 
 @mixin custom-scroller($axis, $brodness: 4px) {
   @if ($axis== "x") {

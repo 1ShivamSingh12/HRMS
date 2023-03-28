@@ -2,10 +2,8 @@
 
 .container{
   .card{
-    box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
-    background-color: $primary-white;
-    border-radius: 10px;
-    margin-bottom: 20px;
+   @include commonCard();
+   margin-bottom: 20px;
     h3{
       font-size: 20px;
       color: $headingsBlue;
@@ -14,34 +12,26 @@
       border-bottom: 1px solid #f3f7fc;
       font-weight: 700;
     }
-
-    .card_inner{
-    }
   }
 }
 :host ::ng-deep .container {
   .tables{
     border: none;
     padding: 0px 18px 30px 16px;
-    overflow-x: scroll;
-    tbody{
-      background-color: $dullGrey;
-      tr{
-        td{
-          padding-left: 10px;
-          border-right: 1px solid #f1f1f2;
-        }
+    table{
+      @include commonTableStyling('','');
+      tbody{
+        background-color: $dullGrey;
       }
     }
-    thead{
-      tr{
-        th{
-          padding-left: 10px;
-          font-size: 14px;
-          color: black;
-          border-right: 1px solid #f1f1f2;
-        }
-      }
+  }
+}
+
+
+@media only screen and (max-width:344px){
+  :host ::ng-deep .container {
+    .tables{
+      overflow-x: scroll;
     }
   }
 }

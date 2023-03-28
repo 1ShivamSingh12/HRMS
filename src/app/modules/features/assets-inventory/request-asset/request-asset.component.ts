@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { commondropDown } from 'src/app/constants/drop_down_data';
 import { Options, REQUEST_ASSETS_CONFIG } from 'src/app/constants/tableConfig';
 import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 import { REQUEST_ASSETS } from 'src/app/interfaces/table.interface';
@@ -13,6 +14,7 @@ import { REQUEST_ASSETS } from 'src/app/interfaces/table.interface';
 export class RequestAssetComponent implements OnInit {
   requestAsset!: FormGroup;
   assetsConfig: Options = REQUEST_ASSETS_CONFIG;
+  dropDown = commondropDown
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -28,6 +30,7 @@ export class RequestAssetComponent implements OnInit {
       requested_at: ['', [COMMON_VALIDATION]],
       assets_category: ['', [COMMON_VALIDATION]],
       allocation_type: ['', [COMMON_VALIDATION]],
+      quantity:['',[COMMON_VALIDATION]]
     });
   }
 

@@ -1,10 +1,11 @@
 @import "../../../../../scss/mix";
 
 .container {
-  background-color: $common-background;
-  padding: 21px 30px 0px 35px;
+   padding: 21px 30px 0px 35px;
   min-height: 100%;
   padding: 2em;
+  background-color: $common-background;
+
   .card {
     .card_header {
       .card_header_body {
@@ -154,7 +155,7 @@
         padding: 1em;
         border-bottom: 1px solid #f3f7fc;
         button {
-          background-color: $darkbklue;
+          background-color: $darkblue;
           color: $primary-white;
           border: 0;
           width: 9rem;

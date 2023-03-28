@@ -1,9 +1,10 @@
 @import "../../../../../scss/mix";
 
 .container {
-  background-color: $common-background;
-  min-height: 100%;
+   min-height: 100%;
   padding: 2em;
+  background-color: $common-background;
+
   .heading {
     margin-bottom: 30px;
     h3 {
@@ -19,29 +20,26 @@
     border: 1px solid #d4d9df;
     border-radius: 5px;
     background-color: $primary-white;
-    // margin: 1em;
 
     .policy {
     }
   }
 }
-
 :host ::ng-deep .container {
   .tables {
-    // display: none;
     border-radius: 10px;
-    overflow-x: scroll;
     table {
+
+      @include commonTableStyling('','');
       tbody {
         tr {
           td.cdk-column-action {
             button {
+              cursor: pointer;
               padding: 4px 8px;
               background-color: #f8f8f8;
               border-style: none;
               border-radius: 5px;
-              cursor: pointer;
-
               box-shadow: 0 0 2px rgba(0, 0, 0, 0.19);
               width: 80%;
               transition: 0.3s ease-in-out all;
@@ -51,8 +49,23 @@
               }
             }
           }
+          td{
+            padding: 10px 10px 10px 10px;
+            color: black;
+            font-weight: 400;
+            font-size: 14px;
+          }
         }
       }
+    }
+  }
+}
+
+
+@media only screen and (max-width:700px){
+  :host ::ng-deep .container {
+    .tables {
+      overflow-x: scroll;
     }
   }
 }

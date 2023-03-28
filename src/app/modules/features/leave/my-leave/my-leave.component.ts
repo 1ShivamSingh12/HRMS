@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { commondropDown } from 'src/app/constants/drop_down_data';
 import { MY_LEVAE_CONFIG, Options } from 'src/app/constants/tableConfig';
 import { MY_LEAVE } from 'src/app/interfaces/table.interface';
 
@@ -12,7 +13,7 @@ import { MY_LEAVE } from 'src/app/interfaces/table.interface';
 export class MyLeaveComponent implements OnInit {
   myLeaveConfig: Options = MY_LEVAE_CONFIG;
   dataSource = new MatTableDataSource<MY_LEAVE>();
-
+  dropDown = commondropDown
   constructor() { }
 
   ngOnInit(): void {

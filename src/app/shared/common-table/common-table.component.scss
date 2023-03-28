@@ -5,7 +5,6 @@
     table {
       width: 100%;
       box-shadow: none;
-
       .edit {
         background-color: grey;
         color: $pure-white;
@@ -14,7 +13,6 @@
         margin-right: 5px;
         cursor: pointer;
       }
-
       .delete {
         background-color: red;
         color: $pure-white;
@@ -22,13 +20,22 @@
         padding: 8px;
         cursor: pointer;
       }
+      .no_data_row {
+        text-align: center;
+        background-color: rgba(24, 28, 33, 0.025);
+
+        td {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
     }
   }
 }
 
 .container {
   .buttons {
-    @include flex("", flex-end);
+    text-align: end;
     padding: 20px 20px 10px 12px;
     .search {
       .input-box {
@@ -77,6 +84,31 @@
     }
     .mat-paginator-page-size {
       margin-left: 22px;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  :host ::ng-deep .container {
+    .buttons {
+      .search {
+        mat-form-field {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 645px) {
+  .containers {
+    .tables {
+      table {
+        .edit {
+          width: 100%;
+        }
+        .delete {
+          width: 100%;
+        }
+      }
     }
   }
 }

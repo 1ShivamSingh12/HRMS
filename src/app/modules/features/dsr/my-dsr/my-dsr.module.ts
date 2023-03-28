@@ -13,6 +13,7 @@ import { CommonTableModule } from 'src/app/shared/common-table/common-table.modu
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     CommonTableModule,
     AngularEditorModule,
     HttpClientModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    DropdownWithSearchModule
   ]
 })
 export class MyDsrModule { }

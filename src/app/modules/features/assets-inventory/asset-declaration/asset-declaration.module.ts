@@ -10,6 +10,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
 
 
 
@@ -27,7 +29,10 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     MatOptionModule,
     MatIconModule,
     MatInputModule,
-    FooterModule
+    FooterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DropdownWithSearchModule
   ]
 })
 export class AssetDeclarationModule { }

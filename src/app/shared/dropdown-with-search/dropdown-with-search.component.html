@@ -1,9 +1,9 @@
 <div class="formfield">
-  <mat-form-field appearance="outline" >
-    <mat-select [formControl]="myControlName" placeholder="{{data.placeholder}}"  (selectionChange)="onSelection()">
-      <input [formControl]="myControl"  class="filter" placeholder="" >
+  <mat-form-field appearance="outline">
+    <mat-select [formControl]="myControlName" placeholder="{{placeholder}}" (selectionChange)="this.filterValue.emit($event)">
+      <input [formControl]="myControl" class="filter" placeholder="" >
       <mat-option *ngFor="let item of filteredOptions | async" [value]="item.value" [disabled]="item=='no results Found'">
-        {{item.viewValue }}
+        {{item.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>

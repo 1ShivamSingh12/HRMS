@@ -1,9 +1,10 @@
 @import "../../../../scss/mix";
 
 .container {
-  background-color: $common-background;
-  padding: 15px 30px 0px 30px;
+   padding: 15px 30px 0px 30px;
   min-height: 100%;
+  background-color: $common-background;
+
   .header_my_details {
     padding: 20px;
     background: $primary-white;
@@ -48,6 +49,7 @@
         word-wrap: break-word;
         background-color: $primary-white;
         border-radius: 10px;
+        margin-bottom: 20px;
 
         .basic_information {
           @include flex("", "");
@@ -55,7 +57,6 @@
           border-top-right-radius: 8px !important;
           font-family: "Segoe UI";
           font-size: 15px;
-          // padding: 10px 10px;
           padding: 12px 28px;
           border: 1px solid #f1f1f2;
           cursor: pointer;
@@ -69,8 +70,8 @@
           }
         }
         .active{
-          border-color: $darkbklue;
-          background-color: $darkbklue;
+          border-color: $darkblue;
+          background-color: $darkblue;
           color: $primary-white;
           mat-icon{
             @include flex(center ,center);
@@ -83,9 +84,6 @@
         }
       }
     }
-    .emp_info_data{
-
-    }
   }
 }
 
@@ -93,7 +91,6 @@
   .container {
     .profile {
       @include grid(grid-template-columns , 100%, "");
-
       .emp_info{
         padding-right: 0;
       }

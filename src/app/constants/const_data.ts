@@ -79,7 +79,7 @@ export const directory = [
   },
 ];
 
- export const degreeList = [
+export const degreeList = [
   {
     school: 'DIT',
     id: '11',
@@ -106,5 +106,74 @@ export const directory = [
     date_to: '2005-03-07',
     Courses: 'DEF',
     language: 'English',
+  },
+];
+
+export const INTERVIEW_DATA = [
+  {
+    serial_number: 1,
+    department: 'Angular',
+    name: 'Shivam Singh',
+    email: 'shivam5@gmail.com',
+    mobileNo: '89894904',
+    round_type: 'round_1',
+    interview_date: '2023-03-04',
+    interview_time: '22:09',
+    final_status: 'Selected',
+  },
+  {
+    serial_number: 2,
+    department: ' Node',
+    name: 'Swapnil Maurya',
+    email: 'swapnil@gmail.com',
+    mobileNo: '79867799',
+    round_type: 'round_2',
+    interview_date: '2023-02-02',
+    interview_time: '22:09',
+    final_status: 'Selected',
+  },
+  {
+    serial_number: 3,
+    department: 'Android',
+    name: 'Arpit Dwivedi',
+    email: 'arpit@gmail.com',
+    mobileNo: '76769798',
+    round_type: 'round_5',
+    interview_date: '2023-01-01',
+    interview_time: '22:09',
+    final_status: 'Rejected',
+  },
+  {
+    serial_number: 4,
+    department: 'React',
+    name: 'Rishab Ghildiyal',
+    email: 'swapnil@gmail.com',
+    mobileNo: '79867799',
+    round_type: 'round_10',
+    interview_date: '2023-02-10',
+    interview_time: '22:09',
+    final_status: 'InProgress',
+  },
+  {
+    serial_number: 5,
+    department: 'Angular',
+    name: 'Walter White',
+    email: 'walter@gmail.com',
+    mobileNo: '69876978',
+    round_type: 'round_1',
+    interview_date: '2023-02-05',
+    interview_time: '22:09',
+    final_status: 'Selected',
+  },
+  {
+    serial_number: 6,
+    department: 'Angular',
+    name: 'Jesse Pinkman',
+    email: 'jesse@gmail.com',
+    mobileNo: '79867799',
+    round_type: 'round_3',
+    interview_date: '2023-01-06',
+    interview_time: '22:09',
+    final_status: 'Rejected',
   },
 ];

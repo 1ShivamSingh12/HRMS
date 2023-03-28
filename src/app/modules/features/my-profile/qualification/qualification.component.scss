@@ -1,11 +1,8 @@
-@import '../../../../../scss/mix';
+@import "../../../../../scss/mix";
 
 .container {
   .card_body_1 {
-    box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
-    background-color: $primary-white;
-    border-radius: 10px;
-    margin-bottom: 20px;
+   @include commonCard();
     .card_header {
       h2 {
         font-size: 20px;
@@ -21,13 +18,12 @@
     .card {
       padding: 1em;
       .card_upper {
-       @include grid(grid-template-columns , 50% 50% , '');
+        @include grid(grid-template-columns, 50% 50%, "");
         margin-bottom: 20px;
         @include form-field(100%);
       }
 
       .card_bottom {
-
         @include form-field(100%);
         .input-box {
           textarea {
@@ -42,11 +38,11 @@
         }
       }
 
-      button{
+      button {
         margin-top: 20px;
         margin-left: 10px;
-        width: 10%;
         @include button(10px);
+        width: 5rem;
       }
       p {
         font-size: 14px;
@@ -58,10 +54,11 @@
       }
     }
   }
-  .card_body_2{
+  .card_body_2 {
     box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
     background-color: $primary-white;
     border-radius: 10px;
+    margin-bottom: 25px;
     .card_header {
       h2 {
         font-size: 20px;
@@ -78,17 +75,9 @@
 
 :host ::ng-deep .container {
   .tables {
-    // display: none;
-    overflow-x: scroll;
     border-radius: 10px;
-    table {
-      tbody {
-        tr {
-          td.mat-column-action {
-
-          }
-        }
-      }
+    table{
+      @include commonTableStyling(1px solid #f1f1f2 , '')
     }
   }
 }
@@ -96,12 +85,16 @@
 @media only screen and (max-width: 825px) {
   .container {
     .card_body_1 {
-      .card{
-        .card_upper{
-          @include grid(grid-template-columns , 100%, "");
+      .card {
+        .card_upper {
+          @include grid(grid-template-columns, 100%, "");
         }
       }
     }
   }
+  :host ::ng-deep .container {
+    .tables {
+      overflow-x: scroll;
+    }
+  }
 }
-

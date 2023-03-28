@@ -1,8 +1,8 @@
-@import '../../../../../scss/mix';
+@import "../../../../../scss/mix";
 
-.container{
-  background-color: $common-background;
+.container {
   min-height: 100%;
+  background-color: $common-background;
   padding: 20px;
   .card {
     .card_header {
@@ -15,26 +15,22 @@
         margin-bottom: 0;
       }
     }
-
-    .card_body{
+    .card_body {
       background-color: $primary-white;
-      .dropDown{
-        padding: 20px 20px 0px 20px ;
-        @include grid(grid-template-columns,'33% 33% 33%' ,'');
+      .dropDown {
+        padding: 20px 20px 0px 20px;
+        @include grid(grid-template-columns, "33% 33% 33%", "");
 
-
-        .input-box{
+        .input-box {
           margin: 0px 30px 0px 10px;
-          mat-form-field{
-            width: 100%;
-
-            ::ng-deep.mat-select-placeholder{
-              color: black;
-            }
-          }
-          p{
+          p {
             margin: 0;
-            color: #96A5B8;
+            color: #96a5b8;
+          }
+          ::ng-deep.mat-form-field-appearance-outline {
+            .mat-form-field-infix {
+              padding: 10px 0px 17px 0px;
+            }
           }
         }
       }
@@ -42,40 +38,43 @@
   }
 }
 :host ::ng-deep .container {
-
-  .tables{
-    //  padding: 20px;
-    overflow-x: scroll;
-    table{
-      border: 1px solid rgba(24,28,33,0.06);
+  .tables {
+    table {
+      border: 1px solid rgba(24, 28, 33, 0.06);
       width: 100%;
       border-collapse: collapse;
-      tbody{
-        background-color: $dullGrey;
-      }
-      thead{
-        tr{
-          th{
-            border:1px solid #f1f1f2;
-            padding: 10px;
-            color: black;
-            font-weight: 400;
-            font-size: 14px;
-          }
+      @include commonTableStyling(1px solid #f1f1f2, 1px solid #f1f1f2);
+      tbody {
+        background-color: white;
+        tr:nth-child(odd) {
+          background-color: #f3f3f3;
         }
       }
     }
   }
 }
-@media only screen and (max-width:600px){
-  .container{
-    .card{
-      .card_body{
-        .dropDown{
-        @include grid(grid-template-columns,'100%' ,'');
-
+:host ::ng-deep .formfield {
+  mat-form-field {
+    ::ng-deep.mat-select-placeholder {
+      color: black;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    .card {
+      .card_body {
+        .dropDown {
+          @include grid(grid-template-columns, "100%", "");
         }
       }
+    }
+  }
+}
+@media only screen and (max-width:1400px){
+  :host ::ng-deep .container {
+    .tables {
+      overflow-x: scroll;
     }
   }
 }

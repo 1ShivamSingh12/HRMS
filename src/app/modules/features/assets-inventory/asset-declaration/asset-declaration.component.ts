@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { commondropDown } from 'src/app/constants/drop_down_data';
 import { ASSETS_DECLARATION_CONFIG, Options } from 'src/app/constants/tableConfig';
+import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 import { ASSETS_DECLARATION } from 'src/app/interfaces/table.interface';
 
 @Component({
@@ -12,12 +15,14 @@ export class AssetDeclarationComponent implements OnInit {
 
   assetsDeclarationConfig: Options = ASSETS_DECLARATION_CONFIG;
   dataSource = new MatTableDataSource<ASSETS_DECLARATION>()
+  assestDeclaration!: FormGroup;
+  dropDown = commondropDown
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<ASSETS_DECLARATION>(this.tableData)
-
+    this.createForm()
   }
 
   show : boolean = false
@@ -29,6 +34,20 @@ export class AssetDeclarationComponent implements OnInit {
       this.show = false
     }
   }
+
+  createForm() {
+    this.assestDeclaration = this.fb.group({
+      unique_asset_code: ['', [COMMON_VALIDATION]],
+      serial_number: ['', [COMMON_VALIDATION]],
+      model_number: ['', [COMMON_VALIDATION]],
+      os: ['', [COMMON_VALIDATION]],
+      os_version: ['', [COMMON_VALIDATION]],
+      brand: ['', [COMMON_VALIDATION]],
+      colour: ['', [COMMON_VALIDATION]],
+      is_Working:['',[COMMON_VALIDATION]]
+    });
+  }
+
 
   tableColumns: Array<any> = [
     {
@@ -94,22 +113,31 @@ export class AssetDeclarationComponent implements OnInit {
   ];
 
   tableData: Array<ASSETS_DECLARATION> = [
-    {
-      s_no: '',
-      employee_Id: '',
-      unique_asset_code: '',
-      serial_number: '',
-      model_number: '',
-      os: '',
-      os_version: '',
-      brand : '',
-      colour: '',
-      images: '',
-      is_Working: '',
-      added : '',
-    },
+    // {
+    //   s_no: '',
+    //   employee_Id: '',
+    //   unique_asset_code: '',
+    //   serial_number: '',
+    //   model_number: '',
+    //   os: '',
+    //   os_version: '',
+    //   brand : '',
+    //   colour: '',
+    //   images: '',
+    //   is_Working: '',
+    //   added : '',
+    // },
   ];
 
+  submitValue(){
+    if (this.assestDeclaration.valid) {
+      this.assestDeclaration
+      console.log(this.assestDeclaration.value,'fskvjeuw');
 
+      this.tableData.push(this.assestDeclaration.value);
+    }
+    this.dataSource = new MatTableDataSource<ASSETS_DECLARATION>(this.tableData);
+    console.log(this.dataSource.data, 'lll');
+  }
 
 }

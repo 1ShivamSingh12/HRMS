@@ -1,9 +1,10 @@
 @import "../../../../../scss/mix";
 
 .container {
-  background-color: $common-background;
-  padding: 15px 30px 10px 30px;
+   padding: 15px 30px 10px 30px;
   min-height: 100%;
+  background-color: $common-background;
+
   .card {
     padding: 20px;
     background: $primary-white;

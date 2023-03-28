@@ -1,9 +1,9 @@
 @import "../../../../../scss/mix";
 
 .container {
-  background-color: $common-background;
-  min-height: 100%;
+   min-height: 100%;
   padding: 30px;
+  background-color: $common-background;
 
   .heading {
     margin-bottom: 30px;
@@ -34,8 +34,7 @@
         .job_logo {
           @include flex(center, center);
           border: 1px solid rgba(150, 165, 184, 0.3);
-          background-color: $common-background;
-          padding: 20px;
+                   padding: 20px;
           min-height: 130px;
           border-radius: 10px;
 
@@ -52,7 +51,7 @@
         border-bottom: 1px solid rgba(150, 165, 184, 0.5);
 
         .job_desc {
-         
+
           @include flex('',space-between);
 
           h3 {

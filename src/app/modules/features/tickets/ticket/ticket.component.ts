@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { commondropDown } from 'src/app/constants/drop_down_data';
 import { TICKET_CONFIG } from 'src/app/constants/tableConfig';
 import { TICKET } from 'src/app/interfaces/table.interface';
 
@@ -14,6 +15,7 @@ export class TicketComponent implements OnInit {
   ticketconfig: any = TICKET_CONFIG;
   ticket!: FormGroup;
   show: boolean = true;
+  dropDown = commondropDown
   dataSource = new MatTableDataSource<TICKET>();
 
 

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { QualificationRoutingModule } from './qualification-routing.module';
 import { QualificationComponent } from './qualification.component';
@@ -14,6 +14,7 @@ import { validationError } from 'src/app/pipes/validation-error/valiadation-erro
 import { EditQualificationComponent } from './edit-qualification/edit-qualification.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteQualificationComponent } from './delete-qualification/delete-qualification.component';
+import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
 
 
 @NgModule({
@@ -29,14 +30,15 @@ import { DeleteQualificationComponent } from './delete-qualification/delete-qual
     MatSelectModule,
     MatOptionModule,
     FieldErrorModule,
-
     CommonTableModule,
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
     validationError,
-    MatDialogModule
-  ]
+    MatDialogModule,
+    DropdownWithSearchModule,
+  ],
+  providers: [DatePipe]
 })
 export class QualificationModule { }

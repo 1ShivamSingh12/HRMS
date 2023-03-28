@@ -15,7 +15,7 @@
         <div class="input-box">
           <p>Education Level</p>
           <mat-form-field appearance="outline">
-            <mat-select placeholder="Eductaion" formControlName="eductaion_level">
+            <mat-select placeholder="Eductaion" formControlName="education_level">
               <mat-option [value]="dialogData.education_level">{{
                 dialogData.education_level
                 }}</mat-option>
@@ -37,22 +37,22 @@
             <div class="card_middle_time">
               <div class="input-box">
                 <mat-form-field appearance="outline">
-                  <input [max]="qualification.value.time_to" matInput [matDatepicker]="picker1" formControlName="time"
-                    placeholder="from" />
+                  <input [max]="qualification.value.date_to" matInput [matDatepicker]="picker1"
+                    formControlName="date_from" placeholder="from" readonly />
                   <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                   <mat-datepicker #picker1></mat-datepicker>
                 </mat-form-field>
-                <app-field-error [error]="qualification | validationError : 'time' : 'Time'"></app-field-error>
+                <app-field-error [error]="qualification | validationError : 'date_from' : 'Time'"></app-field-error>
               </div>
               <div class="input-box">
                 <!-- <p>?</p> -->
                 <mat-form-field appearance="outline">
-                  <input [min]="qualification.value.time" matInput [matDatepicker]="picker2" formControlName="time_to"
-                    placeholder="to" />
+                  <input [min]="qualification.value.date_from" matInput [matDatepicker]="picker2"
+                    formControlName="date_to" placeholder="to" readonly/>
                   <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                   <mat-datepicker #picker2></mat-datepicker>
                 </mat-form-field>
-                <app-field-error [error]="qualification | validationError : 'time_to' : 'Time'"></app-field-error>
+                <app-field-error [error]="qualification | validationError : 'date_to' : 'Time'"></app-field-error>
               </div>
             </div>
           </div>
@@ -90,5 +90,5 @@
 </div>
 <div mat-dialog-actions>
   <button class="close" mat-button mat-dialog-close>Close</button>
-  <button class="save_button" mat-button mat-dialog-close>Update</button>
+  <button class="save_button" mat-button mat-dialog-close (click)="updateValue()">Update</button>
 </div>

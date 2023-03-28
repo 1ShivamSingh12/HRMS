@@ -49,7 +49,8 @@ export class PolicyDocumentComponent implements OnInit {
       buttons:[
         {
           heading:'Download',
-          icon:'download'
+          icon:'download',
+          action:'download'
         }
       ]
     },
@@ -68,7 +69,6 @@ export class PolicyDocumentComponent implements OnInit {
 
   data(){
     this.dataSource = new MatTableDataSource<POLICY>(this.tableData);
-
   }
 
 }

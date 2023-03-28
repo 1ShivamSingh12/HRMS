@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { commondropDown } from 'src/app/constants/drop_down_data';
 import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 
 @Component({
@@ -10,7 +11,7 @@ import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 })
 export class AddPitchComponent implements OnInit {
   addPitch!: FormGroup;
-
+  dropDown = commondropDown
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {

@@ -28,14 +28,13 @@ import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
     MatSelectModule,
     FooterModule,
     CommonTableModule,
-
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
     FieldErrorModule,
     validationError,
-    absolutePipe
+    absolutePipe,
   ],
 })
 export class MyProfileModule {}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { commondropDown } from 'src/app/constants/drop_down_data';
 
 @Component({
   selector: 'app-training-request',
@@ -11,5 +12,7 @@ export class TrainingRequestComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  dropDown = commondropDown
 
 }

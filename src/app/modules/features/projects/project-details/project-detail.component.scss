@@ -1,0 +1,53 @@
+@import '../../../../../scss/mix';
+
+section {
+   min-height: 100%;
+  padding: 20px;
+  background-color: $common-background;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 35px;
+      color: #3246d3;
+      font-weight: bold;
+    }
+    .right_box {
+      background-color: white;
+      width: 21%;
+      padding: 10px;
+      .internal {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(223, 220, 220);
+
+        mat-icon {
+          font-size: 30px;
+          color: #3246d3;
+        }
+      }
+    }
+  }
+
+  .tab{
+    ::ng-deep.mat-tab-labels{
+      display: flex;
+      background-color: white;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+  }
+}
+@media only screen and (max-width:633px) {
+  section{
+    .head{
+      display: block;
+      .right_box{
+        width: 100%;
+
+      }
+    }
+  }
+}

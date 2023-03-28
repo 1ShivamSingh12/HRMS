@@ -7,19 +7,13 @@
   <div class="card">
     <div class="input-box">
       <p>Training Name:</p>
-      <mat-form-field appearance="outline">
-        <mat-select placeholder="Select Training">
-          <mat-option value="All"> NOne</mat-option>
-        </mat-select>
-      </mat-form-field>
+    
+      <app-dropdown-with-search [myControlName]="" [data]="dropDown" [placeholder]="'Training Name'"></app-dropdown-with-search>
     </div>
     <div class="input-box">
       <p>Team Name:</p>
-      <mat-form-field appearance="outline">
-        <mat-select placeholder="Select Team">
-          <mat-option value="All"> NOne</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <app-dropdown-with-search [myControlName]="" [data]="dropDown" [placeholder]="'Team Name'"></app-dropdown-with-search>
+
     </div>
     <div class="skill-set">
       <p>

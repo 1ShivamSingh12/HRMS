@@ -9,23 +9,27 @@
 
         <div class="input-box">
           <p>Department</p>
-          <mat-form-field appearance="outline">
-            <mat-select placeholder="Select Department">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2" >Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
+          <!-- <mat-form-field appearance="outline">
+            <mat-select placeholder="Select Department" (selectionChange)="departmentSelect($event)" [formControl]="department">
+              <mat-option value="Angular">Angular</mat-option>
+              <mat-option value="Android" >Android</mat-option>
+              <mat-option value="React">React</mat-option>
             </mat-select>
-          </mat-form-field>
+          </mat-form-field> -->
+
+          <app-dropdown-with-search [data]="departmentDropDown" (filterValue)="filterValue($event)" [myControlName]="department" [placeholder]="'Department'" ></app-dropdown-with-search>
         </div>
         <div class="input-box">
           <p>Status</p>
-          <mat-form-field appearance="outline">
-            <mat-select placeholder="Select Status">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2" >Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
+          <!-- <mat-form-field appearance="outline">
+            <mat-select placeholder="Select Status" (selectionChange)="departmentSelect($event)" [formControl]="status">
+              <mat-option value="Selected">Selected</mat-option>
+              <mat-option value="InProgress">InProgress</mat-option>
+              <mat-option value="Rejected">Rejected</mat-option>
             </mat-select>
-          </mat-form-field>
+          </mat-form-field> -->
+          <app-dropdown-with-search [data]="statusDropDown" (filterValue)="filterValue($event)" [myControlName]="status" [placeholder]="'Status'" ></app-dropdown-with-search>
+
         </div>
       </div>
       <app-common-table [config]="interviewConfig" [tableColumns]="tableColumns"  [dataSource]="dataSource"></app-common-table>

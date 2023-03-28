@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { commondropDown } from 'src/app/constants/drop_down_data';
 import { DSR_CONFIG } from 'src/app/constants/tableConfig';
 import { DSR } from 'src/app/interfaces/table.interface';
 
@@ -11,7 +12,8 @@ import { DSR } from 'src/app/interfaces/table.interface';
 })
 export class MyDsrComponent implements OnInit {
   dsrconfig: any = DSR_CONFIG;
-  dataSource = new MatTableDataSource<DSR>();
+    dataSource = new MatTableDataSource<DSR>();
+    dropDown = commondropDown
 
   constructor() {}
 

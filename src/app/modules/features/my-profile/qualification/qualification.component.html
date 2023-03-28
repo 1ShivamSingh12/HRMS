@@ -18,13 +18,9 @@
           </div>
           <div class="input-box">
             <p>Education Level</p>
-            <mat-form-field appearance="outline">
-              <mat-select placeholder="Eductaion" formControlName="education_level">
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2">Option 2</mat-option>
-                <mat-option value="option3">Option 3</mat-option>
-              </mat-select>
-            </mat-form-field>
+            <app-dropdown-with-search [myControlName]="qualification.controls.eductaion_level"
+              [data]="dropdown" [placeholder]="'Education Level'"></app-dropdown-with-search>
+
             <app-field-error [error]="
                 qualification
                   | validationError : 'eductaion_level' : 'Education Level'
@@ -32,11 +28,12 @@
           </div>
         </div>
         <div class="">
-          <p style="margin-left: 7px;">Time Period</p>
+          <p style="margin-left: 7px">Time Period</p>
           <div class="card_upper">
             <div class="input-box">
               <mat-form-field appearance="outline">
-                <input [max]="qualification.value.date_from"  matInput [matDatepicker]="picker1" formControlName="date_from" placeholder="from" />
+                <input [max]="qualification.value.date_to" matInput [matDatepicker]="picker1"
+                  formControlName="date_from" placeholder="from" readonly />
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
               </mat-form-field>
@@ -45,7 +42,8 @@
             <div class="input-box">
               <!-- <p>?</p> -->
               <mat-form-field appearance="outline">
-                <input [min]="qualification.value.date_to"  matInput [matDatepicker]="picker2" formControlName="date_to" placeholder="to"/>
+                <input [min]="qualification.value.date_from" matInput [matDatepicker]="picker2"
+                  formControlName="date_to" placeholder="to" readonly />
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
               </mat-form-field>
@@ -56,13 +54,8 @@
         <div class="card_upper">
           <div class="input-box">
             <p>Language</p>
-            <mat-form-field appearance="outline">
-              <mat-select placeholder="Language" formControlName="language">
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2">Option 2</mat-option>
-                <mat-option value="option3">Option 3</mat-option>
-              </mat-select>
-            </mat-form-field>
+            <app-dropdown-with-search [myControlName]="qualification.controls.language"
+              [data]="dropdown" [placeholder]="'Language'"></app-dropdown-with-search>
             <app-field-error [error]="
                 qualification | validationError : 'language' : 'Language'
               "></app-field-error>
@@ -80,6 +73,8 @@
           <div class="input-box">
             <p>Description</p>
             <textarea placeholder="Description"></textarea>
+
+            <!-- <app-field-error [error]="qualification | validationError : 'description' : 'Description'"></app-field-error> -->
           </div>
         </div>
         <div class="save_button">
@@ -95,9 +90,8 @@
     </div>
     <div>
       <div>
-        <!-- <app-listing [config]="qualificationConfig"></app-listing> -->
-        <app-common-table [config]="qualificationConfig" (buttonClick)="buttonClick($event)" [tableColumns]="tableColumns" [dataSource]="dataSource"
-         ></app-common-table>
+        <app-common-table [config]="qualificationConfig" (buttonClick)="buttonClick($event)"
+          [tableColumns]="tableColumns" [dataSource]="dataSource"></app-common-table>
       </div>
     </div>
   </div>

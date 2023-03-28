@@ -11,20 +11,19 @@ import { map, startWith } from 'rxjs/operators';
 export class DropdownWithSearchComponent implements OnInit {
 
   @Input() myControlName: any;
-  // @Input() label: any;
-  @Input() data!: any; //dropdowndata
-  // @Input() selected: any;
-  // @Input() showRequiredStar: boolean = false;
-  @Output() eventEmitter = new EventEmitter<any>();
+  @Input() data!: any;
+  @Input() placeholder!: any;
+
+  @Output() filterValue = new EventEmitter<any>();
 
   myControl = new FormControl('');
   filteredOptions!: Observable<any[]>;
-  errorMessage = {
-    required: 'field required',
-  };
+ 
   constructor() {}
 
   ngOnInit(): void {
+    console.log(this.data,'dta');
+
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map((value) => {
@@ -45,7 +44,7 @@ export class DropdownWithSearchComponent implements OnInit {
     });
   }
 
-  onSelection() {
-    this.eventEmitter.emit(this.myControlName.value);
+  onSelection(e:any) {
+    this.filterValue.emit(e.value);
   }
 }

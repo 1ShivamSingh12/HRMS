@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MatRadioModule } from '@angular/material/radio';
     MatInputModule,
     MatOptionModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    DropdownWithSearchModule
   ]
 })
 export class MyTraningModule { }

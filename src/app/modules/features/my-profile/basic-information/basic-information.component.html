@@ -34,19 +34,12 @@
       <div class="card_upper">
         <div class="input-box">
           <p>Gender</p>
-          <app-dropdown-with-search [myControlName]="basicInfo.controls.gender" [data]="dropDown" >
-          </app-dropdown-with-search>
+          <app-dropdown-with-search [myControlName]="basicInfo.controls.gender" [data]="genderdropDown" [placeholder]="'Gender'"></app-dropdown-with-search>
           <app-field-error [error]="basicInfo | validationError : 'gender' : 'Gender'"></app-field-error>
         </div>
         <div class="input-box">
           <p>Martial Status</p>
-          <mat-form-field appearance="outline">
-            <mat-select placeholder="Martial Status" formControlName="martial_status">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <app-dropdown-with-search [myControlName]="basicInfo.controls.martial_status" [data]="martialdropDown" [placeholder]="'Martial Status'"></app-dropdown-with-search>
           <app-field-error [error]="basicInfo | validationError : 'martial_status' : 'Martial Status'">
           </app-field-error>
 

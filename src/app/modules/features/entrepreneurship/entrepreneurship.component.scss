@@ -1,9 +1,11 @@
 @import '../../../../scss/mix';
 
 .container{
+   min-height: 100%;
   background-color: $common-background;
-  min-height: 100%;
+
   padding: 0px 60px 0px 60px;
+
   .card{
     @include flex('',space-between);
     padding: 30px;

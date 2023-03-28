@@ -12,8 +12,7 @@
     .job_logo {
       @include flex(center, center);
       border: 1px solid rgba(150, 165, 184, 0.3);
-      background-color: $common-background;
-      padding: 20px;
+           padding: 20px;
       min-height: 130px;
       border-radius: 10px;
 

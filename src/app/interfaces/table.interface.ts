@@ -168,3 +168,14 @@ export interface DSR {
   date: string;
   total: any;
 }
+
+export interface PROJECT {
+  project_name: any;
+  billing_type: any;
+  resources: string;
+  hrs: any;
+  total_milestone: string;
+  delivered: any;
+  pending: string;
+  complete: any;
+}

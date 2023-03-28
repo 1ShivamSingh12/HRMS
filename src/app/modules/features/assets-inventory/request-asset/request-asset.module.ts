@@ -10,6 +10,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     FooterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DropdownWithSearchModule,
+    MatExpansionModule
   ]
 })
 export class RequestAssetModule { }
