@@ -18,7 +18,7 @@ export const monthList = [
 
 export const directory = [
   {
-    name: 'Arpit',
+    name: 'Arpit Makkar',
     designation: 'Sr. Software Engineer - Android',
     email: 'shivam.singh5@appinvetiv.com',
     birthday: '21st Aug ',
@@ -166,7 +166,7 @@ export const INTERVIEW_DATA = [
     final_status: 'Selected',
   },
   {
-    serial_number: 6,
+    sr_no: 6,
     department: 'Angular',
     name: 'Jesse Pinkman',
     email: 'jesse@gmail.com',
@@ -175,5 +175,214 @@ export const INTERVIEW_DATA = [
     interview_date: '2023-01-06',
     interview_time: '22:09',
     final_status: 'Rejected',
+  },
+];
+
+export const DSR_TABLEDATA = [
+  {
+    emp_name: 'Ayush Singh',
+    emp_id: '1553',
+    email: 'ayush.singh@appinventiv.com',
+    employee_type: 'Permanent',
+    date: '2023-03-04',
+    total: 2,
+    sr_no: '1',
+    approval_status: 'Pending',
+  
+    DSR: [
+      {
+        sr_no: '1',
+        project_name: 'Training',
+        dsr: 'wekvewfuiefieihfiqeowfoieonfobqf',
+        status: '1',
+        pm_approval: 'Training',
+        am_approval: '1',
+        rm_approval: 'Training',
+        final_approval: 'fd',
+        logged_hrs: '8:00',
+      },
+    ],
+  },
+  {
+    emp_name: 'Shivam Singh',
+    emp_id: '1553',
+    email: 'shivam.singh5@appinventiv.com',
+    employee_type: 'Permanent',
+    date: '2023-03-07',
+    total: 15,
+    sr_no: '2',
+    approval_status: 'Pending',
+  },
+  {
+    emp_name: 'Rishbah Singh',
+    emp_id: '1553',
+    email: 'ayush.singh@appinventiv.com',
+    employee_type: 'Permanent',
+    date: '2023-03-08',
+    total: 1,
+    sr_no: '3',
+    approval_status: 'Pending',
+  },
+
+  {
+    emp_name: 'Arpit Singh',
+    emp_id: '1553',
+    email: 'ayush.singh@appinventiv.com',
+    employee_type: 'Permanent',
+    date: '2023-03-09',
+    total: 10,
+    sr_no: '4',
+    approval_status: 'Pending',
+  },
+  {
+    emp_name: 'ABS Singh',
+    emp_id: '1553',
+    email: 'ayush.singh@appinventiv.com',
+    employee_type: 'Temp',
+    date: '2023-03-10',
+    total: 8,
+    sr_no: '5',
+    approval_status: 'Pending',
+  },
+  {
+    emp_name: 'abc Singh',
+    emp_id: '1553',
+    email: 'ayush.singh@appinventiv.com',
+    employee_type: 'Temp',
+    date: '2023-03-11',
+    total: 2,
+    sr_no: '6',
+    approval_status: 'Pending',
+  },
+  {
+    emp_name: 'AYush',
+    emp_id: '1553',
+    email: 'ayush.singh@appinventiv.com',
+    employee_type: 'Permanent',
+    date: '2023-03-12',
+    total: 3,
+    sr_no: 7,
+    approval_status: 'Pending',
+  },
+  {
+    emp_name: 'shiv ',
+    emp_id: '1553',
+    email: 'ayush.singh@appinventiv.com',
+    employee_type: 'Permanent',
+    date: '2023-03-14',
+    total: 5,
+    sr_no: 3,
+    approval_status: 'Pending',
+  },
+  {
+    emp_name: 'Shiv singh',
+    emp_id: '1553',
+    email: 'ayush.singh@appinventiv.com',
+    employee_type: 'Permanent',
+    date: '2023-03-13',
+    total: 5,
+    sr_no: 1,
+    approval_status: 'Approved',
+  },
+  {
+    emp_name: 'AYush Singh',
+    emp_id: '1553',
+    email: 'ayush.singh@appinventiv.com',
+    employee_type: 'Permanent',
+    date: '2023-03-15',
+    total: 9,
+    sr_no: 1,
+    approval_status: 'Approved',
+  },
+
+];
+
+export const LEAVE_TABLEDATA = [
+  {
+    leave_type: 'Short Leaves',
+    request_from: 'Jan-06-2023	',
+    request_to: 'Jan-06-2023',
+    applied_on: 'Jan-06-2023',
+    status: 'Pending',
+    level1: 'Suyash Saxena(AI057)',
+    level2: 'HR (Human Resourse)',
+    id:'23'
+  },
+  {
+    leave_type: 'Planned Leave (CL)',
+    request_from: 'Jan-09-2023	',
+    request_to: 'Jan-10-2023',
+    applied_on: 'Jan-07-2023',
+    status: 'Pending',
+    level1: 'Suyash Saxena(AI057)',
+    level2: 'HR (Human Resourse)',
+    id:'24'
+
+  },
+  {
+    leave_type: 'Planned Leave (CL)',
+    request_from: 'Jan-06-2023	',
+    request_to: 'Jan-06-2023',
+    applied_on: 'Jan-06-2023',
+    status: 'Pending',
+    level1: 'Suyash Saxena(AI057)',
+    level2: 'HR (Human Resourse)',
+    id:'26'
+
+  },
+  {
+    leave_type: 'Emergency Leave (CL)	',
+    request_from: 'Jan-06-2023	',
+    request_to: 'Jan-06-2023',
+    applied_on: 'Jan-06-2023',
+    status: 'Pending',
+    level1: 'Suyash Saxena(AI057)',
+    level2: 'HR (Human Resourse)',
+    id:'29'
+
+  },
+  {
+    leave_type: 'Short Leaves',
+    request_from: 'Jan-06-2023	',
+    request_to: 'Jan-06-2023',
+    applied_on: 'Jan-06-2023',
+    status: 'Pending',
+    level1: 'Suyash Saxena(AI057)',
+    level2: 'HR (Human Resourse)',
+    id:'70'
+
+  },
+  {
+    leave_type: 'Emergency Leave (CL)	',
+    request_from: 'Jan-06-2023	',
+    request_to: 'Jan-06-2023',
+    applied_on: 'Jan-06-2023',
+    status: 'Pending',
+    level1: 'Suyash Saxena(AI057)',
+    level2: 'HR (Human Resourse)',
+    id:'34'
+
+  },
+  {
+    leave_type: 'Emergency Leave (CL) Half Day - (2nd Half)	',
+    request_from: 'Jan-06-2023	',
+    request_to: 'Jan-06-2023',
+    applied_on: 'Jan-06-2023',
+    status: 'Pending',
+    level1: 'Suyash Saxena(AI057)',
+    level2: 'HR (Human Resourse)',
+    id:'67'
+
+  },
+  {
+    leave_type: 'Short Leaves',
+    request_from: 'Jan-06-2023	',
+    request_to: 'Jan-06-2023',
+    applied_on: 'Jan-06-2023',
+    status: 'Pending',
+    level1: 'Suyash Saxena(AI057)',
+    level2: 'HR (Human Resourse)',
+    id:'56'
+
   },
 ];

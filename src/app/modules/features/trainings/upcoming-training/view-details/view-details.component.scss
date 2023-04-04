@@ -1,37 +1,34 @@
-@import '../../../../../../scss/mix';
+@import "../../../../../../scss/mix";
 
 .container {
   padding: 25px;
-   min-height: 100%;
+  min-height: 100%;
+  background-color: $common-background;
   .content {
-    h3{
+    h3 {
       margin: 0 0 0;
     }
     .breadcrum {
       margin-bottom: 20px;
-      span{
-        color:blue;
+      span {
+        color: blue;
         cursor: pointer;
       }
 
-      nav{
+      nav {
         color: $dullBlack;
-
       }
-
     }
     .heading {
-      @include flex('',space-between);
+      @include flex("", space-between);
       margin-bottom: 10px;
-      h3{
+      h3 {
         font-size: 24px;
         font-weight: 500;
       }
-      button{
+      button {
         @include button(10px);
-
       }
-
     }
 
     .card {
@@ -39,16 +36,16 @@
       padding: 1.5em;
       .trainig_detail {
         .trainig_detail_heading {
-          @include flex('',space-between);
+          @include flex("", space-between);
           padding-bottom: 15px;
           border-bottom: 1px solid rgba(150, 165, 184, 0.5);
 
-          button{
+          button {
             border: 1.5px solid rgba(150, 165, 184, 0.5);
             background-color: $pure-white;
             font-family: "Lato";
             font-size: 14px;
-            color: #96A5B8;
+            color: #96a5b8;
             font-weight: 500;
             line-height: 1.4;
             border-radius: 4px;
@@ -75,25 +72,25 @@
             margin: 0 0 8px;
           }
           .title {
-            @include flex('',space-between);
+            @include flex("", space-between);
             width: 66%;
           }
           .dates {
-            @include flex('',space-between);
+            @include flex("", space-between);
             width: 67%;
           }
           .mode-batch {
-            @include flex('',space-between);
+            @include flex("", space-between);
             width: 65%;
           }
           .start_date {
-            @include flex('','');
+            @include flex("", "");
           }
           .training_mode {
-            @include flex('','');
+            @include flex("", "");
           }
           .j {
-            @include flex('','');
+            @include flex("", "");
           }
         }
       }
@@ -106,10 +103,10 @@
             font-size: 18px;
           }
         }
-        .description_content{
-          p{
+        .description_content {
+          p {
             margin-top: 15px;
-            background-color: #F4F8FF;
+            background-color: #f4f8ff;
             padding: 20px;
             border-radius: 5px;
             color: #606167;
@@ -120,25 +117,39 @@
   }
 }
 
-@media only screen and (max-width:900px){
-  .container{
-    .content{
-      .card{
-        .trainig_detail{
-
-        .card_body{
-          .title{
-            display: block;
-          }
-          .dates{
-            display: block;
-          }
-          .mode-batch{
-            display: block;
+@media only screen and (max-width: 900px) {
+  .container {
+    .content {
+      .card {
+        .trainig_detail {
+          .card_body {
+            span{
+              min-width: 120px;
+            }
           }
         }
       }
+    }
+  }
+}
 
+@media only screen and (max-width: 530px) {
+  .container {
+    .content {
+      .card {
+        .trainig_detail {
+          .card_body {
+            .title {
+              display: block;
+            }
+            .dates {
+              display: block;
+            }
+            .mode-batch {
+              display: block;
+            }
+          }
+        }
       }
     }
   }

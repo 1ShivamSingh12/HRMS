@@ -9,6 +9,7 @@ import {
   HOLIDAY_CALENDER,
   HOME,
   JOB_OPENING,
+  LUNCH_COUPON,
   MANUAL_PUNCH,
   MY_ASSETS,
   MY_DSR,
@@ -24,6 +25,7 @@ import {
   REFERRAL_LIST,
   REQUESTED_TRAINING,
   REQUEST_ASSET,
+  REQUEST_DINNER,
   TICKET,
   UPCOMING_TRAINING,
 } from './routes';
@@ -42,6 +44,17 @@ export const sideNavList = [
     link: DIRECTORY.path,
     isActive: true,
   },
+  {
+    title: 'Food',
+    logo: 'restaurant',
+    show: false,
+    options: [
+      { subTitle: 'Lunch Coupon', link: LUNCH_COUPON.fullurl, subLogo: 'lunch_dining' },
+      { subTitle: 'Request Dinner', link: REQUEST_DINNER.fullurl, subLogo: 'dinner_dining' },
+    ],
+    isActive: true,
+  },
+
   {
     title: 'Entrepreneurship Program',
     logo: 'person',
@@ -73,6 +86,7 @@ export const sideNavList = [
   {
     title: 'Finance',
     logo: 'payments',
+
     options: [
       { subTitle: 'Salary Slip', link: '' },
       { subTitle: 'Form 16', link: '' },

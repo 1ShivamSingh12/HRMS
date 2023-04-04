@@ -1,0 +1,52 @@
+@import '../../../../../../scss/mix';
+
+.container{
+  min-height: 100%;
+  background-color: $common-background;
+  padding: 30px;
+
+  .card{
+    background-color: #fff;
+    border-radius: 4px;
+
+    .new_dsr {
+      @include grid(grid-template-columns, "48% 48%", 2%);
+      padding: 30px;
+
+      .dsr_type {
+        margin-bottom: 30px;
+        @include form-field(100%);
+        ::ng-deep.mat-form-field-wrapper {
+          padding-bottom: 0.7em;
+        }
+
+        .dsr_details {
+          @include grid(grid-template-columns, "50% 50%", "");
+        }
+      }
+
+      .Description {
+        p {
+          font-size: 14px;
+          font-weight: 600;
+          font-family: "Segoe UI";
+          color: #2f3031;
+        }
+      }
+
+      .buttons {
+        margin: 30px 0px 0px 5px;
+        button {
+          color: $pure-white;
+          padding: 10px;
+          border: none;
+        }
+        .save_button {
+          background: #1da81b !important;
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+}

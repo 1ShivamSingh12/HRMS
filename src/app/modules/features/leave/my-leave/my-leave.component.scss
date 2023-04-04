@@ -155,8 +155,6 @@
 
 :host ::ng-deep .container {
   .tables {
-    //  padding: 20px;
-    overflow-x: scroll;
     table {
       border: 1px solid rgba(24, 28, 33, 0.06);
       width: 100%;
@@ -165,24 +163,15 @@
       @include commonTableStyling(1px solid #f1f1f2,'');
 
       tbody {
-        background-color: $dullGrey;
+        tr:nth-child(odd) {
+          background-color: #f3f3f3;
+        }
       }
-      // thead {
-      //   tr {
-      //     th {
-      //       border: 1px solid #f1f1f2;
-      //       padding: 10px;
-      //       color: black;
-      //       font-weight: 400;
-      //       font-size: 14px;
-      //     }
-      //   }
-      // }
     }
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 775px) {
   .container {
     .leaves {
       @include grid(grid-template-columns, "100%", "");
@@ -202,6 +191,12 @@
           }
         }
       }
+    }
+  }
+  :host ::ng-deep .container {
+    .tables {
+
+      overflow-x: scroll;
     }
   }
 }

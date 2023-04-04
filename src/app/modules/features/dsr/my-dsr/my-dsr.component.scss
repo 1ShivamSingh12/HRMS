@@ -118,20 +118,28 @@
 
 :host ::ng-deep .container {
   .tables {
-    overflow-x: scroll;
     table {
       border: 1px solid rgba(24, 28, 33, 0.06);
       width: 100%;
-      // border-collapse: collapse;
       @include commonTableStyling(1px solid #f1f1f2,1px solid #f1f1f2);
-
-      tbody {
-        background-color: $dullGrey;
+      tbody{
+        tr:nth-child(odd) {
+          background-color: #f3f3f3;
+        }
 
       }
+
     }
   }
 }
+@media only screen and(max-width:1200px) {
+  :host ::ng-deep .container {
+    .tables {
+      overflow-x: scroll;
+    }
+  }
+}
+
 
 @media only screen and(max-width:800px) {
   .container {
@@ -150,6 +158,7 @@
       }
     }
   }
+
 }
 
 @media only screen and(max-width:500px) {

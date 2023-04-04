@@ -31,7 +31,7 @@ export class BasicInformationComponent implements OnInit {
 
   createForm() {
     this.basicInfo = this.fb.group({
-      first_name: ['', [COMMON_VALIDATION, NAME_PATTERN]],
+      first_name: ['', [COMMON_VALIDATION,NAME_PATTERN]],
       last_name: ['', [COMMON_VALIDATION, NAME_PATTERN]],
       date_of_birth: ['', [COMMON_VALIDATION]],
       gender: ['', [COMMON_VALIDATION]],

@@ -11,6 +11,7 @@ import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
+import { FooterModule } from 'src/app/shared/footer/footer.module';
 
 @NgModule({
   declarations: [FeatureComponent],
@@ -24,7 +25,8 @@ import {MatMenuModule} from '@angular/material/menu';
     absolutePipe,
     MatButtonModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    FooterModule
   ],
 })
 export class FeaturesModule {}

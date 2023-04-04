@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { commondropDown } from 'src/app/constants/drop_down_data';
+import { MY_PITCH } from 'src/app/constants/routes';
 import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 
 @Component({
@@ -12,7 +14,7 @@ import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 export class AddPitchComponent implements OnInit {
   addPitch!: FormGroup;
   dropDown = commondropDown
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder , private route : Router) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -75,6 +77,10 @@ export class AddPitchComponent implements OnInit {
     }else{
       this.addPitch.markAllAsTouched()
     }
+  }
+
+  myPitch(){
+    this.route.navigate([MY_PITCH.fullurl])
   }
 
 

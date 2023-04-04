@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="progree-bar">
+    <header>
+      <p class="leave-head">1. {{value[0].level1}}</p>
+      <p class="leave-head">2. {{value[0].level2}}</p>
+    </header>
+    <div class="progress">
+      <div class="button-border">
+        <button></button>
+      </div>
+      <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+      <div class="button-border">
+        <button></button>
+      </div>
+    </div>
+
+  </div>
+  <div class="content">
+    <div class="leave-details">
+      <div class="header">
+        <h3>Leave Details</h3>
+      </div>
+      <div class="leave-data">
+        <div class="name">
+          <p>Employee Name:</p>
+          <span>Shivam Singh (AI 1547)</span>
+        </div>
+        <div class="name">
+          <p>Leave Type:</p>
+          <span>{{ value[0]?.leave_type }}</span>
+        </div>
+        <div class="name">
+          <p>Leave Duration:</p>
+          <span>5:00 PM - 7:00 PM</span>
+        </div>
+        <div class="name">
+          <p>Applied On:</p>
+          <span>{{ value[0]?.applied_on }}</span>
+        </div>
+        <div class="name">
+          <p>Start Date:</p>
+          <span>{{ value[0]?.request_from }}</span>
+        </div>
+        <div class="name">
+          <p>End Date:</p>
+          <span>{{ value[0]?.request_to }}</span>
+        </div>
+        <div class="name">
+          <p>Upload Document:</p>
+          <span><mat-icon>download</mat-icon></span>
+        </div>
+        <div class="reason">
+          <h4>Reason</h4>
+          <b>
+            <p>Hello Sir/Maam</p>
+            <p>I hope you are doing well,</p>
+            <p>
+              This is to inform you that I have a severe headache so I will be
+              on a short day leave from 5:00 to 7:00
+            </p>
+          </b>
+        </div>
+        <div class="remark">
+          <span style="display:flex">
+            <label>Remarks</label>
+            <p>Short Leave for headache</p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="approval-status">
+      <div class="header">
+        <h3>Approval Status</h3>
+      </div>
+      <div class="approval-data">
+        <div class="pending">
+          <span>{{value[0]?.level1}}</span>
+          <p>{{value[0]?.status}}</p>
+        </div>
+        <div class="pending">
+          <span>{{value[0]?.level2}}</span>
+          <p>{{value[0]?.status}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <></> -->

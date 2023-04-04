@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { directory } from 'src/app/constants/const_data';
-import { departmentDrop, directoryDropDown } from 'src/app/constants/drop_down_data';
+import {departmentDrop,directoryDropDown,} from 'src/app/constants/drop_down_data';
 
 @Component({
   selector: 'app-directory',
@@ -15,9 +15,9 @@ export class DirectoryComponent implements OnInit {
   name: any;
   filteredData: any[] = directory;
   dropDown: any;
-  departmentDropDown = departmentDrop
+  departmentDropDown = departmentDrop;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.dropDown = directoryDropDown;
@@ -27,7 +27,10 @@ export class DirectoryComponent implements OnInit {
     console.log(this.filteredData, 'kkkllnfdknk');
     if (this.searchValue.value) {
       this.filteredData = directory.filter((item) => {
-        if ( item.name.toLowerCase().includes(this.searchValue.value.trim().toLowerCase())
+        if (
+          item.name
+            .toLowerCase()
+            .includes(this.searchValue.value.trim().toLowerCase())
         ) {
           return true;
         }
@@ -40,7 +43,8 @@ export class DirectoryComponent implements OnInit {
     if (this.departmentSearch !== 'All' && this.searchValue.value) {
       this.filteredData = directory.filter((item) => {
         if (
-          item.designation.toLowerCase()
+          item.designation
+            .toLowerCase()
             .includes(this.departmentSearch.toLowerCase()) &&
           item.name
             .toLowerCase()

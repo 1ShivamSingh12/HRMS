@@ -3,63 +3,56 @@
     <div class="card_upper">
       <div class="card_upper_heading">
         <h3>Create New DSR</h3>
-        <button (click)="addnew()">+ Add </button>
+        <button (click)="addnew()">+ Add</button>
       </div>
-      <div class="new_dsr" *ngIf="!show">
-        <div class="dsr_type">
-          <div class="input-box">
-            <p>Project</p>
-            <mat-form-field appearance="outline">
-              <mat-select placeholder="Project" formControlName="priority">
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2">Option 2</mat-option>
-                <mat-option value="option3">Option 3</mat-option>
-              </mat-select>
-            </mat-form-field>
-            <!-- <app-dropdown-with-search [data]="dropDown" [placeholder]="'Project'"></app-dropdown-with-search> -->
+      <form [formGroup]="dsrForm">
+        <div class="new_dsr" *ngIf="!show">
+          <div class="dsr_type">
+            <div class="input-box">
+              <p>Project</p>
+              <app-dropdown-with-search [data]="dropDown" [myControlName]="dsrForm.controls.project"
+                [placeholder]="'Project'"></app-dropdown-with-search>
+            </div>
 
+            <div class="dsr_details">
+              <div class="input-box">
+                <p>Date</p>
+                <mat-form-field appearance="outline">
+                  <input matInput [matDatepicker]="picker1" formControlName="date" placeholder="Date" />
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+                <!-- <app-field-error [error]="qualification | validationError : 'time' : 'Time'"></app-field-error> -->
+              </div>
+              <div class="input-box">
+                <p>Estimated Hour</p>
+                <mat-form-field appearance="outline">
+                  <input matInput [matDatepicker]="picker2" formControlName="hours" placeholder="Estimated Hour" />
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+                <!-- <app-field-error [error]="qualification | validationError : 'time_to' : 'Time'"></app-field-error> -->
+              </div>
+
+              <div class="check">
+                <section class="example-section">
+                  <mat-checkbox class="example-margin">No Work Done
+                  </mat-checkbox>
+                </section>
+              </div>
+            </div>
           </div>
 
-          <div class="dsr_details">
-            <div class="input-box">
-              <p>Dtae</p>
-              <mat-form-field appearance="outline">
-                <input matInput [matDatepicker]="picker1" formControlName="time" placeholder="Date" />
-                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                <mat-datepicker #picker1></mat-datepicker>
-              </mat-form-field>
-              <!-- <app-field-error [error]="qualification | validationError : 'time' : 'Time'"></app-field-error> -->
-            </div>
-            <div class="input-box">
-              <p>Estimated Hour</p>
-              <mat-form-field appearance="outline">
-                <input matInput [matDatepicker]="picker2" formControlName="time_to" placeholder="Estimated Hour" />
-                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                <mat-datepicker #picker2></mat-datepicker>
-              </mat-form-field>
-              <!-- <app-field-error [error]="qualification | validationError : 'time_to' : 'Time'"></app-field-error> -->
-            </div>
-
-            <div class="check">
-              <section class="example-section">
-                <mat-checkbox class="example-margin">No Work Done
-                </mat-checkbox>
-              </section>
-            </div>
-
+          <div class="Description">
+            <p>Description</p>
+            <angular-editor [config]="editorConfig" placeholder="'Enter industrytext here...'"></angular-editor>
           </div>
 
+          <div class="buttons">
+            <button class="save_button">Add</button>
+          </div>
         </div>
-
-        <div class="Description">
-          <p> Description</p>
-          <angular-editor [config]="editorConfig" placeholder="'Enter industrytext here...'"></angular-editor>
-        </div>
-
-        <div class="buttons">
-          <button class="save_button">Add</button>
-        </div>
-      </div>
+      </form>
     </div>
 
     <div class="card_middle">
@@ -67,7 +60,7 @@
         <div class="input-box">
           <p>From Date</p>
           <mat-form-field appearance="outline">
-            <input matInput [matDatepicker]="picker1" formControlName="time" placeholder="from" />
+            <input matInput [max]="to_date.value" [matDatepicker]="picker1" [formControl]="from_date" placeholder="from" />
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
@@ -76,7 +69,7 @@
         <div class="input-box">
           <p>End Date</p>
           <mat-form-field appearance="outline">
-            <input matInput [matDatepicker]="picker2" formControlName="time_to" placeholder="to" />
+            <input matInput [min]="from_date.value" [matDatepicker]="picker2" [formControl]="to_date" placeholder="to" />
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
@@ -84,54 +77,25 @@
         </div>
         <div class="input-box">
           <p>Submission Status</p>
-          <mat-form-field appearance="outline">
-            <mat-select placeholder="Priority" formControlName="priority">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
-            <!-- <app-dropdown-with-search [data]="dropDown" [placeholder]="'Project'"></app-dropdown-with-search> -->
 
+          <!-- <app-dropdown-with-search [data]="dropDown" [placeholder]="'Status'"></app-dropdown-with-search> -->
         </div>
         <div class="input-box">
           <p>Project</p>
-          <mat-form-field appearance="outline">
-            <mat-select placeholder="Required by Date" formControlName="requested_at">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
-            <!-- <app-dropdown-with-search [data]="dropDown" [placeholder]="'Project'"></app-dropdown-with-search> -->
-
+          <!-- <app-dropdown-with-search [data]="dropDown" [placeholder]="'Project'"></app-dropdown-with-search> -->
         </div>
         <div class="input-box">
           <p>Final Approval Status</p>
-          <mat-form-field appearance="outline">
-            <mat-select placeholder="Allocation type" formControlName="allocation_type">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
-            <!-- <app-dropdown-with-search [data]="dropDown" [placeholder]="'Project'"></app-dropdown-with-search> -->
-
+          <app-dropdown-with-search (filterValue)="filterValue($event)" [data]="approvaldropDown"
+            [myControlName]="approval" [placeholder]="'Allocation Status'"></app-dropdown-with-search>
         </div>
         <div class="input-box">
           <p>Hours</p>
-          <mat-form-field appearance="outline">
-            <mat-select placeholder="Allocation type" formControlName="allocation_type">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
-            <!-- <app-dropdown-with-search [data]="dropDown" [placeholder]="'Project'"></app-dropdown-with-search> -->
 
+          <app-dropdown-with-search [myControlName]="hours" (filterValue)="filterValue($event)" [data]="hoursdropDown"
+            [placeholder]="'Hours'"></app-dropdown-with-search>
         </div>
         <div class="button">
-
           <button>Reset</button>
         </div>
       </div>
@@ -141,9 +105,9 @@
       <div class="card_bottom_header">
         <h3>List All Worksheets</h3>
       </div>
-      <app-common-table [config]="dsrconfig" [tableColumns]="tableColumns" [dataSource]="dataSource"
-       ></app-common-table>
+      <app-common-table (buttonClick)="buttonClick($event)" [config]="dsrconfig" [tableColumns]="tableColumns"
+        [dataSource]="dataSource"></app-common-table>
     </div>
   </div>
 </div>
-<app-footer></app-footer>
+

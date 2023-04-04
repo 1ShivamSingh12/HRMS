@@ -20,6 +20,7 @@
       .dropDown {
         padding: 20px 20px 0px 20px;
         @include grid(grid-template-columns, "33% 33% 33%", "");
+      
 
         .input-box {
           margin: 0px 30px 0px 10px;

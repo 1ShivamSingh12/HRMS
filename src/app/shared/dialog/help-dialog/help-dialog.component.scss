@@ -1,0 +1,25 @@
+h2{
+  display: flex;
+  justify-content: center;
+}
+
+@import '../../../../scss/mix';
+
+mat-dialog-content{
+  h3{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+  }
+  p{
+    text-align: center;
+    font-size: 17px;
+  }
+}
+mat-dialog-actions{
+
+  button{
+    @include button(10px);
+    width: 5rem;
+  }
+}

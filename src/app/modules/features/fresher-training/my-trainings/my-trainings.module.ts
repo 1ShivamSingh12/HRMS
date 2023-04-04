@@ -8,6 +8,7 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
+import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatIconModule,
     FooterModule,
     MatDialogModule,
-    MatRadioModule
+    MatRadioModule,
+    absolutePipe
 
   ]
 })

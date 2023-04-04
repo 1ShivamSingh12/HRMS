@@ -1,8 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { commondropDown } from 'src/app/constants/drop_down_data';
+import { DSR_TABLEDATA } from 'src/app/constants/const_data';
+import {
+  approvalDropDown,
+  commondropDown,
+  hoursDropDown,
+} from 'src/app/constants/drop_down_data';
+import { LOGIN, MY_DSR_DETAIL } from 'src/app/constants/routes';
 import { DSR_CONFIG } from 'src/app/constants/tableConfig';
+import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 import { DSR } from 'src/app/interfaces/table.interface';
 
 @Component({
@@ -12,16 +21,38 @@ import { DSR } from 'src/app/interfaces/table.interface';
 })
 export class MyDsrComponent implements OnInit {
   dsrconfig: any = DSR_CONFIG;
-    dataSource = new MatTableDataSource<DSR>();
-    dropDown = commondropDown
+  dataSource = new MatTableDataSource<DSR>();
+  dropDown = commondropDown;
+  approvaldropDown = approvalDropDown;
+  hoursdropDown = hoursDropDown;
+  approval = new FormControl();
+  hours = new FormControl();
+  from_date = new FormControl()
+  to_date = new FormControl()
+  show: boolean = true;
+  dsrForm!:FormGroup
 
-  constructor() {}
+  constructor(private route: Router , private fb :FormBuilder) {}
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<DSR>(this.tableData);
+    this.createForm()
+    for(const item in DSR_TABLEDATA){
+
+      console.log(item);
+    }
   }
 
-  show: boolean = true;
+
+  createForm() {
+    this.dsrForm = this.fb.group({
+      project: ['', [COMMON_VALIDATION]],
+      date: ['', [COMMON_VALIDATION]],
+      hours: ['', [COMMON_VALIDATION]],
+    });
+  }
+
+
 
   addnew() {
     if (this.show == false) {
@@ -106,17 +137,53 @@ export class MyDsrComponent implements OnInit {
       header: 'Total(Logged Hr)',
       cell: (element: Record<string, any>) => `${element['total']}`,
     },
-  ];
-
-  tableData: Array<DSR> = [
     {
-      sr_no: '',
-      emp_name: '',
-      emp_id: '',
-      email: '',
-      employee_type: '',
-      date: '',
-      total: '',
+      columnDef: 'approval_status',
+      header: 'Fianl Approval',
+      cell: (element: Record<string, any>) => `${element['approval_status']}`,
+      type: 'button',
+      buttons: [
+        {
+          type:'const_data',
+          // heading:DSR_TABLEDATA[0].approval_status,
+          style: 'pending',
+          data: (element: DSR) => element,
+          action: 'pending',
+        },
+      ],
     },
   ];
+
+  tableData: Array<any> = DSR_TABLEDATA;
+
+  buttonClick(result: any) {
+    let temp = result[1].date;
+    window.open(MY_DSR_DETAIL.fullurl + '/' + temp, '_blank');
+  }
+
+
+
+  filterData: any = DSR_TABLEDATA;
+
+  filterValue(e: any) {
+    if (this.approval.value && !this.hours.value) {
+      this.filterData = this.tableData.filter(
+        (item: any) => item.approval_status == this.approval.value
+      );
+      console.log(this.filterData);
+    } else if (!this.approval.value && this.hours.value) {
+      if (this.hours.value == 1) {
+        this.filterData = this.tableData.filter((item: any) => item.total < 5);
+      } else if (this.hours.value == 2) {
+        this.filterData = this.tableData.filter(
+          (item: any) => item.total > 5 && item.total < 8
+        );
+      } else if (this.hours.value == 3) {
+        this.filterData = this.tableData.filter((item: any) => item.total > 8);
+      } else {
+        this.filterData = this.tableData.filter((item: any) => item.total > 10);
+      }
+    }
+    this.dataSource = new MatTableDataSource<DSR>(this.filterData);
+  }
 }

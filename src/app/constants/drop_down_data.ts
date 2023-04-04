@@ -106,3 +106,42 @@ export const statusDropDown = {
     },
   ]
 }
+export const approvalDropDown = {
+  list:[
+    {
+      value:'All',
+      viewValue:'All'
+    },
+    {
+      value:'Pending',
+      viewValue:'Pending'
+    },
+    {
+      value:'Approved',
+      viewValue:'Approved'
+    }, {
+      value:'Rejected',
+      viewValue:'Rejected'
+    },
+  ]
+}
+
+export const hoursDropDown = {
+  list:[
+    {
+      value:'1',
+      viewValue:'Less than 5 hours'
+    },
+    {
+      value:'2',
+      viewValue:'Greater than 5 and less then equal to 8'
+    },
+    {
+      value:'3',
+      viewValue:'Greater than 8'
+    }, {
+      value:'4',
+      viewValue:'Greater than 10'
+    },
+  ]
+}

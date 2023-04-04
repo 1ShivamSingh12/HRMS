@@ -70,33 +70,10 @@
 :host ::ng-deep .container {
   .tables{
     padding: 25px;
-    overflow-x: scroll;
     table{
       border: 1px solid rgba(24,28,33,0.06);
       width: 100%;
       @include commonTableStyling(1px solid #f1f1f2,1px solid #f1f1f2);
-
-      // tbody{
-      //   // background-color: $dullGrey;
-      //   tr{
-      //     td{
-
-      //       padding: 10px 10px 10px 20px;
-
-      //     }
-      //   }
-      // }
-      // thead{
-      //   tr{
-      //     th{
-
-      //       padding: 10px 10px 10px 20px;
-      //       color: black;
-      //       font-weight: 400;
-      //       font-size: 14px;
-      //     }
-      //   }
-      // }
     }
   }
 }
@@ -106,6 +83,11 @@
   .container{
     .card{
       @include grid(grid-template-columns , 100% ,'');
+    }
+  }
+  :host ::ng-deep .container {
+    .tables{
+      overflow-x: scroll;
     }
   }
 }

@@ -1,9 +1,6 @@
 @import "../../../scss/mix";
 
 .header {
-  // @include position(fixed , '','','','');
-  width: 100%;
-  z-index: 10000;
   mat-toolbar {
     padding: 17px 20px 0px 14px;
     @include flex("", space-between);
@@ -11,7 +8,6 @@
 
     .header-left {
       img {
-        // width: 60%;
         height: 40px;
         cursor: pointer;
       }
@@ -49,9 +45,7 @@
           border-radius: 50%;
         }
         span {
-          position: relative;
-          bottom: 8px;
-          right: 10px;
+          @include position(relative, "", 8px, "", 10px);
           color: #485665;
           font-size: 13px;
         }
@@ -59,25 +53,22 @@
       .help {
         margin: 0;
         padding: 0;
-        // width: 80%;
-        // background-color: red;
         button {
+          cursor: pointer;
           color: $pure-white;
           background-color: red;
           padding: 3px;
           margin-left: 9px;
-          // width: 30px;
           font-weight: bold;
         }
       }
 
       .bellIcon {
         mat-icon {
+          @include position(relative, 4px, "", "", "");
           color: grey;
         }
       }
-
-
     }
   }
 }
@@ -86,7 +77,6 @@
   @include position(relative, 10px, "", "", "");
   .example-sidenav {
     mat-nav-list {
-      @include custom-scroller("y");
       mat-list-item {
         margin-bottom: 8px;
         mat-icon {
@@ -96,13 +86,19 @@
         span {
           font-weight: 500;
           font-size: 14px;
+        }
+      }
+    }
+    ::ng-deep {
+      .mat-drawer-inner-container {
+        @include custom-scroller("y", 5px, white);
+      }
+    }
 
-          .s {
-            display: none;
-          }
-          .w {
-            background-color: red;
-          }
+    &:hover{
+      ::ng-deep {
+        .mat-drawer-inner-container {
+          @include custom-scroller("y", 5px, grey);
         }
       }
     }
@@ -110,15 +106,17 @@
 
   .parent {
     &:hover {
-      color: blue;
+      color: #199cff;
+      background-color: white;
     }
   }
   .activeLink {
-    color: blue;
+    color: #199cff;
     border-left: 4px solid blue;
+    background-color: white;
   }
   .activeLink1 {
-    color: blue;
+    color: #199cff;
   }
 
   ::ng-deep.mat-drawer-content {
@@ -129,9 +127,6 @@
 .example-sidenav-content {
   @include custom-scroller("y");
   height: 900px;
-}
-.example-sidenav {
-  user-select: none;
 }
 .full-width {
   width: 9rem;

@@ -1,0 +1,119 @@
+@import "../../../../../scss/mix";
+
+.container {
+  min-height: 100%;
+  background-color: $common-background;
+  padding: 30px;
+  .content {
+    .card {
+      display: grid;
+      grid-template-columns: 58% 38%;
+      column-gap: 20px;
+      mat-icon {
+        position: relative;
+        top: 6px;
+        font-size: 21px;
+        margin-right: 10px;
+      }
+      .amount {
+        background-color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #dce2e9;
+        .amount_upper {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          h3 {
+            font-size: 25px;
+            font-weight: 500;
+          }
+          p {
+            color: #469cf8;
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+        .amount_middle {
+          h3 {
+            font-size: 35px;
+            color: #469cf8;
+            font-weight: 500;
+          }
+        }
+        .amount_lower {
+          display: flex;
+          justify-content: space-between;
+          span {
+            font-weight: 500;
+          }
+          button {
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ccd2da;
+            color: #469cf8;
+          }
+        }
+      }
+      .purchase {
+        background-color: #fff;
+        border: 1px solid #dce2e9;
+        border-radius: 5px;
+        padding: 40px 10px 10px 10px;
+        .purchase_button {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+          button {
+            @include button(10px);
+            width: 20rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .container {
+    .content {
+      .card {
+        .amount {
+          .amount_upper {
+            display: block;
+          }
+          .amount_lower {
+            display: block;
+
+            button {
+              @include button(10px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 650px) {
+  .container {
+    .content {
+      .card {
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 20px;
+        .amount {
+          .amount_upper {
+            display: block;
+          }
+          .amount_lower {
+            display: block;
+
+            button {
+              @include button(10px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

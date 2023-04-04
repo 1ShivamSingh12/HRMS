@@ -1,0 +1,81 @@
+@import "../../../../../scss/mix";
+
+.container {
+  min-height: 100%;
+  background-color: $common-background;
+  padding: 30px;
+  .card {
+    background-color: #fff;
+    padding: 15px 20px;
+    border: 1px solid #dce2e9;
+    .card-content {
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        font-size: 26px;
+        margin: 0 0 7px;
+      }
+      button {
+        @include button(10px);
+      }
+    }
+    mat-icon {
+      position: relative;
+      top: 6px;
+      font-size: 21px;
+      margin-right: 10px;
+    }
+  }
+  .dinner-content {
+    @include grid(grid-template-columns, "48% 48%", 2%);
+    padding: 20px;
+    background-color: #fff;
+    .dsr_details {
+      @include form-field(100%);
+      @include grid(grid-template-columns, "50% 50%", "");
+    }
+
+    .Description {
+      p {
+        font-size: 14px;
+        font-weight: 600;
+        font-family: "Segoe UI";
+        color: #2f3031;
+        margin: 0 0 5px;
+      }
+    }
+
+    .buttons {
+      margin: 30px 0px 0px 5px;
+      button {
+        color: $pure-white;
+        padding: 10px;
+        border: none;
+      }
+      .save_button {
+        background: #1da81b !important;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .container {
+    .dinner-content {
+      @include grid(grid-template-columns, "100%", 2%);
+      .dsr_details {
+        @include grid(grid-template-columns, "100%", 2%);
+      }
+    }
+  }
+}
+@media only screen and (max-width: 435px) {
+  .container {
+    .card{
+      .card-content{
+        display: block;
+      }
+    }
+  }
+}

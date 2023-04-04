@@ -1,4 +1,5 @@
 
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -27,7 +28,7 @@ export class QualificationComponent implements OnInit {
   qualificationConfig: Options = QUALIFICATION_DECLARATION_CONFIG;
   dataSource = new MatTableDataSource<QUALIFICATION>();
   dropdown: any;
-  constructor(private fb: FormBuilder, private dialog: MatDialog) { }
+  constructor(private fb: FormBuilder, private dialog: MatDialog,private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -39,12 +40,12 @@ export class QualificationComponent implements OnInit {
   createForm() {
     this.qualification = this.fb.group({
       school: ['', [COMMON_VALIDATION]],
-      eductaion_level: ['', [COMMON_VALIDATION]],
+      education_level: ['', [COMMON_VALIDATION]],
       date_from: ['', [COMMON_VALIDATION]],
       date_to: ['', [COMMON_VALIDATION]],
       language: ['', [COMMON_VALIDATION]],
       Courses: ['', [COMMON_VALIDATION]],
-      description:['',[COMMON_VALIDATION]]
+      // description:['',[COMMON_VALIDATION]]
     });
   }
   tableColumns: Array<any> = [
@@ -135,7 +136,12 @@ export class QualificationComponent implements OnInit {
   }
 
   saveData() {
+    console.log('wekfb');
+
     if (this.qualification.valid) {
+      console.log('wekfbwefwwef');
+      this.qualification.value.date_from = this.datePipe.transform(this.qualification.value.date_from, 'YYYY-MM-dd');
+      this.qualification.value.date_to = this.datePipe.transform(this.qualification.value.date_to, 'YYYY-MM-dd');
       this.tableData.push(this.qualification.value);
     } else {
       this.qualification.markAllAsTouched();

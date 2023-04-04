@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3>{{value[0]?.emp_name}} | DSR | {{query_param | date}}</h3>
+    </div>
+
+    <app-common-table (buttonClick)="buttonClick($event)" [config]="dsrDetailConfig" [tableColumns]="tableColumns" [dataSource]="dataSource"
+    ></app-common-table>
+  </div>
+</div>
+<!-- <></> -->

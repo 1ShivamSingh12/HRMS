@@ -5,15 +5,15 @@ import { POLICY } from 'src/app/interfaces/table.interface';
 @Component({
   selector: 'app-policy-document',
   templateUrl: './policy-document.component.html',
-  styleUrls: ['./policy-document.component.scss']
+  styleUrls: ['./policy-document.component.scss'],
 })
 export class PolicyDocumentComponent implements OnInit {
   dataSource = new MatTableDataSource<POLICY>();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    this.data()
+    this.data();
   }
   tableColumns: Array<any> = [
     {
@@ -25,6 +25,7 @@ export class PolicyDocumentComponent implements OnInit {
       columnDef: 'name',
       header: 'Name',
       cell: (element: Record<string, any>) => `${element['name']}`,
+      icon : 'picture_as_pdf'
     },
     {
       columnDef: 'type',
@@ -45,14 +46,15 @@ export class PolicyDocumentComponent implements OnInit {
       columnDef: 'action',
       header: 'Action',
       cell: (element: Record<string, any>) => `${element['action']}`,
-      type:'button',
-      buttons:[
+      type: 'button',
+      buttons: [
         {
-          heading:'Download',
-          icon:'download',
-          action:'download'
-        }
-      ]
+          heading: 'Download',
+          icon: 'download',
+          action: 'download',
+          data: (element: POLICY) => element,
+        },
+      ],
     },
   ];
 
@@ -63,12 +65,15 @@ export class PolicyDocumentComponent implements OnInit {
       type: '	pdf',
       file_size: '341.71 KB',
       last_modified: 'May-13-2022',
-      action:''
+      action: '',
     },
   ];
 
-  data(){
+  data() {
     this.dataSource = new MatTableDataSource<POLICY>(this.tableData);
   }
 
+  buttonClick(result: any) {
+    console.log(result, 'wslidhqw');
+  }
 }

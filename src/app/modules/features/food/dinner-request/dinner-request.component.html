@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <h3>Dinner Request</h3>
+      <button (click)="show = !show">Request Dinner</button>
+    </div>
+    <p>
+      <mat-icon>info</mat-icon> <span>Note</span> : Amount due need to paid in
+      cash in account office.
+    </p>
+  </div>
+  <div class="dinner-content" *ngIf="!show">
+    <div class="dsr_details">
+      <div class="input-box">
+        <p>Date</p>
+        <mat-form-field appearance="outline">
+          <input matInput />
+        </mat-form-field>
+      </div>
+      <div class="input-box">
+        <p>Project</p>
+        <app-dropdown-with-search
+          [data]="dropDown"
+          [placeholder]="'Select Project'"
+        ></app-dropdown-with-search>
+      </div>
+    </div>
+
+    <div class="Description">
+      <p>Reason for late stay</p>
+      <angular-editor
+        [config]="editorConfig"
+        placeholder="'Enter industrytext here...'"
+      ></angular-editor>
+    </div>
+
+    <div class="buttons">
+      <button class="save_button">Submit</button>
+    </div>
+  </div>
+</div>
+<!-- <></> -->

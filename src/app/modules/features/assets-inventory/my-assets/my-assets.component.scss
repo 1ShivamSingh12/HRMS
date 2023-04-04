@@ -1,12 +1,12 @@
-@import '../../../../../scss/mix';
+@import "../../../../../scss/mix";
 
-.container{
-   min-height: 100%;
+.container {
+  min-height: 100%;
   background-color: $common-background;
 
   padding: 30px;
   .card {
-    .card_body{
+    .card_body {
       .card_header {
         h3 {
           font-size: 20px;
@@ -21,42 +21,44 @@
   }
 }
 :host ::ng-deep .container {
-  .tables{
-    overflow-x: scroll;
-    table{
-      border: 1px solid rgba(24,28,33,0.06);
+  .tables {
+    table {
+      border: 1px solid rgba(24, 28, 33, 0.06);
       width: 100%;
       border-collapse: collapse;
-      @include commonTableStyling(1px solid #f1f1f2,1px solid #f1f1f2);
+      @include commonTableStyling(1px solid #f1f1f2, 1px solid #f1f1f2);
     }
   }
 }
 
-
 @media only screen and (max-width: 625px) {
-  :host ::ng-deep .container{
-    .buttons{
+  :host ::ng-deep .container {
+    .buttons {
       display: flex;
       flex-direction: column;
-      .input-box{
+      .input-box {
         margin-bottom: 20px;
-        .select{
+        .select {
           height: 50px !important;
         }
-        span{
+        span {
           margin: 5px !important;
         }
       }
-      .search{
+      .search {
         margin-left: 5px;
         margin-bottom: 20px;
-        mat-form-field{
+        mat-form-field {
           width: 50%;
         }
       }
     }
   }
-
-
 }
-
+@media only screen and (max-width: 1100px) {
+  :host ::ng-deep .container {
+    .tables {
+      overflow-x: scroll;
+    }
+  }
+}

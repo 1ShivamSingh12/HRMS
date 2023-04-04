@@ -167,6 +167,20 @@ export interface DSR {
   employee_type: string;
   date: string;
   total: any;
+  final_approval:any
+}
+
+export interface DSR_DETAIL {
+  sr_no: any;
+  project_name: any;
+  dsr: any;
+  status: string;
+  pm_approval: string;
+  am_approval: string;
+  rm_approval: any;
+  final_approval:any
+  logged_hrs : any,
+  action:any
 }
 
 export interface PROJECT {
@@ -178,4 +192,13 @@ export interface PROJECT {
   delivered: any;
   pending: string;
   complete: any;
+}
+
+export interface MY_PITCH {
+  s_no: any;
+  title: any;
+  industry: string;
+  technical: any;
+  submitted: string;
+  action: any;
 }

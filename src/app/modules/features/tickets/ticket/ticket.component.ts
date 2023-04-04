@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { commondropDown } from 'src/app/constants/drop_down_data';
 import { TICKET_CONFIG } from 'src/app/constants/tableConfig';
+import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
 import { TICKET } from 'src/app/interfaces/table.interface';
 
 @Component({
@@ -23,19 +24,16 @@ export class TicketComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<TICKET>(this.tableData);
-
+    this.createForm()
   }
 
   createForm() {
     this.ticket = this.fb.group({
-      // serial_no: ['', [COMMON_VALIDATION, NAME_PATTERN]],
-      // status: ['', [COMMON_VALIDATION, NAME_PATTERN]],
-      // request_reason: ['', [COMMON_VALIDATION]],
-      // priority: ['', [COMMON_VALIDATION]],
-      // requested_at: ['', [COMMON_VALIDATION]],
-      // assets_category: ['', [COMMON_VALIDATION]],
-      // allocation_type: ['', [COMMON_VALIDATION]],
-      // company: ['', [COMMON_VALIDATION]],
+      subject: ['', [COMMON_VALIDATION, NAME_PATTERN]],
+      department: ['', [COMMON_VALIDATION, NAME_PATTERN]],
+      ticket: ['', [COMMON_VALIDATION]],
+      priority: ['', [COMMON_VALIDATION]],
+
     });
   }
 
@@ -124,14 +122,14 @@ export class TicketComponent implements OnInit {
   ];
 
   tableData: Array<TICKET> = [
-    {
-      action: '',
-      ticket_code: '',
-      priority: '',
-      employee: '',
-      subject: '',
-      status: '',
-      date: '',
-    },
+    // {
+    //   action: '',
+    //   ticket_code: '',
+    //   priority: '',
+    //   employee: '',
+    //   subject: '',
+    //   status: '',
+    //   date: '',
+    // },
   ];
 }

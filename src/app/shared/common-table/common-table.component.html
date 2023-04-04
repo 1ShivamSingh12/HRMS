@@ -19,23 +19,26 @@
         </th>
         <td mat-cell *matCellDef="let element" [ngSwitch]="disCol.type">
           <span *ngSwitchCase="">
+            <mat-icon class="icons" *ngIf="disCol.icon">{{ disCol.icon}}</mat-icon>
             {{ disCol?.cell(element) }}
           </span>
           <span *ngSwitchCase="'link'">
-            <a href={{disCol.link}} target="_blank"> {{ disCol?.cell(element) }}</a>
+            <a href="{{ disCol.link }}" target="_blank">
+              {{ disCol?.cell(element) }}</a>
           </span>
           <span *ngSwitchCase="'button'">
             <span *ngFor="let buttons of disCol.buttons">
-              <button class="{{ buttons.style }}" (click)="this.buttonClick.emit([buttons.action, buttons.data(element)])">
+              <button *ngIf="buttons.type != 'const_data'" class="{{ buttons.style }}" (click)="this.buttonClick.emit([buttons.action, buttons.data(element)])">
                 <mat-icon *ngIf="buttons.icon">{{ buttons.icon }}</mat-icon><span>{{ buttons.heading }}</span>
+                <a> </a>
+              </button>
+              <button *ngIf="buttons.type == 'const_data'" class="{{ buttons.style }}" (click)="this.buttonClick.emit([buttons.action, buttons.data(element)])">
+                {{ disCol.cell(element) }}
               </button>
             </span>
           </span>
         </td>
-
       </ng-container>
-
-
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 
@@ -48,4 +51,4 @@
   </div>
 </div>
 
-<mat-paginator *ngIf="config?.pagination" [pageSizeOptions]="[5, 10]" #paginator></mat-paginator>
+<mat-paginator *ngIf="config?.pagination" [pageSizeOptions]="[5, 10, 25]" #paginator></mat-paginator>

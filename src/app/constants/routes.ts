@@ -108,6 +108,32 @@ export const DIRECTORY : Route = {
 
 }
 
+
+/* food */
+
+export const FOOD : Route = {
+  path:'food',
+  get fullurl(): string {
+    return `${DASHBOARD.fullurl}/${this.path}`;
+  },
+
+}
+
+export const LUNCH_COUPON : Route = {
+  path:'lunch-coupon',
+  get fullurl(): string {
+    return `${FOOD.fullurl}/${this.path}`;
+  },
+
+}
+
+export const REQUEST_DINNER : Route = {
+  path:'request-dinner',
+  get fullurl(): string {
+    return `${FOOD.fullurl}/${this.path}`;
+  },
+
+}
 /* entrepreneurship routes*/
 
 export const ENTREPRENEURSHIP : Route = {
@@ -125,6 +151,13 @@ export const ADD_PITCH : Route = {
   }
 }
 
+
+export const MY_PITCH : Route = {
+  path:'my-pitch',
+  get fullurl(): string {
+    return `${ADD_PITCH.fullurl}/${this.path}`;
+  }
+}
 /* my-links routes*/
 
 export const MY_LINKS : Route = {
@@ -360,6 +393,15 @@ export const MY_LEAVE : Route = {
   },
 }
 
+export const MY_LEAVE_DETAILS : Route = {
+  path:'myLeave-details',
+  get fullurl(): string {
+    return `${MY_LEAVE.fullurl}/${this.path}`;
+  },
+}
+
+
+
 export const FLOATING_LEAVE : Route = {
   path:'floating-leave',
   get fullurl(): string {
@@ -397,6 +439,20 @@ export const MY_DSR : Route = {
   path:'my-dsr',
   get fullurl(): string {
     return `${DSR.fullurl}/${this.path}`;
+  },
+}
+
+export const MY_DSR_DETAIL : Route = {
+  path:'my-dsr-detail',
+  get fullurl(): string {
+    return `${MY_DSR.fullurl}/${this.path}`;
+  },
+}
+
+export const DSR_EDIT : Route = {
+  path:'dsr-edit',
+  get fullurl(): string {
+    return `${MY_DSR.fullurl}/${this.path}`;
   },
 }
 

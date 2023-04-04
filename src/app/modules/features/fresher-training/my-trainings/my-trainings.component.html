@@ -33,9 +33,12 @@
       </div>
 
       <div class="card_button">
-        <button class="view_detail" (click)="openViewDetail()">
+        <!-- <button class="view_detail" (click)="openViewDetail()">
           View Details
-        </button>
+        </button> -->
+        <a [routerLink]="['VIEW_DETAILS' | absolute]" target="_blank">
+          <button >View Details</button>
+        </a>
         <button class="refer" (click)="openDialog()">Feedback</button>
       </div>
     </div>
@@ -69,9 +72,9 @@
       </div>
 
       <div class="card_button">
-        <button class="view_detail" (click)="openViewDetail()">
-          View Details
-        </button>
+        <a [routerLink]="['VIEW_DETAILS' | absolute]" target="_blank">
+          <button >View Details</button>
+        </a>
         <button class="refer" (click)="openDialog()">Feedback</button>
       </div>
     </div>
@@ -79,7 +82,7 @@
 </div>
 <div>
   <div>
-    <app-footer></app-footer>
+    <!-- <></> -->
   </div>
 
   <router-outlet></router-outlet>

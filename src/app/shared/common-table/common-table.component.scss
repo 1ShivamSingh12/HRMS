@@ -20,6 +20,24 @@
         padding: 8px;
         cursor: pointer;
       }
+      .pending{
+        border:1px solid #199cff;
+        color: orange;
+        background-color: white;
+
+        &:hover{
+          cursor: pointer;
+          background-color: #28c3d7;
+        }
+      }
+
+      .arrow-circle{
+        color: #28c3d7;
+        background-color: white;
+        border: 1px solid #28c3d7;
+         cursor: pointer;
+
+      }
       .no_data_row {
         text-align: center;
         background-color: rgba(24, 28, 33, 0.025);
@@ -28,6 +46,11 @@
           padding-top: 10px;
           padding-bottom: 10px;
         }
+      }
+      .icons{
+        position: relative;
+        top: 8px;
+        color: red;
       }
     }
   }

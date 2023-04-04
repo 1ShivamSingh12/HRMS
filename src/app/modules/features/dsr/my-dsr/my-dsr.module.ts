@@ -14,6 +14,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +34,10 @@ import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dr
     AngularEditorModule,
     HttpClientModule,
     MatCheckboxModule,
-    DropdownWithSearchModule
+    DropdownWithSearchModule,
+    ReactiveFormsModule,
+    FormsModule,
+    FooterModule
   ]
 })
 export class MyDsrModule { }

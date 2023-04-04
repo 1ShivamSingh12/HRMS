@@ -39,10 +39,6 @@ export class JobDetailsComponent implements OnInit {
   };
   openDialog() {
     const dialogRef = this.dialog.open(ReferCandidateDialogComponent,this.options );
-
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
   }
 
   viewDetail(){

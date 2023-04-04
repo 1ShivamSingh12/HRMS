@@ -85,6 +85,7 @@ export const TICKET_CONFIG: Options = {
   search: true,
   showFilter:true,
   show:true,
+  pagination:true,
   searchPlaceholder: "Search..",
 };
 
@@ -92,6 +93,7 @@ export const DSR_CONFIG: Options = {
   search: true,
   showFilter:true,
   show:true,
+  pagination:true,
   searchPlaceholder: "Search..",
 };
 
@@ -99,5 +101,18 @@ export const PROJECTS_CONFIG: Options = {
   search: false,
   showFilter:false,
   show:false,
+  searchPlaceholder: "Search..",
+};
+export const DSR_DETAIL_CONFIG: Options = {
+  search: false,
+  showFilter:false,
+  show:false,
+  searchPlaceholder: "Search..",
+};
+export const MY_PITCH_CONFIG: Options = {
+  search: true,
+  showFilter:false,
+  show:true,
+  pagination:true,
   searchPlaceholder: "Search..",
 };

@@ -18,10 +18,45 @@
     padding: 25px;
     margin-top: 20px;
 
-    .main-card {
-      h1 {
+    .card_body {
+      margin-bottom: 15px;
+      h1{
         border-bottom: 1px solid rgba(150, 165, 184, 0.5);
         padding: 0px 0px 10px 0px;
+      }
+      span {
+        font-family: "Lato";
+        font-size: 14px;
+        color: #606167;
+        font-weight: 400;
+        line-height: 1.5;
+        min-width: 160px;
+        margin: 0 10px 0 0;
+      }
+      p {
+        font-size: 14px;
+        color: #231e1e;
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 0 0 8px;
+      }
+      .title {
+        @include flex('','');
+      }
+      .dates {
+        @include flex('',space-between);
+        width: 70%;
+      }
+      .mode-batch {
+        @include flex('',space-between);
+        width: 69%;
+      }
+      .start_date {
+        @include flex('','');
+      }
+
+      .training_mode {
+        @include flex('','');
       }
     }
 
@@ -118,6 +153,32 @@
               padding: 5px;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .main-container{
+    .container{
+      .card_body{
+        .dates{
+          display: block;
+        }
+        .mode-batch{
+          display: block;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .main-container{
+    .container{
+      .card_body{
+        span{
+          min-width: 100px;
         }
       }
     }

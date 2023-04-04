@@ -43,97 +43,96 @@
       <h3>Add Leave</h3>
       <button (click)="toggle()">+ Add New</button>
     </div>
-    <div class="add_new_leave" *ngIf="show">
-      <div class="new_leave_details">
-        <div class="leave_type">
-          <div class="input-box">
-            <p>Leave Type</p>
-            <mat-form-field appearance="outline">
-              <mat-select placeholder="Leave Type">
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2">Option 2</mat-option>
-                <mat-option value="option3">Option 3</mat-option>
-              </mat-select>
-            </mat-form-field>
-            <!-- <app-dropdown-with-search [data]="dropDown" [placeholder]="" [myControlName]=""></app-dropdown-with-search> -->
-
-          </div>
-          <div class="half_day_toggle">
-            <section class="example-section">
-              <mat-checkbox class="example-margin" [(ngModel)]="checked">Half Day?
-              </mat-checkbox>
-            </section>
-            <mat-radio-group aria-label="Select an option" *ngIf="checked">
-              <mat-radio-button value="1">1st Half</mat-radio-button>
-            </mat-radio-group>
-            <mat-radio-group aria-label="Select an option" *ngIf="checked">
-              <mat-radio-button value="2">2nd Half</mat-radio-button>
-            </mat-radio-group>
-          </div>
-        </div>
-
-        <div class="dates">
-          <div class="input-box">
-            <p>Start Date</p>
-            <mat-form-field appearance="outline">
-              <input matInput [matDatepicker]="picker1" placeholder="from" />
-              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-              <mat-datepicker #picker1></mat-datepicker>
-            </mat-form-field>
-            <!-- <app-field-error [error]="qualification | validationError : 'time' : 'Time'"></app-field-error> -->
+    <form [formGroup]="myLeaveForm">
+      <div class="add_new_leave" *ngIf="show">
+        <div class="new_leave_details">
+          <div class="leave_type">
+            <div class="input-box">
+              <p>Leave Type</p>
+              <mat-form-field appearance="outline">
+                <mat-select placeholder="Leave Type" formControlName="leave_type">
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2">Option 2</mat-option>
+                  <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <!-- <app-dropdown-with-search [data]="dropDown" [placeholder]="" [myControlName]="myLeaveForm.controls.leave_type"></app-dropdown-with-search> -->
+            </div>
+            <div class="half_day_toggle">
+              <section class="example-section">
+                <mat-checkbox class="example-margin">Half Day?
+                </mat-checkbox>
+              </section>
+              <mat-radio-group aria-label="Select an option" *ngIf="checked">
+                <mat-radio-button value="1">1st Half</mat-radio-button>
+              </mat-radio-group>
+              <mat-radio-group aria-label="Select an option" *ngIf="checked">
+                <mat-radio-button value="2">2nd Half</mat-radio-button>
+              </mat-radio-group>
+            </div>
           </div>
 
-          <div class="input-box">
-            <p>End Date</p>
-            <mat-form-field appearance="outline">
-              <input matInput [matDatepicker]="picker2" placeholder="from" />
-              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-              <mat-datepicker #picker2></mat-datepicker>
-            </mat-form-field>
-            <!-- <app-field-error [error]="qualification | validationError : 'time' : 'Time'"></app-field-error> -->
-          </div>
-        </div>
+          <div class="dates">
+            <div class="input-box">
+              <p>Start Date</p>
+              <mat-form-field appearance="outline">
+                <input readonly [max]="myLeaveForm.value.request_to" matInput [matDatepicker]="picker1" placeholder="from" formControlName="request_from" />
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+              <!-- <app-field-error [error]="qualification | validationError : 'time' : 'Time'"></app-field-error> -->
+            </div>
 
-        <div class="remarks">
-          <div class="input-box">
-            <p>Remarks</p>
-            <mat-form-field appearance="outline">
-              <input matInput placeholder="First Name" />
-            </mat-form-field>
-            <!-- <app-field-error [error]="
+            <div class="input-box">
+              <p>End Date</p>
+              <mat-form-field appearance="outline">
+                <input readonly [min]="myLeaveForm.value.request_from" matInput [matDatepicker]="picker2" placeholder="to" formControlName="request_to" />
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+              <!-- <app-field-error [error]="qualification | validationError : 'time' : 'Time'"></app-field-error> -->
+            </div>
+          </div>
+
+          <div class="remarks">
+            <div class="input-box">
+              <p>Remarks</p>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="First Name" />
+              </mat-form-field>
+              <!-- <app-field-error [error]="
                 qualification | validationError : 'school' : 'School/University'
               "></app-field-error> -->
+            </div>
+          </div>
+
+          <div class="file-choose">
+            <p>Upload Document</p>
+            <input type="file" />
+            <!-- <app-field-error [error]="referCandidate | validationError : 'file' : 'CV'"></app-field-error> -->
           </div>
         </div>
-
-        <div class="file-choose">
-          <p>Upload Document</p>
-          <input type="file"/>
-          <!-- <app-field-error [error]="referCandidate | validationError : 'file' : 'CV'"></app-field-error> -->
-
+        <div class="leave_reason">
+          <p>Leave Reason</p>
+          <angular-editor [config]="editorConfig" placeholder="'Enter industrytext here...'"></angular-editor>
         </div>
 
+        <div class="buttons">
+          <button class="save_button" (click)="saveData()">Save</button>
+          <button class="cancel_button">Cancel</button>
+        </div>
       </div>
-      <div class="leave_reason">
-        <p>Leave Reason</p>
-        <angular-editor [config]="editorConfig" placeholder="'Enter industrytext here...'" ></angular-editor>
-      </div>
-
-      <div class="buttons">
-        <button class="save_button">Save</button>
-        <button class="cancel_button">Cancel</button>
-      </div>
-    </div>
+    </form>
   </div>
 
   <div class="leave_list">
-
     <h3>List All Leave</h3>
 
     <!-- <app-listing [config]="myLeaveConfig"></app-listing> -->
-      <app-common-table [config]="myLeaveConfig" [tableColumns]="tableColumns"  [dataSource]="dataSource"></app-common-table>
+    <app-common-table (buttonClick)="buttonClick($event)" [config]="myLeaveConfig" [tableColumns]="tableColumns"
+      [dataSource]="dataSource"></app-common-table>
   </div>
 </div>
 <div>
-  <app-footer></app-footer>
+  <!-- <></> -->
 </div>

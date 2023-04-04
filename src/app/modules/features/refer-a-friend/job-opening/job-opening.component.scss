@@ -17,8 +17,8 @@
     }
 
     .card_body {
-      @include grid(grid-template-columns,'33% 33% 33%' ,'10px');
-
+      @include grid(grid-template-columns,'33% 33% 33%' ,10px);
+      row-gap: 10px;
       .content {
         background-color: $pure-white;
       }

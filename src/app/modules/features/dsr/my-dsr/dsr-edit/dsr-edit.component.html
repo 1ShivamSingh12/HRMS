@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="card">
+    <div class="new_dsr">
+      <div class="dsr_type">
+        <div class="input-box">
+          <p>Project</p>
+          <mat-form-field appearance="outline">
+            <mat-select placeholder="Project" formControlName="priority">
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2">Option 2</mat-option>
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- <app-dropdown-with-search [data]="dropDown" [placeholder]="'Project'"></app-dropdown-with-search> -->
+
+        </div>
+
+        <div class="dsr_details">
+          <div class="input-box">
+            <p>Dtae</p>
+            <mat-form-field appearance="outline">
+              <input matInput [matDatepicker]="picker1" formControlName="time" placeholder="Date" />
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <!-- <app-field-error [error]="qualification | validationError : 'time' : 'Time'"></app-field-error> -->
+          </div>
+          <div class="input-box">
+            <p>Estimated Hour</p>
+            <mat-form-field appearance="outline">
+              <input matInput [matDatepicker]="picker2" formControlName="time_to" placeholder="Estimated Hour" />
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <!-- <app-field-error [error]="qualification | validationError : 'time_to' : 'Time'"></app-field-error> -->
+          </div>
+        </div>
+
+      </div>
+
+      <div class="Description">
+        <p> Description</p>
+        <angular-editor [config]="editorConfig" placeholder="'Enter industrytext here...'"></angular-editor>
+      </div>
+
+      <div class="buttons">
+        <button class="save_button">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <></> -->

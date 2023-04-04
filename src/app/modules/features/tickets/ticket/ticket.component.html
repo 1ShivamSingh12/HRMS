@@ -12,22 +12,22 @@
             <div class="input-box">
               <p>Subject</p>
               <mat-form-field appearance="outline">
-                <input matInput placeholder="Subject" />
+                <input matInput placeholder="Subject" formControlName="subject"/>
               </mat-form-field>
             </div>
             <div class="input-box">
               <p>Departmnet</p>
-            <app-dropdown-with-search [data]="dropDown" [placeholder]="'Department'" [myControlName]=""></app-dropdown-with-search>
+            <app-dropdown-with-search [data]="dropDown" [placeholder]="'Department'" [myControlName]="ticket.controls.department"></app-dropdown-with-search>
 
             </div>
             <div class="input-box">
               <p>Ticket Category</p>
-              <app-dropdown-with-search [data]="dropDown" [placeholder]="'Ticket Category'" [myControlName]=""></app-dropdown-with-search>
+              <app-dropdown-with-search [data]="dropDown" [placeholder]="'Ticket Category'" [myControlName]="ticket.controls.ticket"></app-dropdown-with-search>
 
             </div>
             <div class="input-box">
               <p>Priority</p>
-              <app-dropdown-with-search [data]="dropDown" [placeholder]="'Priority'" [myControlName]=""></app-dropdown-with-search>
+              <app-dropdown-with-search [data]="dropDown" [placeholder]="'Priority'" [myControlName]="ticket.controls.priority"></app-dropdown-with-search>
 
             </div>
           </div>
@@ -53,4 +53,4 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>
+<!-- <></> -->

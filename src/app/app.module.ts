@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HelpDialogComponent } from './shared/dialog/help-dialog/help-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -14,14 +17,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    HelpDialogComponent,
 
       ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

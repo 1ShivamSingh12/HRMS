@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ASSETS_INVENTORY, ASSET_DECLARATION, ATTENDANCE, DIRECTORY, DOCUMENTS, DSR, ENTREPRENEURSHIP, FRESHER_TRAINING, HOLIDAY_CALENDER, HOME, JOB_OPENING, LEAVE, MY_INTERVIEW, MY_LINKS, MY_PERFORMANCE, MY_PROFILE, MY_TRAINING, ONGOING_TRAINING, PROJECTS, RECRUITMENT, REFERRAL_LIST, REFER_A_FRIEND, REQUESTED_TRAINING, REQUEST_ASSET, REVIEWS, TICKETS, TRAINING, UPCOMING_TRAINING } from 'src/app/constants/routes';
+import { ASSETS_INVENTORY, ATTENDANCE, DIRECTORY, DSR, ENTREPRENEURSHIP, FOOD, FRESHER_TRAINING, HOME, LEAVE, MY_LINKS, MY_PROFILE, PROJECTS, RECRUITMENT, REFER_A_FRIEND,REVIEWS, TICKETS, TRAINING } from 'src/app/constants/routes';
 import { FeatureComponent } from './feature.component';
 
 const routes: Routes = [
@@ -99,6 +99,12 @@ const routes: Routes = [
         loadChildren: () =>
           import('./projects/projects.module').then((m) => m.ProjectsModule),
       },
+      {
+        path: FOOD.path,
+        loadChildren: () =>
+          import('./food/food.module').then((m) => m.FoodModule),
+      },
+
     ],
   },
 ];

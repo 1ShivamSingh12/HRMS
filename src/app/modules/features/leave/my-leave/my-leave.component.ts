@@ -1,28 +1,42 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { LEAVE_TABLEDATA } from 'src/app/constants/const_data';
 import { commondropDown } from 'src/app/constants/drop_down_data';
+import { MY_LEAVE_DETAILS } from 'src/app/constants/routes';
 import { MY_LEVAE_CONFIG, Options } from 'src/app/constants/tableConfig';
+import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 import { MY_LEAVE } from 'src/app/interfaces/table.interface';
 
 @Component({
   selector: 'app-my-leave',
   templateUrl: './my-leave.component.html',
-  styleUrls: ['./my-leave.component.scss']
+  styleUrls: ['./my-leave.component.scss'],
 })
 export class MyLeaveComponent implements OnInit {
   myLeaveConfig: Options = MY_LEVAE_CONFIG;
   dataSource = new MatTableDataSource<MY_LEAVE>();
-  dropDown = commondropDown
-  constructor() { }
+  dropDown = commondropDown;
+  myLeaveForm!: FormGroup;
+
+  constructor(private route: Router, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<MY_LEAVE>(this.tableData);
-
+    this.createForm();
   }
+
+  createForm() {
+    this.myLeaveForm = this.fb.group({
+      leave_type: ['', [COMMON_VALIDATION]],
+      request_from: ['', [COMMON_VALIDATION]],
+      request_to: ['', [COMMON_VALIDATION]],
+    });
+  }
+
   checked = false;
-
-
   editorConfig: AngularEditorConfig = {
     editable: true,
     spellcheck: true,
@@ -62,13 +76,13 @@ export class MyLeaveComponent implements OnInit {
     uploadUrl: 'v1/image',
   };
 
-  show = false
+  show = false;
 
-  toggle(){
-    if(this.show == false){
-      this.show = true
-    }else{
-      this.show = false
+  toggle() {
+    if (this.show == false) {
+      this.show = true;
+    } else {
+      this.show = false;
     }
   }
   tableColumns: Array<any> = [
@@ -76,6 +90,14 @@ export class MyLeaveComponent implements OnInit {
       columnDef: 'action',
       header: 'Action',
       cell: (element: Record<string, any>) => `${element['action']}`,
+      type: 'button',
+      buttons: [
+        {
+          icon: 'arrow_circle_right',
+          data: (element: MY_LEAVE) => element,
+          style: 'arrow-circle',
+        },
+      ],
     },
     {
       columnDef: 'leave_type',
@@ -114,18 +136,21 @@ export class MyLeaveComponent implements OnInit {
     },
   ];
 
-  tableData: Array<MY_LEAVE> = [
-    {
-      action: '',
-      leave_type: '',
-      request_from: '',
-      request_to: '',
-      applied_on: '',
-      status: '',
-      level1: '',
-      level2 : '',
-    },
-  ];
+  tableData: Array<any> = LEAVE_TABLEDATA;
 
+  buttonClick(result: any) {
+    console.log(result);
 
+    this.route.navigate([MY_LEAVE_DETAILS.fullurl, result[1].id]);
+  }
+
+  saveData() {
+    if (this.myLeaveForm.valid) {
+      this.myLeaveForm.value['id'] = '23456'
+      this.tableData.push(this.myLeaveForm.value);
+      this.dataSource = new MatTableDataSource<MY_LEAVE>(this.tableData);
+    } else {
+      this.myLeaveForm.markAllAsTouched();
+    }
+  }
 }

@@ -1,7 +1,7 @@
 @import "../../../../../scss/mix";
 .container {
   padding: 2em;
-   min-height: 100%;
+  min-height: 100%;
   background-color: $common-background;
 
   .header {
@@ -40,7 +40,7 @@
       h3 {
         font-size: 24px;
         font-weight: 500;
-        @include flex(center,'');
+        @include flex(center, "");
         margin-left: 15px;
         &::after {
           content: "";
@@ -67,19 +67,15 @@
           margin-bottom: 4px;
         }
 
-        ::ng-deep.mat-form-field-appearance-outline{
-          .mat-form-field-flex{
-            background-color: #F8F8F8;
+        ::ng-deep.mat-form-field-appearance-outline {
+          .mat-form-field-flex {
+            background-color: #f8f8f8;
           }
         }
-
       }
       .my_detail_body {
-        @include grid(grid-template-columns,'49.5% 49.5%' ,'1%');
-
+        @include grid(grid-template-columns, "49.5% 49.5%", "1%");
       }
-
-
     }
 
     .pitch_detail {
@@ -96,7 +92,6 @@
       }
 
       .textarea {
-
         margin-bottom: 15px;
         p {
           font-size: 14px;
@@ -105,12 +100,9 @@
           line-height: 1.4;
           margin-bottom: 4px;
         }
-
-
       }
 
       .choose-file {
-
         p {
           font-size: 14px;
           color: #96a5b8;
@@ -128,10 +120,6 @@
       }
     }
   }
-}
-
-.angular-editor-textarea{
-  min-height: 15vw;
 }
 
 @media only screen and (max-width: 375px) {
