@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ADD_PITCH } from 'src/app/constants/routes';
+import { ADD_PITCH, MY_PITCH } from 'src/app/constants/routes';
 import { EntrepreneurshipComponent } from './entrepreneurship.component';
 
 const routes: Routes = [
@@ -9,6 +9,11 @@ const routes: Routes = [
     path: ADD_PITCH.path,
     loadChildren: () =>
       import('./add-pitch/add-pitch.module').then((m) => m.AddPitchModule),
+  },
+  {
+    path: MY_PITCH.path,
+    loadChildren: () =>
+      import('./my-pitch/my-pitch.module').then((m) => m.MyPitchModule),
   },
 ];
 

@@ -48,6 +48,12 @@ export class QualificationComponent implements OnInit {
       // description:['',[COMMON_VALIDATION]]
     });
   }
+
+  noSpace(event:any){
+    if(event.target.selectionStart == 0 && event.code == "Space"){
+      event.preventDefault();
+    }
+  }
   tableColumns: Array<any> = [
     {
       columnDef: 'action',

@@ -16,6 +16,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     MatOptionModule,
     MatSelectModule,
     MatButtonModule,
-    FooterModule
+    FooterModule,
+    CommonTableModule
   ]
 })
 export class ProjectDetailsModule { }

@@ -20,7 +20,7 @@
         <div mat-menu-item [routerLink]="['CHANGE_PASSWORD' | absolute]">
           <mat-icon>key</mat-icon> Change Password
         </div>
-        <hr>
+        <hr />
         <div mat-menu-item [routerLink]="['AUTH' | absolute]">
           <mat-icon>logout</mat-icon> Sign Out
         </div>
@@ -29,10 +29,22 @@
         <button (click)="openDialog()">Help</button>
       </div>
       <div class="bellIcon">
-        <mat-icon>notifications</mat-icon>
+        <mat-icon (click)="notificationToggle = !notificationToggle">notifications</mat-icon>
       </div>
+      <mat-card class="notification-box " [@enterLeaveAnimation] *ngIf="notificationToggle">
+        <mat-icon class="close" (click)="toggleDiv()">close</mat-icon>
+        <div class="notify-card">
+          <div class="notify-header">
+            <mat-card-subtitle>No new notification</mat-card-subtitle>
+          </div>
+          <div class="notify-body">
+            <p class="notify-content">- -</p>
+          </div>
+        </div>
+      </mat-card>
     </div>
   </mat-toolbar>
+
 </div>
 <div>
   <mat-sidenav-container class="example-container" autosize>
@@ -41,7 +53,8 @@
       <mat-nav-list [ngClass]="isExpanded ? 'primary' : 'secondary'">
         <ng-container *ngFor="let item of sideroutes">
           <mat-list-item class="parent" [routerLink]="item.link" [routerLinkActive]="item.link ? 'activeLink' : ''"
-            (click)="showSubmenu = !showSubmenu" (click)="item.show = !item.show" (click)="collapseOtherMenus(item)">
+            (click)="showSubmenu = !showSubmenu"  (click)="collapseOtherMenus(item)"
+            [ngClass]="item.isActive ? '' : 'disable'">
             <mat-icon>{{ item.logo }}</mat-icon>
             <span class="full-width" *ngIf="isExpanded || isShowing">{{
               item.title
@@ -53,8 +66,8 @@
           </mat-list-item>
           <div class="submenu" [ngClass]="{ expanded: item.show }" *ngIf="item.show">
             <ng-container *ngFor="let item1 of item.options">
-              <mat-list-item class="parent" [routerLink]="item1.link" [routerLinkActive]="item1.link ? 'activeLink1':''"
-                [ngClass]="isExpanded ? 'primary' : 'secondary'">
+              <mat-list-item class="parent" [routerLink]="item1.link"
+                [routerLinkActive]="item1.link ? 'activeLink1' : ''" [ngClass]="isExpanded ? 'primary' : 'secondary'">
                 <mat-icon *ngIf="item1.subLogo">{{ item1.subLogo }}</mat-icon>
                 <span class="full-width" *ngIf="isExpanded || isShowing">{{
                   item1.subTitle
@@ -67,7 +80,9 @@
     </mat-sidenav>
     <div class="example-sidenav-content">
       <router-outlet></router-outlet>
+      <button mat-button class="covid-help" (click)="openCovid()">Covid 19-Desk</button>
       <app-footer></app-footer>
     </div>
   </mat-sidenav-container>
+
 </div>

@@ -1,5 +1,22 @@
 @import "../../../scss/mix";
 
+.example-notification {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-notification-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-notification-sidenav {
+  padding: 20px;
+}
+
 .header {
   mat-toolbar {
     padding: 17px 20px 0px 14px;
@@ -67,6 +84,37 @@
         mat-icon {
           @include position(relative, 4px, "", "", "");
           color: grey;
+          cursor: pointer;
+        }
+      }
+      .notification-box {
+        padding: 24px;
+        margin-top: 3rem;
+        min-height: calc(100vh - 6em);
+        width: 20em;
+        position: fixed;
+        right: 0;
+        z-index: 9999;
+        border-radius: 3px;
+        background: #f7f7f7;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        overflow: scroll;
+        .close {
+          cursor: pointer;
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+        }
+        .notify-card {
+          margin-bottom: 15px;
+          border: 1px solid #cac5c578;
+          border-radius: 12px;
+          .notify-header {
+            padding: 10px;
+            border-radius: 12px 12px 0 0 !important;
+            background-color: #0000000f;
+          }
         }
       }
     }
@@ -87,15 +135,23 @@
           font-weight: 500;
           font-size: 14px;
         }
+
+      }
+      .disable{
+        color: grey;
+        &:hover{
+          color: #199cff;
+        }
       }
     }
+
     ::ng-deep {
       .mat-drawer-inner-container {
         @include custom-scroller("y", 5px, white);
       }
     }
 
-    &:hover{
+    &:hover {
       ::ng-deep {
         .mat-drawer-inner-container {
           @include custom-scroller("y", 5px, grey);
@@ -148,6 +204,17 @@
 }
 .submenu.expanded {
   transform: scaleY(1);
+}
+.covid-help {
+  height: 60px;
+  font-size: 18px;
+  position: fixed;
+  background-color: white;
+  color: red;
+  bottom: 5%;
+  right: 0;
+  border-radius: 20px 0 0 20px;
+  z-index: 999;
 }
 
 @media only screen and (max-width: 1000px) {

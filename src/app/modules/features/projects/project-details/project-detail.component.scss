@@ -1,7 +1,7 @@
-@import '../../../../../scss/mix';
+@import "../../../../../scss/mix";
 
 section {
-   min-height: 100%;
+  min-height: 100%;
   padding: 20px;
   background-color: $common-background;
 
@@ -31,8 +31,8 @@ section {
     }
   }
 
-  .tab{
-    ::ng-deep.mat-tab-labels{
+  .tab {
+    ::ng-deep.mat-tab-labels {
       display: flex;
       background-color: white;
       margin-top: 30px;
@@ -40,13 +40,12 @@ section {
     }
   }
 }
-@media only screen and (max-width:633px) {
-  section{
-    .head{
+@media only screen and (max-width: 633px) {
+  section {
+    .head {
       display: block;
-      .right_box{
+      .right_box {
         width: 100%;
-
       }
     }
   }

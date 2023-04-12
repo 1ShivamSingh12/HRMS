@@ -188,7 +188,7 @@ export const DSR_TABLEDATA = [
     total: 2,
     sr_no: '1',
     approval_status: 'Pending',
-  
+
     DSR: [
       {
         sr_no: '1',
@@ -384,5 +384,51 @@ export const LEAVE_TABLEDATA = [
     level2: 'HR (Human Resourse)',
     id:'56'
 
+  },
+];
+
+
+export const PROJECT_LIST_DATA = [
+  {
+    name: 'Shivam Singh',
+    allocated: 'Resource',
+    department: 'Angular',
+    allocate_hours: '8:00',
+    exp: '1.0',
+    relevant_exp: '0.7',
+    hrs_log: '2161:16',
+  },
+  {
+    name: 'Ishaan Sharma ',
+    allocated: 'Resource',
+    department: 'Angular',
+    allocate_hours: '8:00',
+    exp: '1.0',
+    relevant_exp: '0.7',
+    hrs_log: '2161:16',
+  }, {
+    name: 'Rishabh Ghildiyal',
+    allocated: 'Resource',
+    department: 'Angular',
+    allocate_hours: '8:00',
+    exp: '1.0',
+    relevant_exp: '0.7',
+    hrs_log: '2161:16',
+  }, {
+    name: 'Swapnil Maurya',
+    allocated: 'Resource',
+    department: 'Angular',
+    allocate_hours: '8:00',
+    exp: '1.0',
+    relevant_exp: '0.7',
+    hrs_log: '2161:16',
+  }, {
+    name: 'Arpit Dwivedi',
+    allocated: 'Resource',
+    department: 'Angular',
+    allocate_hours: '8:00',
+    exp: '1.0',
+    relevant_exp: '0.7',
+    hrs_log: '2161:16',
   },
 ];

@@ -131,10 +131,9 @@ export class AssetDeclarationComponent implements OnInit {
 
   submitValue(){
     if (this.assestDeclaration.valid) {
-      this.assestDeclaration
-      console.log(this.assestDeclaration.value,'fskvjeuw');
-
       this.tableData.push(this.assestDeclaration.value);
+    }else{
+      this.assestDeclaration.markAllAsTouched()
     }
     this.dataSource = new MatTableDataSource<ASSETS_DECLARATION>(this.tableData);
     console.log(this.dataSource.data, 'lll');

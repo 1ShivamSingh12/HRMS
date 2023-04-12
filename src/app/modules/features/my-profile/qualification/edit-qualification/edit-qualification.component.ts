@@ -25,7 +25,7 @@ export class EditQualificationComponent implements OnInit {
   createForm() {
     this.qualification = this.fb.group({
       school: ['', [COMMON_VALIDATION]],
-      education_level: ['', [COMMON_VALIDATION, NAME_PATTERN]],
+      education_level: ['', [COMMON_VALIDATION]],
       date_from: ['', [COMMON_VALIDATION]],
       date_to: ['', [COMMON_VALIDATION]],
       language: ['', [COMMON_VALIDATION]],
@@ -35,9 +35,13 @@ export class EditQualificationComponent implements OnInit {
   time:any
 
   updateValue(){
-    this.qualification.value['id']=this.dialogData.id
-    this.qualification.value.date_from = this.datePipe.transform(this.qualification.value.date_from, 'YYYY-MM-dd');
-    this.qualification.value.date_to = this.datePipe.transform(this.qualification.value.date_to, 'YYYY-MM-dd');
-    this.dialogRef.close(this.qualification.value);
+    if(this.qualification.valid){
+      this.qualification.value['id']=this.dialogData.id
+      this.qualification.value.date_from = this.datePipe.transform(this.qualification.value.date_from, 'YYYY-MM-dd');
+      this.qualification.value.date_to = this.datePipe.transform(this.qualification.value.date_to, 'YYYY-MM-dd');
+      this.dialogRef.close(this.qualification.value);
+    }else{
+      this.qualification.markAllAsTouched()
+    }
   }
 }

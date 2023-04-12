@@ -102,6 +102,8 @@
     .header_my_details{
       .my_details{
         display: block;
+        text-align: center;
+        word-break: break-word;
         .my_details_body{
           margin-left: 0;
         }

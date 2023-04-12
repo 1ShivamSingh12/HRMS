@@ -1,6 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { REGEX } from 'src/app/constants/Validations';
+import { LOGIN } from 'src/app/constants/routes';
 
 @Pipe({
   name: 'validationError',
@@ -15,7 +16,7 @@ export class ValidationErrorPipe implements PipeTransform {
 
       const error = form.get(control)?.errors;
 
-      // console.log(error,'errr');/
+      // console.log(error,'errr');
 
       if (error?.hasOwnProperty('required')) {
         return `${label} is required`;
@@ -30,8 +31,8 @@ export class ValidationErrorPipe implements PipeTransform {
           return `${label} must be 3 character and must not contain spaces`;
         } else {
           let pattern = error.pattern.requiredPattern;
-          // console.log(pattern, 'erk');
-          // console.log(REGEX.name);
+          console.log(pattern);
+          console.log(REGEX.space);
 
           return this.PATTERN_ERRORS(pattern, label);
         }
@@ -48,6 +49,10 @@ export class ValidationErrorPipe implements PipeTransform {
       return `${label} is invalid`;
     } else if (pattern == REGEX.name) {
       return `${label} is invalid`;
+    }else if(pattern == REGEX.number){
+      return `${label} should be number`;
+    }else if(pattern == REGEX.space){
+      return `${label} should note be start and end with space`;
     }
     return '';
   }

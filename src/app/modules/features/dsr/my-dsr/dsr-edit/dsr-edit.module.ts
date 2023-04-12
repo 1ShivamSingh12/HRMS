@@ -14,6 +14,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
 import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     AngularEditorModule,
     HttpClientModule,
     MatCheckboxModule,
-    DropdownWithSearchModule
+    DropdownWithSearchModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DsrEditModule { }

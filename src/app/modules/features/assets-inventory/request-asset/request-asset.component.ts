@@ -12,6 +12,8 @@ import { REQUEST_ASSETS } from 'src/app/interfaces/table.interface';
   styleUrls: ['./request-asset.component.scss'],
 })
 export class RequestAssetComponent implements OnInit {
+  dataSource = new MatTableDataSource<REQUEST_ASSETS>();
+
   requestAsset!: FormGroup;
   assetsConfig: Options = REQUEST_ASSETS_CONFIG;
   dropDown = commondropDown
@@ -19,8 +21,7 @@ export class RequestAssetComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
-    this.dataSource = new MatTableDataSource<REQUEST_ASSETS>();
-    this.submitRequest();
+    this.dataSource = new MatTableDataSource<REQUEST_ASSETS>(this.tableData);
   }
 
   createForm() {
@@ -189,13 +190,15 @@ export class RequestAssetComponent implements OnInit {
     },
   ];
 
-  dataSource = new MatTableDataSource<REQUEST_ASSETS>(this.tableData);
 
   submitRequest() {
     if (this.requestAsset.valid) {
       this.tableData.push(this.requestAsset.value);
+    }else{
+      this.requestAsset.markAllAsTouched()
     }
     this.dataSource = new MatTableDataSource<REQUEST_ASSETS>(this.tableData);
+    // this.requestAsset.reset()
     console.log(this.dataSource.data, 'lll');
   }
 }

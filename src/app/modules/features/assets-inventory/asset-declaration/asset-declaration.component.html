@@ -18,46 +18,71 @@
             <div class="input-box">
               <p>Unique Asset Code</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="unique_asset_code" placeholder="">
+                <input matInput formControlName="unique_asset_code" placeholder="" />
+                <mat-error>{{
+                  assestDeclaration
+                  | validationError : "unique_asset_code" : "Code"
+                  }}</mat-error>
               </mat-form-field>
             </div>
             <div class="input-box">
               <p>Serial Number</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="serial_number" placeholder="">
+                <input matInput formControlName="serial_number" placeholder="" />
+                <mat-error>{{
+                  assestDeclaration
+                  | validationError : "serial_number" : "Serial Number"
+                  }}</mat-error>
               </mat-form-field>
             </div>
             <div class="input-box">
               <p>Model Number</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="model_number" placeholder="">
+                <input matInput formControlName="model_number" placeholder="" />
+                <mat-error>{{
+                  assestDeclaration
+                  | validationError : "model_number" : "Model Number"
+                  }}</mat-error>
               </mat-form-field>
             </div>
             <div class="input-box">
               <p>OS</p>
-              <app-dropdown-with-search [data]="dropDown" [placeholder]="" [myControlName]="assestDeclaration.controls.os"></app-dropdown-with-search>
+              <app-dropdown-with-search [error]="assestDeclaration | validationError : 'os' : 'OS'" [data]="dropDown"
+                [placeholder]="" [myControlName]="assestDeclaration.controls.os"></app-dropdown-with-search>
             </div>
             <div class="input-box">
               <p>OS version</p>
-               <mat-form-field appearance="outline">
-                <input matInput formControlName="os_version" placeholder="">
+              <mat-form-field appearance="outline">
+                <input matInput formControlName="os_version" placeholder="" />
+                <mat-error>{{
+                  assestDeclaration
+                  | validationError : "os_version" : "OS version"
+                  }}</mat-error>
               </mat-form-field>
             </div>
             <div class="input-box">
               <p>Brand</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="brand" placeholder="">
+                <input matInput formControlName="brand" placeholder="" />
+                <mat-error>{{
+                  assestDeclaration | validationError : "brand" : "Brand"
+                  }}</mat-error>
               </mat-form-field>
             </div>
             <div class="input-box">
               <p>Colour</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="colour" placeholder="">
+                <input matInput formControlName="colour" placeholder="" />
+                <mat-error>{{
+                  assestDeclaration | validationError : "colour" : "Colour"
+                  }}</mat-error>
               </mat-form-field>
             </div>
             <div class="input-box">
               <p>Device is in working condition?</p>
-              <app-dropdown-with-search [data]="dropDown" [placeholder]="" [myControlName]="assestDeclaration.controls.is_Working"></app-dropdown-with-search>
+              <app-dropdown-with-search [data]="dropDown" [error]="
+                  assestDeclaration | validationError : 'is_Working' : 'Working'
+                " [placeholder]="" [myControlName]="assestDeclaration.controls.is_Working"></app-dropdown-with-search>
             </div>
           </div>
           <div class="card_bottom">

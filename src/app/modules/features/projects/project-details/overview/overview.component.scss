@@ -1,69 +1,95 @@
-.row1_wrapper,
-.row2_wrapper {
-  margin-top: 30px;
-  padding: 2%;
-  background-color: white;
-}
-.row2_wrapper {
-  margin-bottom: 2%;
-}
-.panel {
-  display: grid;
-  grid-template-columns: 48% 48%;
-  column-gap: 4%;
+@import "../../../../../../scss/mix";
 
-  .left {
-    .left_panels {
-      mat-expansion-panel {
-        padding: 20px 0px;
-        display: grid;
-        grid-template-columns: auto;
-      }
-      mat-expansion-panel-header {
-        padding: 0 13px;
-        .mat-expansion-panel-header-title, .mat-expansion-panel-header-description{
-          display: flex;
-          flex-grow: 0;
+.container {
+  .row1_wrapper,
+  .row2_wrapper {
+    margin-top: 30px;
+    padding: 1%;
+    background-color: white;
+    h2 {
+      font-size: 20px;
+      color: #3246d3;
+      border-bottom: 1px solid #f3f7fc;
+      font-weight: 500;
+    }
+  }
+  .row2_wrapper {
+    margin-bottom: 2%;
+  }
+  .panel {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    column-gap: 4%;
+
+    .left {
+      .left_panels {
+        mat-expansion-panel {
+          padding: 20px 0px;
+          display: grid;
+          grid-template-columns: auto;
         }
-      }
-      .caps {
-        width: 60px;
-        height: 60px;
-        border-radius: 7px;
-        background-color: #3246d3;
-        font-size: 31px;
-        font-weight: 600;
-        color: #fff;
-        font-family: "Segoe UI";
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        h1 {
-          margin-top: 10px;
-          font-size: 35px;
-        }
-      }
-      .data {
-        display: flex;
-        flex-direction: column;
-        .info {
-          h1 {
-            margin-bottom: 0px;
+        mat-expansion-panel-header {
+          padding: 0 13px;
+          .mat-expansion-panel-header-title,
+          .mat-expansion-panel-header-description {
+            display: flex;
+            flex-grow: 0;
           }
         }
-        .noDoc {
-          color: grey;
+        .caps {
+          width: 60px;
+          height: 60px;
+          border-radius: 7px;
+          background-color: #3246d3;
+          font-size: 31px;
+          font-weight: 600;
+          color: #fff;
+          font-family: "Segoe UI";
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          h1 {
+            margin-top: 10px;
+            font-size: 35px;
+          }
+        }
+        .data {
+          display: flex;
+          flex-direction: column;
+          .info {
+            h1 {
+              margin-bottom: 0px;
+            }
+          }
+          .noDoc {
+            color: grey;
+          }
         }
       }
     }
   }
 }
 
-@media only screen and (max-width:633px) {
+.ll {
+}
+:host ::ng-deep .container {
+  .tables {
+    border-radius: 10px;
+    table {
+      @include commonTableStyling(1px solid #f1f1f2, "");
+      tbody {
+        background-color:  white;
+        tr:nth-child(odd) {
+          background-color: #f3f3f3;
+        }
+      }
+    }
+  }
+}
 
-  .panel{
+@media only screen and (max-width: 633px) {
+  .panel {
     display: grid;
     grid-template-columns: 100%;
   }
-
 }

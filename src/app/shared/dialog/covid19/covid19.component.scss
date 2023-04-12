@@ -1,0 +1,84 @@
+@import "../../../../scss/mix";
+section {
+  display: grid;
+  grid-template-columns: 48% 48%;
+  border-radius: 5px;
+  .job-card-wrapper {
+    height: 60vh;
+    display: grid;
+    .left_wrapper {
+      @include flex(center, center);
+      flex-direction: column;
+      padding: 4%;
+      h1 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #9a9c9c;
+      }
+    }
+  }
+
+  .right_wrapper {
+    padding: 37px 20px;
+    background: #fafafa;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+
+    // padding: 8%;
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #3246d3;
+    }
+    p {
+      color: #9a9c9c;
+    }
+
+    button {
+      // color: $buttontext;
+
+      margin: 1%;
+    }
+
+    @include form-field(100%);
+
+    .input-box {
+      margin: 0px 0px 10px 0px;
+      ::ng-deep.mat-form-field-appearance-outline .mat-form-field-wrapper {
+        background-color: #fafafa;
+      }
+
+      .desc {
+        ::ng-deep.mat-form-field-flex {
+          min-height: 100px;
+        }
+      }
+      p {
+        color: #9a9c9c;
+      }
+    }
+
+    button {
+      @include button(10px);
+      background-color: #3246d3;
+      &:hover {
+        background-color: #3246d3;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  section {
+    display: grid;
+    grid-template-columns: 100%;
+
+    .job-card-wrapper {
+      height: 20vh;
+    }
+  }
+}

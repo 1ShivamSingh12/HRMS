@@ -1,6 +1,7 @@
 @import "../../../scss/mix";
 .containers {
   .tables {
+    overflow-x: auto;
     background-color: $primary-white;
     table {
       width: 100%;
@@ -20,7 +21,7 @@
         padding: 8px;
         cursor: pointer;
       }
-      .pending{
+      .dsr_button {
         border:1px solid #199cff;
         color: orange;
         background-color: white;
@@ -30,7 +31,11 @@
           background-color: #28c3d7;
         }
       }
-
+      .dsr_edit {
+        border:1px solid #199cff;
+        color: #199cff;
+        background-color: white;
+      }
       .arrow-circle{
         color: #28c3d7;
         background-color: white;

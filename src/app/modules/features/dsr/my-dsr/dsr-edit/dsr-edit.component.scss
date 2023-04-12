@@ -19,6 +19,9 @@
         ::ng-deep.mat-form-field-wrapper {
           padding-bottom: 0.7em;
         }
+        .input-box{
+          margin-bottom: 20px
+        }
 
         .dsr_details {
           @include grid(grid-template-columns, "50% 50%", "");

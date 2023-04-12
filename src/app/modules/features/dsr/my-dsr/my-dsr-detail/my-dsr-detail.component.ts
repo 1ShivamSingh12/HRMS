@@ -84,18 +84,18 @@ export class MyDsrDetailComponent implements OnInit {
       type:'button',
       buttons:[
         {
-          heading:'',
-          icon:'home',
-          style: 'we',
-          data:(element:DSR_DETAIL)=>element,
-          // action: 'pending',
+          icon:'edit',
+          style: 'dsr_edit',
+          data:(element:DSR_DETAIL) => element,
         }
       ]
     },
   ];
 
   buttonClick(result:any){
-    this.Route.navigate([DSR_EDIT.fullurl , result])
-    
+    console.log(result,'ll');
+
+    this.Route.navigate([DSR_EDIT.fullurl ,  this.query_param])
+
   }
 }

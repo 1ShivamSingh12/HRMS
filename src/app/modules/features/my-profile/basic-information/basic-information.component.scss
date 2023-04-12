@@ -75,15 +75,24 @@
     margin-bottom: 20px;
     .card_body {
       .card_upper {
+        .input-box{
+          margin-bottom: 20px
+        }
         @include grid(grid-template-columns, 100%, "");
       }
       .card_middle {
         @include grid(grid-template-columns, 100%, "");
 
         .years_experience {
+          .input-box{
+            margin-bottom: 20px
+          }
           @include grid(grid-template-columns, 100%, "");
         }
         .relevant_experience {
+          .input-box{
+            margin-bottom: 20px
+          }
           @include grid(grid-template-columns, 100%, "");
         }
       }

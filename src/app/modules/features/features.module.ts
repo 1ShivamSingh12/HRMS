@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [FeatureComponent],
@@ -26,7 +27,8 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     MatButtonModule,
     MatDialogModule,
     MatMenuModule,
-    FooterModule
+    FooterModule,
+    MatCardModule
   ],
 })
 export class FeaturesModule {}

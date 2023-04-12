@@ -11,6 +11,8 @@ import {departmentDrop,directoryDropDown,} from 'src/app/constants/drop_down_dat
 export class DirectoryComponent implements OnInit {
   departmentSearch: any = 'All';
   searchValue = new FormControl();
+  directory = new FormControl();
+
   department: any;
   name: any;
   filteredData: any[] = directory;

@@ -35,6 +35,7 @@ export class JobDetailsComponent implements OnInit {
   }
   options: MatDialogConfig = {
     width: '51rem',
+
     panelClass: 'refer-a-candidate-dialog',
   };
   openDialog() {

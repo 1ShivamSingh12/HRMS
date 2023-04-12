@@ -27,22 +27,23 @@ export class MyDsrComponent implements OnInit {
   hoursdropDown = hoursDropDown;
   approval = new FormControl();
   hours = new FormControl();
-  from_date = new FormControl()
-  to_date = new FormControl()
-  show: boolean = true;
-  dsrForm!:FormGroup
+  from_date = new FormControl();
+  to_date = new FormControl();
+  submission_status = new FormControl();
+  project = new FormControl();
 
-  constructor(private route: Router , private fb :FormBuilder) {}
+  show: boolean = true;
+  dsrForm!: FormGroup;
+
+  constructor(private route: Router, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<DSR>(this.tableData);
-    this.createForm()
-    for(const item in DSR_TABLEDATA){
-
+    this.createForm();
+    for (const item in DSR_TABLEDATA) {
       console.log(item);
     }
   }
-
 
   createForm() {
     this.dsrForm = this.fb.group({
@@ -51,8 +52,6 @@ export class MyDsrComponent implements OnInit {
       hours: ['', [COMMON_VALIDATION]],
     });
   }
-
-
 
   addnew() {
     if (this.show == false) {
@@ -144,9 +143,9 @@ export class MyDsrComponent implements OnInit {
       type: 'button',
       buttons: [
         {
-          type:'const_data',
+          type: 'const_data',
           // heading:DSR_TABLEDATA[0].approval_status,
-          style: 'pending',
+          style: 'dsr_button',
           data: (element: DSR) => element,
           action: 'pending',
         },
@@ -157,11 +156,10 @@ export class MyDsrComponent implements OnInit {
   tableData: Array<any> = DSR_TABLEDATA;
 
   buttonClick(result: any) {
+   
     let temp = result[1].date;
     window.open(MY_DSR_DETAIL.fullurl + '/' + temp, '_blank');
   }
-
-
 
   filterData: any = DSR_TABLEDATA;
 
@@ -170,7 +168,6 @@ export class MyDsrComponent implements OnInit {
       this.filterData = this.tableData.filter(
         (item: any) => item.approval_status == this.approval.value
       );
-      console.log(this.filterData);
     } else if (!this.approval.value && this.hours.value) {
       if (this.hours.value == 1) {
         this.filterData = this.tableData.filter((item: any) => item.total < 5);

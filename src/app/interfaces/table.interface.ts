@@ -198,7 +198,17 @@ export interface MY_PITCH {
   s_no: any;
   title: any;
   industry: string;
-  technical: any;
+  type: any;
   submitted: string;
   action: any;
+}
+
+export interface PROJECT_LIST {
+  name: any;
+  allocated: any;
+  department: string;
+  allocate_hours: any;
+  exp: string;
+  relevant_exp: any;
+  hrs_log: any;
 }

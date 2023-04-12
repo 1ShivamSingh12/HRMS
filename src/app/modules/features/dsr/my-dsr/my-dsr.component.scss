@@ -1,7 +1,7 @@
 @import "../../../../../scss/mix";
 
 .container {
-   min-height: 100%;
+  min-height: 100%;
   background-color: $common-background;
 
   padding: 30px;
@@ -44,6 +44,10 @@
             padding-bottom: 0.7em;
           }
 
+          .input-box {
+            margin-bottom: 20px;
+          }
+
           .dsr_details {
             @include grid(grid-template-columns, "33% 33% 33%", "");
             .check {
@@ -82,8 +86,11 @@
       padding: 20px;
 
       .card_middle_content {
-        @include grid(grid-template-columns,'24% 24% 24% 24%' ,'16px');
+        @include grid(grid-template-columns, "24% 24% 24% 24%", "16px");
         @include form-field(100%);
+        .input-box {
+          margin-bottom: 20px;
+        }
         mat-form-field {
           ::ng-deep.mat-select-placeholder {
             color: #babbbc;
@@ -121,25 +128,15 @@
     table {
       border: 1px solid rgba(24, 28, 33, 0.06);
       width: 100%;
-      @include commonTableStyling(1px solid #f1f1f2,1px solid #f1f1f2);
-      tbody{
+      @include commonTableStyling(1px solid #f1f1f2, 1px solid #f1f1f2);
+      tbody {
         tr:nth-child(odd) {
           background-color: #f3f3f3;
         }
-
       }
-
     }
   }
 }
-@media only screen and(max-width:1200px) {
-  :host ::ng-deep .container {
-    .tables {
-      overflow-x: scroll;
-    }
-  }
-}
-
 
 @media only screen and(max-width:800px) {
   .container {
@@ -150,15 +147,13 @@
         }
       }
 
-      .card_middle{
-        .card_middle_content{
+      .card_middle {
+        .card_middle_content {
           @include grid(grid-template-columns, "100%", "");
-
         }
       }
     }
   }
-
 }
 
 @media only screen and(max-width:500px) {

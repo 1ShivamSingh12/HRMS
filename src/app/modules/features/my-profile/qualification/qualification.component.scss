@@ -2,7 +2,7 @@
 
 .container {
   .card_body_1 {
-   @include commonCard();
+    @include commonCard();
     .card_header {
       h2 {
         font-size: 20px;
@@ -76,8 +76,8 @@
 :host ::ng-deep .container {
   .tables {
     border-radius: 10px;
-    table{
-      @include commonTableStyling(1px solid #f1f1f2 , '')
+    table {
+      @include commonTableStyling(1px solid #f1f1f2, "");
     }
   }
 }
@@ -87,14 +87,12 @@
     .card_body_1 {
       .card {
         .card_upper {
+          .input-box{
+            margin-bottom: 20px;
+          }
           @include grid(grid-template-columns, 100%, "");
         }
       }
-    }
-  }
-  :host ::ng-deep .container {
-    .tables {
-      overflow-x: scroll;
     }
   }
 }

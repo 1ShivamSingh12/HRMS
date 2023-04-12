@@ -9,6 +9,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HelpDialogComponent } from './shared/dialog/help-dialog/help-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { Covid19Component } from './shared/dialog/covid19/covid19.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { CarouselModule } from './shared/carousel/carousel.module';
+import { FieldErrorModule } from './shared/field-error/field-error.module';
+import { validationError } from './pipes/validation-error/valiadation-error.module';
 
 
 
@@ -18,6 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent,
     PageNotFoundComponent,
     HelpDialogComponent,
+    Covid19Component,
 
       ],
   imports: [
@@ -26,7 +34,16 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    CarouselModule,
+    FieldErrorModule,
+    validationError,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,6 +5,8 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { commondropDown } from 'src/app/constants/drop_down_data';
 import { MY_PITCH } from 'src/app/constants/routes';
 import { COMMON_VALIDATION } from 'src/app/constants/Validations';
+import { PitchDataService } from 'src/app/services/pitch-data/pitch-data.service';
+import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-add-pitch',
@@ -14,7 +16,7 @@ import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 export class AddPitchComponent implements OnInit {
   addPitch!: FormGroup;
   dropDown = commondropDown
-  constructor(private fb: FormBuilder , private route : Router) {}
+  constructor(private fb: FormBuilder , private route : Router ,private pitchService : PitchDataService , private snackbar : SnackbarService) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -25,7 +27,7 @@ export class AddPitchComponent implements OnInit {
       name: [{value : 'Shivam Singh' , disabled:true}, [,]],
       employeeId: [{value:'AI 1547', disabled:true}, [,]],
       date_of_birth: [{value:'2000-12-19', disabled:true}, []],
-      pitch:['',[COMMON_VALIDATION]],
+      title:['',[COMMON_VALIDATION]],
       industry:['',[COMMON_VALIDATION]],
       type:['',[COMMON_VALIDATION]],
       idea : ['',[COMMON_VALIDATION]]
@@ -73,7 +75,8 @@ export class AddPitchComponent implements OnInit {
 
   addPitchSubmit(){
     if(this.addPitch.valid){
-
+      this.pitchService.data = this.addPitch.value
+      this.snackbar.openSnackBar('Submitted Successfully','green-snackbar')
     }else{
       this.addPitch.markAllAsTouched()
     }
@@ -83,5 +86,9 @@ export class AddPitchComponent implements OnInit {
     this.route.navigate([MY_PITCH.fullurl])
   }
 
-
+  noSpace(event:any){
+    if(event.target.selectionStart == 0 && event.code == "Space"){
+      event.preventDefault();
+    }
+  }
 }

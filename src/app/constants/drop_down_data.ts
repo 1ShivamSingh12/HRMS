@@ -108,10 +108,10 @@ export const statusDropDown = {
 }
 export const approvalDropDown = {
   list:[
-    {
-      value:'All',
-      viewValue:'All'
-    },
+    // {
+    //   value:'All',
+    //   viewValue:'All'
+    // },
     {
       value:'Pending',
       viewValue:'Pending'

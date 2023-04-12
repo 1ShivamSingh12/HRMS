@@ -1,50 +1,62 @@
-@import '../../../../scss/mix';
+@import "../../../../scss/mix";
 
 .container {
-   min-height: 100%;
+  min-height: 100%;
   padding: 30px;
   background-color: $common-background;
 
-  .card{
-    background-color: $primary-white;
-    h3 {
-      font-size: 20px;
-      color: $headingsBlue;
-      padding: 11px 25px 11px 15px;
-      border-bottom: 1px solid #f3f7fc;
-      font-weight: 600;
-      margin: 0 0 0;
-    }
-  }
-}
-:host ::ng-deep .container {
-  .tables{
-    // overflow-x: scroll;
-    table{
-      border: 1px solid rgba(24,28,33,0.06);
-      width: 100%;
-      border-collapse: collapse;
-      tbody{
-        background-color: $dullGrey;
-        tr{
-          td{
-            border:1px solid #f1f1f2;
-            padding: 10px 10px 10px 20px;
+  .grid_view {
+    mat-button-toggle-group {
+      background-color: $common-background;
+      border: none;
+      .mat-button-toggle-checked {
+        display: flex;
+        background-color: blue !important;
+        color: #fff !important;
+        padding: 2px;
+        border-radius: 4px;
+        transform: scaleY(1);
+      }
 
-          }
-        }
+      .mat-button-toggle {
+        background-color: $common-background;
+        border: none;
       }
-      thead{
-        tr{
-          th{
-            border:1px solid #f1f1f2;
-            padding: 10px 10px 10px 20px;
-            color: black;
-            font-weight: 400;
-            font-size: 14px;
-          }
-        }
+    }
+  }
+
+  .project {
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+    margin-bottom: 50px;
+    mat-button-toggle-group {
+      background-color: $common-background;
+      border: none;
+      .mat-button-toggle-checked {
+        background-color: #323a46 !important;
+        color: #fff !important;
+        padding: 2px;
+        border-radius: 4px;
+        transform: scaleY(1);
+        display: flex;
+      }
+
+      .mat-button-toggle {
+        background-color: $common-background;
+        border: none;
       }
     }
   }
 }
+
+@media only screen and (max-width:455px){
+  .container{
+    .grid_view{
+      overflow: auto;
+
+    }
+  }
+}
+
+

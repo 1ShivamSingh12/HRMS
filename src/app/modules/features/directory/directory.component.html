@@ -12,7 +12,7 @@
       </div>
       <div class="input-box">
         <p>Department</p>
-        <app-dropdown-with-search [data]="departmentDropDown" (filterValue)="filterValue($event)" [myControlName]="" [placeholder]="'Directory'" ></app-dropdown-with-search>
+        <app-dropdown-with-search [data]="departmentDropDown" (filterValue)="filterValue($event)" [myControlName]="directory" [placeholder]="'Directory'" ></app-dropdown-with-search>
 
       </div>
       <div class="buttons">
@@ -41,6 +41,11 @@
           </div>
           <div class="social">&nbsp;</div>
         </div>
+        <div></div>
+        <div class="notFound">
+          <h1 *ngIf="filteredData.length == 0">Result Not Found</h1>
+        </div>
+        <div></div>
       </div>
     </div>
   </div>

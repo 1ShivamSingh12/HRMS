@@ -1,4 +1,5 @@
 import {
+  ADD_PITCH,
   ASSET_DECLARATION,
   ATTENDANCE_CALENDER,
   AUTH,
@@ -16,6 +17,7 @@ import {
   MY_INTERVIEW,
   MY_LEAVE,
   MY_PERFORMANCE,
+  MY_PITCH,
   MY_PROFILE,
   MY_TRAINING,
   MY_TRAININGS,
@@ -61,6 +63,7 @@ export const sideNavList = [
     show: false,
     options: [
       { subTitle: 'Explore', link: ENTREPRENEURSHIP.path, subLogo: '' },
+      { subTitle: 'Ideas', link: MY_PITCH.fullurl, subLogo: '' },
     ],
     isActive: true,
   },

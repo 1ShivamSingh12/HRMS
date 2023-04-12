@@ -29,7 +29,9 @@
       .employee_body {
         padding: 1.5em;
         @include form-field(100%);
-
+        .input-box{
+          margin-bottom: 15px;
+        }
         button{
           margin-left: 10px;
           width: 20%;
@@ -83,11 +85,6 @@
   .container{
     .card{
       @include grid(grid-template-columns , 100% ,'');
-    }
-  }
-  :host ::ng-deep .container {
-    .tables{
-      overflow-x: scroll;
     }
   }
 }

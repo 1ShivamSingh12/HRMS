@@ -155,7 +155,7 @@ export const ADD_PITCH : Route = {
 export const MY_PITCH : Route = {
   path:'my-pitch',
   get fullurl(): string {
-    return `${ADD_PITCH.fullurl}/${this.path}`;
+    return `${ENTREPRENEURSHIP.fullurl}/${this.path}`;
   }
 }
 /* my-links routes*/

@@ -257,7 +257,11 @@
           .personal_body {
             .personal_achievement {
               @include grid(grid-template-columns, "73% 22%", 10px);
+
             }
+          }
+          .personal_rating{
+            margin: 10px 0px 0px 0px ;
           }
         }
       }

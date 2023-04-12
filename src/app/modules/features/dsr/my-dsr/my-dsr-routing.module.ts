@@ -11,7 +11,7 @@ const routes: Routes = [
       import('./my-dsr-detail/my-dsr-detail.module').then((m) => m.MyDsrDetailModule),
   },
   {
-    path: DSR_EDIT.path,
+    path: `${DSR_EDIT.path}/:id`,
     loadChildren: () =>
       import('./dsr-edit/dsr-edit.module').then((m) => m.DsrEditModule),
   },

@@ -1,11 +1,14 @@
 <div class="container">
   <div class="card">
+    <form [formGroup] = "dsrEdit">
+
     <div class="new_dsr">
       <div class="dsr_type">
         <div class="input-box">
           <p>Project</p>
           <mat-form-field appearance="outline">
-            <mat-select placeholder="Project" formControlName="priority">
+            <mat-select placeholder="Project" formControlName="project_name">
+              <mat-option value={{this.value1.project_name}}>{{this.value1.project_name}}</mat-option>
               <mat-option value="option1">Option 1</mat-option>
               <mat-option value="option2">Option 2</mat-option>
               <mat-option value="option3">Option 3</mat-option>
@@ -17,9 +20,9 @@
 
         <div class="dsr_details">
           <div class="input-box">
-            <p>Dtae</p>
+            <p>Date</p>
             <mat-form-field appearance="outline">
-              <input matInput [matDatepicker]="picker1" formControlName="time" placeholder="Date" />
+              <input matInput [matDatepicker]="picker1" formControlName="date" placeholder="Date" />
               <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
               <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
@@ -28,7 +31,7 @@
           <div class="input-box">
             <p>Estimated Hour</p>
             <mat-form-field appearance="outline">
-              <input matInput [matDatepicker]="picker2" formControlName="time_to" placeholder="Estimated Hour" />
+              <input matInput [matDatepicker]="picker2" placeholder="Estimated Hour" />
               <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
               <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
@@ -40,13 +43,15 @@
 
       <div class="Description">
         <p> Description</p>
-        <angular-editor [config]="editorConfig" placeholder="'Enter industrytext here...'"></angular-editor>
+        <angular-editor formControlName="dsr" [config]="editorConfig" placeholder="'Enter industrytext here...'"></angular-editor>
       </div>
 
       <div class="buttons">
         <button class="save_button">Add</button>
       </div>
     </div>
+  </form>
+
   </div>
 </div>
 <!-- <></> -->

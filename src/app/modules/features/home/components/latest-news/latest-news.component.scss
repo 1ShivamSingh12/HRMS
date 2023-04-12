@@ -19,15 +19,8 @@
 
     button {
       @include position(absolute, "", 0, 0, "");
-      padding: 16px;
+      @include button(10px);
       margin: 15px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
-      background-blend-mode: soft-light, normal;
-      border: 1px solid rgba(150, 165, 184, 0.2);
-      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
-      border-radius: 4px;
-      color: $primary-white;
-      padding: 10px 20px 10px 20px;
     }
   }
 }

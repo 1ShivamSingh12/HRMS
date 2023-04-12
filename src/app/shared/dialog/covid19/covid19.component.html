@@ -1,0 +1,90 @@
+<section>
+  <ng-container *ngFor="let item of arr">
+    <ng-template #listOfDivs>
+      <div class="job-card-wrapper">
+        <div class="left_wrapper">
+          <h1>Wear a mask</h1>
+          <p>
+            Consult docts or certified medial practitioners remotely and reduce
+            the risk of transmission. Telemediaction consulation is the best
+            alternative for steady and quick medical services
+          </p>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #listOfDivs>
+      <div class="job-card-wrapper">
+        <div class="left_wrapper">
+          <h1>Fight the virus</h1>
+          <p>
+            Consult docts or certified medial practitioners remotely and reduce
+            the risk of transmission. Telemediaction consulation is the best
+            alternative for steady and quick medical services
+          </p>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #listOfDivs>
+      <div class="job-card-wrapper">
+        <div class="left_wrapper">
+          <h1>Telemedicine consultation</h1>
+          <p>
+            Consult docts or certified medial practitioners remotely and reduce
+            the risk of transmission. Telemediaction consulation is the best
+            alternative for steady and quick medical services
+          </p>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+
+  <ng-container *ngIf="render_child">
+    <app-carousel [inputs]="new_member_Config" [buttondata]="buttonData" [carouselData]="dataSource"></app-carousel>
+  </ng-container>
+  <form [formGroup]="covidForm">
+    <div class="right_wrapper">
+      <h1>Need Help!</h1>
+      <p>
+        Let us know if you are facing any issue because of the lockdown, We will
+        be giving our best to take care of your problems, Please fill the form
+        below and provide the required details, Concerned person will get in
+        touch with you on the earliest.
+      </p>
+      <div class="input-box">
+        <p>Title</p>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="" formControlName="title"/>
+        </mat-form-field>
+        <app-field-error [error]="covidForm | validationError : 'title' : 'Title'"></app-field-error>
+      </div>
+      <div class="input-box">
+        <p>Mobile No.</p>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="" formControlName="mobileNo"/>
+        </mat-form-field>
+        <app-field-error style="display: inline;" [error]="covidForm | validationError : 'mobileNo' : 'Mobile Number'"></app-field-error>
+      </div>
+      <div class="input-box">
+        <p>Address</p>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="" formControlName="address"/>
+          <mat-error>
+              {{covidForm | validationError : 'address' : 'Address'}}
+          </mat-error>
+        </mat-form-field>
+        <!-- <app-field-error [error]="covidForm | validationError : 'address' : 'Address'"></app-field-error> -->
+      </div>
+      <div class="input-box">
+        <p>Description</p>
+        <mat-form-field class="desc" appearance="outline">
+          <input matInput placeholder="" formControlName="description" />
+        </mat-form-field>
+        <app-field-error [error]="covidForm | validationError : 'description' : 'Description'"></app-field-error>
+      </div>
+      <div>
+        <button mat-button [mat-dialog-close]>Cancel</button>
+        <button mat-button>Submit</button>
+      </div>
+    </div>
+  </form>
+</section>

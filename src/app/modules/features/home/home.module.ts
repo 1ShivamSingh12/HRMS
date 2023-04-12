@@ -38,6 +38,7 @@ import { validationError } from 'src/app/pipes/validation-error/valiadation-erro
     ReferCandidateDialogComponent,
     CarouselDialogComponent,
     GalleryCarouselComponent,
+    
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { COMMON_VALIDATION, EMAIL_VALIDATION, MIN_LENGTH } from 'src/app/constants/Validations';
+import { COMMON_VALIDATION, EMAIL_VALIDATION, MIN_LENGTH, PASSWORD_VALIDATION } from 'src/app/constants/Validations';
 import { ToastrService } from 'ngx-toastr';
 import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 import { Router } from '@angular/router';
@@ -23,12 +23,15 @@ export class LoginWithCredentialsComponent implements OnInit {
   createForm() {
     this.loginForm = this.fb.group({
       email: ['', [COMMON_VALIDATION , EMAIL_VALIDATION]],
-      password: ['', [COMMON_VALIDATION, MIN_LENGTH]],
+      password: ['', [COMMON_VALIDATION, MIN_LENGTH , PASSWORD_VALIDATION]],
     });
   }
 
 
   onSubmit(){
+
+    console.log("this is credential>>",this.loginForm);
+
 
     if(this.loginForm.valid){
 

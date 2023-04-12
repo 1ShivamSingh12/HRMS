@@ -12,6 +12,7 @@
     margin: 0;
   }
   mat-icon{
+    cursor: pointer;
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -21,7 +22,12 @@
   }
 }
 
+
 mat-dialog-content{
+  @include form-field(100%);
+  .input-box{
+    margin-bottom: 20px;
+  }
   padding-left: 48px;
   padding-top: 24px;
   padding-right: 48px;
@@ -49,7 +55,6 @@ mat-dialog-content{
     }
   }
 
-  @include form-field(100%);
   .input-box{
     p{
       font-family: "Lato";
@@ -110,6 +115,7 @@ mat-dialog-content{
         width: 96%;
         border: 1px solid #d8d8d8;
         resize: none;
+        padding: 10px
       }
     }
 
@@ -138,6 +144,9 @@ mat-dialog-actions{
       grid-template-columns: 100%;
     }
     .candidate_detail{
+      .input-box{
+        margin-bottom: 40px;
+      }
       grid-template-columns: 100%;
 
     }

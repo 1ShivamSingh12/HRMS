@@ -44,55 +44,55 @@
       <div class="input-box">
         <p>Job Loaction</p>
         <mat-form-field appearance="outline">
-          <input matInput placeholder="Job Loaction" formControlName="job_location" />
+          <input matInput placeholder="Job Loaction" formControlName="job_location" (keydown)="noSpace($event)"/>
+          <mat-error>{{referCandidate | validationError : 'job_location' : 'Job Location'}}</mat-error>
         </mat-form-field>
-        <app-field-error [error]="referCandidate | validationError : 'job_location' : 'Job Location'"></app-field-error>
 
       </div>
       <div class="input-box">
         <p>Candidate Name</p>
         <mat-form-field appearance="outline">
-          <input matInput placeholder="Candidate Name" formControlName="candidate_name"/>
+          <input matInput placeholder="Candidate Name" inputTrim formControlName="candidate_name"/>
+          <mat-error>{{referCandidate | validationError : 'candidate_name' : 'Candidate Name'}}</mat-error>
         </mat-form-field>
-        <app-field-error [error]="referCandidate | validationError : 'candidate_name' : 'Candidate Name'"></app-field-error>
 
       </div>
       <div class="input-box">
         <p>Position Title</p>
         <mat-form-field appearance="outline">
           <input matInput placeholder="Position Title" formControlName="position"/>
+          <mat-error>{{referCandidate | validationError : 'position' : 'Position Title'}}</mat-error>
         </mat-form-field>
-        <app-field-error [error]="referCandidate | validationError : 'position' : 'Position Title'"></app-field-error>
 
       </div>
       <div class="input-box">
         <p>Experience</p>
         <mat-form-field appearance="outline">
           <input matInput placeholder="Experience" formControlName="experience" />
+          <mat-error>{{referCandidate | validationError : 'experience' : 'Experience'}}</mat-error>
         </mat-form-field>
-        <app-field-error [error]="referCandidate | validationError : 'experience' : 'Experience'"></app-field-error>
 
       </div>
       <div class="input-box">
         <p>Email ID</p>
         <mat-form-field appearance="outline">
           <input matInput placeholder="Enter Email ID" formControlName="email"/>
+          <mat-error>{{referCandidate | validationError : 'email' : 'Email'}}</mat-error>
         </mat-form-field>
-        <app-field-error [error]="referCandidate | validationError : 'email' : 'Email'"></app-field-error>
 
       </div>
       <div class="input-box">
         <p>Phone Number</p>
         <mat-form-field appearance="outline">
-          <input matInput type="number" placeholder="Enter Phone Number" formControlName="number"/>
+          <input matInput type="number" placeholder="Phone Number" formControlName="number"/>
+          <mat-error>{{referCandidate | validationError : 'number' : 'Phone Number'}}</mat-error>
         </mat-form-field>
-        <app-field-error [error]="referCandidate | validationError : 'number' : 'Enter Phone Number'"></app-field-error>
 
       </div>
       <div class="file-choose">
         <p>Upload CV(pdf,doc)</p>
-        <input type="file"/>
-        <!-- <app-field-error [error]="referCandidate | validationError : 'file' : 'CV'"></app-field-error> -->
+        <input type="file" formControlName="file" (change)="preview($event)"/>
+        <mat-error>{{referCandidate | validationError : 'file' : 'CV'}}</mat-error>
 
       </div>
       <div class="skill-set">

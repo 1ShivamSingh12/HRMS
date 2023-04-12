@@ -23,35 +23,46 @@
               <div class="input-box">
                 <p>Assets Categories</p>
 
-                <app-dropdown-with-search [myControlName]="requestAsset.controls.assets_category" [data]="dropDown"
+                <app-dropdown-with-search
+                  [error]="requestAsset | validationError : 'assets_category' : 'Assest Category'"
+                  [myControlName]="requestAsset.controls.assets_category" [data]="dropDown"
                   [placeholder]="'Assets Categories'"></app-dropdown-with-search>
 
               </div>
               <div class="input-box">
                 <p>Quantity</p>
 
-                <app-dropdown-with-search [myControlName]="requestAsset.controls.quantity" [data]="dropDown"
+                <app-dropdown-with-search [error]="requestAsset | validationError : 'quantity' : 'Quantity'"
+                  [myControlName]="requestAsset.controls.quantity" [data]="dropDown"
                   [placeholder]="'Quantity'"></app-dropdown-with-search>
+
 
               </div>
               <div class="input-box">
                 <p>Priority</p>
 
-                <app-dropdown-with-search [myControlName]="requestAsset.controls.priority" [data]="dropDown"
+                <app-dropdown-with-search [error]="requestAsset | validationError : 'priority' : 'Priority'"
+                  [myControlName]="requestAsset.controls.priority" [data]="dropDown"
                   [placeholder]="'Priority'"></app-dropdown-with-search>
+
 
               </div>
               <div class="input-box">
                 <p>Required by Date</p>
-
-                <app-dropdown-with-search [myControlName]="requestAsset.controls.requested_at" [data]="dropDown"
-                  [placeholder]="'Required by Date'"></app-dropdown-with-search>
-
+                <mat-form-field appearance="outline">
+                  <input matInput [matDatepicker]="picker1" placeholder="Date" formControlName="requested_at"
+                    readonly />
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-error>{{requestAsset | validationError : 'requested_at' : 'Requested Date'}}</mat-error>
+                </mat-form-field>
               </div>
               <div class="input-box">
                 <p>Allocation type</p>
 
-                <app-dropdown-with-search [myControlName]="requestAsset.controls.allocation_type" [data]="dropDown"
+                <app-dropdown-with-search
+                  [error]="requestAsset | validationError : 'allocation_type' : 'Allocation Type'"
+                  [myControlName]="requestAsset.controls.allocation_type" [data]="dropDown"
                   [placeholder]="'Allocation Type'"></app-dropdown-with-search>
 
               </div>

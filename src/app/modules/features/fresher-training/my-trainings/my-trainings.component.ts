@@ -21,7 +21,9 @@ export class MyTrainingsComponent implements OnInit {
   }
 
   options: MatDialogConfig = {
+    autoFocus:false,
     width: '35rem',
+    height:'85%',
     panelClass: 'feedback-form',
   };
 

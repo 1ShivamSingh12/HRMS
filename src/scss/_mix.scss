@@ -33,6 +33,12 @@ $Blue: blue;
     margin: 0px 10px 0px 10px;
     mat-form-field {
       width: $width;
+
+      mat-error {
+        margin-top: 16px;
+        font-size: 12px;
+        margin-left: -9px;
+      }
     }
     p {
       font-size: 14px;
@@ -49,6 +55,9 @@ $Blue: blue;
         padding: 20px 0px 17px 0px;
         border-top: 0em solid transparent;
       }
+      .mat-form-field-wrapper {
+        padding-bottom: 0em;
+      }
     }
     ::ng-deep .mat-form-field-appearance-fill {
       background-color: $pure-white;
@@ -61,6 +70,8 @@ $Blue: blue;
 }
 
 @mixin button($padding) {
+  cursor: pointer;
+
   padding: $padding;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
   background-blend-mode: soft-light, normal;
@@ -85,30 +96,29 @@ $Blue: blue;
   border-radius: 10px;
 }
 
-@mixin commonTableStyling($border,$td_border) {
-    tbody {
-      tr {
-        td {
-          border: $td_border;
-          padding: 10px 10px 10px 20px;
-        }
-      }
-    }
-    thead {
-      tr {
-        th {
-          border: $border;
-          padding: 10px 10px 10px 20px;
-          color: black;
-          font-weight: 400;
-          font-size: 14px;
-        }
+@mixin commonTableStyling($border, $td_border) {
+  tbody {
+    tr {
+      td {
+        border: $td_border;
+        padding: 10px 10px 10px 20px;
       }
     }
   }
+  thead {
+    tr {
+      th {
+        border: $border;
+        padding: 10px 10px 10px 20px;
+        color: black;
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+  }
+}
 
-
-@mixin custom-scroller($axis, $brodness: 4px , $bgcolor:grey) {
+@mixin custom-scroller($axis, $brodness: 4px, $bgcolor: grey) {
   @if ($axis== "x") {
     overflow-x: auto;
     overflow-y: hidden;

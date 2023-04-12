@@ -12,6 +12,8 @@ import { PROJECT } from 'src/app/interfaces/table.interface';
 export class ProjectsComponent implements OnInit {
   projectConfig: Options = PROJECTS_CONFIG;
   dataSource = new MatTableDataSource<PROJECT>();
+  viewMode = 'project_list';
+
 
   constructor() {}
 

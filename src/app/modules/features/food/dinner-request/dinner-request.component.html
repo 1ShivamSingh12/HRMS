@@ -9,34 +9,32 @@
       cash in account office.
     </p>
   </div>
-  <div class="dinner-content" *ngIf="!show">
-    <div class="dsr_details">
-      <div class="input-box">
-        <p>Date</p>
-        <mat-form-field appearance="outline">
-          <input matInput />
-        </mat-form-field>
+  <form [formGroup]="dinnerForm">
+    <div class="dinner-content" *ngIf="!show">
+      <div class="dsr_details">
+        <div class="input-box">
+          <p>Date</p>
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="date" />
+            <mat-error>{{dinnerForm | validationError : "date" : "Date"}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="input-box">
+          <p>Project</p>
+          <app-dropdown-with-search [error]="dinnerForm | validationError : 'project' : 'Project'" [data]="dropDown" [myControlName]="dinnerForm.controls.project" [placeholder]="'Select Project'"></app-dropdown-with-search>
+        </div>
       </div>
-      <div class="input-box">
-        <p>Project</p>
-        <app-dropdown-with-search
-          [data]="dropDown"
-          [placeholder]="'Select Project'"
-        ></app-dropdown-with-search>
+
+      <div class="Description">
+        <p>Reason for late stay</p>
+        <angular-editor [config]="editorConfig" formControlName="reason" placeholder="'Enter industrytext here...'"></angular-editor>
+        <mat-error>{{dinnerForm | validationError : "reason" : "Reason"}}</mat-error>
+      </div>
+
+      <div class="buttons">
+        <button class="save_button" (click)="submitDinner()">Submit</button>
       </div>
     </div>
-
-    <div class="Description">
-      <p>Reason for late stay</p>
-      <angular-editor
-        [config]="editorConfig"
-        placeholder="'Enter industrytext here...'"
-      ></angular-editor>
-    </div>
-
-    <div class="buttons">
-      <button class="save_button">Submit</button>
-    </div>
-  </div>
+  </form>
 </div>
 <!-- <></> -->

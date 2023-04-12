@@ -10,7 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
-import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     DropdownWithSearchModule,
     AngularEditorModule,
     HttpClientModule,
-    FooterModule
+    validationError,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DinnerRequestModule { }

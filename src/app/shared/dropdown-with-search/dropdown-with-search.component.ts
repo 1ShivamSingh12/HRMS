@@ -11,6 +11,8 @@ import { map, startWith } from 'rxjs/operators';
 export class DropdownWithSearchComponent implements OnInit {
 
   @Input() myControlName: any;
+  @Input() error: any;
+
   @Input() data!: any;
   @Input() placeholder!: any;
 
@@ -18,7 +20,7 @@ export class DropdownWithSearchComponent implements OnInit {
 
   myControl = new FormControl('');
   filteredOptions!: Observable<any[]>;
- 
+
   constructor() {}
 
   ngOnInit(): void {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MY_PITCH_CONFIG } from 'src/app/constants/tableConfig';
 import { MY_PITCH } from 'src/app/interfaces/table.interface';
+import { PitchDataService } from 'src/app/services/pitch-data/pitch-data.service';
 
 @Component({
   selector: 'app-my-pitch',
@@ -11,10 +12,17 @@ import { MY_PITCH } from 'src/app/interfaces/table.interface';
 export class MyPitchComponent implements OnInit {
   dataSource = new MatTableDataSource<MY_PITCH>();
   myPitchConfig = MY_PITCH_CONFIG;
-  constructor() {}
+  constructor(private pitchService: PitchDataService) {}
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.tableData)
+
+    if(this.pitchService.data){
+      this.tableData.push(this.pitchService.data)
+      this.dataSource = new MatTableDataSource(this.tableData);
+      console.log(this.tableData, 'sdfkhcweuif');
+    }else{
+      this.dataSource = new MatTableDataSource(this.tableData);
+    }
   }
 
   tableColumns: Array<any> = [
@@ -35,9 +43,9 @@ export class MyPitchComponent implements OnInit {
       cell: (element: Record<string, any>) => `${element['industry']}`,
     },
     {
-      columnDef: 'technical',
+      columnDef: 'type',
       header: 'Technical / Non-Technical',
-      cell: (element: Record<string, any>) => `${element['technical']}`,
+      cell: (element: Record<string, any>) => `${element['type']}`,
     },
     {
       columnDef: 'submitted',
@@ -52,23 +60,21 @@ export class MyPitchComponent implements OnInit {
   ];
 
   tableData: Array<MY_PITCH> = [
-    // {
-    //   s_no: 1,
-    //   title: 'arpit',
-    //   industry: '',
-    //   technical: '',
-    //   submitted: '',
-    //   action: '',
-
-    // },
-    // {
-    //   s_no: 1,
-    //   title: 'Shivam',
-    //   industry: '',
-    //   technical: '',
-    //   submitted: '',
-    //   action: '',
-
-    // },
+    {
+      s_no: 1,
+      title: 'arpit',
+      industry: '',
+      type: 'efwe',
+      submitted: '',
+      action: '',
+    },
+    {
+      s_no: 1,
+      title: 'Shivam',
+      industry: '',
+      type: 'efwef',
+      submitted: '',
+      action: '',
+    },
   ];
 }

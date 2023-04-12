@@ -9,16 +9,16 @@
           <p>First Name</p>
           <mat-form-field appearance="outline">
             <input matInput placeholder="First Name" formControlName="first_name" />
+            <mat-error>{{basicInfo | validationError : 'first_name' : 'First Name'}}</mat-error>
           </mat-form-field>
-          <app-field-error [error]="basicInfo | validationError : 'first_name' : 'First Name'"></app-field-error>
         </div>
 
         <div class="input-box">
           <p>Last Name</p>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="Last Name" formControlName="last_name" />
+            <input matInput (keydown)="noSpace($event)" placeholder="Last Name" formControlName="last_name" />
+            <mat-error>{{basicInfo | validationError : 'last_name' : 'Last Name'}}</mat-error>
           </mat-form-field>
-          <app-field-error [error]="basicInfo | validationError : 'last_name' : 'Last Name'"></app-field-error>
 
         </div>
         <div class="input-box">
@@ -27,29 +27,28 @@
             <input matInput [matDatepicker]="picker1" placeholder="Date of Birth" formControlName="date_of_birth" readonly [max]="minFromDate"/>
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
+            <mat-error>{{basicInfo | validationError : 'date_of_birth' : 'Date of Birth'}}</mat-error>
           </mat-form-field>
-          <app-field-error [error]="basicInfo | validationError : 'date_of_birth' : 'Date of Birth'"></app-field-error>
+
         </div>
       </div>
       <div class="card_upper">
         <div class="input-box">
           <p>Gender</p>
-          <app-dropdown-with-search [myControlName]="basicInfo.controls.gender" [data]="genderdropDown" [placeholder]="'Gender'"></app-dropdown-with-search>
-          <app-field-error [error]="basicInfo | validationError : 'gender' : 'Gender'"></app-field-error>
+          <app-dropdown-with-search [error]="basicInfo | validationError : 'gender' : 'Gender'" [myControlName]="basicInfo.controls.gender" [data]="genderdropDown" [placeholder]="'Gender'"></app-dropdown-with-search>
         </div>
+
         <div class="input-box">
           <p>Martial Status</p>
-          <app-dropdown-with-search [myControlName]="basicInfo.controls.martial_status" [data]="martialdropDown" [placeholder]="'Martial Status'"></app-dropdown-with-search>
-          <app-field-error [error]="basicInfo | validationError : 'martial_status' : 'Martial Status'">
-          </app-field-error>
+          <app-dropdown-with-search [error]="basicInfo | validationError : 'martial_status' : 'Martial Status'" [myControlName]="basicInfo.controls.martial_status" [data]="martialdropDown" [placeholder]="'Martial Status'"></app-dropdown-with-search>
 
         </div>
         <div class="input-box">
           <p>Conatct Number</p>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="First Name" type="number" formControlName="number" />
+            <input matInput placeholder="Contact Number" formControlName="number" />
+            <mat-error>{{basicInfo | validationError : 'number' : 'Conatct Number'}}</mat-error>
           </mat-form-field>
-          <app-field-error [error]="basicInfo | validationError : 'number' : 'Conatct Number'"></app-field-error>
 
         </div>
       </div>
@@ -62,17 +61,18 @@
             <div class="input-box">
               <p>Years</p>
               <mat-form-field appearance="outline">
-                <input matInput type="number" placeholder="First Name" formControlName='years_experience' />
+                <input matInput type="number" placeholder="Years" formControlName='years_experience' />
+                <mat-error>{{basicInfo | validationError : 'years_experience' : 'Years'}}</mat-error>
               </mat-form-field>
-              <app-field-error [error]="basicInfo | validationError : 'years_experience' : 'Years'"></app-field-error>
 
             </div>
             <div class="input-box">
               <p>Months</p>
               <mat-form-field appearance="outline">
-                <input matInput type="number" placeholder="First Name" formControlName="months_experience" />
+                <input matInput type="number" placeholder="Months" formControlName="months_experience" />
+                <mat-error>{{basicInfo | validationError : 'months_experience' : 'Month'}}</mat-error>
               </mat-form-field>
-              <app-field-error [error]="basicInfo | validationError : 'months_experience' : 'Month'"></app-field-error>
+
 
             </div>
           </div>
@@ -86,17 +86,19 @@
             <div class="input-box">
               <p>Years</p>
               <mat-form-field appearance="outline">
-                <input matInput type="number" placeholder="First Name" formControlName="years_relevant" />
+                <input matInput type="number" placeholder="Years" formControlName="years_relevant" />
+                <mat-error>{{basicInfo | validationError : 'years_relevant' : 'Years'}}</mat-error>
               </mat-form-field>
-              <app-field-error [error]="basicInfo | validationError : 'years_relevant' : 'Years'"></app-field-error>
+
 
             </div>
             <div class="input-box">
               <p>Months</p>
               <mat-form-field appearance="outline">
-                <input matInput type="number" placeholder="First Name" formControlName="months_relevant" />
+                <input matInput type="number" placeholder="Months" formControlName="months_relevant" />
+                <mat-error>{{basicInfo | validationError : 'months_relevant' : 'Months'}}</mat-error>
               </mat-form-field>
-              <app-field-error [error]="basicInfo | validationError : 'months_relevant' : 'Months'"></app-field-error>
+
 
             </div>
           </div>

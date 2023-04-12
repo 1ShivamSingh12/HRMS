@@ -28,11 +28,3 @@
     }
   }
 }
-
-@media only screen and (max-width:1200px){
-  :host ::ng-deep .container {
-    .tables{
-     overflow-x: scroll;
-    }
-  }
-}

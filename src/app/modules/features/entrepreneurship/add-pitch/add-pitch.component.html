@@ -43,29 +43,24 @@
         <div class="input-box">
           <p>Pitch Title</p>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="Title" formControlName="pitch"/>
-
+            <input matInput (keydown)="noSpace($event)" placeholder="Title" formControlName="title"/>
+            <mat-error>{{addPitch | validationError : 'title' : 'Pitch title'}}</mat-error>
           </mat-form-field>
-          <app-field-error [error]="addPitch | validationError : 'pitch' : 'Pitch Name'"></app-field-error>
         </div>
         <div class="input-box">
           <p>Industry</p>
-
-          <app-dropdown-with-search [myControlName]="addPitch.controls.industry" [data]="dropDown" [placeholder]="'Industry'"></app-dropdown-with-search>
-          <app-field-error [error]="addPitch | validationError : 'industry' : 'Industry'"></app-field-error>
+          <app-dropdown-with-search [error]="addPitch | validationError : 'industry' : 'Industry'" [myControlName]="addPitch.controls.industry" [data]="dropDown" [placeholder]="'Industry'"></app-dropdown-with-search>
         </div>
         <div class="input-box">
           <p>Type</p>
-
-          <app-dropdown-with-search [myControlName]="addPitch.controls.type" [data]="dropDown" [placeholder]="'Type'"></app-dropdown-with-search>
-          <app-field-error [error]="addPitch | validationError : 'type' : 'Type'"></app-field-error>
+          <app-dropdown-with-search [error]="addPitch | validationError : 'type' : 'Type'" [myControlName]="addPitch.controls.type" [data]="dropDown" [placeholder]="'Type'"></app-dropdown-with-search>
 
         </div>
         <div class="textarea">
           <p>Idea - (Share your idea in brief)</p>
           <angular-editor [config]="editorConfig" placeholder="'Enter industrytext here...'" formControlName="idea"></angular-editor>
+          <mat-error>{{addPitch | validationError : 'idea' : 'Idea'}}</mat-error>
         </div>
-        <app-field-error [error]="addPitch | validationError : 'idea' : 'Idea'"></app-field-error>
 
         <div class="choose-file">
           <p>

@@ -7,27 +7,26 @@
           <p>School/University</p>
           <mat-form-field appearance="outline">
             <input matInput placeholder="First Name" formControlName="school" />
+            <mat-error>{{qualification | validationError : 'school' : 'School/University'}}</mat-error>
           </mat-form-field>
-          <app-field-error [error]="
+          <!-- <app-field-error [error]="
               qualification | validationError : 'school' : 'School/University'
-            "></app-field-error>
+            "></app-field-error> -->
         </div>
         <div class="input-box">
           <p>Education Level</p>
           <mat-form-field appearance="outline">
             <mat-select placeholder="Eductaion" formControlName="education_level">
-              <mat-option [value]="dialogData.education_level">{{
-                dialogData.education_level
-                }}</mat-option>
+              <mat-option [value]="dialogData.education_level">{{dialogData.education_level}}</mat-option>
               <mat-option value="option1">Option 1</mat-option>
               <mat-option value="option2">Option 2</mat-option>
               <mat-option value="option3">Option 3</mat-option>
             </mat-select>
+            <mat-error>{{qualification | validationError : 'education_level' : 'Education Level'}}</mat-error>
           </mat-form-field>
-          <app-field-error [error]="
-              qualification
-                | validationError : 'eductaion_level' : 'Education Level'
-            "></app-field-error>
+          <!-- <app-field-error [error]="
+              qualification | validationError : 'eductaion_level' : 'Education Level'
+            "></app-field-error> -->
         </div>
       </div>
       <div class="">
@@ -41,18 +40,20 @@
                     formControlName="date_from" placeholder="from" readonly />
                   <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                   <mat-datepicker #picker1></mat-datepicker>
+                  <mat-error>{{qualification | validationError : 'date_from' : 'Time'}}</mat-error>
                 </mat-form-field>
-                <app-field-error [error]="qualification | validationError : 'date_from' : 'Time'"></app-field-error>
+                <!-- <app-field-error [error]="qualification | validationError : 'date_from' : 'Time'"></app-field-error> -->
               </div>
               <div class="input-box">
                 <!-- <p>?</p> -->
                 <mat-form-field appearance="outline">
                   <input [min]="qualification.value.date_from" matInput [matDatepicker]="picker2"
-                    formControlName="date_to" placeholder="to" readonly/>
+                    formControlName="date_to" placeholder="to" readonly />
                   <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                   <mat-datepicker #picker2></mat-datepicker>
+                  <mat-error>{{qualification | validationError : 'date_to' : 'Time'}}</mat-error>
                 </mat-form-field>
-                <app-field-error [error]="qualification | validationError : 'date_to' : 'Time'"></app-field-error>
+                <!-- <app-field-error [error]="qualification | validationError : 'date_to' : 'Time'"></app-field-error> -->
               </div>
             </div>
           </div>
@@ -65,10 +66,12 @@
                 <mat-option value="option2">Option 2</mat-option>
                 <mat-option value="option3">Option 3</mat-option>
               </mat-select>
+            <mat-error>{{qualification | validationError : 'language' : 'Language'}}</mat-error>
+
             </mat-form-field>
-            <app-field-error [error]="
+            <!-- <app-field-error [error]="
                 qualification | validationError : 'language' : 'Language'
-              "></app-field-error>
+              "></app-field-error> -->
           </div>
         </div>
       </div>
@@ -76,9 +79,10 @@
         <div class="input-box">
           <p>Professional Courses (if any)</p>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="First Name" formControlName="Courses" />
+            <input matInput placeholder="Courses" formControlName="Courses" />
+            <mat-error>{{qualification | validationError : 'Courses' : 'Courses'}}</mat-error>
           </mat-form-field>
-          <app-field-error [error]="qualification | validationError : 'Courses' : 'Courses'"></app-field-error>
+          <!-- <app-field-error [error]="qualification | validationError : 'Courses' : 'Courses'"></app-field-error> -->
         </div>
         <div class="input-box">
           <p>Description</p>
@@ -90,5 +94,5 @@
 </div>
 <div mat-dialog-actions>
   <button class="close" mat-button mat-dialog-close>Close</button>
-  <button class="save_button" mat-button mat-dialog-close (click)="updateValue()">Update</button>
+  <button class="save_button" mat-button (click)="updateValue()">Update</button>
 </div>

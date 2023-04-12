@@ -1,0 +1,62 @@
+@import "../../../../../../../scss/mix";
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  mat-icon {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    @include flex(center, center);
+    background-color: $primary-white;
+    position: relative;
+    left: 23px;
+    bottom: 23px;
+  }
+}
+.container {
+  .main {
+    display: flex;
+    background-color: #f3f7fc;
+    padding: 15px;
+    border-radius: 5px;
+    .image {
+      margin-left: 10px;
+      img {
+        height: 50px;
+        width: 55px;
+        border-radius: 50%;
+      }
+    }
+
+    .heading {
+      margin-left: 30px;
+      h3 {
+        margin: 0px;
+        font-weight: bold;
+      }
+      h4 {
+        color: #6c7e92;
+        margin: 0px;
+      }
+    }
+  }
+  .body {
+    p{
+      margin-top: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width:397px){
+  .container{
+    .main{
+      display: block;
+      .image{
+        text-align: center;
+      }
+    }
+  }
+}

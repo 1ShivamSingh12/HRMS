@@ -1,7 +1,7 @@
 @import "../../../../../scss/mix";
 
 .container {
-   min-height: 100%;
+  min-height: 100%;
   padding: 30px;
   background-color: $common-background;
 
@@ -11,9 +11,9 @@
       margin-bottom: 20px;
 
       .request_button {
-        @include flex('',flex-end);
+        @include flex("", flex-end);
         padding: 20px 20px 10px 0px;
-        border-bottom: 1px solid rgba(24,28,33,0.06);
+        border-bottom: 1px solid rgba(24, 28, 33, 0.06);
         button {
           background: $headingsBlue;
           color: $primary-white;
@@ -27,29 +27,31 @@
           font-weight: 600;
           text-transform: capitalize;
           border: none;
-          span{
+          span {
             position: relative;
             top: -7px;
           }
         }
       }
 
-      .card_upper_body{
-
+      .card_upper_body {
         padding: 20px;
-        .card_content{
-          @include grid(grid-template-columns,'24% 24% 24% 24%' ,'16px');
+        .card_content {
+          @include grid(grid-template-columns, "24% 24% 24% 24%", "16px");
           @include form-field(100%);
-          mat-form-field{
-            ::ng-deep.mat-select-placeholder{
-            color:#babbbc;
+          .input-box{
+            margin-bottom: 20px;
+          }
+          mat-form-field {
+            ::ng-deep.mat-select-placeholder {
+              color: #babbbc;
             }
           }
         }
-        .card_bottom{
+        .card_bottom {
           @include form-field(100%);
           .input-box {
-            textarea{
+            textarea {
               width: 97.5%;
               min-height: 60px;
               border: 1px solid #d8d8d8;
@@ -58,9 +60,9 @@
               background: $primary-white;
               resize: none;
             }
-            p{
+            p {
               word-break: break-word;
-              span{
+              span {
                 color: red;
                 word-break: break-word;
               }
@@ -68,17 +70,10 @@
           }
         }
 
-        .submit_button{
-          @include flex(center,center);
-          button{
-            margin-top: 20px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primary-blue;
-            background-blend-mode: soft-light, normal;
-            border: 1px solid rgba(150, 165, 184, 0.2);
-            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
-            border-radius: 4px;
-            color: $pure-white;
-            padding: 10px;
+        .submit_button {
+          @include flex(center, center);
+          button {
+            @include button(10px);
           }
         }
       }
@@ -99,29 +94,28 @@
 }
 :host ::ng-deep .container {
   .tables {
-    overflow-x: scroll;
     table {
       border: 1px solid rgba(24, 28, 33, 0.06);
       width: 100%;
       border-collapse: collapse;
-      @include commonTableStyling(1px solid #f1f1f2,1px solid #f1f1f2);
+      @include commonTableStyling(1px solid #f1f1f2, 1px solid #f1f1f2);
     }
   }
 }
-@media only screen and (max-width:800px){
-  .container{
-    .card{
-      .card_upper{
-        .request_button{
+@media only screen and (max-width: 800px) {
+  .container {
+    .card {
+      .card_upper {
+        .request_button {
           padding: 20px;
         }
-        .card_upper_body{
-          .card_content{
+        .card_upper_body {
+          .card_content {
             grid-template-columns: 100%;
           }
-          .card_bottom{
-            .input-box{
-              textarea{
+          .card_bottom {
+            .input-box {
+              textarea {
                 width: 89%;
               }
             }
@@ -131,4 +125,3 @@
     }
   }
 }
-

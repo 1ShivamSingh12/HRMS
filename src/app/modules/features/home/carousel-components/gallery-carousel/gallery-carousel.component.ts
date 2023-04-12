@@ -38,7 +38,7 @@ export class GalleryCarouselComponent implements OnInit {
 
   listofImage = [
     { image: 'award_1660310382113.jpg' },
-    { image: 'award_1665553979253.jpg' },
+    { image: 'award_1656582283345.JPG' },
     { image: 'award_1672292016846.jpg' },
     { image: 'award_1672378171227.jpg' },
     { image: 'award_1565349878201.jpg' },

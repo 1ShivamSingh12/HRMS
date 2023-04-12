@@ -5,7 +5,9 @@
     .card_upper {
       @include grid(grid-template-columns, 50% 50%, "");
       @include form-field(100%);
+
       .input-box {
+        margin-bottom: 20px;
         textarea {
           width: 93%;
           min-height: 50px;
@@ -29,6 +31,9 @@
     .card_middle {
       @include grid(grid-template-columns, 50% 50%, "");
       @include form-field(100%);
+      .input-box{
+        margin-bottom: 20px
+      }
 
       .card_middle_time {
         @include grid(grid-template-columns, 50% 50%, "");
