@@ -23,7 +23,7 @@ export class LoginWithCredentialsComponent implements OnInit {
   createForm() {
     this.loginForm = this.fb.group({
       email: ['', [COMMON_VALIDATION , EMAIL_VALIDATION]],
-      password: ['', [COMMON_VALIDATION, MIN_LENGTH , PASSWORD_VALIDATION]],
+      password: ['', [COMMON_VALIDATION, MIN_LENGTH]],
     });
   }
 

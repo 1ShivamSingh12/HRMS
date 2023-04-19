@@ -4,15 +4,16 @@
 </div>
 
 <mat-dialog-content class="mat-typography">
+  <form [formGroup]="requestTrainingForm">
+
   <div class="card">
     <div class="input-box">
       <p>Training Name:</p>
-    
-      <app-dropdown-with-search [myControlName]="" [data]="dropDown" [placeholder]="'Training Name'"></app-dropdown-with-search>
+      <app-dropdown-with-search [error]="requestTrainingForm | validationError : 'training' : 'Training Name'" [myControlName]="requestTrainingForm.controls.training" [data]="dropDown" [placeholder]="'Training Name'"></app-dropdown-with-search>
     </div>
     <div class="input-box">
       <p>Team Name:</p>
-      <app-dropdown-with-search [myControlName]="" [data]="dropDown" [placeholder]="'Team Name'"></app-dropdown-with-search>
+      <app-dropdown-with-search [error]="requestTrainingForm | validationError : 'team' : 'Team Name'" [myControlName]="requestTrainingForm.controls.team" [data]="dropDown" [placeholder]="'Team Name'"></app-dropdown-with-search>
 
     </div>
     <div class="skill-set">
@@ -20,7 +21,10 @@
         Please mention the training/learning area’s you feel can be beneficial
         for your skill enhancement and job performance *
       </p>
-      <textarea placeholder="Type Your answer here..."></textarea>
+      <mat-form-field appearance="outline">
+        <textarea (keydown)="noSpace($event)" matInput placeholder="Type Your answer here..." formControlName="skills_area"></textarea>
+      </mat-form-field>
+      <mat-error>{{requestTrainingForm | validationError : 'skills_area' : 'Text box'}}</mat-error>
     </div>
 
     <div class="skill-set">
@@ -28,42 +32,49 @@
         Why do you feel these skills are needed and how they will benefit your
         personal and organizational needs
       </p>
-      <textarea placeholder="Type Your answer here..."></textarea>
+      <mat-form-field appearance="outline">
+        <textarea matInput (keydown)="noSpace($event)" placeholder="Type Your answer here..." formControlName="need"></textarea>
+      </mat-form-field>
+      <mat-error>{{requestTrainingForm | validationError : 'need' : 'Text box'}}</mat-error>
     </div>
 
     <div class="helpful">
       <p>Are you interested to give the Trainings? *</p>
 
-      <mat-radio-group aria-label="Select an option">
+      <mat-radio-group aria-label="Select an option" formControlName="interested">
         <mat-radio-button value="1">Yes</mat-radio-button>
         <mat-radio-button value="2">No</mat-radio-button>
       </mat-radio-group>
+      <mat-error style="margin-top: 10px;">{{requestTrainingForm | validationError : 'interested' : 'Check box'}}</mat-error>
     </div>
 
     <div class="timeline">
       <p>What should be the timeline to conduct this training? *</p>
       <div>
-        <mat-radio-group aria-label="Select an option">
+        <mat-radio-group aria-label="Select an option" formControlName="time_period">
           <mat-radio-button value="1">Intermediate</mat-radio-button>
         </mat-radio-group>
       </div>
       <div>
-        <mat-radio-group aria-label="Select an option">
+        <mat-radio-group aria-label="Select an option" formControlName="time_period">
           <mat-radio-button value="2">3-6 Months</mat-radio-button>
         </mat-radio-group>
       </div>
       <div>
-        <mat-radio-group aria-label="Select an option">
+        <mat-radio-group aria-label="Select an option" formControlName="time_period">
           <mat-radio-button value="2">More than 6 Months</mat-radio-button>
         </mat-radio-group>
       </div>
+      <mat-error style="margin-top: 10px;">{{requestTrainingForm | validationError : 'time_period' : 'Check box'}}</mat-error>
     </div>
   </div>
+</form>
+
 </mat-dialog-content>
 
 <mat-dialog-actions>
   <button class="cancel" mat-button mat-dialog-close>Cancel</button>
-  <button class="submit" mat-button cdkFocusInitial>
+  <button class="submit" mat-button cdkFocusInitial (click)="requestSubmit()">
     Submit
   </button>
 </mat-dialog-actions>

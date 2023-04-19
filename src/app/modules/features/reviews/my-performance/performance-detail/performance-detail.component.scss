@@ -1,6 +1,7 @@
 @import '../../../../../../scss/mix';
 
 .container{
+  min-height: 50%;
   .cards{
     @include flex('','');
     .honours {
@@ -72,6 +73,7 @@
 }
 @media only screen and (max-width:591px){
   .container{
+    height: 36vh;
     .cards{
       .ratings{
         display: block;
@@ -80,6 +82,7 @@
         }
         .rating_breakup{
           display: block;
+          margin-bottom: 30px;
         }
       }
     }

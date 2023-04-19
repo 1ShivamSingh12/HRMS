@@ -1,6 +1,8 @@
-.container{
+@import "../../../../../../../scss/mix";
+
+.container {
   padding: 20px;
-  .card{
+  .card {
     .heading {
       padding: 0 0 15px 0;
       border-bottom: 1px solid rgba(150, 165, 184, 0.5);
@@ -14,7 +16,17 @@
 
 :host ::ng-deep .container {
   .tables {
-    overflow-x: scroll;
+    overflow-x: auto;
+    table {
+      @include commonTableStyling('', "");
+      tbody{
+        tr{
+          td.cdk-column-sub_topic{
+           min-width: 95rem;
 
+        }
+        }
+      }
+    }
   }
 }

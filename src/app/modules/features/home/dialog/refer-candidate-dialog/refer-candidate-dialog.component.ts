@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { COMMON_VALIDATION, CONTACT_MAX_LENGTH, CONTACT_NUMBER, EMAIL_VALIDATION } from 'src/app/constants/Validations';
+import { COMMON_VALIDATION, CONTACT_MAX_LENGTH, CONTACT_NUMBER, EMAIL_VALIDATION, NAME_PATTERN, USERNAME_MAX_LENGTH } from 'src/app/constants/Validations';
 import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 
 @Component({
@@ -23,9 +23,9 @@ export class ReferCandidateDialogComponent implements OnInit {
 
   createForm() {
     this.referCandidate = this.fb.group({
-      job_location: ['', [COMMON_VALIDATION]],
-      candidate_name: ['', [COMMON_VALIDATION]],
-      position: ['', [COMMON_VALIDATION]],
+      job_location: ['', [COMMON_VALIDATION , NAME_PATTERN]],
+      candidate_name: ['', [COMMON_VALIDATION , NAME_PATTERN , USERNAME_MAX_LENGTH]],
+      position: ['', [COMMON_VALIDATION , NAME_PATTERN]],
       experience: ['', [COMMON_VALIDATION]],
       email: ['', [COMMON_VALIDATION , EMAIL_VALIDATION]],
       number: ['', [COMMON_VALIDATION , CONTACT_MAX_LENGTH , CONTACT_NUMBER]],

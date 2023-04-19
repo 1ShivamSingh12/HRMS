@@ -12,14 +12,44 @@ mat-dialog-content{
   .slider{
 
     .image{
-
       @include flex(center,center);
+      margin-bottom: 30px;
     }
     img{
 
       width: 50%;
       height: 360px;
     }
+
+  }
+}
+
+:host ::ng-deep .ngucarousel {
+  .leftRs {
+    cursor: pointer;
+    position: relative;
+    top: 400px;
+    left: 47%;
+    // bottom: 0;
+    color: var(--caurosel-button-color);
+    background-color: #f1f1f1;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    right: 0;
+    border: none;
+  }
+  .rightRs {
+    cursor: pointer;
+    position: relative;
+    left: 53%;
+    bottom: 15px;
+    color: var(--caurosel-button-color);
+    background-color: #f1f1f1;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
   }
 }
 .myPoint {
@@ -53,6 +83,20 @@ mat-dialog-content{
         width: 100%;
         height: 360px;
       }
+    }
+  }
+  :host ::ng-deep .ngucarousel {
+    .leftRs {
+      position: relative;
+      top: 400px;
+      left: 39%;
+
+    }
+    .rightRs {
+      position: relative;
+      left: 50%;
+      bottom: 15px;
+
     }
   }
 }

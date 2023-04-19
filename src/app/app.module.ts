@@ -20,12 +20,14 @@ import { validationError } from './pipes/validation-error/valiadation-error.modu
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     HelpDialogComponent,
     Covid19Component,
+
 
       ],
   imports: [
@@ -42,7 +44,7 @@ import { validationError } from './pipes/validation-error/valiadation-error.modu
     CarouselModule,
     FieldErrorModule,
     validationError,
-    
+
 
   ],
   providers: [],

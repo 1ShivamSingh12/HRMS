@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MY_TRAINING_ATTENDENCE } from 'src/app/constants/const_data';
 import { ATTENDENCE } from 'src/app/interfaces/table.interface';
 
 @Component({
@@ -38,13 +39,6 @@ export class AttendenceComponent implements OnInit {
     },
   ];
 
-  tableData: Array<ATTENDENCE> = [
-    {
-      serial_number: '',
-      topic: '',
-      date: '',
-      attendence: '',
-    },
-  ];
+  tableData: any =  MY_TRAINING_ATTENDENCE
 
 }

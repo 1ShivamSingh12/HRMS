@@ -60,4 +60,12 @@ export class Covid19Component implements OnInit {
 
   }
 
+  submit(){
+    if(this.covidForm.valid){
+
+    }else{
+      this.covidForm.markAllAsTouched()
+    }
+  }
+
 }

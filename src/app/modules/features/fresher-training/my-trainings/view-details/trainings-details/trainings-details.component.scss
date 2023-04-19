@@ -67,6 +67,9 @@
 :host ::ng-deep .container {
   .tables {
     overflow-x: scroll;
+    table{
+      @include commonTableStyling('','');
+    }
   }
 }
 

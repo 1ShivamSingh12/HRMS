@@ -49,6 +49,6 @@
       </tr>
     </table>
   </div>
+  <mat-paginator *ngIf="config?.pagination" [pageSizeOptions]="[5, 10, 25]" #paginator></mat-paginator>
 </div>
 
-<mat-paginator showFirstLastButtons="true" *ngIf="config?.pagination" [pageSizeOptions]="[5, 10, 25]" #paginator></mat-paginator>

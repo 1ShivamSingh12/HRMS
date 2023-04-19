@@ -18,7 +18,7 @@
             <div class="input-box">
               <p>Unique Asset Code</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="unique_asset_code" placeholder="" />
+                <input matInput formControlName="unique_asset_code" placeholder="" (keydown)="noSpace($event)"/>
                 <mat-error>{{
                   assestDeclaration
                   | validationError : "unique_asset_code" : "Code"
@@ -28,7 +28,7 @@
             <div class="input-box">
               <p>Serial Number</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="serial_number" placeholder="" />
+                <input matInput  formControlName="serial_number" placeholder="" (keydown)="noSpace($event)"/>
                 <mat-error>{{
                   assestDeclaration
                   | validationError : "serial_number" : "Serial Number"
@@ -38,7 +38,7 @@
             <div class="input-box">
               <p>Model Number</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="model_number" placeholder="" />
+                <input matInput formControlName="model_number" placeholder="" (keydown)="noSpace($event)" />
                 <mat-error>{{
                   assestDeclaration
                   | validationError : "model_number" : "Model Number"
@@ -53,7 +53,7 @@
             <div class="input-box">
               <p>OS version</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="os_version" placeholder="" />
+                <input matInput formControlName="os_version" placeholder="" (keydown)="noSpace($event)"/>
                 <mat-error>{{
                   assestDeclaration
                   | validationError : "os_version" : "OS version"
@@ -63,7 +63,7 @@
             <div class="input-box">
               <p>Brand</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="brand" placeholder="" />
+                <input matInput formControlName="brand" placeholder="" (keydown)="noSpace($event)"/>
                 <mat-error>{{
                   assestDeclaration | validationError : "brand" : "Brand"
                   }}</mat-error>
@@ -72,7 +72,7 @@
             <div class="input-box">
               <p>Colour</p>
               <mat-form-field appearance="outline">
-                <input matInput formControlName="colour" placeholder="" />
+                <input matInput formControlName="colour" placeholder="" (keydown)="noSpace($event)"/>
                 <mat-error>{{
                   assestDeclaration | validationError : "colour" : "Colour"
                   }}</mat-error>

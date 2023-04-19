@@ -7,6 +7,7 @@ import { DSR_TABLEDATA } from 'src/app/constants/const_data';
 import {
   approvalDropDown,
   commondropDown,
+  dsrProject,
   hoursDropDown,
 } from 'src/app/constants/drop_down_data';
 import { LOGIN, MY_DSR_DETAIL } from 'src/app/constants/routes';
@@ -22,7 +23,7 @@ import { DSR } from 'src/app/interfaces/table.interface';
 export class MyDsrComponent implements OnInit {
   dsrconfig: any = DSR_CONFIG;
   dataSource = new MatTableDataSource<DSR>();
-  dropDown = commondropDown;
+  dropDown = dsrProject;
   approvaldropDown = approvalDropDown;
   hoursdropDown = hoursDropDown;
   approval = new FormControl();
@@ -31,7 +32,9 @@ export class MyDsrComponent implements OnInit {
   to_date = new FormControl();
   submission_status = new FormControl();
   project = new FormControl();
-
+  miscellaneousShow = false
+  interviewShow = false
+  todayDate = new Date()
   show: boolean = true;
   dsrForm!: FormGroup;
 
@@ -50,6 +53,7 @@ export class MyDsrComponent implements OnInit {
       project: ['', [COMMON_VALIDATION]],
       date: ['', [COMMON_VALIDATION]],
       hours: ['', [COMMON_VALIDATION]],
+      dsr: ['', [COMMON_VALIDATION]],
     });
   }
 
@@ -144,7 +148,6 @@ export class MyDsrComponent implements OnInit {
       buttons: [
         {
           type: 'const_data',
-          // heading:DSR_TABLEDATA[0].approval_status,
           style: 'dsr_button',
           data: (element: DSR) => element,
           action: 'pending',
@@ -156,7 +159,6 @@ export class MyDsrComponent implements OnInit {
   tableData: Array<any> = DSR_TABLEDATA;
 
   buttonClick(result: any) {
-   
     let temp = result[1].date;
     window.open(MY_DSR_DETAIL.fullurl + '/' + temp, '_blank');
   }
@@ -183,4 +185,32 @@ export class MyDsrComponent implements OnInit {
     }
     this.dataSource = new MatTableDataSource<DSR>(this.filterData);
   }
+
+  fill(e: any) {
+    if (e.checked == true) {
+      this.dsrForm.controls['dsr'].setValue(
+        'Today no work has been done on this project'
+      );
+      this.dsrForm.controls['hours'].setValue('00:00');
+    } else {
+      this.dsrForm.controls['dsr'].reset();
+      this.dsrForm.controls['hours'].reset();
+    }
+  }
+
+  selectProject(data:any){
+    console.log(data,"bismyle")
+    if(data.value == "Training"){
+      this.miscellaneousShow = false
+      this.interviewShow = false
+    }else if(data.value == 'Miscellaneous'){
+      this.miscellaneousShow = true
+      this.interviewShow = false
+    }else if(data.value == 'Interview'){
+      this.interviewShow = true
+      this.miscellaneousShow = false
+    }
+  }
+
 }
+

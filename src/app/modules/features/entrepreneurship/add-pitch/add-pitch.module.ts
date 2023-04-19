@@ -13,6 +13,9 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { FieldErrorModule } from 'src/app/shared/field-error/field-error.module';
 import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
 import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
+import { BreadCrumModule } from 'src/app/pipes/breadcrum/breadcrum.module';
+import { SubHeadingPipe } from 'src/app/pipes/subHeadingBreadcrum/sub-heading.pipe';
+import { SubHeadingModule } from 'src/app/pipes/subHeadingBreadcrum/sub-heading.module';
 
 
 @NgModule({
@@ -33,7 +36,9 @@ import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dr
     FieldErrorModule,
     AngularEditorModule,
     validationError,
-    DropdownWithSearchModule
+    DropdownWithSearchModule,
+    BreadCrumModule,
+    SubHeadingModule
   ]
 })
 export class AddPitchModule { }

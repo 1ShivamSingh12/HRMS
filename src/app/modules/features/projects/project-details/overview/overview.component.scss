@@ -88,8 +88,11 @@
 }
 
 @media only screen and (max-width: 633px) {
-  .panel {
-    display: grid;
-    grid-template-columns: 100%;
+  .container{
+    .panel {
+      display: grid;
+      grid-template-columns: 100%;
+    }
+
   }
 }

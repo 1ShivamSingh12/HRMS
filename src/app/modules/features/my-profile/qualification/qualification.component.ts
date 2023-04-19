@@ -11,7 +11,7 @@ import {
   Options,
   QUALIFICATION_DECLARATION_CONFIG,
 } from 'src/app/constants/tableConfig';
-import { COMMON_VALIDATION } from 'src/app/constants/Validations';
+import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
 import { QUALIFICATION } from 'src/app/interfaces/table.interface';
 import { DeleteQualificationComponent } from './delete-qualification/delete-qualification.component';
 import { EditQualificationComponent } from './edit-qualification/edit-qualification.component';
@@ -39,12 +39,12 @@ export class QualificationComponent implements OnInit {
   // data : any = degreeList
   createForm() {
     this.qualification = this.fb.group({
-      school: ['', [COMMON_VALIDATION]],
+      school: ['', [COMMON_VALIDATION , NAME_PATTERN]],
       education_level: ['', [COMMON_VALIDATION]],
       date_from: ['', [COMMON_VALIDATION]],
       date_to: ['', [COMMON_VALIDATION]],
       language: ['', [COMMON_VALIDATION]],
-      Courses: ['', [COMMON_VALIDATION]],
+      Courses: ['', [COMMON_VALIDATION , NAME_PATTERN]],
       // description:['',[COMMON_VALIDATION]]
     });
   }
@@ -68,6 +68,7 @@ export class QualificationComponent implements OnInit {
           action: 'edit',
         },
         {
+          type:'show',
           heading: 'Delete',
           style: 'delete',
           data: (element: QUALIFICATION) => element,

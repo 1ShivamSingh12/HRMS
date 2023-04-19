@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { MyLeaveRoutingModule } from './my-leave-routing.module';
 import { MyLeaveComponent } from './my-leave.component';
@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonTableModule } from 'src/app/shared/common-table/common-table.module';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
 
 @NgModule({
   declarations: [MyLeaveComponent],
@@ -39,8 +41,10 @@ import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dr
     DropdownWithSearchModule,
     CommonTableModule,
     FooterModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    NgxMaterialTimepickerModule,
+    validationError
   ],
+  providers:[DatePipe]
 })
 export class MyLeaveModule {}

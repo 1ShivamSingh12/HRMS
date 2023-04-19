@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { TicketRoutingModule } from './ticket-routing.module';
 import { TicketComponent } from './ticket.component';
@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
+import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
 
 
 @NgModule({
@@ -34,7 +35,9 @@ import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dr
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    DropdownWithSearchModule
-  ]
+    DropdownWithSearchModule,
+    validationError,
+  ],
+  providers:[DatePipe]
 })
 export class TicketModule { }

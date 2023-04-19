@@ -1,10 +1,11 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { LEAVE_TABLEDATA } from 'src/app/constants/const_data';
-import { commondropDown } from 'src/app/constants/drop_down_data';
+import { commondropDown, leave_type } from 'src/app/constants/drop_down_data';
 import { MY_LEAVE_DETAILS } from 'src/app/constants/routes';
 import { MY_LEVAE_CONFIG, Options } from 'src/app/constants/tableConfig';
 import { COMMON_VALIDATION } from 'src/app/constants/Validations';
@@ -19,9 +20,16 @@ export class MyLeaveComponent implements OnInit {
   myLeaveConfig: Options = MY_LEVAE_CONFIG;
   dataSource = new MatTableDataSource<MY_LEAVE>();
   dropDown = commondropDown;
+  leaveTypeDropDown = leave_type
   myLeaveForm!: FormGroup;
+  showShortLeave = false;
+  todayDate = new Date()
 
-  constructor(private route: Router, private fb: FormBuilder) {}
+  constructor(
+    private route: Router,
+    private fb: FormBuilder,
+    private datePipe: DatePipe
+  ) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<MY_LEAVE>(this.tableData);
@@ -33,6 +41,13 @@ export class MyLeaveComponent implements OnInit {
       leave_type: ['', [COMMON_VALIDATION]],
       request_from: ['', [COMMON_VALIDATION]],
       request_to: ['', [COMMON_VALIDATION]],
+      shortLeaveEndTime: ['', []],
+      shortLeaveStartTime: ['', []],
+      level1: ['', []],
+      level2: ['', []],
+      status: ['', []],
+      id: ['', []],
+      applied_on:['',[]]
     });
   }
 
@@ -97,6 +112,12 @@ export class MyLeaveComponent implements OnInit {
           data: (element: MY_LEAVE) => element,
           style: 'arrow-circle',
         },
+        {
+          type: 'rollback',
+          icon: 'home',
+          data: (element: MY_LEAVE) => element,
+          style: 'arrow-circle',
+        },
       ],
     },
     {
@@ -140,13 +161,42 @@ export class MyLeaveComponent implements OnInit {
 
   buttonClick(result: any) {
     console.log(result);
-
     this.route.navigate([MY_LEAVE_DETAILS.fullurl, result[1].id]);
+  }
+
+  leaveType(e: any) {
+    if (e.value == 'Short Leave') {
+      console.log('ll');
+      this.showShortLeave = true;
+      this.myLeaveForm.controls['shortLeaveStartTime'].setValue('10:00');
+      this.myLeaveForm.controls['shortLeaveEndTime'].setValue('12:00');
+    } else {
+      this.showShortLeave = false;
+    }
+  }
+
+  leave(e: any) {
+    console.log(e, 'll');
+
+    if (e.checked == true) {
+      this.checked = true;
+    } else {
+      this.checked = false;
+    }
   }
 
   saveData() {
     if (this.myLeaveForm.valid) {
-      this.myLeaveForm.value['id'] = '23456'
+      // this.myLeaveForm.value.request_from = this.datePipe.transform(this.myLeaveForm.value.request_from, 'YYYY-MM-dd');
+      this.myLeaveForm.controls['request_from'].setValue(this.datePipe.transform(this.myLeaveForm.value.request_from, 'YYYY-MM-dd'))
+
+      this.myLeaveForm.controls['level1'].setValue('Suyash Saxena(AI057)');
+      this.myLeaveForm.controls['level2'].setValue('HR(Human Resource)');
+      this.myLeaveForm.controls['status'].setValue('Pending');
+      this.myLeaveForm.controls['id'].setValue('234');
+      this.myLeaveForm.controls['applied_on'].setValue(this.todayDate);
+
+
       this.tableData.push(this.myLeaveForm.value);
       this.dataSource = new MatTableDataSource<MY_LEAVE>(this.tableData);
     } else {

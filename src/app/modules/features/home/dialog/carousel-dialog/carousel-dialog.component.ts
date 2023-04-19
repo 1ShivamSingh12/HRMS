@@ -52,8 +52,8 @@ export class CarouselDialogComponent implements OnInit {
   ];
 
   buttonData = {
-    button : false,
-    dot :true
+    button : true,
+    dot :false
   }
 
 

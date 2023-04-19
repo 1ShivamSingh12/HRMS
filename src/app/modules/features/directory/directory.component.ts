@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { directory } from 'src/app/constants/const_data';
 import {departmentDrop,directoryDropDown,} from 'src/app/constants/drop_down_data';
 
@@ -19,7 +20,7 @@ export class DirectoryComponent implements OnInit {
   dropDown: any;
   departmentDropDown = departmentDrop;
 
-  constructor() {}
+  constructor(public route : Router) {}
 
   ngOnInit(): void {
     this.dropDown = directoryDropDown;

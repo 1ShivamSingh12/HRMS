@@ -9,6 +9,9 @@ import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
 
 
 @NgModule({
@@ -23,7 +26,11 @@ import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
     FooterModule,
     MatDialogModule,
     MatRadioModule,
-    absolutePipe
+    absolutePipe,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    validationError
 
   ]
 })

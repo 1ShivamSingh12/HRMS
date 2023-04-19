@@ -10,42 +10,71 @@
           <div class="dsr_type">
             <div class="input-box">
               <p>Project</p>
-              <app-dropdown-with-search [data]="dropDown" [myControlName]="dsrForm.controls.project"
-                [placeholder]="'Project'"></app-dropdown-with-search>
+              <app-dropdown-with-search [error]="dsrForm | validationError : 'project' : 'Project'" [data]="dropDown"
+                [myControlName]="dsrForm.controls.project" [placeholder]="'Project'"
+                (filterValue)="selectProject($event)"></app-dropdown-with-search>
             </div>
 
             <div class="dsr_details">
               <div class="input-box">
                 <p>Date</p>
                 <mat-form-field appearance="outline">
-                  <input matInput [matDatepicker]="picker1" formControlName="date" placeholder="Date" />
+                  <input [max]="todayDate" readonly matInput [matDatepicker]="picker1" formControlName="date"
+                    placeholder="Date" />
                   <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                   <mat-datepicker #picker1></mat-datepicker>
+                  <mat-error>{{
+                    dsrForm | validationError : "date" : "Date"
+                    }}</mat-error>
                 </mat-form-field>
                 <!-- <app-field-error [error]="qualification | validationError : 'time' : 'Time'"></app-field-error> -->
               </div>
               <div class="input-box">
                 <p>Estimated Hour</p>
                 <mat-form-field appearance="outline">
-                  <input matInput [matDatepicker]="picker2" formControlName="hours" placeholder="Estimated Hour" />
-                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                  <mat-datepicker #picker2></mat-datepicker>
+                  <input readonly matInput [ngxTimepicker]="picker" [format]="24" formControlName="hours"
+                    placeholder="Estimated Hour" />
+                  <ngx-material-timepicker #picker></ngx-material-timepicker>
+                  <mat-error>{{
+                    dsrForm | validationError : "hours" : "Hours"
+                    }}</mat-error>
                 </mat-form-field>
-                <!-- <app-field-error [error]="qualification | validationError : 'time_to' : 'Time'"></app-field-error> -->
               </div>
 
               <div class="check">
                 <section class="example-section">
-                  <mat-checkbox class="example-margin">No Work Done
+                  <mat-checkbox (change)="fill($event)" class="example-margin">No Work Done
                   </mat-checkbox>
                 </section>
+              </div>
+            </div>
+            <div class="Miscellaneous" *ngIf="miscellaneousShow">
+              <div class="input-box">
+                <p>Approving Authority 1 (PM)</p>
+                <app-dropdown-with-search [error]="dsrForm | validationError : 'project' : 'Project'" [data]="dropDown"
+                  [myControlName]="dsrForm.controls.project" [placeholder]="'Project Manager'"
+                  (filterValue)="selectProject($event)"></app-dropdown-with-search>
+              </div>
+              <div class="input-box">
+                <p>Approving Authority 2 (AM)</p>
+                <app-dropdown-with-search [error]="dsrForm | validationError : 'project' : 'Project'" [data]="dropDown"
+                  [myControlName]="dsrForm.controls.project" [placeholder]="'Account Manager'"
+                  (filterValue)="selectProject($event)"></app-dropdown-with-search>
+              </div>
+            </div>
+            <div class="Miscellaneous" *ngIf="interviewShow">
+              <div class="input-box">
+                <p>Choose AM</p>
+                <app-dropdown-with-search [error]="dsrForm | validationError : 'project' : 'Project'" [data]="dropDown"
+                  [myControlName]="dsrForm.controls.project" [placeholder]="'Account Manager'"
+                  (filterValue)="selectProject($event)"></app-dropdown-with-search>
               </div>
             </div>
           </div>
 
           <div class="Description">
             <p>Description</p>
-            <angular-editor [config]="editorConfig" placeholder="'Enter industrytext here...'"></angular-editor>
+            <angular-editor [config]="editorConfig" formControlName="dsr"></angular-editor>
           </div>
 
           <div class="buttons">
@@ -60,7 +89,8 @@
         <div class="input-box">
           <p>From Date</p>
           <mat-form-field appearance="outline">
-            <input matInput [max]="to_date.value" [matDatepicker]="picker1" [formControl]="from_date" placeholder="from" />
+            <input readonly matInput [max]="to_date.value" [matDatepicker]="picker1" [formControl]="from_date"
+              placeholder="from" />
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
@@ -69,7 +99,8 @@
         <div class="input-box">
           <p>End Date</p>
           <mat-form-field appearance="outline">
-            <input matInput [min]="from_date.value" [matDatepicker]="picker2" [formControl]="to_date" placeholder="to" />
+            <input readonly matInput [min]="from_date.value" [matDatepicker]="picker2" [formControl]="to_date"
+              placeholder="to" />
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
@@ -78,11 +109,13 @@
         <div class="input-box">
           <p>Submission Status</p>
 
-          <app-dropdown-with-search [data]="dropDown" [myControlName]="submission_status" [placeholder]="'Status'"></app-dropdown-with-search>
+          <app-dropdown-with-search [data]="dropDown" [myControlName]="submission_status"
+            [placeholder]="'Status'"></app-dropdown-with-search>
         </div>
         <div class="input-box">
           <p>Project</p>
-          <app-dropdown-with-search [data]="dropDown" [myControlName]="project" [placeholder]="'Project'"></app-dropdown-with-search>
+          <app-dropdown-with-search [data]="dropDown" [myControlName]="project"
+            [placeholder]="'Project'"></app-dropdown-with-search>
         </div>
         <div class="input-box">
           <p>Final Approval Status</p>
@@ -110,4 +143,3 @@
     </div>
   </div>
 </div>
-

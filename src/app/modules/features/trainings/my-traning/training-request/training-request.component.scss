@@ -3,7 +3,7 @@
 .header {
   background-color: #f3f3f3;
   padding: 20px 10px 10px 20px;
-  @include flex('',space-between);
+  @include flex("", space-between);
   margin-bottom: 20px;
   h2 {
     font-size: 20px;
@@ -18,7 +18,7 @@
     width: 30px;
     border-radius: 50%;
     border: 1px solid black;
-    @include flex(center,center);
+    @include flex(center, center);
     background-color: $primary-white;
   }
 }
@@ -52,7 +52,7 @@ mat-dialog-content {
       textarea {
         min-height: 90px;
         width: 96%;
-        border: 1px solid #d8d8d8;
+        border: 0px solid #d8d8d8;
         resize: none;
       }
     }
@@ -71,11 +71,28 @@ mat-dialog-content {
         padding: 15px 10px 0px 0px;
       }
     }
+    ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+      background-color: blue !important;
+    }
+
+    ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+      border-color: grey;
+    }
+    ::ng-deep.mat-radio-button.mat-accent .mat-radio-inner-circle {
+      background-color: blue;
+    }
   }
 }
 
+mat-form-field{
+  width: 100%;
+}
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  padding-bottom: 0em
+}
+
 mat-dialog-actions {
-  @include flex('',flex-end);
+  @include flex("", flex-end);
   .submit {
     @include button(10px);
     margin-left: 5px;

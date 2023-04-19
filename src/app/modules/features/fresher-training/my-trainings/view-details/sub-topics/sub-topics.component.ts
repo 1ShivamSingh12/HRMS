@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MY_TRAINING_SUB_TOPIC } from 'src/app/constants/const_data';
 import { SUB_TOPICS } from 'src/app/interfaces/table.interface';
 
 @Component({
@@ -26,7 +27,7 @@ export class SubTopicsComponent implements OnInit {
     {
       columnDef: 'sub_topic',
       header: 'Sub-Topic',
-      cell: (element: Record<string, any>) => `${element['topic']}`,
+      cell: (element: Record<string, any>) => `${element['sub_topic']}`,
     },
     {
       columnDef: 'topic',
@@ -60,18 +61,7 @@ export class SubTopicsComponent implements OnInit {
     },
   ];
 
-  tableData: Array<SUB_TOPICS> = [
-    {
-      serial_number: '',
-      sub_topic : '',
-      topic: '',
-      trainer: '',
-      trainer_email: '',
-      start_date: '',
-      end_date: '',
-      resource_url: '',
-    },
-  ];
+  tableData: any = MY_TRAINING_SUB_TOPIC
 
 
 

@@ -13,7 +13,7 @@ import { REQUEST_ASSETS } from 'src/app/interfaces/table.interface';
 })
 export class RequestAssetComponent implements OnInit {
   dataSource = new MatTableDataSource<REQUEST_ASSETS>();
-
+  minDate = new Date()
   requestAsset!: FormGroup;
   assetsConfig: Options = REQUEST_ASSETS_CONFIG;
   dropDown = commondropDown

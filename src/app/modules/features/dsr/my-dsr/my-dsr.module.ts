@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DropdownWithSearchModule,
     ReactiveFormsModule,
     FormsModule,
-    FooterModule
+    FooterModule,
+    NgxMaterialTimepickerModule,
+    validationError
   ]
 })
 export class MyDsrModule { }

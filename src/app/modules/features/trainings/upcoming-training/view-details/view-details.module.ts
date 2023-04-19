@@ -6,6 +6,7 @@ import { ViewDetailsComponent } from './view-details.component';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
 import { EnrollTrainingComponent } from './enroll-training/enroll-training.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { EnrollTrainingComponent } from './enroll-training/enroll-training.compo
     CommonModule,
     ViewDetailsRoutingModule,
     FooterModule,
-    absolutePipe
+    absolutePipe,
+    MatDialogModule
   ]
 })
 export class ViewDetailsModule { }

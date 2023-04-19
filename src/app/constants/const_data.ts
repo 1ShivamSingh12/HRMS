@@ -294,7 +294,6 @@ export const DSR_TABLEDATA = [
     sr_no: 1,
     approval_status: 'Approved',
   },
-
 ];
 
 export const LEAVE_TABLEDATA = [
@@ -306,7 +305,7 @@ export const LEAVE_TABLEDATA = [
     status: 'Pending',
     level1: 'Suyash Saxena(AI057)',
     level2: 'HR (Human Resourse)',
-    id:'23'
+    id: '23',
   },
   {
     leave_type: 'Planned Leave (CL)',
@@ -316,8 +315,7 @@ export const LEAVE_TABLEDATA = [
     status: 'Pending',
     level1: 'Suyash Saxena(AI057)',
     level2: 'HR (Human Resourse)',
-    id:'24'
-
+    id: '24',
   },
   {
     leave_type: 'Planned Leave (CL)',
@@ -327,8 +325,7 @@ export const LEAVE_TABLEDATA = [
     status: 'Pending',
     level1: 'Suyash Saxena(AI057)',
     level2: 'HR (Human Resourse)',
-    id:'26'
-
+    id: '26',
   },
   {
     leave_type: 'Emergency Leave (CL)	',
@@ -338,8 +335,7 @@ export const LEAVE_TABLEDATA = [
     status: 'Pending',
     level1: 'Suyash Saxena(AI057)',
     level2: 'HR (Human Resourse)',
-    id:'29'
-
+    id: '29',
   },
   {
     leave_type: 'Short Leaves',
@@ -349,8 +345,7 @@ export const LEAVE_TABLEDATA = [
     status: 'Pending',
     level1: 'Suyash Saxena(AI057)',
     level2: 'HR (Human Resourse)',
-    id:'70'
-
+    id: '70',
   },
   {
     leave_type: 'Emergency Leave (CL)	',
@@ -360,8 +355,7 @@ export const LEAVE_TABLEDATA = [
     status: 'Pending',
     level1: 'Suyash Saxena(AI057)',
     level2: 'HR (Human Resourse)',
-    id:'34'
-
+    id: '34',
   },
   {
     leave_type: 'Emergency Leave (CL) Half Day - (2nd Half)	',
@@ -371,8 +365,7 @@ export const LEAVE_TABLEDATA = [
     status: 'Pending',
     level1: 'Suyash Saxena(AI057)',
     level2: 'HR (Human Resourse)',
-    id:'67'
-
+    id: '67',
   },
   {
     leave_type: 'Short Leaves',
@@ -382,11 +375,9 @@ export const LEAVE_TABLEDATA = [
     status: 'Pending',
     level1: 'Suyash Saxena(AI057)',
     level2: 'HR (Human Resourse)',
-    id:'56'
-
+    id: '56',
   },
 ];
-
 
 export const PROJECT_LIST_DATA = [
   {
@@ -406,7 +397,8 @@ export const PROJECT_LIST_DATA = [
     exp: '1.0',
     relevant_exp: '0.7',
     hrs_log: '2161:16',
-  }, {
+  },
+  {
     name: 'Rishabh Ghildiyal',
     allocated: 'Resource',
     department: 'Angular',
@@ -414,7 +406,8 @@ export const PROJECT_LIST_DATA = [
     exp: '1.0',
     relevant_exp: '0.7',
     hrs_log: '2161:16',
-  }, {
+  },
+  {
     name: 'Swapnil Maurya',
     allocated: 'Resource',
     department: 'Angular',
@@ -422,7 +415,8 @@ export const PROJECT_LIST_DATA = [
     exp: '1.0',
     relevant_exp: '0.7',
     hrs_log: '2161:16',
-  }, {
+  },
+  {
     name: 'Arpit Dwivedi',
     allocated: 'Resource',
     department: 'Angular',
@@ -432,3 +426,134 @@ export const PROJECT_LIST_DATA = [
     hrs_log: '2161:16',
   },
 ];
+
+export const MY_TRAINING_ATTENDENCE = [
+  {
+    serial_number: 1,
+    topic: 'Introduction',
+    date: 'Feb-28-2022',
+    attendence: 'Present',
+  },
+  {
+    serial_number: 2,
+
+    topic: 'Basic building block	',
+    date: 'Feb-28-2022',
+    attendence: 'Present',
+  },
+  {
+    serial_number: 3,
+    topic: 'Components',
+    date: 'Feb-28-2022',
+    attendence: 'Present',
+  },
+  {
+    serial_number: 4,
+    topic: 'Ist - Assignment	',
+    date: 'Feb-28-2022',
+    attendence: 'Present',
+  },
+  {
+    serial_number: 5,
+    topic: 'Modules',
+    date: 'Feb-28-2022',
+    attendence: 'Present',
+  },
+  {
+    serial_number: 6,
+
+    topic: 'Routing',
+    date: 'Feb-28-2022',
+    attendence: 'Present',
+  },
+];
+
+ export const MY_TRAINING_SUB_TOPIC =  [
+  {
+    serial_number:1,
+    sub_topic:'What is SPADifference between SPA and MPAWhat is AngularWhy should we use it?',
+    topic:'Introfuction',
+    trainer:'Sandeep Gupta',
+    trainer_email:'sandeep@gmail.com',
+    start_date:'02-03-2022',
+    end_date:'02-03-2022',
+    resource_url:'---'
+  },
+  {
+    serial_number:2,
+    sub_topic:'Basic building blocks Basic diff between Angular & other SPA’s Basics of CLI usage	',
+    topic:'Basic building block	',
+    trainer:'Sandeep Gupta',
+    trainer_email:'sandeep@gmail.com',
+    start_date:'02-03-2022',
+    end_date:'02-03-2022',
+    resource_url:'---'
+  },
+  {
+    serial_number:3,
+    sub_topic:'We will develop a demo project which is currently running in appiventiv. We will use the same api and functionaliy. Duration of this project will be around 3 weeks. Based on perfomance of the tranees we will then onboard them on the live projects.	',
+    topic:'Components',
+    trainer:'Sandeep Gupta',
+    trainer_email:'sandeep@gmail.com',
+    start_date:'02-03-2022',
+    end_date:'02-03-2022',
+    resource_url:'---'
+  },
+  {
+    serial_number:4,
+    sub_topic:'We will develop a demo project which is currently running in appiventiv. We will use the same api and functionaliy. Duration of this project will be around 3 weeks. Based on perfomance of the tranees we will then onboard them on the live projects.	',
+    topic:'Components',
+    trainer:'Sandeep Gupta',
+    trainer_email:'sandeep@gmail.com',
+    start_date:'02-03-2022',
+    end_date:'02-03-2022',
+    resource_url:'---'
+  },
+]
+export const MY_TRAINING_TRAINING_DETAILS = [
+  {
+    serial_number:1,
+    topic:'ANgular',
+    topic_trainer:'Sandeep sr',
+    trainer_email:'al@gmail.com',
+    start_date:'28-02-2022',
+    end_date:'28-02-2022',
+    resource_url:'--'
+  },
+  {
+    serial_number:2,
+    topic:'ANgular',
+    topic_trainer:'Sandeep sr',
+    trainer_email:'al@gmail.com',
+    start_date:'28-02-2022',
+    end_date:'28-02-2022',
+    resource_url:'--'
+  },
+  {
+    serial_number:3,
+    topic:'ANgular',
+    topic_trainer:'Sandeep sr',
+    trainer_email:'al@gmail.com',
+    start_date:'28-02-2022',
+    end_date:'28-02-2022',
+    resource_url:'--'
+  },
+  {
+    serial_number:4,
+    topic:'ANgular',
+    topic_trainer:'Sandeep sr',
+    trainer_email:'al@gmail.com',
+    start_date:'28-02-2022',
+    end_date:'28-02-2022',
+    resource_url:'--'
+  },
+  {
+    serial_number:5,
+    topic:'ANgular',
+    topic_trainer:'Sandeep sr',
+    trainer_email:'al@gmail.com',
+    start_date:'28-02-2022',
+    end_date:'28-02-2022',
+    resource_url:'--'
+  }
+]

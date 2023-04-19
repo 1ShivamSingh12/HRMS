@@ -16,7 +16,7 @@
         <div class="input-box">
           <p>Last Name</p>
           <mat-form-field appearance="outline">
-            <input matInput (keydown)="noSpace($event)" placeholder="Last Name" formControlName="last_name" />
+            <input matInput  placeholder="Last Name" formControlName="last_name" />
             <mat-error>{{basicInfo | validationError : 'last_name' : 'Last Name'}}</mat-error>
           </mat-form-field>
 
@@ -108,7 +108,9 @@
       <div class="card_bottom">
         <div class="input-box">
           <p>Address</p>
-          <textarea placeholder="Address"></textarea>
+          <mat-form-field appearance="outline">
+            <textarea (keydown)="noSpace($event)" placeholder="Address" matInput></textarea>
+          </mat-form-field>
         </div>
       </div>
       <div class="save_button">

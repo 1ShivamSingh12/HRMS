@@ -23,16 +23,16 @@ export class ValidationErrorPipe implements PipeTransform {
       } else if (error?.hasOwnProperty('minlength')) {
         return `${label} must be of 6 character`;
       } else if (error?.hasOwnProperty('maxlength')) {
-        return `${label} must be of 10 character `;
+        return `${label} must be of 18 character `;
       } else if (error?.hasOwnProperty('pattern')) {
-        // console.log(control);
+        console.log(error);
 
         if (control === 'password' || control === 'confirm_password') {
           return `${label} must be 3 character and must not contain spaces`;
         } else {
           let pattern = error.pattern.requiredPattern;
-          console.log(pattern);
-          console.log(REGEX.space);
+          // console.log(pattern);
+          console.log(REGEX.name);
 
           return this.PATTERN_ERRORS(pattern, label);
         }

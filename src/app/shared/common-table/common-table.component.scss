@@ -1,5 +1,6 @@
 @import "../../../scss/mix";
 .containers {
+  position: relative;
   .tables {
     overflow-x: auto;
     background-color: $primary-white;
@@ -64,7 +65,7 @@
 .container {
   .buttons {
     text-align: end;
-    padding: 20px 20px 10px 12px;
+    padding: 20px 20px 10px 0px;
     .search {
       .input-box {
         ::ng-deep.mat-form-field-appearance-outline {
@@ -102,6 +103,25 @@
   }
   .mat-paginator-page-size {
     margin-left: 15px;
+    position: absolute;
+    top: -74px;
+  }
+  .mat-paginator-range-actions{
+    width: 100%;
+  }
+  .mat-paginator-range-label{
+    margin: 0px !important;
+    flex-grow: 1;
+  }
+  .mat-paginator-range-label::after{
+    content: 'Entries';
+    margin-left: 5px;
+    font-size: 15px;
+  }
+  .mat-paginator-range-label::before{
+    content: 'Showing';
+    margin-right: 5px;
+    font-size: 15px;
   }
 }
 
@@ -115,12 +135,12 @@
     }
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 396px) {
   :host ::ng-deep .container {
     .buttons {
       .search {
         mat-form-field {
-          width: 50%;
+          width: 65%;
         }
       }
     }
@@ -139,4 +159,27 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: 550px) {
+  .container{
+    .buttons{
+      text-align: initial;
+      padding: 20px 20px 10px 24px;
+      .search{
+        .input-box{
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+
+  ::ng-deep.mat-paginator-outer-container {
+    .mat-paginator-page-size {
+      margin-left: 15px;
+      position: absolute;
+      top: -130px;
+    }
+  }
+
 }

@@ -14,6 +14,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dropdown-with-search.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
 
 
 @NgModule({
@@ -33,7 +35,10 @@ import { DropdownWithSearchModule } from 'src/app/shared/dropdown-with-search/dr
     MatOptionModule,
     MatSelectModule,
     MatRadioModule,
-    DropdownWithSearchModule
+    DropdownWithSearchModule,
+    FormsModule,
+    ReactiveFormsModule,
+    validationError
   ]
 })
 export class MyTraningModule { }

@@ -43,9 +43,9 @@ export class NewMembersCarouselComponent implements OnInit {
     velocity: 0.2
   }
   buttonData = {
-    button:false,
+    button:true,
     dot : false
   }
 
-
+ 
 }

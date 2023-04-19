@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 import { myProfileAnimation } from 'src/app/animations/myProfileAnimation';
 import { sideNavList } from 'src/app/constants/sidenav';
 import { Covid19Component } from 'src/app/shared/dialog/covid19/covid19.component';
@@ -23,10 +24,13 @@ export class FeatureComponent implements OnInit, AfterViewInit {
   sideroutes = sideNavList;
   showFiller = false;
   notificationToggle = false;
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog , public route : Router) {}
   ngAfterViewInit(): void {}
+route1:any
+  ngOnInit(): void {
+  
 
-  ngOnInit(): void {}
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize() {

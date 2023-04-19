@@ -5,6 +5,7 @@ import { commondropDown } from 'src/app/constants/drop_down_data';
 import { ASSETS_DECLARATION_CONFIG, Options } from 'src/app/constants/tableConfig';
 import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 import { ASSETS_DECLARATION } from 'src/app/interfaces/table.interface';
+import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-asset-declaration',
@@ -18,7 +19,7 @@ export class AssetDeclarationComponent implements OnInit {
   assestDeclaration!: FormGroup;
   dropDown = commondropDown
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder , private snackbar : SnackbarService) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<ASSETS_DECLARATION>(this.tableData)
@@ -137,6 +138,14 @@ export class AssetDeclarationComponent implements OnInit {
     }
     this.dataSource = new MatTableDataSource<ASSETS_DECLARATION>(this.tableData);
     console.log(this.dataSource.data, 'lll');
+  }
+
+  noSpace(event:any){
+    if(event.target.selectionStart == 0 && event.code == "Space"){
+      event.preventDefault();
+      this.snackbar.openSnackBarErr('Should not start with space' , 'red-snackbar')
+    }
+
   }
 
 }

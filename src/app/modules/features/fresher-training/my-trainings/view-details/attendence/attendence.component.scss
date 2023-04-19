@@ -1,3 +1,5 @@
+@import "../../../../../../../scss/mix";
+
 .container{
   padding: 20px;
   .card{
@@ -15,5 +17,10 @@
 :host ::ng-deep .container {
   .tables {
     overflow-x: scroll;
+
+    table{
+      @include commonTableStyling('', "");
+
+    }
   }
 }

@@ -57,20 +57,23 @@
       @include grid(grid-template-columns, "48% 48%", 2%);
       padding: 30px;
       .new_leave_details {
-
         .leave_type {
-          margin-bottom: 30px;
           @include form-field(50%);
+          .input-box {
+            margin-bottom: 30px;
+          }
+
           ::ng-deep.mat-form-field-wrapper {
             padding-bottom: 0.7em;
           }
 
-          .input-box{
-            margin-bottom: 15px
+          .input-box {
+            margin-bottom: 15px;
           }
 
           .half_day_toggle {
             @include flex("", space-between);
+            margin-bottom: 15px;
             .example-section {
               margin-left: 10px;
               ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
@@ -84,12 +87,19 @@
               background-color: blue;
             }
           }
+
+          .shortLeave {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            @include form-field(100%);
+            margin-bottom: 10px;
+          }
         }
 
         .dates {
           @include grid(grid-template-columns, "49% 49%", 2%);
           @include form-field(100%);
-          .input-box{
+          .input-box {
             margin-bottom: 15px;
           }
           p {
@@ -99,7 +109,7 @@
 
         .remarks {
           @include form-field(100%);
-          .input-box{
+          .input-box {
             margin-bottom: 15px;
           }
         }
@@ -194,9 +204,46 @@
         @include grid(grid-template-columns, "100%", "");
 
         .new_leave_details {
-          margin-bottom: 20px;
+          margin-bottom: 50px;
           .leave_type {
             @include form-field(100%);
+            .input-box {
+              margin-bottom: 20px;
+            }
+          }
+          .dates {
+            @include grid(grid-template-columns, "100%", "");
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .container {
+    .add_leave {
+      .add_new_leave {
+        @include grid(grid-template-columns, "100%", "");
+
+        .new_leave_details {
+          // margin-bottom: 20px;
+          .leave_type {
+            @include form-field(100%);
+            .input-box {
+              margin-bottom: 20px;
+            }
+            .shortLeave {
+              display: block;
+              margin-top: 10px;
+              .input-box {
+                margin-bottom: 20px;
+              }
+            }
+
+            .half_day_toggle {
+              margin-bottom: 10px
+            }
           }
           .dates {
             @include grid(grid-template-columns, "100%", "");
@@ -212,6 +259,9 @@
     .add_leave {
       .add_leave_content {
         display: block;
+        button{
+          margin-top: 10px;
+        }
       }
       .add_new_leave {
         .new_leave_details {

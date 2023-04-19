@@ -12,33 +12,35 @@
             <div class="input-box">
               <p>Subject</p>
               <mat-form-field appearance="outline">
-                <input matInput placeholder="Subject" formControlName="subject"/>
+                <input matInput placeholder="Subject" (keydown)="noSpace($event)" formControlName="subject"/>
+                <mat-error>{{ticket | validationError : 'subject' : 'Subject'}}</mat-error>
               </mat-form-field>
             </div>
             <div class="input-box">
               <p>Departmnet</p>
-            <app-dropdown-with-search [data]="dropDown" [placeholder]="'Department'" [myControlName]="ticket.controls.department"></app-dropdown-with-search>
+            <app-dropdown-with-search [error]="ticket | validationError : 'department' : 'Department'" [data]="dropDown" [placeholder]="'Department'" [myControlName]="ticket.controls.department"></app-dropdown-with-search>
 
             </div>
             <div class="input-box">
               <p>Ticket Category</p>
-              <app-dropdown-with-search [data]="dropDown" [placeholder]="'Ticket Category'" [myControlName]="ticket.controls.ticket"></app-dropdown-with-search>
+              <app-dropdown-with-search [error]="ticket | validationError : 'ticket': 'Ticket'" [data]="dropDown" [placeholder]="'Ticket Category'" [myControlName]="ticket.controls.ticket"></app-dropdown-with-search>
 
             </div>
             <div class="input-box">
               <p>Priority</p>
-              <app-dropdown-with-search [data]="dropDown" [placeholder]="'Priority'" [myControlName]="ticket.controls.priority"></app-dropdown-with-search>
+              <app-dropdown-with-search [error]="ticket | validationError : 'priority' : 'Priority'" [data]="dropDown" [placeholder]="'Priority'" [myControlName]="ticket.controls.priority"></app-dropdown-with-search>
 
             </div>
           </div>
 
           <div class="ticket_description">
             <p>Ticket Description</p>
-            <angular-editor [config]="editorConfig" placeholder="'Enter industrytext here...'"></angular-editor>
+            <angular-editor formControlName="description" [config]="editorConfig" placeholder="'Enter industrytext here...'"></angular-editor>
+            <mat-error>{{ticket | validationError : 'description' : 'Description'}}</mat-error>
           </div>
 
           <div class="buttons">
-            <button class="save_button">Save</button>
+            <button class="save_button" (click)="ticketSave()">Save</button>
           </div>
         </div>
       </form>

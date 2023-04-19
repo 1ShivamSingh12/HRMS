@@ -31,28 +31,4 @@
   }
 }
 
-@media only screen and (max-width: 625px) {
-  :host ::ng-deep .container {
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      .input-box {
-        margin-bottom: 20px;
-        .select {
-          height: 50px !important;
-        }
-        span {
-          margin: 5px !important;
-        }
-      }
-      .search {
-        margin-left: 5px;
-        margin-bottom: 20px;
-        mat-form-field {
-          width: 50%;
-        }
-      }
-    }
-  }
-}
 

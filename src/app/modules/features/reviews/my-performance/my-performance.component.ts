@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { monthList } from 'src/app/constants/const_data';
 import { PerformanceDetailComponent } from './performance-detail/performance-detail.component';
 
@@ -32,6 +32,10 @@ export class MyPerformanceComponent implements OnInit {
   }
 
   openDialog(){
+    // let config: MatDialogConfig = {
+    //   autoFocus: false,
+    //   height: '30%',
+    // };
     this.dialog.open(PerformanceDetailComponent)
   }
 

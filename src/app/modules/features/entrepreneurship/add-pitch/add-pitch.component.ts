@@ -16,7 +16,7 @@ import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 export class AddPitchComponent implements OnInit {
   addPitch!: FormGroup;
   dropDown = commondropDown
-  constructor(private fb: FormBuilder , private route : Router ,private pitchService : PitchDataService , private snackbar : SnackbarService) {}
+  constructor(private fb: FormBuilder , public route : Router ,private pitchService : PitchDataService , private snackbar : SnackbarService) {}
 
   ngOnInit(): void {
     this.createForm();

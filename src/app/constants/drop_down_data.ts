@@ -42,6 +42,47 @@ export const commondropDown = {
       value:'2',
       viewValue:'option 2'
     },
+    {
+      value:'2',
+      viewValue:'option 3'
+    },
+  ]
+}
+
+export const dsrProject = {
+  placeholder:'Placeholder',
+  list:[
+    {
+      value:'Training',
+      viewValue:'Training'
+    },
+    {
+      value:'Miscellaneous',
+      viewValue:'Miscellaneous'
+    },
+    {
+      value:'Interview',
+      viewValue:'Interview'
+    },
+  ]
+}
+
+
+export const leave_type = {
+  placeholder:'Placeholder',
+  list:[
+    {
+      value:'Short Leave',
+      viewValue:'Short Leave'
+    },
+    {
+      value:'Planned leave',
+      viewValue:'Planned leave'
+    },
+    {
+      value:'Emergency leave',
+      viewValue:'Emergency leave'
+    },
   ]
 }
 

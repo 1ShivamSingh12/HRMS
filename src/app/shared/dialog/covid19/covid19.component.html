@@ -54,15 +54,15 @@
         <p>Title</p>
         <mat-form-field appearance="outline">
           <input matInput placeholder="" formControlName="title"/>
+          <mat-error>{{covidForm | validationError : 'title' : 'Title'}}</mat-error>
         </mat-form-field>
-        <app-field-error [error]="covidForm | validationError : 'title' : 'Title'"></app-field-error>
       </div>
       <div class="input-box">
         <p>Mobile No.</p>
         <mat-form-field appearance="outline">
           <input matInput placeholder="" formControlName="mobileNo"/>
+          <mat-error>{{covidForm | validationError : 'mobileNo' : 'Mobile Number'}}</mat-error>
         </mat-form-field>
-        <app-field-error style="display: inline;" [error]="covidForm | validationError : 'mobileNo' : 'Mobile Number'"></app-field-error>
       </div>
       <div class="input-box">
         <p>Address</p>
@@ -78,12 +78,12 @@
         <p>Description</p>
         <mat-form-field class="desc" appearance="outline">
           <input matInput placeholder="" formControlName="description" />
+          <mat-error>{{covidForm | validationError : 'description' : 'Description'}}</mat-error>
         </mat-form-field>
-        <app-field-error [error]="covidForm | validationError : 'description' : 'Description'"></app-field-error>
       </div>
       <div>
         <button mat-button [mat-dialog-close]>Cancel</button>
-        <button mat-button>Submit</button>
+        <button mat-button (click)="submit()">Submit</button>
       </div>
     </div>
   </form>

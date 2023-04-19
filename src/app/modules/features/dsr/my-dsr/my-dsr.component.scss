@@ -52,7 +52,14 @@
             @include grid(grid-template-columns, "33% 33% 33%", "");
             .check {
               margin: 30px 0px 0px 15px;
+              ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background{
+                background-color: blue;
+              }
             }
+          }
+
+          .Miscellaneous{
+            @include grid(grid-template-columns, "49% 49%", 2%);
           }
         }
 
@@ -123,6 +130,7 @@
   }
 }
 
+
 :host ::ng-deep .container {
   .tables {
     table {
@@ -164,6 +172,11 @@
           .dsr_type {
             .dsr_details {
               @include grid(grid-template-columns, "100%", "");
+            }
+            .Miscellaneous{
+              margin-top: 10px;
+              @include grid(grid-template-columns, "100%", "");
+
             }
           }
         }

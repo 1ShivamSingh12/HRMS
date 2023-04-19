@@ -4,59 +4,71 @@
   min-height: 100%;
   padding: 30px;
   background-color: $common-background;
-
-  .grid_view {
-    mat-button-toggle-group {
-      background-color: $common-background;
-      border: none;
-      .mat-button-toggle-checked {
-        display: flex;
-        background-color: blue !important;
-        color: #fff !important;
-        padding: 2px;
-        border-radius: 4px;
-        transform: scaleY(1);
-      }
-
-      .mat-button-toggle {
-        background-color: $common-background;
-        border: none;
-      }
-    }
-  }
-
-  .project {
+  .projects_content {
     display: flex;
     justify-content: flex-end;
-    border: none;
-    margin-bottom: 50px;
-    mat-button-toggle-group {
-      background-color: $common-background;
-      border: none;
-      .mat-button-toggle-checked {
-        background-color: #323a46 !important;
-        color: #fff !important;
-        padding: 2px;
-        border-radius: 4px;
-        transform: scaleY(1);
-        display: flex;
-      }
-
-      .mat-button-toggle {
+    .grid_view {
+      mat-button-toggle-group {
         background-color: $common-background;
         border: none;
+        .mat-button-toggle-checked {
+          display: flex;
+          background-color: blue !important;
+          color: #fff !important;
+          padding: 2px;
+          border-radius: 4px;
+          transform: scaleY(1);
+        }
+
+        .mat-button-toggle {
+          background-color: $common-background;
+          border: none;
+        }
+      }
+    }
+
+    .project {
+      display: flex;
+      justify-content: flex-end;
+      border: none;
+      margin-bottom: 50px;
+      mat-button-toggle-group {
+        background-color: $common-background;
+        border: none;
+        .mat-button-toggle-checked {
+          background-color: #323a46 !important;
+          color: #fff !important;
+          padding: 2px;
+          border-radius: 4px;
+          transform: scaleY(1);
+          display: flex;
+        }
+
+        .mat-button-toggle {
+          background-color: $common-background;
+          border: none;
+        }
       }
     }
   }
 }
 
-@media only screen and (max-width:455px){
-  .container{
-    .grid_view{
-      overflow: auto;
-
+:host ::ng-deep .container {
+  .tables {
+    border-radius: 10px;
+    table {
+      @include commonTableStyling(1px solid #f1f1f2, "");
     }
   }
 }
 
-
+@media only screen and (max-width: 455px) {
+  .container {
+    .projects_content {
+      flex-wrap: wrap;
+      .grid_view {
+        overflow: auto;
+      }
+    }
+  }
+}

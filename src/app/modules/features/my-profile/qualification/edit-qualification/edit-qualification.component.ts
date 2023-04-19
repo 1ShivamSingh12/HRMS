@@ -24,12 +24,12 @@ export class EditQualificationComponent implements OnInit {
 
   createForm() {
     this.qualification = this.fb.group({
-      school: ['', [COMMON_VALIDATION]],
+      school: ['', [COMMON_VALIDATION , NAME_PATTERN]],
       education_level: ['', [COMMON_VALIDATION]],
       date_from: ['', [COMMON_VALIDATION]],
       date_to: ['', [COMMON_VALIDATION]],
       language: ['', [COMMON_VALIDATION]],
-      Courses: ['', [COMMON_VALIDATION]],
+      Courses: ['', [COMMON_VALIDATION , NAME_PATTERN]],
     });
   }
   time:any

@@ -10,7 +10,7 @@
           <div class="input-box">
             <p>School/University</p>
             <mat-form-field appearance="outline">
-              <input matInput (keydown)="noSpace($event)" placeholder="School/University" formControlName="school" />
+              <input matInput placeholder="School/University" formControlName="school" />
               <mat-error>{{
                 qualification | validationError : "school" : "School/University"
                 }}</mat-error>

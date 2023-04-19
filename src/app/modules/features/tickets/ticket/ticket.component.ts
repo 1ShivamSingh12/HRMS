@@ -4,8 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { commondropDown } from 'src/app/constants/drop_down_data';
 import { TICKET_CONFIG } from 'src/app/constants/tableConfig';
-import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
+import { COMMON_VALIDATION } from 'src/app/constants/Validations';
 import { TICKET } from 'src/app/interfaces/table.interface';
+import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-ticket',
@@ -16,23 +17,27 @@ export class TicketComponent implements OnInit {
   ticketconfig: any = TICKET_CONFIG;
   ticket!: FormGroup;
   show: boolean = true;
-  dropDown = commondropDown
+  dropDown = commondropDown;
   dataSource = new MatTableDataSource<TICKET>();
 
-
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder , private snackbar : SnackbarService) {}
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<TICKET>(this.tableData);
-    this.createForm()
+    this.createForm();
   }
 
   createForm() {
     this.ticket = this.fb.group({
-      subject: ['', [COMMON_VALIDATION, NAME_PATTERN]],
-      department: ['', [COMMON_VALIDATION, NAME_PATTERN]],
+      subject: ['', [COMMON_VALIDATION]],
+      department: ['', [COMMON_VALIDATION]],
       ticket: ['', [COMMON_VALIDATION]],
       priority: ['', [COMMON_VALIDATION]],
+      description: ['', [COMMON_VALIDATION]],
+      ticket_code:['',[]],
+      employee:['',[]],
+      status:['',[]],
+      date:['',[]]
 
     });
   }
@@ -132,4 +137,28 @@ export class TicketComponent implements OnInit {
     //   date: '',
     // },
   ];
+
+  noSpace(event:any){
+    if(event.target.selectionStart == 0 && event.code == "Space"){
+      event.preventDefault();
+      this.snackbar.openSnackBarErr('Should not start with space' , 'red-snackbar')
+    }
+
+  }
+
+
+  ticketSave() {
+    if (this.ticket.valid) {
+
+      this.ticket.controls['ticket_code'].setValue('123')
+      this.ticket.controls['employee'].setValue('Shivam')
+      this.ticket.controls['status'].setValue('Pending')
+      this.ticket.controls['date'].setValue(new Date())
+
+      this.tableData.push(this.ticket.value);
+      this.dataSource = new MatTableDataSource<TICKET>(this.tableData);
+    } else {
+      this.ticket.markAllAsTouched();
+    }
+  }
 }
