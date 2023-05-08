@@ -1,0 +1,55 @@
+<div class="calender">
+  <div class="heading">
+    <div class="month">
+      <h2 align="left" style="color: black">
+        {{ currentMonth }} {{ currentYear }}
+      </h2>
+    </div>
+    <div class="color">
+      <div class="lock"><span></span>Locked</div>
+      <div class="coupon-purchase"><span></span>Coupon purchased</div>
+      <div class="coupon-ava"><span></span>Coupon available</div>
+      <div class="holiday"><span></span>Holiday</div>
+    </div>
+  </div>
+  <br />
+
+  <div class="tables">
+
+
+  <table bgcolor="white" cellspacing="21" cellpadding="21">
+    <caption align="top"></caption>
+
+    <thead>
+      <tr>
+        <th *ngFor="let item of week">
+          {{ item.viewValue }}
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let week of myCalendar">
+        <td *ngFor="let day of week" [ngClass]="{
+          'locked': locked(day.Date),
+          'weekend': day.Day == 'Sat' || day.Day == 'Sun',
+          'coupon-available': day.couponPurchase == false,
+          'coupon-purchased' : day.couponPurchase == true
+          }">
+          <div class="calender-content">
+            <div *ngIf="day.Date">
+              <section class="example-section" *ngIf="confiq.checkbox && day.Day != 'Sat' && day.Day != 'Sun' && !locked(day.Date) && day.couponPurchase == false">
+                <mat-checkbox [checked]="day.booked"  (change)="selectCheckbox($event, day.Date)" class="example-margin"></mat-checkbox>
+              </section>
+            </div>
+            <div>
+              {{ day.Date }}
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>

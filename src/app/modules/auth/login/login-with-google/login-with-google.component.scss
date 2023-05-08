@@ -12,6 +12,7 @@
       width: 43px;
     }
     p {
+      cursor: pointer;
       margin: 0;
       background-color: #4285f4;
       @include flex(center, center);
@@ -25,6 +26,7 @@
     padding-top: 20px;
     color: $dullBlack;
     p{
+      cursor: pointer;
       margin-bottom: 6em;
     }
   }

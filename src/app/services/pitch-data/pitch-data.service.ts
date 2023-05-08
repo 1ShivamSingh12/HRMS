@@ -9,7 +9,5 @@ export class PitchDataService implements OnInit {
   constructor() { }
   ngOnInit(): void {
     console.log(this.data,'lll');
-
   }
-
 }

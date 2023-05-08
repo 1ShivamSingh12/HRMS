@@ -14,6 +14,8 @@ export class LoginWithCredentialsComponent implements OnInit {
 
   loginForm!: FormGroup;
 
+  hide = true
+
   constructor(private fb : FormBuilder ,private snackbar_service : SnackbarService ,private route : Router ) { }
 
   ngOnInit(): void {
@@ -52,4 +54,19 @@ export class LoginWithCredentialsComponent implements OnInit {
       }
     }
   }
+  passwordPressed:boolean = false;
+
+
+  get passwordPressedGet():boolean{
+    return this.passwordPressed;
+  }
+
+  passwordInput(){
+    this.passwordPressed = false
+
+    setTimeout(()=>{
+      this.passwordPressed = true
+    },700)
+  }
+
 }

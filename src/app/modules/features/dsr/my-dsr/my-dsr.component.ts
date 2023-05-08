@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
@@ -32,20 +33,21 @@ export class MyDsrComponent implements OnInit {
   to_date = new FormControl();
   submission_status = new FormControl();
   project = new FormControl();
-  miscellaneousShow = false
-  interviewShow = false
-  todayDate = new Date()
+  miscellaneousShow = false;
+  interviewShow = false;
+  todayDate = new Date();
   show: boolean = true;
   dsrForm!: FormGroup;
 
-  constructor(private route: Router, private fb: FormBuilder) {}
+  constructor(
+    private route: Router,
+    private fb: FormBuilder,
+    private datePipe: DatePipe
+  ) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<DSR>(this.tableData);
     this.createForm();
-    for (const item in DSR_TABLEDATA) {
-      console.log(item);
-    }
   }
 
   createForm() {
@@ -198,19 +200,38 @@ export class MyDsrComponent implements OnInit {
     }
   }
 
-  selectProject(data:any){
-    console.log(data,"bismyle")
-    if(data.value == "Training"){
-      this.miscellaneousShow = false
-      this.interviewShow = false
-    }else if(data.value == 'Miscellaneous'){
-      this.miscellaneousShow = true
-      this.interviewShow = false
-    }else if(data.value == 'Interview'){
-      this.interviewShow = true
-      this.miscellaneousShow = false
+  selectProject(data: any) {
+    // console.log(data,"bismyle")
+    if (data.value == 'Training') {
+      this.miscellaneousShow = false;
+      this.interviewShow = false;
+    } else if (data.value == 'Miscellaneous') {
+      this.miscellaneousShow = true;
+      this.interviewShow = false;
+    } else if (data.value == 'Interview') {
+      this.interviewShow = true;
+      this.miscellaneousShow = false;
     }
   }
 
-}
+  Startdate: any;
+  EndDate : any
 
+  dateFilter(e: any) {
+    this.Startdate = this.datePipe.transform(e.value, 'YYYY-MM-dd');
+    if (e.value) {
+      this.filterData = this.tableData.filter((item: any) => item.date >= this.Startdate);
+      console.log(this.filterData, 'egvlerlg');
+    }
+    this.dataSource = new MatTableDataSource<DSR>(this.filterData);
+  }
+
+  EnddateFilter(e:any){
+    this.EndDate = this.datePipe.transform(e.value, 'YYYY-MM-dd');
+    if (e.value) {
+      this.filterData = this.tableData.filter((item: any) => item.date <= this.EndDate);
+      console.log(this.filterData, 'egvlerlg');
+    }
+    this.dataSource = new MatTableDataSource<DSR>(this.filterData);
+  }
+}

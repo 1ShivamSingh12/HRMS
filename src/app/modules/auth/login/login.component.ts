@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { slideInAnimation } from 'src/app/animations/animations';
+import { GoogleAuthProvider } from "firebase/auth";
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,8 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    const provider = new GoogleAuthProvider();
+
   }
 
   show(){

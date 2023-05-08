@@ -127,6 +127,14 @@ export const LUNCH_COUPON : Route = {
 
 }
 
+export const PURCHASE_COUPON : Route = {
+  path:'purchase-coupon',
+  get fullurl(): string {
+    return `${LUNCH_COUPON.fullurl}/${this.path}`;
+  },
+}
+
+
 export const REQUEST_DINNER : Route = {
   path:'request-dinner',
   get fullurl(): string {

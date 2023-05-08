@@ -116,3 +116,8 @@ export const MY_PITCH_CONFIG: Options = {
   pagination:true,
   searchPlaceholder: "Search..",
 };
+
+export interface calenderOptions {
+  checkbox:any
+  cancelMenu:any
+}

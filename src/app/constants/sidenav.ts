@@ -1,3 +1,4 @@
+import { ArrayType } from '@angular/compiler';
 import {
   ADD_PITCH,
   ASSET_DECLARATION,
@@ -32,13 +33,17 @@ import {
   UPCOMING_TRAINING,
 } from './routes';
 
-export const sideNavList = [
+import { NavBarItem } from 'src/app/interfaces/route.interface';
+
+
+export const sideNavList:Array<NavBarItem> = [
   { title: 'Home', logo: 'home', link: HOME.path, isActive: true },
   {
     title: 'My Profile',
     logo: 'person',
     link: MY_PROFILE.path,
     isActive: true,
+
   },
   {
     title: 'Directory',
@@ -88,8 +93,8 @@ export const sideNavList = [
   },
   {
     title: 'Finance',
-    logo: 'payments',
-
+      logo: 'payments',
+      show: false,
     options: [
       { subTitle: 'Salary Slip', link: '' },
       { subTitle: 'Form 16', link: '' },
@@ -100,6 +105,7 @@ export const sideNavList = [
   {
     title: 'Reviews',
     logo: 'grid_view',
+    show: false,
     options: [
       {
         subTitle: 'My Performance',
@@ -112,6 +118,7 @@ export const sideNavList = [
   {
     title: 'Refer a Friend',
     logo: 'groups',
+    show: false,
     options: [
       { subTitle: 'Job Openings', subLogo: '', link: JOB_OPENING.fullurl },
       { subTitle: ' Referral List', subLogo: '', link: REFERRAL_LIST.fullurl },
@@ -121,12 +128,14 @@ export const sideNavList = [
   {
     title: 'Recruitment',
     logo: 'newspaper',
+    show: false,
     options: [{ subTitle: 'My Interview', link: MY_INTERVIEW.fullurl }],
     isActive: true,
   },
   {
     title: 'Freshers Training',
     logo: 'school',
+    show: false,
     options: [
       { subTitle: 'My Trainings', link: MY_TRAINING.fullurl, subLogo: 'event' },
     ],
@@ -135,6 +144,7 @@ export const sideNavList = [
   {
     title: 'Training',
     logo: 'school',
+    show: false,
     options: [
       {
         subTitle: 'Upcoming Trainings',
@@ -158,6 +168,7 @@ export const sideNavList = [
   {
     title: 'Assests Inventory',
     logo: 'science',
+    show: false,
     options: [
       {
         subTitle: 'My Assets inventory',
@@ -180,6 +191,7 @@ export const sideNavList = [
   {
     title: 'Attendance',
     logo: 'schedule',
+    show: false,
     options: [
       { subTitle: 'Attendance Calender', link: ATTENDANCE_CALENDER.fullurl },
       { subTitle: 'Manual Punch', link: MANUAL_PUNCH.fullurl },
@@ -190,6 +202,7 @@ export const sideNavList = [
   {
     title: 'Leave',
     logo: 'calendar_today',
+    show: false,
     options: [
       { subTitle: 'My Leave', link: MY_LEAVE.fullurl },
       { subTitle: 'Floating Leave', link: FLOATING_LEAVE.fullurl },
@@ -199,12 +212,14 @@ export const sideNavList = [
   {
     title: 'Tickets',
     logo: 'view_day',
+    show: false,
     options: [{ subTitle: 'Ticket', link: TICKET.fullurl }],
     isActive: true,
   },
   {
     title: 'DSR',
     logo: 'calendar_today',
+    show: false,
     options: [{ subTitle: 'My DSR', link: MY_DSR.fullurl }],
     isActive: true,
   },

@@ -7,8 +7,9 @@
   .content {
     .card {
       display: grid;
-      grid-template-columns: 58% 38%;
+      grid-template-columns: 58% 40%;
       column-gap: 20px;
+      margin-bottom: 30px;
       mat-icon {
         position: relative;
         top: 6px;
@@ -72,7 +73,10 @@
       }
     }
   }
+  
 }
+
+
 
 @media only screen and (max-width: 875px) {
   .container {

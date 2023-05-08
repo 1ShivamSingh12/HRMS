@@ -17,19 +17,13 @@ import { CarouselModule } from './shared/carousel/carousel.module';
 import { FieldErrorModule } from './shared/field-error/field-error.module';
 import { validationError } from './pipes/validation-error/valiadation-error.module';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     HelpDialogComponent,
     Covid19Component,
-
-
-      ],
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -44,10 +38,8 @@ import { validationError } from './pipes/validation-error/valiadation-error.modu
     CarouselModule,
     FieldErrorModule,
     validationError,
-
-
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

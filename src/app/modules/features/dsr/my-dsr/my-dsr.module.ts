@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { MyDsrRoutingModule } from './my-dsr-routing.module';
 import { MyDsrComponent } from './my-dsr.component';
@@ -42,6 +42,7 @@ import { validationError } from 'src/app/pipes/validation-error/valiadation-erro
     FooterModule,
     NgxMaterialTimepickerModule,
     validationError
-  ]
+  ],
+  providers:[DatePipe]
 })
 export class MyDsrModule { }

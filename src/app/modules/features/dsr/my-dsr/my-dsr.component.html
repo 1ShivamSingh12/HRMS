@@ -89,7 +89,7 @@
         <div class="input-box">
           <p>From Date</p>
           <mat-form-field appearance="outline">
-            <input readonly matInput [max]="to_date.value" [matDatepicker]="picker1" [formControl]="from_date"
+            <input (dateChange)="dateFilter($event)" readonly matInput [max]="to_date.value" [matDatepicker]="picker1" [formControl]="from_date"
               placeholder="from" />
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
@@ -99,7 +99,7 @@
         <div class="input-box">
           <p>End Date</p>
           <mat-form-field appearance="outline">
-            <input readonly matInput [min]="from_date.value" [matDatepicker]="picker2" [formControl]="to_date"
+            <input (dateChange)="EnddateFilter($event)" readonly matInput [min]="from_date.value" [matDatepicker]="picker2" [formControl]="to_date"
               placeholder="to" />
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>

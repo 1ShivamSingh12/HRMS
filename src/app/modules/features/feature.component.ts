@@ -13,6 +13,9 @@ import { sideNavList } from 'src/app/constants/sidenav';
 import { Covid19Component } from 'src/app/shared/dialog/covid19/covid19.component';
 import { HelpDialogComponent } from 'src/app/shared/dialog/help-dialog/help-dialog.component';
 
+import { NavBarItem } from 'src/app/interfaces/route.interface';
+import { AUTH } from 'src/app/constants/routes';
+
 @Component({
   selector: 'app-feature',
   templateUrl: './feature.component.html',
@@ -21,16 +24,13 @@ import { HelpDialogComponent } from 'src/app/shared/dialog/help-dialog/help-dial
   animations: [myProfileAnimation],
 })
 export class FeatureComponent implements OnInit, AfterViewInit {
-  sideroutes = sideNavList;
+  sideroutes:Array<NavBarItem> = sideNavList;
   showFiller = false;
   notificationToggle = false;
-  constructor(private dialog: MatDialog , public route : Router) {}
+  constructor(private dialog: MatDialog, public route: Router) {}
   ngAfterViewInit(): void {}
-route1:any
-  ngOnInit(): void {
-  
-
-  }
+  route1: any;
+  ngOnInit(): void {}
 
   @HostListener('window:resize', ['$event'])
   onResize() {
@@ -60,12 +60,20 @@ route1:any
     }
   }
   collapseOtherMenus(item: any) {
-    // this.sideroutes.map((navbarItem:any)=>{
-    //   if(item.title != navbarItem.title){
-    //     item.show = false;
-    //   }
-    // })
-    item.show = !item.show
+    console.log(item,'---LXI---',this.sideroutes)
+    this.sideroutes.map((navbarItem:any)=>{
+      // debugger
+      if(item.title == navbarItem.title){
+        navbarItem.show = !navbarItem.show
+        console.log(navbarItem.title,'here',item.title)
+      }else{
+        navbarItem.show = false
+        // console.log(navbarItem.title,'here2',item.title)
+
+      }
+    })
+    console.log(item,'---LXI2---',this.sideroutes)
+
   }
   options: MatDialogConfig = {
     width: '28rem',
@@ -83,6 +91,11 @@ route1:any
     this.dialog.open(Covid19Component, config);
   }
   toggleDiv() {
-    this.notificationToggle = false
+    this.notificationToggle = false;
+  }
+
+  signout(){
+    this.route.navigate([AUTH.fullurl])
+    localStorage.setItem('login','false')
   }
 }

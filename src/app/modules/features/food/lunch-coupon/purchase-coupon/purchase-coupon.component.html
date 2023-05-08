@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="content">
+    <div class="back_arrow">
+      <mat-icon [routerLink]="['LUNCH_COUPON' | absolute]">arrow_back</mat-icon>
+    </div>
+    <h1>Lunch Coupon</h1>
+    <p><mat-icon>info</mat-icon> <span>Note</span> : Amount due need to paid in cash in account office.</p>
+    <div class="card">
+      <div class="amount">
+        <div class="amount_upper">
+          <h3>Amount Due</h3>
+          <p>Available coupon for purchase : 0</p>
+        </div>
+        <div class="amount_middle">
+          <h3>{{amount}}</h3>
+        </div>
+        <div class="amount_lower">
+          <p><mat-icon>info</mat-icon> <span>Note</span> : Amount due need to paid in cash in account office.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="coupon-detail" [formGroup]="purchaseCoupon">
+      <div class="input-box">
+        <p>Coupon Count</p>
+        <mat-form-field appearance="outline">
+          <input readonly matInput placeholder="" formControlName="coupon"/>
+        </mat-form-field>
+      </div>
+      <div class="input-box">
+        <p>Total Amount (Rs)</p>
+        <mat-form-field appearance="outline">
+          <input readonly matInput placeholder="" formControlName="couponV"/>
+        </mat-form-field>
+      </div>
+      <div class="buttons">
+        <button class="submit" (click)="submit()">Submit</button>
+        <button class="cancel">Cancel</button>
+      </div>
+    </div>
+    <app-food-calender  (couponCount)="couponCount($event)" (couponValue)="couponValue($event)" [confiq]="purchaseConfiq"
+    ></app-food-calender>
+  </div>
+</div>
+<!-- <></> -->

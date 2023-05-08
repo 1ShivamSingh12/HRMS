@@ -10,17 +10,20 @@
           <h3>0</h3>
         </div>
         <div class="amount_lower">
-            <p><mat-icon>info</mat-icon> <span>Note</span> : Amount due need to paid in cash in account office.</p>
-            <button>View Details</button>
+          <p><mat-icon>info</mat-icon> <span>Note</span> : Amount due need to paid in cash in account office.</p>
+          <button>View Details</button>
         </div>
       </div>
       <div class="purchase">
         <div class="purchase_button">
-          <button>+ Purchase Coupons</button>
+          <button [routerLink]="['PURCHASE_COUPON' | absolute]">+ Purchase Coupons</button>
         </div>
-        <p><mat-icon>info</mat-icon> <span>Note</span> : You can purchase/cancel a coupon for the upcoming day before 6 p.m. today.</p>
+        <p><mat-icon>info</mat-icon> <span>Note</span> : You can purchase/cancel a coupon for the upcoming day before 6
+          p.m. today.</p>
       </div>
     </div>
+
+    <app-food-calender [confiq]="lunchConfiq"></app-food-calender>
   </div>
 </div>
 <!-- <></> -->

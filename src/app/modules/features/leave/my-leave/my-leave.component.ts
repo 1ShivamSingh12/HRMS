@@ -112,12 +112,12 @@ export class MyLeaveComponent implements OnInit {
           data: (element: MY_LEAVE) => element,
           style: 'arrow-circle',
         },
-        {
-          type: 'rollback',
-          icon: 'home',
-          data: (element: MY_LEAVE) => element,
-          style: 'arrow-circle',
-        },
+        // {
+        //   type: 'rollback',
+        //   icon: 'home',
+        //   data: (element: MY_LEAVE) => element,
+        //   style: 'arrow-circle',
+        // },
       ],
     },
     {
@@ -149,11 +149,15 @@ export class MyLeaveComponent implements OnInit {
       columnDef: 'level1',
       header: 'Level 1',
       cell: (element: Record<string, any>) => `${element['level1']}`,
+      color : true,
+      style : 'addColor'
     },
     {
       columnDef: 'level2',
       header: 'Level 2',
       cell: (element: Record<string, any>) => `${element['level2']}`,
+      color : true,
+      style : 'addColor'
     },
   ];
 

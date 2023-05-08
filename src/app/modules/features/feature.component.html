@@ -21,7 +21,7 @@
           <mat-icon>key</mat-icon> Change Password
         </div>
         <hr />
-        <div mat-menu-item [routerLink]="['AUTH' | absolute]">
+        <div mat-menu-item (click)="signout()">
           <mat-icon>logout</mat-icon> Sign Out
         </div>
       </mat-menu>

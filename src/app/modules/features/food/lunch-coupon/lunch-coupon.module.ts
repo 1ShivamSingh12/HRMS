@@ -5,6 +5,9 @@ import { LunchCouponRoutingModule } from './lunch-coupon-routing.module';
 import { LunchCouponComponent } from './lunch-coupon.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
+import { FoodCalenderModule } from 'src/app/shared/common-calender/food-calender.module';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     CommonModule,
     LunchCouponRoutingModule,
     MatIconModule,
-    FooterModule
+    FooterModule,
+    MatCheckboxModule,
+    absolutePipe,
+    FoodCalenderModule
   ]
 })
 export class LunchCouponModule { }

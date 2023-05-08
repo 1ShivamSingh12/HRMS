@@ -13,7 +13,7 @@ import { Options } from 'src/app/constants/tableConfig';
 export class CommonTableComponent implements OnInit,OnChanges {
   displayedColumns: Array<any> = [];
   filterValue:any
-
+  todayDate = new Date();
   constructor() {}
   @Input() tableColumns: Array<any> = [];
   @Input() dataSource! : MatTableDataSource<any>
@@ -41,8 +41,6 @@ export class CommonTableComponent implements OnInit,OnChanges {
 
   }
 
-
-
   applyFilter(event:Event){
     this.filterValue = (event.target as HTMLInputElement).value;
     console.log(this.dataSource,'this.dataSource');
@@ -51,5 +49,4 @@ export class CommonTableComponent implements OnInit,OnChanges {
     this.dataSource.filter = this.filterValue?.trim().toLowerCase();
 
   }
-
 }

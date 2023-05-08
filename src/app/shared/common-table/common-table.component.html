@@ -19,9 +19,15 @@
         </th>
         <td mat-cell *matCellDef="let element" [ngSwitch]="disCol.type">
           <span *ngSwitchCase="">
-            <mat-icon class="icons" *ngIf="disCol.icon">{{ disCol.icon}}</mat-icon>
-            {{ disCol?.cell(element) }}
-          </span>
+            <span *ngIf="!disCol.color">
+              <mat-icon class="icons" *ngIf="disCol.icon">{{ disCol.icon}}</mat-icon>
+              {{disCol?.cell(element)}}
+            </span>
+            <span *ngIf="disCol.color">
+              <mat-icon class="icons" *ngIf="disCol.icon">{{ disCol.icon}}</mat-icon>
+              <span class="{{ disCol.style }}">{{disCol?.cell(element)}}</span>
+            </span>
+            </span>
           <span *ngSwitchCase="'link'">
             <a href="{{ disCol.link }}" target="_blank">
               {{ disCol?.cell(element) }}</a>
