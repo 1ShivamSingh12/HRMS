@@ -13,19 +13,19 @@
       </div>
       <div class="input-box">
         <p>Department</p>
-        <app-dropdown-with-search [data]="departmentDropDown" (filterValue)="filterValue($event)" [myControlName]="directory" [placeholder]="'Directory'" ></app-dropdown-with-search>
+        <app-dropdown-with-search [data]="departmentDropDown" (filterValue)="filterValue($event.value)" [myControlName]="directoryControl" [placeholder]="'Directory'" ></app-dropdown-with-search>
 
       </div>
       <div class="buttons">
-        <button class="reset" (click)="reset()">Reset</button>
-        <button (click)="search()" class="search">
+        <button class="reset" (click)="reset(searchValue.value , directoryControl.value)">Reset</button>
+        <button (click)="search(searchValue.value)" class="search">
           <mat-icon>search</mat-icon>Search
         </button>
       </div>
     </div>
     <div class="row">
       <div class="card_lower">
-        <div class="card_body" *ngFor="let item of filteredData">
+        <div class="card_body" *ngFor="let item of filteredData$ | async">
           <div class="card-hover">&nbsp;</div>
           <div class="picture">
             <img src="../../../../assets/images (1).png" />
@@ -44,7 +44,7 @@
         </div>
         <div></div>
         <div class="notFound">
-          <h1 *ngIf="filteredData.length == 0">Result Not Found</h1>
+          <!-- <h1 *ngIf="filteredData.length == 0">Result Not Found</h1> -->
         </div>
         <div></div>
       </div>

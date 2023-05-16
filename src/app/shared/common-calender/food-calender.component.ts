@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { LUNCH_COUPON } from 'src/app/constants/routes';
 import { calenderOptions } from 'src/app/constants/tableConfig';
 import { FoodCalenderService } from 'src/app/services/food-calender/food-calender.service';
+import { directoryStore } from 'src/app/store/directory.store';
 
 @Component({
   selector: 'app-food-calender',
@@ -10,13 +10,10 @@ import { FoodCalenderService } from 'src/app/services/food-calender/food-calende
   styleUrls: ['./food-calender.component.scss'],
 })
 export class FoodCalenderComponent implements OnInit {
-  constructor(private foodService: FoodCalenderService , private route : Router) {}
+  constructor(private foodService: FoodCalenderService , private route : Router , private store : directoryStore) {}
 
   @Input() confiq!: calenderOptions;
-  @Output() CalenderEmit = new EventEmitter<any>();
-  @Output() couponCount = new EventEmitter<number>();
-  @Output() couponValue = new EventEmitter<number>();
-
+  // @Output() CalenderEmit = new EventEmitter<any>();
 
   week = [
     { value: 1, viewValue: 'Mon' },
@@ -38,7 +35,10 @@ export class FoodCalenderComponent implements OnInit {
 
     this.foodService.subject.subscribe((response: any) => {
      this.couponPurchase()
-    });6
+    });
+
+    console.log(this.myCalendar,'erfr');
+
   }
 
   Calender: Array<any> = [];
@@ -140,11 +140,13 @@ export class FoodCalenderComponent implements OnInit {
         }else{
           item['booked'] = false;
         }
-        this.couponCount.emit(1 * this.checkCount);
-        this.couponValue.emit(25 * this.checkCount);
+
+        let CouponCount = (1 * this.checkCount)
+        let couponValue = (25* this.checkCount)
+
+        this.store.patchState({CouponCount , couponValue})
 
       }
-
     });
     console.log(this.Calender,'')
   }
@@ -155,9 +157,7 @@ export class FoodCalenderComponent implements OnInit {
     this.Calender.map((item: any) => {
       if (item.booked == true) {
         item.couponPurchase = true;
-        // this.route.navigate([LUNCH_COUPON.fullurl])
       }
     });
-    console.log(this.Calender, '()())');
   }
 }

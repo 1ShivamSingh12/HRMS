@@ -12,7 +12,7 @@
           <p>Available coupon for purchase : 0</p>
         </div>
         <div class="amount_middle">
-          <h3>{{amount}}</h3>
+          <h3>{{this.store.couponValue$ | async}}</h3>
         </div>
         <div class="amount_lower">
           <p><mat-icon>info</mat-icon> <span>Note</span> : Amount due need to paid in cash in account office.</p>
@@ -20,17 +20,18 @@
       </div>
     </div>
 
-    <div class="coupon-detail" [formGroup]="purchaseCoupon">
+    <div class="coupon-detail">
       <div class="input-box">
         <p>Coupon Count</p>
         <mat-form-field appearance="outline">
-          <input readonly matInput placeholder="" formControlName="coupon"/>
+          <input readonly matInput placeholder="" [value]="this.store.couponCount$| async"/>
+          <!-- {{this.store.directory1$ | async}} -->
         </mat-form-field>
       </div>
       <div class="input-box">
         <p>Total Amount (Rs)</p>
         <mat-form-field appearance="outline">
-          <input readonly matInput placeholder="" formControlName="couponV"/>
+          <input readonly matInput placeholder="" [value]="this.store.couponValue$ | async"/>
         </mat-form-field>
       </div>
       <div class="buttons">
@@ -38,8 +39,7 @@
         <button class="cancel">Cancel</button>
       </div>
     </div>
-    <app-food-calender  (couponCount)="couponCount($event)" (couponValue)="couponValue($event)" [confiq]="purchaseConfiq"
-    ></app-food-calender>
+    <app-food-calender [confiq]="purchaseConfiq"></app-food-calender>
   </div>
 </div>
 <!-- <></> -->

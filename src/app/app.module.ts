@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CarouselModule } from './shared/carousel/carousel.module';
 import { FieldErrorModule } from './shared/field-error/field-error.module';
 import { validationError } from './pipes/validation-error/valiadation-error.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { validationError } from './pipes/validation-error/valiadation-error.modu
     CarouselModule,
     FieldErrorModule,
     validationError,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

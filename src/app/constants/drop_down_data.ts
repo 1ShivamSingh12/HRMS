@@ -109,10 +109,10 @@ export const directoryDropDown = {
 
 export const departmentDrop = {
   list:[
-    {
-      value:'All',
-      viewValue:'All'
-    },
+    // {
+    //   value:'All',
+    //   viewValue:'All'
+    // },
     {
       value:'Angular',
       viewValue:'Angular'

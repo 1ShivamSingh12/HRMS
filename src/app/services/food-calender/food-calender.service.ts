@@ -10,10 +10,7 @@ export class FoodCalenderService {
 
   subject = new BehaviorSubject('');
 
-  constructor() {
-    console.log(this.data,'ervrui');
-
-  }
+  constructor() {}
 
   sendData(value:any){
     this.subject.next(value);
