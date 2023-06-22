@@ -14,6 +14,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import {MatCardModule} from '@angular/material/card';
 import { BreadCrumModule } from 'src/app/pipes/breadcrum/breadcrum.module';
+import { StoreModule } from '@ngrx/store';
+import { PROFILE_PICTURE_PREVIEW } from 'src/app/store/state.selector';
+import { profilePictureReducer } from 'src/app/store/state.reducers';
 
 @NgModule({
   declarations: [FeatureComponent],
@@ -30,7 +33,8 @@ import { BreadCrumModule } from 'src/app/pipes/breadcrum/breadcrum.module';
     MatMenuModule,
     FooterModule,
     MatCardModule,
-    BreadCrumModule
+    BreadCrumModule,
+    StoreModule.forFeature(PROFILE_PICTURE_PREVIEW, profilePictureReducer)
   ],
 })
 export class FeaturesModule {}

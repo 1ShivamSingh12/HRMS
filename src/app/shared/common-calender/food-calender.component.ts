@@ -1,8 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { calenderOptions } from 'src/app/constants/tableConfig';
 import { FoodCalenderService } from 'src/app/services/food-calender/food-calender.service';
-import { directoryStore } from 'src/app/store/directory.store';
+import { getNumberOfCoupon } from 'src/app/store/state.actions';
+import { getNumberOfCouponSelector } from 'src/app/store/state.selector';
+// import { directoryStore } from 'src/app/store/state.store';
 
 @Component({
   selector: 'app-food-calender',
@@ -10,7 +13,11 @@ import { directoryStore } from 'src/app/store/directory.store';
   styleUrls: ['./food-calender.component.scss'],
 })
 export class FoodCalenderComponent implements OnInit {
-  constructor(private foodService: FoodCalenderService , private route : Router , private store : directoryStore) {}
+  constructor(
+    private foodService: FoodCalenderService,
+    private route: Router,
+    private store: Store
+  ) {}
 
   @Input() confiq!: calenderOptions;
   // @Output() CalenderEmit = new EventEmitter<any>();
@@ -25,6 +32,8 @@ export class FoodCalenderComponent implements OnInit {
     { value: 7, viewValue: 'Sun' },
   ];
 
+  data: any;
+
   ngOnInit(): void {
     let newDate = new Date();
     let firstDay = new Date(newDate.getFullYear(), newDate.getMonth(), 1);
@@ -32,13 +41,11 @@ export class FoodCalenderComponent implements OnInit {
     // console.log(newDate, firstDay. , lastDay, '0000');
     this.getDate();
     this.daysInMonth();
-
     this.foodService.subject.subscribe((response: any) => {
-     this.couponPurchase()
+      this.couponPurchase();
     });
 
-    console.log(this.myCalendar,'erfr');
-
+    console.log(this.myCalendar, 'erfr');
   }
 
   Calender: Array<any> = [];
@@ -125,30 +132,31 @@ export class FoodCalenderComponent implements OnInit {
     return false;
   }
 
-  checkCount = 0;
+  // checkCount = 0;
 
   selectCheckbox(e: any, day: any) {
-    if (e.checked == true) {
-      this.checkCount++;
-    } else {
-      this.checkCount--;
-    }
+    this.store.dispatch(getNumberOfCoupon({ e: e.checked }));
+    // if (e.checked == true) {
+    //   this.checkCount++;
+    // } else {
+    //   this.checkCount--;
+    // }
+
     this.Calender.map((item: any) => {
       if (day == item.Date) {
-        if(e.checked){
+        if (e.checked) {
           item['booked'] = true;
-        }else{
+        } else {
           item['booked'] = false;
         }
 
-        let CouponCount = (1 * this.checkCount)
-        let couponValue = (25* this.checkCount)
+        // let CouponCount = (1 * this.checkCount)
+        // let couponValue = (25* this.checkCount)
 
-        this.store.patchState({CouponCount , couponValue})
-
+        // this.store.patchState({CouponCount , couponValue})
       }
     });
-    console.log(this.Calender,'')
+    console.log(this.Calender, '');
   }
 
   couponPurchase() {

@@ -2,11 +2,11 @@ export const genderData={
   placeholder:'Gender',
   list:[
     {
-      value:'1',
+      value:'Male',
       viewValue:'Male'
     },
     {
-      value:'2',
+      value:'Female',
       viewValue:'Female'
     },
   ]
@@ -15,18 +15,18 @@ export const martialData={
   placeholder:'Martial Status',
   list:[
     {
-      value:'1',
+      value:'Single',
       viewValue:'Single'
     },
     {
-      value:'2',
+      value:'Married',
       viewValue:'Married'
     },
     {
-      value:'3',
+      value:'Divorced',
       viewValue:'Divorced'
     },  {
-      value:'2',
+      value:'Widowed',
       viewValue:'Widowed'
     },
   ]
@@ -109,10 +109,10 @@ export const directoryDropDown = {
 
 export const departmentDrop = {
   list:[
-    // {
-    //   value:'All',
-    //   viewValue:'All'
-    // },
+    {
+      value:'All',
+      viewValue:'All'
+    },
     {
       value:'Angular',
       viewValue:'Angular'

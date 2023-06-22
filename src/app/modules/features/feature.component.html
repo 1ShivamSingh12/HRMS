@@ -9,8 +9,8 @@
     </div>
     <div class="right">
       <div class="userName" [matMenuTriggerFor]="menu">
-        <span>Shivam Singh</span>
-        <img src="../../../assets/images (1).png" />
+        <span>{{myProfileData?.firstname}} {{myProfileData?.lastname}}</span>
+        <img [src]= myProfileData?.profilePic />
         <mat-icon>keyboard_arrow_down</mat-icon>
       </div>
       <mat-menu #menu="matMenu">
@@ -31,7 +31,7 @@
       <div class="bellIcon">
         <mat-icon (click)="notificationToggle = !notificationToggle">notifications</mat-icon>
       </div>
-      <mat-card class="notification-box " [@enterLeaveAnimation] *ngIf="notificationToggle">
+      <mat-card class="notification-box" [@enterLeaveAnimation] *ngIf="notificationToggle">
         <mat-icon class="close" (click)="toggleDiv()">close</mat-icon>
         <div class="notify-card">
           <div class="notify-header">
@@ -44,7 +44,6 @@
       </mat-card>
     </div>
   </mat-toolbar>
-
 </div>
 <div>
   <mat-sidenav-container class="example-container" autosize>
@@ -53,7 +52,7 @@
       <mat-nav-list [ngClass]="isExpanded ? 'primary' : 'secondary'">
         <ng-container *ngFor="let item of sideroutes">
           <mat-list-item class="parent" [routerLink]="item.link" [routerLinkActive]="item.link ? 'activeLink' : ''"
-            (click)="showSubmenu = !showSubmenu"  (click)="collapseOtherMenus(item)"
+            (click)="showSubmenu = !showSubmenu" (click)="collapseOtherMenus(item)"
             [ngClass]="item.isActive ? '' : 'disable'">
             <mat-icon>{{ item.logo }}</mat-icon>
             <span class="full-width" *ngIf="isExpanded || isShowing">{{
@@ -80,9 +79,10 @@
     </mat-sidenav>
     <div class="example-sidenav-content">
       <router-outlet></router-outlet>
-      <button mat-button class="covid-help" (click)="openCovid()">Covid 19-Desk</button>
+      <button mat-button class="covid-help" (click)="openCovid()">
+        Covid 19-Desk
+      </button>
       <app-footer></app-footer>
     </div>
   </mat-sidenav-container>
-
 </div>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TrainingsRoutingModule } from './trainings-routing.module';
 import { TrainingsComponent } from './trainings.component';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { TrainingsComponent } from './trainings.component';
   ],
   imports: [
     CommonModule,
-    TrainingsRoutingModule
+    TrainingsRoutingModule,
   ]
 })
 export class TrainingsModule { }

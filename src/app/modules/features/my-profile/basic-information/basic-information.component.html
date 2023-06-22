@@ -8,26 +8,26 @@
         <div class="input-box">
           <p>First Name</p>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="First Name" formControlName="first_name" />
-            <mat-error>{{basicInfo | validationError : 'first_name' : 'First Name'}}</mat-error>
+            <input matInput placeholder="First Name" formControlName="firstname" />
+            <mat-error>{{basicInfo | validationError : 'firstname' : 'First Name'}}</mat-error>
           </mat-form-field>
         </div>
 
         <div class="input-box">
           <p>Last Name</p>
           <mat-form-field appearance="outline">
-            <input matInput  placeholder="Last Name" formControlName="last_name" />
-            <mat-error>{{basicInfo | validationError : 'last_name' : 'Last Name'}}</mat-error>
+            <input matInput  placeholder="Last Name" formControlName="lastname" />
+            <mat-error>{{basicInfo | validationError : 'lastname' : 'Last Name'}}</mat-error>
           </mat-form-field>
 
         </div>
         <div class="input-box">
           <p>Date of Birth</p>
           <mat-form-field appearance="outline">
-            <input matInput [matDatepicker]="picker1" placeholder="Date of Birth" formControlName="date_of_birth" readonly [max]="minFromDate"/>
+            <input matInput [matDatepicker]="picker1" placeholder="Date of Birth" formControlName="dateOfBirth" readonly [max]="minFromDate"/>
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
-            <mat-error>{{basicInfo | validationError : 'date_of_birth' : 'Date of Birth'}}</mat-error>
+            <mat-error>{{basicInfo | validationError : 'dateOfBirth' : 'Date of Birth'}}</mat-error>
           </mat-form-field>
 
         </div>
@@ -35,19 +35,19 @@
       <div class="card_upper">
         <div class="input-box">
           <p>Gender</p>
-          <app-dropdown-with-search [error]="basicInfo | validationError : 'gender' : 'Gender'" [myControlName]="basicInfo.controls.gender" [data]="genderdropDown" [placeholder]="'Gender'"></app-dropdown-with-search>
+          <app-dropdown-with-search  [error]="basicInfo | validationError : 'gender' : 'Gender'" [myControlName]="basicInfo.controls.gender" [data]="genderdropDown" [placeholder]="'Gender'"></app-dropdown-with-search>
         </div>
 
         <div class="input-box">
           <p>Martial Status</p>
-          <app-dropdown-with-search [error]="basicInfo | validationError : 'martial_status' : 'Martial Status'" [myControlName]="basicInfo.controls.martial_status" [data]="martialdropDown" [placeholder]="'Martial Status'"></app-dropdown-with-search>
+          <app-dropdown-with-search [error]="basicInfo | validationError : 'martialStatus' : 'Martial Status'" [myControlName]="basicInfo.controls.martialStatus" [data]="martialdropDown" [placeholder]="'Martial Status'"></app-dropdown-with-search>
 
         </div>
         <div class="input-box">
           <p>Conatct Number</p>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="Contact Number" formControlName="number" />
-            <mat-error>{{basicInfo | validationError : 'number' : 'Conatct Number'}}</mat-error>
+            <input matInput placeholder="Contact Number" formControlName="contactNumber" />
+            <mat-error>{{basicInfo | validationError : 'contactNumber' : 'Conatct Number'}}</mat-error>
           </mat-form-field>
 
         </div>
@@ -61,16 +61,16 @@
             <div class="input-box">
               <p>Years</p>
               <mat-form-field appearance="outline">
-                <input matInput type="number" placeholder="Years" formControlName='years_experience' />
-                <mat-error>{{basicInfo | validationError : 'years_experience' : 'Years'}}</mat-error>
+                <input matInput type="number" placeholder="Years" formControlName='experiencedYears' />
+                <mat-error>{{basicInfo | validationError : 'experiencedYears' : 'Years'}}</mat-error>
               </mat-form-field>
 
             </div>
             <div class="input-box">
               <p>Months</p>
               <mat-form-field appearance="outline">
-                <input matInput type="number" placeholder="Months" formControlName="months_experience" />
-                <mat-error>{{basicInfo | validationError : 'months_experience' : 'Month'}}</mat-error>
+                <input matInput type="number" placeholder="Months" formControlName="experiencedMonths" />
+                <mat-error>{{basicInfo | validationError : 'experiencedMonths' : 'Month'}}</mat-error>
               </mat-form-field>
 
 
@@ -86,8 +86,8 @@
             <div class="input-box">
               <p>Years</p>
               <mat-form-field appearance="outline">
-                <input matInput type="number" placeholder="Years" formControlName="years_relevant" />
-                <mat-error>{{basicInfo | validationError : 'years_relevant' : 'Years'}}</mat-error>
+                <input matInput type="number" placeholder="Years" formControlName="relaventExperiencedYears" />
+                <mat-error>{{basicInfo | validationError : 'relaventExperiencedYears' : 'Years'}}</mat-error>
               </mat-form-field>
 
 
@@ -95,8 +95,8 @@
             <div class="input-box">
               <p>Months</p>
               <mat-form-field appearance="outline">
-                <input matInput type="number" placeholder="Months" formControlName="months_relevant" />
-                <mat-error>{{basicInfo | validationError : 'months_relevant' : 'Months'}}</mat-error>
+                <input matInput type="number" placeholder="Months" formControlName="relaventExperiencedMonths" />
+                <mat-error>{{basicInfo | validationError : 'relaventExperiencedMonths' : 'Months'}}</mat-error>
               </mat-form-field>
 
 
@@ -109,7 +109,7 @@
         <div class="input-box">
           <p>Address</p>
           <mat-form-field appearance="outline">
-            <textarea (keydown)="noSpace($event)" placeholder="Address" matInput></textarea>
+            <textarea (keydown)="noSpace($event)" placeholder="Address" matInput [value]="basicInfoData?.address"></textarea>
           </mat-form-field>
         </div>
       </div>

@@ -14,6 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FieldErrorModule } from 'src/app/shared/field-error/field-error.module';
 import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
 import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
+import { StoreModule } from '@ngrx/store';
+import { PROFILE_PICTURE_PREVIEW } from 'src/app/store/state.selector';
+import { profilePictureReducer } from 'src/app/store/state.reducers';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { absolutePipe } from 'src/app/pipes/Absolute Path/absolute-path.module';
     FieldErrorModule,
     validationError,
     absolutePipe,
+    StoreModule.forFeature(PROFILE_PICTURE_PREVIEW, profilePictureReducer)
   ],
 })
 export class MyProfileModule {}

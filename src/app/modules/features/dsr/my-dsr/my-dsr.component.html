@@ -32,7 +32,7 @@
               <div class="input-box">
                 <p>Estimated Hour</p>
                 <mat-form-field appearance="outline">
-                  <input readonly matInput [ngxTimepicker]="picker" [format]="24" formControlName="hours"
+                  <input readonly matInput [ngxTimepicker]="picker" [format]="24" formControlName="total"
                     placeholder="Estimated Hour" />
                   <ngx-material-timepicker #picker></ngx-material-timepicker>
                   <mat-error>{{
@@ -78,7 +78,7 @@
           </div>
 
           <div class="buttons">
-            <button class="save_button">Add</button>
+            <button class="save_button" (click)="addDsrData()">Add</button>
           </div>
         </div>
       </form>

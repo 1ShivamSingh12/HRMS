@@ -16,7 +16,7 @@ export class SnackbarService {
       horizontalPosition: 'center'
     })
   }
-
+ 
   openSnackBar(message: any, theme: string) {
     this.snackbar.open(message, '', {
       duration: 1500,

@@ -15,6 +15,7 @@ import { COMMON_VALIDATION, NAME_PATTERN } from 'src/app/constants/Validations';
 import { QUALIFICATION } from 'src/app/interfaces/table.interface';
 import { DeleteQualificationComponent } from './delete-qualification/delete-qualification.component';
 import { EditQualificationComponent } from './edit-qualification/edit-qualification.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-qualification',
@@ -28,19 +29,22 @@ export class QualificationComponent implements OnInit {
   qualificationConfig: Options = QUALIFICATION_DECLARATION_CONFIG;
   dataSource = new MatTableDataSource<QUALIFICATION>();
   dropdown: any;
-  constructor(private fb: FormBuilder, private dialog: MatDialog,private datePipe: DatePipe) { }
+  qualificationData: any;
+
+  constructor(private fb: FormBuilder, private dialog: MatDialog,private datePipe: DatePipe, private http: HttpClient,) { }
 
   ngOnInit(): void {
     this.createForm();
     this.dataSource = new MatTableDataSource<QUALIFICATION>(this.tableData);
     this.dropdown = commondropDown;
+    this.api()
   }
 
   // data : any = degreeList
   createForm() {
     this.qualification = this.fb.group({
-      school: ['', [COMMON_VALIDATION , NAME_PATTERN]],
-      education_level: ['', [COMMON_VALIDATION]],
+      university: ['', [COMMON_VALIDATION , NAME_PATTERN]],
+      educationLevel: ['', [COMMON_VALIDATION]],
       date_from: ['', [COMMON_VALIDATION]],
       date_to: ['', [COMMON_VALIDATION]],
       language: ['', [COMMON_VALIDATION]],
@@ -48,6 +52,19 @@ export class QualificationComponent implements OnInit {
       // description:['',[COMMON_VALIDATION]]
     });
   }
+
+
+  api() {
+    this.http.post('http://localhost:4000/my-profile',{'email':localStorage.getItem('email')}).subscribe((res: any) => {
+      console.log(res[0].education, 'kewfeufk');
+      this.qualificationData = res[0].education;
+
+      this.qualification.patchValue(this.qualificationData)
+
+
+    });
+  }
+
 
   noSpace(event:any){
     if(event.target.selectionStart == 0 && event.code == "Space"){

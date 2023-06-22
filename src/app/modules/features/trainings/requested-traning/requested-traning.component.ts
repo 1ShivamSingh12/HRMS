@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Store } from '@ngrx/store';
 import {
   Options,
   REQUESTED_TRANING_DECLARATION,
@@ -15,9 +16,10 @@ export class RequestedTraningComponent implements OnInit {
   requestedTraningConfig: Options = REQUESTED_TRANING_DECLARATION;
   dataSource = new MatTableDataSource<REQUESTED_TRAINING>();
 
-  constructor() {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
+
     this.dataSource = new MatTableDataSource<REQUESTED_TRAINING>(
       this.tableData
     );
@@ -58,13 +60,6 @@ export class RequestedTraningComponent implements OnInit {
   ];
 
   tableData: Array<REQUESTED_TRAINING> = [
-    // {
-    //   serial_number: '',
-    //   training_name: '',
-    //   timeline_to_conduct: '',
-    //   requested_date: '',
-    //   status: '',
-    //   action: '',
-    // },
+
   ];
 }

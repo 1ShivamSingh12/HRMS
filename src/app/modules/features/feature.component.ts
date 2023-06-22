@@ -15,6 +15,9 @@ import { HelpDialogComponent } from 'src/app/shared/dialog/help-dialog/help-dial
 
 import { NavBarItem } from 'src/app/interfaces/route.interface';
 import { AUTH } from 'src/app/constants/routes';
+import { Store } from '@ngrx/store';
+import { getProfilePictureSelector } from 'src/app/store/state.selector';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-feature',
@@ -26,11 +29,26 @@ import { AUTH } from 'src/app/constants/routes';
 export class FeatureComponent implements OnInit, AfterViewInit {
   sideroutes:Array<NavBarItem> = sideNavList;
   showFiller = false;
+  img:any
+
   notificationToggle = false;
-  constructor(private dialog: MatDialog, public route: Router) {}
+  constructor(private dialog: MatDialog, public route: Router,private store : Store,private http: HttpClient) {
+
+  }
   ngAfterViewInit(): void {}
   route1: any;
-  ngOnInit(): void {}
+  myProfileData:any
+
+  ngOnInit(): void {
+    this.store.select(getProfilePictureSelector).subscribe((res:any)=>{
+      this.img = res.profile
+    })
+    this.http.post('http://localhost:4000/my-profile',{email:localStorage.getItem('email')}).subscribe((res: any) => {
+      console.log(res[0], 'kewfeufk');
+      this.myProfileData = res[0]
+    });
+
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
@@ -96,6 +114,6 @@ export class FeatureComponent implements OnInit, AfterViewInit {
 
   signout(){
     this.route.navigate([AUTH.fullurl])
-    localStorage.setItem('login','false')
+    localStorage.clear()
   }
 }

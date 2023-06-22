@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class DropdownWithSearchComponent implements OnInit {
 
-  @Input() myControlName: any;
+  @Input() myControlName: any
   @Input() error: any;
 
   @Input() data!: any;
@@ -23,8 +23,11 @@ export class DropdownWithSearchComponent implements OnInit {
 
   constructor() {}
 
+
+  // ngOnChanges(changes: SimpleChanges): void {
+
+  // }
   ngOnInit(): void {
-    console.log(this.data,'dta');
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),

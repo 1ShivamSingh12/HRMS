@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Store } from '@ngrx/store';
 import { REFERRAL_LIST } from 'src/app/interfaces/table.interface';
+import { getReferFriendAelector } from 'src/app/store/state.selector';
 
 @Component({
   selector: 'app-referral-list',
@@ -10,10 +12,22 @@ import { REFERRAL_LIST } from 'src/app/interfaces/table.interface';
 export class ReferralListComponent implements OnInit {
   dataSource = new MatTableDataSource<REFERRAL_LIST>();
 
-  constructor() { }
+  constructor(private store: Store) { }
+
+  table:any
 
   ngOnInit(): void {
-    this.data()
+    // this.data(
+    this.store.select(getReferFriendAelector).subscribe((res:any)=>{
+      console.log(res);
+      this.table = res
+    });
+
+    console.log(this.table,'ekjfh');
+
+    this.dataSource = new MatTableDataSource<REFERRAL_LIST>(this.table);
+
+
   }
 
   tableColumns: Array<any> = [
@@ -83,10 +97,5 @@ export class ReferralListComponent implements OnInit {
     },
 
   ];
-
-  data(){
-    this.dataSource = new MatTableDataSource<REFERRAL_LIST>(this.tableData);
-
-  }
 
 }

@@ -12,7 +12,7 @@
           <p>Available coupon for purchase : 0</p>
         </div>
         <div class="amount_middle">
-          <h3>{{this.store.couponValue$ | async}}</h3>
+          <!-- <h3>{{this.store.couponValue$ | async}}</h3> -->
         </div>
         <div class="amount_lower">
           <p><mat-icon>info</mat-icon> <span>Note</span> : Amount due need to paid in cash in account office.</p>
@@ -24,14 +24,14 @@
       <div class="input-box">
         <p>Coupon Count</p>
         <mat-form-field appearance="outline">
-          <input readonly matInput placeholder="" [value]="this.store.couponCount$| async"/>
+          <input readonly matInput placeholder="" [value]="data.count">
           <!-- {{this.store.directory1$ | async}} -->
         </mat-form-field>
       </div>
       <div class="input-box">
         <p>Total Amount (Rs)</p>
         <mat-form-field appearance="outline">
-          <input readonly matInput placeholder="" [value]="this.store.couponValue$ | async"/>
+          <input readonly matInput placeholder="" [value]="data.value">
         </mat-form-field>
       </div>
       <div class="buttons">

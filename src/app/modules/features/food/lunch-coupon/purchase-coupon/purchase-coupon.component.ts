@@ -1,7 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { FoodCalenderService } from 'src/app/services/food-calender/food-calender.service';
-import { directoryStore } from 'src/app/store/directory.store';
+import { getNumberOfCouponSelector } from 'src/app/store/state.selector';
+// import { directoryStore } from 'src/app/store/state.store';
 
 @Component({
   selector: 'app-purchase-coupon',
@@ -9,14 +11,21 @@ import { directoryStore } from 'src/app/store/directory.store';
   styleUrls: ['./purchase-coupon.component.scss']
 })
 export class PurchaseCouponComponent implements OnInit {
-  constructor(private fb : FormBuilder , private foodService : FoodCalenderService , public store: directoryStore) {}
+  constructor(private fb : FormBuilder , private foodService : FoodCalenderService , private store : Store ) {}
 
   // purchaseCoupon!: FormGroup;
   // @Output() buttonSubmit = new EventEmitter<any>();
 
-
+data:any
   ngOnInit(): void {
-    // this.createForm() 
+    this.store.select(getNumberOfCouponSelector).subscribe((res)=>{
+      console.log(res,'efkv');
+      this.data = res
+
+    })
+    // console.log(this.data);
+
+    // this.createForm()
   }
 
   // createForm(){
@@ -49,7 +58,7 @@ export class PurchaseCouponComponent implements OnInit {
   // }
 
   submit(){
-    if(this.store.couponValue$){
+    if(this.data){
       this.foodService.sendData('true');
     }
   }

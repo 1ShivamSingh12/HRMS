@@ -26,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     absolutePipe,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    
   ]
 })
 export class PurchaseCouponModule { }

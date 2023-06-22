@@ -27,6 +27,9 @@ import { GalleryCarouselComponent } from './carousel-components/gallery-carousel
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FieldErrorModule } from 'src/app/shared/field-error/field-error.module';
 import { validationError } from 'src/app/pipes/validation-error/valiadation-error.module';
+import { StoreModule } from '@ngrx/store';
+import { REFER_A_FRIEND, getReferFriendAelector } from 'src/app/store/state.selector';
+import { ReferAFriendReducer } from 'src/app/store/state.reducers';
 
 
 @NgModule({
@@ -38,7 +41,7 @@ import { validationError } from 'src/app/pipes/validation-error/valiadation-erro
     ReferCandidateDialogComponent,
     CarouselDialogComponent,
     GalleryCarouselComponent,
-    
+
   ],
   imports: [
     CommonModule,
@@ -64,6 +67,7 @@ import { validationError } from 'src/app/pipes/validation-error/valiadation-erro
     ReactiveFormsModule,
     FieldErrorModule,
     validationError,
+    // StoreModule.forFeature(REFER_A_FRIEND, ReferAFriendReducer)
   ],
 })
 export class HomeModule {}

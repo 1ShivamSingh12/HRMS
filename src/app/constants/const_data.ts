@@ -188,7 +188,6 @@ export const DSR_TABLEDATA = [
     total: 2,
     sr_no: '1',
     approval_status: 'Pending',
-
     DSR: [
       {
         sr_no: '1',

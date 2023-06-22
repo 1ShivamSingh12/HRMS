@@ -4,7 +4,8 @@ import { COMMON_VALIDATION, EMAIL_VALIDATION, MIN_LENGTH, PASSWORD_VALIDATION } 
 import { ToastrService } from 'ngx-toastr';
 import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 import { Router } from '@angular/router';
-import { HOME } from 'src/app/constants/routes';
+import { DASHBOARD, HOME } from 'src/app/constants/routes';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-login-with-credentials',
   templateUrl: './login-with-credentials.component.html',
@@ -16,7 +17,7 @@ export class LoginWithCredentialsComponent implements OnInit {
 
   hide = true
 
-  constructor(private fb : FormBuilder ,private snackbar_service : SnackbarService ,private route : Router ) { }
+  constructor(private fb : FormBuilder ,private snackbar_service : SnackbarService ,private route : Router, private http : HttpClient ) { }
 
   ngOnInit(): void {
     this.createForm()
@@ -32,17 +33,25 @@ export class LoginWithCredentialsComponent implements OnInit {
 
   onSubmit(){
 
-    console.log("this is credential>>",this.loginForm);
-
-
     if(this.loginForm.valid){
 
-      if(this.loginForm.value.email == 'shivam12@gmail.com' && this.loginForm.value.password == '123456'){
-        localStorage.setItem('login','True')
-        this.route.navigate(['dashboard/home'])
-      }else{
-        this.snackbar_service.openSnackBarErr('Login Credentials are invalid','red-snackbar')
+      let option = {
+        email:this.loginForm.value.email,
+        password : this.loginForm.value.password
       }
+
+      this.http.post('http://localhost:4000/login',option).subscribe((res:any)=>{
+        console.log(res,'khedfiewh');
+
+        if(res.status == 'success'){
+          this.snackbar_service.openSnackBarErr(res.message,'green-snackbar')
+          this.route.navigate([HOME.fullurl])
+          localStorage.setItem('email',this.loginForm.value.email)
+        }else{
+          this.snackbar_service.openSnackBarErr(res.message,'red-snackbar')
+        }
+      })
+
 
     }else{
 

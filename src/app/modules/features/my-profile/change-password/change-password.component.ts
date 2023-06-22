@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { myProfileAnimation } from 'src/app/animations/myProfileAnimation';
@@ -14,7 +15,7 @@ import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 })
 export class ChangePasswordComponent implements OnInit {
   password!:FormGroup
-  constructor(private fb:FormBuilder , private snackabr : SnackbarService) { }
+  constructor(private fb:FormBuilder , private snackabr : SnackbarService,private http : HttpClient) { }
 
   ngOnInit(): void {
     this.createForm()
@@ -29,13 +30,22 @@ export class ChangePasswordComponent implements OnInit {
 
   save(){
     if(this.password.valid){
-      if(this.password.value.new_pass == this.password.value.confirm_pass){
-        console.log('wkfuwe');
-      }else{
-        this.snackabr.openSnackBarErr('Password and confirm password do not match' , 'red-snackbar')
+      let params = {
+        data : this.password.value,
+        email:localStorage.getItem('email')
       }
+      this.http.post("http://localhost:4000/change-pass",params).subscribe((res:any)=>{
+        console.log(res,'kkk');
+        if(res.status == "Success"){
+          this.snackabr.openSnackBarErr(res.message , 'green-snackbar')
+          // this.password.setValue['']
+        }else{
+          this.snackabr.openSnackBarErr(res.message , 'red-snackbar')
+        }
+      })
     }else{
       this.password.markAllAsTouched()
     }
   }
 }
+

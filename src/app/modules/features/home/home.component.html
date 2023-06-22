@@ -2,10 +2,10 @@
   <div class="referal">
     <div class="referal-inner">
       <div class="header">
-        <img src="../../../../assets/images (1).png" />
+        <img [src]="myProfileData?.profilePic"/>
         <div class="user">
           <span>Hello!</span>
-          <p>Shivam Singh</p>
+          <p>{{myProfileData?.firstname}} {{myProfileData?.lastname}}</p>
         </div>
       </div>
       <div class="main">

@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { FoodCalenderComponent } from './food-calender.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
+
 @NgModule({
   declarations: [FoodCalenderComponent],
   imports: [
     CommonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+
   ],
   exports: [FoodCalenderComponent],
 })

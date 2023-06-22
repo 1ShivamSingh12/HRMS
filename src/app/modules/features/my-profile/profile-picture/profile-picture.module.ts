@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProfilePictureRoutingModule } from './profile-picture-routing.module';
 import { ProfilePictureComponent } from './profile-picture.component';
+import {CloudinaryModule} from '@cloudinary/ng';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ProfilePictureComponent } from './profile-picture.component';
   ],
   imports: [
     CommonModule,
-    ProfilePictureRoutingModule
+    ProfilePictureRoutingModule,
+    CloudinaryModule
   ]
 })
 export class ProfilePictureModule { }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 import { COMMON_VALIDATION, CONTACT_MAX_LENGTH, CONTACT_NUMBER, EMAIL_VALIDATION, NAME_PATTERN, USERNAME_MAX_LENGTH } from 'src/app/constants/Validations';
 import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
+import { getReferFriend } from 'src/app/store/state.actions';
 
 @Component({
   selector: 'app-refer-candidate-dialog',
@@ -13,7 +15,7 @@ export class ReferCandidateDialogComponent implements OnInit {
 
   referCandidate! : FormGroup
 
-  constructor(private fb : FormBuilder , private dialogRef: MatDialogRef<ReferCandidateDialogComponent> , private snackbar  :SnackbarService) {
+  constructor(private fb : FormBuilder , private dialogRef: MatDialogRef<ReferCandidateDialogComponent> , private snackbar  :SnackbarService , private store : Store) {
     this.dialogRef.disableClose = true
   }
 
@@ -34,9 +36,10 @@ export class ReferCandidateDialogComponent implements OnInit {
   }
 
   onSubmit(){
+    this.store.dispatch(getReferFriend({values:this.referCandidate.value}))
     if(this.referCandidate.valid){
       console.log(this.referCandidate.value);
-
+      // this.store.select(getReferFriendAelector)
     }else{
       this.referCandidate.markAllAsTouched()
     }

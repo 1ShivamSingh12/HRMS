@@ -1,12 +1,12 @@
 <div class="container">
   <div class="header_my_details">
     <div class="my_details">
-      <img src="../../../../assets/images (1).png">
+      <img [src]= myProfileData?.profilePic >
       <div class="my_details_body">
-        <h2>Shivam Singh</h2>
-        <p><strong>Email : </strong> <span>shivamsingh07725@gmial.com</span></p>
-        <p><strong>Employee ID : </strong> <span>AI1547</span></p>
-        <p><strong>Designation : </strong> <span>Software Engineer</span></p>
+        <h2>{{myProfileData?.firstname}} {{myProfileData?.lastname}}</h2>
+        <p><strong>Email : </strong> <span>{{myProfileData?.email}}</span></p>
+        <p><strong>Employee ID : </strong> <span>{{myProfileData?.companyInfo.empId}}</span></p>
+        <p><strong>Designation : </strong> <span>{{myProfileData?.companyInfo.designation}}</span></p>
         <p><strong>Last Login : </strong> <span>Feb-01-2023 10:17 PM from 172.31.25.47</span></p>
       </div>
     </div>

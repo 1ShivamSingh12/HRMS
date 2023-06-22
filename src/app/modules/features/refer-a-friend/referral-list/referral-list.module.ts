@@ -17,7 +17,6 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     CommonModule,
     ReferralListRoutingModule,
     CommonTableModule,
-
     FooterModule
   ]
 })

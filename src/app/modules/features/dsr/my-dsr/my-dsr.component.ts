@@ -54,7 +54,7 @@ export class MyDsrComponent implements OnInit {
     this.dsrForm = this.fb.group({
       project: ['', [COMMON_VALIDATION]],
       date: ['', [COMMON_VALIDATION]],
-      hours: ['', [COMMON_VALIDATION]],
+      total: ['', [COMMON_VALIDATION]],
       dsr: ['', [COMMON_VALIDATION]],
     });
   }
@@ -159,6 +159,18 @@ export class MyDsrComponent implements OnInit {
   ];
 
   tableData: Array<any> = DSR_TABLEDATA;
+
+  addDsrData(){
+    if(this.dsrForm.valid){
+      this.tableData.unshift(this.dsrForm.value)
+    }else{
+      this.dsrForm.markAllAsTouched()
+    }
+    this.dataSource = new MatTableDataSource<DSR>(this.tableData);
+
+    console.log(this.dsrForm.value,'j');
+
+  }
 
   buttonClick(result: any) {
     let temp = result[1].date;

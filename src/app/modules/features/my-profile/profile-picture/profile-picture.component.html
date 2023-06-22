@@ -8,12 +8,12 @@
         <h4>Browse</h4>
         <input #logo type="file" (change)="preview(logo.files)" accept="image/png, image/gif, image/jpeg">
         <p>Upload files only: gif,png,jpg,jpeg</p>
-        <img src="../../../../../assets/images (1).png"  *ngIf="!imgURL">
-        <img [src]="imgURL" *ngIf="imgURL">
-      </div>
+        <!-- <img src="../../../../../assets/images (1).png"  *ngIf="!imgURL"> -->
+        <img [src]="imgURL" >
 
+      </div>
       <div class="save_button">
-        <button>Save</button>
+        <button (click)="saveProfile()">Save</button>
       </div>
     </div>
   </div>

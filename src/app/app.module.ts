@@ -17,6 +17,7 @@ import { CarouselModule } from './shared/carousel/carousel.module';
 import { FieldErrorModule } from './shared/field-error/field-error.module';
 import { validationError } from './pipes/validation-error/valiadation-error.module';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     CarouselModule,
     FieldErrorModule,
     validationError,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent],
